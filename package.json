@@ -1,0 +1,15 @@
+{
+  "name": "odtuclass-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sync ODTUClass data with a GitHub Actions-friendly workflow.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "sync": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0"
+  }
+}
