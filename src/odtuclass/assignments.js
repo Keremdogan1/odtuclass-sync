@@ -63,8 +63,9 @@ function extractAssignmentsFromApi(course, sections) {
 				url: module.url || '',
 				openAt: dates.openAt,
 				dueAt: dates.dueAt,
+				closeAt: dates.closeAt,
 			});
-			}
+		}
 	}
 
 	return assignments;
@@ -101,6 +102,7 @@ async function scrapeAssignmentsFromHtml(client, course) {
 
 		const link = activity.find('a.aalink').first();
 
+		// Bazen başlık span'da oluyor veya hoca link koymuyor, ancak mevcut mantık a.aalink arıyor. Buna dokunmuyoruz.
 		if (!link.length) {
 			return;
 		}
@@ -113,6 +115,8 @@ async function scrapeAssignmentsFromHtml(client, course) {
 			return;
 		}
 
+		const dates = extractHtmlDates($, activity);
+
 		assignments.push({
 			id: `assignment:${course.id}:${moduleId}`,
 			type: 'assignment',
@@ -122,8 +126,9 @@ async function scrapeAssignmentsFromHtml(client, course) {
 			moduleType,
 			title,
 			url,
-			openAt: null,
-			dueAt: null,
+			openAt: dates.openAt,
+			dueAt: dates.dueAt,
+			closeAt: dates.closeAt,
 		});
 	});
 
@@ -144,12 +149,15 @@ function extractModuleId(url) {
 function extractDates(dates) {
 	let openAt = null;
 	let dueAt = null;
+	let closeAt = null;
 
 	for (const date of dates) {
 		const label = (date.label || '').toLowerCase();
 
-		if (label.includes('due') || label.includes('close')) {
+		if (label.includes('due')) {
 			dueAt = date.timestamp || null;
+		} else if (label.includes('close') || label.includes('cut-off') || label.includes('cutoff')) {
+			closeAt = date.timestamp || null;
 		} else if (label.includes('open')) {
 			openAt = date.timestamp || null;
 		}
@@ -158,5 +166,51 @@ function extractDates(dates) {
 	return {
 		openAt,
 		dueAt,
+		closeAt,
 	};
+}
+
+function extractHtmlDates($, activity) {
+	let openAt = null;
+	let dueAt = null;
+	let closeAt = null;
+
+	const datesRegion = activity.find('div[data-region="activity-dates"] > div');
+	datesRegion.each((_, el) => {
+		const text = $(el).text().trim();
+		const parts = text.split(':');
+		if (parts.length >= 2) {
+			const label = parts[0].trim().toLowerCase();
+			const dateStr = parts.slice(1).join(':').trim();
+			const isoDate = parseHumanDate(dateStr);
+
+			if (label === 'opened' || label === 'opens' || label === 'open') {
+				openAt = isoDate || openAt;
+			} else if (label === 'due') {
+				dueAt = isoDate || dueAt;
+			} else if (label === 'closes' || label === 'close' || label === 'cut-off' || label === 'cutoff') {
+				closeAt = isoDate || closeAt;
+			}
+		}
+	});
+
+	if (!openAt && !dueAt && !closeAt) {
+		const description = activity.find('div.activity-description').text();
+		const deadlineMatch = description.match(/deadline\s*:\s*([^\n<]+)/i);
+		if (deadlineMatch) {
+			dueAt = parseHumanDate(deadlineMatch[1].trim()) || dueAt;
+		}
+	}
+
+	return { openAt, dueAt, closeAt };
+}
+
+function parseHumanDate(dateStr) {
+	if (!dateStr) return null;
+	const cleaned = dateStr.replace(/^[a-z]+,\s*/i, '').trim();
+	const timestamp = Date.parse(cleaned + ' GMT+0300');
+	if (!Number.isNaN(timestamp)) {
+		return new Date(timestamp).toISOString();
+	}
+	return null;
 }

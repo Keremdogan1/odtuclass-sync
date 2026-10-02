@@ -70,9 +70,10 @@ export function recordAssignments(state, assignments) {
 	const recordedAt = new Date().toISOString();
 
 	for (const assignment of assignments) {
+		const existing = state.assignments[assignment.id];
 		state.assignments[assignment.id] = {
 			...assignment,
-			seenAt: recordedAt,
+			seenAt: existing ? existing.seenAt : recordedAt,
 		};
 	}
 
