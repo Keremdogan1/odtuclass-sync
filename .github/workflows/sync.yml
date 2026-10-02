@@ -42,7 +42,9 @@ jobs:
           git config --local user.name "github-actions[bot]"
           
           git add .odtuclass/state.json || true
-          git add .odtuclass/pending/*.json || true
+          if [ -d ".odtuclass/pending" ]; then
+            git add .odtuclass/pending/*.json || true
+          fi
           
           if git diff --staged --quiet; then
             echo "No changes to commit. State and pending files are up to date."
