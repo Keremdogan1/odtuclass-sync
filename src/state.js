@@ -1,6 +1,12 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 
 const STATE_VERSION = 1;
+export const DEFAULT_STATE_PATH = '.odtuclass/state.json';
+
+function getStatePath(filePath) {
+	return filePath || process.env.ODTUCLASS_STATE_PATH || DEFAULT_STATE_PATH;
+}
 
 export function createEmptyState() {
 	return {
@@ -10,9 +16,11 @@ export function createEmptyState() {
 	};
 }
 
-export async function loadState(filePath = 'state.json') {
+export async function loadState(filePath) {
+	const statePath = getStatePath(filePath);
+
 	try {
-		const contents = await readFile(filePath, 'utf8');
+		const contents = await readFile(statePath, 'utf8');
 		const state = JSON.parse(contents);
 
 		if (!state || typeof state !== 'object') {
@@ -36,15 +44,17 @@ export async function loadState(filePath = 'state.json') {
 	}
 }
 
-export async function saveState(state, filePath = 'state.json') {
+export async function saveState(state, filePath) {
+	const statePath = getStatePath(filePath);
 	const normalizedState = {
 		version: STATE_VERSION,
 		initialized: true,
 		assignments: state.assignments ?? {},
 	};
 
-	await writeFile(
-		filePath,
+	 await mkdir(dirname(statePath), { recursive: true });
+	 await writeFile(
+		 statePath,
 		`${JSON.stringify(normalizedState, null, 2)}\n`,
 		'utf8',
 	);

@@ -5,71 +5,16 @@ import { getAssignments } from './odtuclass/assignments.js';
 import { syncAssignments } from './sync.js';
 import { notifyNewAssignment } from './notifications.js';
 import { getPendingDirectory, writePendingAssignment } from './pending.js';
-import readline from 'node:readline/promises';
-
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout,
-});
-
-async function readHiddenPassword(prompt) {
-	if (!process.stdin.isTTY || typeof process.stdin.setRawMode !== 'function') {
-		const fallback = readline.createInterface({
-			input: process.stdin,
-			output: process.stdout,
-		});
-
-		try {
-			return await fallback.question(prompt);
-		} finally {
-			fallback.close();
-		}
-	}
-
-	process.stdout.write(prompt);
-	process.stdin.setRawMode(true);
-	process.stdin.resume();
-
-	return new Promise((resolve, reject) => {
-		let password = '';
-
-		const cleanup = () => {
-			process.stdin.setRawMode(false);
-			process.stdin.removeListener('data', onData);
-		};
-
-		const onData = (chunk) => {
-			for (const character of chunk.toString()) {
-				if (character === '\u0003') {
-					cleanup();
-					reject(new Error('Password input cancelled.'));
-					return;
-				}
-
-				if (character === '\r' || character === '\n') {
-					cleanup();
-					process.stdout.write('\n');
-					resolve(password);
-					return;
-				}
-
-				if (character === '\u007f' || character === '\b') {
-					password = password.slice(0, -1);
-					continue;
-				}
-
-				password += character;
-			}
-		};
-
-		process.stdin.on('data', onData);
-	});
-}
 
 try {
-	const username = await rl.question('ODTU username: ');
-	rl.close();
-	const password = await readHiddenPassword('ODTU password: ');
+	const username = process.env.ODTU_USERNAME;
+	const password = process.env.ODTU_PASSWORD;
+
+	if (!username || !password) {
+		throw new Error(
+			'ODTU_USERNAME and ODTU_PASSWORD environment variables are required.',
+		);
+	}
 
 	const client = new ODTUClassClient(2026, 'f');
 
@@ -116,6 +61,4 @@ try {
 	console.error('\n=== TEST FAILED ===');
 	console.error(error.message);
 	process.exitCode = 1;
-} finally {
-	rl.close();
 }
