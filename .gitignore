@@ -4,3 +4,4 @@ node_modules/
 state.json
 state.*.json
 *.session.json
+!.odtuclass/state.json
