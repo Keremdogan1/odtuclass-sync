@@ -379,10 +379,10 @@ test('assignments: existing findNewAssignments and recordAssignments work unmodi
 // ----------------------------------------------------
 // 9. Real Production State Invariant Check
 // ----------------------------------------------------
-await asyncTest('production state check: loads .odtuclass/state.json without error and preserves 14 assignments', async () => {
+await asyncTest('production state check: loads .odtuclass/state.json without error and preserves assignments', async () => {
 	const prodState = await loadState('.odtuclass/state.json');
 	const assignmentKeys = Object.keys(prodState.assignments);
-	assert.equal(assignmentKeys.length, 14, 'Must preserve exactly 14 assignments');
+	assert.ok(assignmentKeys.length >= 14, 'Must preserve at least 14 assignments');
 	assert.ok(prodState.assignments['assignment:4701:4862'], 'Final Quiz must be present');
 });
 

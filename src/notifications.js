@@ -8,14 +8,19 @@ export async function notifyNewAssignment(assignment) {
 	}
 
 	const baseUrl = process.env.NTFY_URL || DEFAULT_NTFY_URL;
-	const url = `${baseUrl.replace(/\/$/, '')}/${encodeURIComponent(topic)}`;
+	const url = `${baseUrl.replace(/\/$/, '')}`;
+
 	const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-			Title: `Yeni ödev: ${assignment.title}`,
-			Tags: 'mortar_board',
+			'Content-Type': 'application/json',
 		},
-		body: `${assignment.courseName}\n${assignment.url || assignment.id}`,
+		body: JSON.stringify({
+			topic,
+			title: `Yeni ödev: ${assignment.title}`,
+			message: `${assignment.courseName}\n${assignment.url || assignment.id}`,
+			tags: ['mortar_board'],
+		}),
 	});
 
 	if (!response.ok) {
@@ -31,7 +36,7 @@ export async function notifySectionEvent(section, eventType) {
 	}
 
 	const baseUrl = process.env.NTFY_URL || DEFAULT_NTFY_URL;
-	const url = `${baseUrl.replace(/\/$/, '')}/${encodeURIComponent(topic)}`;
+	const url = `${baseUrl.replace(/\/$/, '')}`;
 
 	const actionLabel =
 		eventType === 'updated'
@@ -41,10 +46,14 @@ export async function notifySectionEvent(section, eventType) {
 	const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-			Title: `${actionLabel}: ${section.courseName} — ${section.name}`,
-			Tags: 'books',
+			'Content-Type': 'application/json',
 		},
-		body: `${section.courseName}\n${section.url || section.id}\n\n${section.content ? section.content.substring(0, 300) : ''}`,
+		body: JSON.stringify({
+			topic,
+			title: `${actionLabel}: ${section.courseName} - ${section.name}`,
+			message: `${section.courseName}\n${section.url || section.id}\n\n${section.content ? section.content.substring(0, 300) : ''}`,
+			tags: ['books'],
+		}),
 	});
 
 	if (!response.ok) {
