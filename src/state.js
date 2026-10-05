@@ -13,6 +13,7 @@ export function createEmptyState() {
 		version: STATE_VERSION,
 		initialized: false,
 		assignments: {},
+		sections: {},
 	};
 }
 
@@ -34,6 +35,10 @@ export async function loadState(filePath) {
 				state.assignments && typeof state.assignments === 'object'
 					? state.assignments
 					: {},
+			sections:
+				state.sections && typeof state.sections === 'object'
+					? state.sections
+					: {},
 		};
 	} catch (error) {
 		if (error.code === 'ENOENT') {
@@ -50,6 +55,7 @@ export async function saveState(state, filePath) {
 		version: STATE_VERSION,
 		initialized: true,
 		assignments: state.assignments ?? {},
+		sections: state.sections ?? {},
 	};
 
 	 await mkdir(dirname(statePath), { recursive: true });
@@ -79,3 +85,55 @@ export function recordAssignments(state, assignments) {
 
 	return state;
 }
+
+export function findNewOrUpdatedSections(sections, state) {
+	const results = [];
+	const existingSections = state.sections || {};
+
+	for (const section of sections) {
+		const existing = existingSections[section.id];
+		if (!existing) {
+			results.push({
+				...section,
+				event: 'created',
+			});
+		} else if (existing.contentHash !== section.contentHash) {
+			results.push({
+				...section,
+				event: 'updated',
+			});
+		}
+	}
+
+	return results;
+}
+
+export function recordSections(state, sections) {
+	if (!state.sections) {
+		state.sections = {};
+	}
+	const recordedAt = new Date().toISOString();
+
+	for (const section of sections) {
+		const existing = state.sections[section.id];
+		const isUpdated = existing && existing.contentHash !== section.contentHash;
+
+		state.sections[section.id] = {
+			id: section.id,
+			type: 'section',
+			courseId: section.courseId,
+			courseName: section.courseName,
+			sectionId: section.sectionId,
+			name: section.name,
+			url: section.url,
+			contentHash: section.contentHash,
+			weekStart: section.weekStart,
+			weekEnd: section.weekEnd,
+			seenAt: existing ? existing.seenAt : recordedAt,
+			updatedAt: isUpdated ? recordedAt : existing?.updatedAt || recordedAt,
+		};
+	}
+
+	return state;
+}
+

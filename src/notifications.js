@@ -22,3 +22,32 @@ export async function notifyNewAssignment(assignment) {
 		throw new Error(`ntfy notification failed: HTTP ${response.status}.`);
 	}
 }
+
+export async function notifySectionEvent(section, eventType) {
+	const topic = process.env.NTFY_TOPIC;
+
+	if (!topic) {
+		throw new Error('NTFY_TOPIC environment variable is required.');
+	}
+
+	const baseUrl = process.env.NTFY_URL || DEFAULT_NTFY_URL;
+	const url = `${baseUrl.replace(/\/$/, '')}/${encodeURIComponent(topic)}`;
+
+	const actionLabel =
+		eventType === 'updated'
+			? 'ODTUClass içeriği güncellendi'
+			: 'Yeni ODTUClass içeriği';
+
+	const response = await fetch(url, {
+		method: 'POST',
+		headers: {
+			Title: `${actionLabel}: ${section.courseName} — ${section.name}`,
+			Tags: 'books',
+		},
+		body: `${section.courseName}\n${section.url || section.id}\n\n${section.content ? section.content.substring(0, 300) : ''}`,
+	});
+
+	if (!response.ok) {
+		throw new Error(`ntfy notification failed: HTTP ${response.status}.`);
+	}
+}

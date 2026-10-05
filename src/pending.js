@@ -15,12 +15,24 @@ export async function writePendingAssignment(
 	return filePath;
 }
 
-export function getPendingFileName(assignment) {
-	if (!assignment.id) {
-		throw new Error('Assignment must have an id.');
+export async function writePendingSection(
+	section,
+	directory = DEFAULT_PENDING_DIRECTORY,
+) {
+	await mkdir(directory, { recursive: true });
+
+	const filePath = join(directory, `${getPendingFileName(section)}.json`);
+	await writeFile(filePath, `${JSON.stringify(section, null, 2)}\n`, 'utf8');
+
+	return filePath;
+}
+
+export function getPendingFileName(item) {
+	if (!item || !item.id) {
+		throw new Error('Item must have an id.');
 	}
 
-	return assignment.id.replace(/[^a-zA-Z0-9._-]+/g, '-');
+	return item.id.replace(/[^a-zA-Z0-9._-]+/g, '-');
 }
 
 export function getPendingDirectory() {
