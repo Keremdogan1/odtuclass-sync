@@ -10,6 +10,7 @@ import {
 	getCourseSections,
 	parseSectionTopics,
 	parseSuggestedProblems,
+	deriveSectionTitle,
 } from '../src/odtuclass/sections.js';
 import {
 	createEmptyState,
@@ -469,6 +470,25 @@ Suggested problems from textbook:
 	assert.equal(results[1].section, '1.3');
 	assert.equal(results[1].title, 'Limits at Infinity and Infinite Limits');
 	assert.equal(results[1].problems.length, 12);
+});
+
+test('deriveSectionTitle: extracts week and topic cleanly for date ranges and preserves custom titles', () => {
+	const w1 = deriveSectionTitle(
+		'September 28 - October 4',
+		1,
+		'(Reading assignment: Ch. 0: Preliminaries + Ch. 1.1)\n\nCh. 1: Limits and Continuity\n\n1.2 Limits of Functions'
+	);
+	assert.equal(w1, 'Week 1: Limits and Continuity');
+
+	const w2 = deriveSectionTitle(
+		'October 5 - October 11',
+		2,
+		'Topics to be covered:\n\n1.3. Limits at Infinity and Infinite Limits\n\n1.4. Continuity\n\n1.5. The Formal Definition of Limit'
+	);
+	assert.equal(w2, 'Week 2: Limits at Infinity & Continuity');
+
+	const custom = deriveSectionTitle('Syllabus & Course Info', 0, 'Welcome to the course');
+	assert.equal(custom, 'Syllabus & Course Info');
 });
 
 console.log(`\n========================================`);

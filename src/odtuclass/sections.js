@@ -202,6 +202,38 @@ export function parseSuggestedProblems(content) {
 	return results;
 }
 
+export function deriveSectionTitle(name, sectionNumber, content) {
+	if (!name || typeof name !== 'string') {
+		return sectionNumber ? `Week ${sectionNumber}` : 'Untitled Section';
+	}
+
+	const { weekStart } = parseWeekDates(name);
+	if (!weekStart) {
+		return name;
+	}
+
+	let topic = null;
+	if (content && typeof content === 'string') {
+		const chMatch = content.match(/(?:^|\n)\s*Ch\.\s*\d+:\s*([^\n\r]+)/i);
+		if (chMatch) {
+			topic = chMatch[1].trim();
+		} else {
+			const topics = parseSectionTopics(content);
+			const topicKeys = Object.keys(topics);
+			if (topicKeys.length > 0) {
+				const firstTopics = topicKeys.slice(0, 2).map((k) => topics[k].replace(/\s+and\s+Infinite\s+Limits/i, ''));
+				topic = firstTopics.join(' & ');
+			}
+		}
+	}
+
+	const weekPrefix = sectionNumber ? `Week ${sectionNumber}` : 'Week';
+	if (topic) {
+		return `${weekPrefix}: ${topic}`;
+	}
+	return weekPrefix;
+}
+
 export async function getCourseSections(client, course) {
 	const response = await client.request(
 		'GET',
@@ -211,7 +243,7 @@ export async function getCourseSections(client, course) {
 	const $ = cheerio.load(response.data);
 	const sections = [];
 
-	$('li.section').each((_, element) => {
+	$('li.section').each((index, element) => {
 		const sec = $(element);
 
 		const link = sec.find('a[href*="section.php"]').first();
@@ -241,9 +273,13 @@ export async function getCourseSections(client, course) {
 			return;
 		}
 
+		const sectionIndexMatch = sec.attr('id')?.match(/section-(\d+)/);
+		const sectionNumber = sectionIndexMatch ? parseInt(sectionIndexMatch[1], 10) : index;
+
 		const contentHash = computeContentHash(content);
 		const { weekStart, weekEnd } = parseWeekDates(name, client.year || 2026);
 		const suggestedProblems = parseSuggestedProblems(content);
+		const cleanTitle = deriveSectionTitle(name, sectionNumber, content);
 
 		sections.push({
 			id: `section:${course.id}:${sectionId}`,
@@ -251,7 +287,8 @@ export async function getCourseSections(client, course) {
 			courseId: course.id,
 			courseName: course.fullname,
 			sectionId,
-			title: name,
+			sectionNumber,
+			title: cleanTitle,
 			name,
 			url,
 			content,
