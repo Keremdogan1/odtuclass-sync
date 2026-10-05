@@ -163,7 +163,7 @@ Respond ONLY with valid JSON in this exact structure:
   "reason": "short explanation"
 }`;
 
-	const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+	const model = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 	const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
 	const response = await fetch(url, {
