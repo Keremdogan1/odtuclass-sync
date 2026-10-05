@@ -8,6 +8,8 @@ import {
 	parseWeekDates,
 	extractSectionId,
 	getCourseSections,
+	parseSectionTopics,
+	parseSuggestedProblems,
 } from '../src/odtuclass/sections.js';
 import {
 	createEmptyState,
@@ -381,6 +383,92 @@ await asyncTest('production state check: loads .odtuclass/state.json without err
 	const assignmentKeys = Object.keys(prodState.assignments);
 	assert.equal(assignmentKeys.length, 14, 'Must preserve exactly 14 assignments');
 	assert.ok(prodState.assignments['assignment:4701:4862'], 'Final Quiz must be present');
+});
+
+// ----------------------------------------------------
+// 10. Suggested Problems & Topics Parsing
+// ----------------------------------------------------
+test('parseSectionTopics: extracts section numbers and topic titles', () => {
+	const text = `Topics to be covered:
+
+1.3. Limits at Infinity and Infinite Limits
+
+1.4. Continuity
+
+1.5. The Formal Definition of Limit
+
+Suggested problems from the textbook:
+
+- 1.3 : 3, 6, 9`;
+
+	const topics = parseSectionTopics(text);
+	assert.deepEqual(topics, {
+		'1.3': 'Limits at Infinity and Infinite Limits',
+		'1.4': 'Continuity',
+		'1.5': 'The Formal Definition of Limit',
+	});
+});
+
+test('parseSuggestedProblems: extracts problem lists and links topic titles', () => {
+	const text = `Topics to be covered:
+
+1.3. Limits at Infinity and Infinite Limits
+
+1.4. Continuity
+
+Suggested problems from the textbook:
+
+- 1.3 : 3, 6, 9, 10
+- 1.4: 1, 2, 4-6, 8,10`;
+
+	const results = parseSuggestedProblems(text);
+	assert.equal(results.length, 2);
+
+	// 1.3
+	assert.equal(results[0].section, '1.3');
+	assert.equal(results[0].title, 'Limits at Infinity and Infinite Limits');
+	assert.deepEqual(results[0].problems, ['3', '6', '9', '10']);
+
+	// 1.4
+	assert.equal(results[1].section, '1.4');
+	assert.equal(results[1].title, 'Continuity');
+	// Handles range 4-6 and unspaced 8,10
+	assert.deepEqual(results[1].problems, ['1', '2', '4', '5', '6', '8', '10']);
+});
+
+test('parseSuggestedProblems: returns empty array when no suggested problems found', () => {
+	const text = `Just an announcement about midterm dates. No problems assigned.`;
+	assert.deepEqual(parseSuggestedProblems(text), []);
+	assert.deepEqual(parseSuggestedProblems(''), []);
+	assert.deepEqual(parseSuggestedProblems(null), []);
+});
+
+test('parseSuggestedProblems: handles real September MATH 119 text', () => {
+	const text = `(Reading assignment: Ch. 0: Preliminaries + Ch. 1.1)
+
+Ch. 1: Limits and Continuity
+
+1.2 Limits of Functions
+
+1.3 Limits at Infinity and Infinite Limits
+
+Suggested problems from textbook:
+
+- 1.2: 2, 3, 4, 5, 6, 11, 13, 18, 22, 24, 32, 36, 56, 58, 61, 62, 63,64, 67, 68, 75
+- 1.3 : 3, 6, 9, 10, 14, 20, 25, 29, 33, 34, 50, 51`;
+
+	const results = parseSuggestedProblems(text);
+	assert.equal(results.length, 2);
+
+	assert.equal(results[0].section, '1.2');
+	assert.equal(results[0].title, 'Limits of Functions');
+	assert.equal(results[0].problems.length, 21);
+	assert.ok(results[0].problems.includes('63'));
+	assert.ok(results[0].problems.includes('64'));
+
+	assert.equal(results[1].section, '1.3');
+	assert.equal(results[1].title, 'Limits at Infinity and Infinite Limits');
+	assert.equal(results[1].problems.length, 12);
 });
 
 console.log(`\n========================================`);

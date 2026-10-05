@@ -131,6 +131,77 @@ export function extractSectionId(url) {
 	}
 }
 
+export function parseSectionTopics(content) {
+	if (!content || typeof content !== 'string') {
+		return {};
+	}
+
+	const topics = {};
+	const regex = /(?:^|\n)\s*(\d+\.\d+)\.?\s+([^\n]+)/g;
+	let match;
+
+	while ((match = regex.exec(content)) !== null) {
+		const sec = match[1].trim();
+		const title = match[2].trim();
+		if (!title.includes(':') && !/^[\d\s,]+$/.test(title)) {
+			topics[sec] = title;
+		}
+	}
+
+	return topics;
+}
+
+export function parseSuggestedProblems(content) {
+	if (!content || typeof content !== 'string') {
+		return [];
+	}
+
+	const headerMatch = content.match(/suggested\s+problems[^:\n]*:[\s\S]*/i);
+	if (!headerMatch) {
+		return [];
+	}
+
+	const problemText = headerMatch[0];
+	const topics = parseSectionTopics(content);
+	const results = [];
+
+	const lineRegex = /(?:^|\n)\s*[-*]?\s*(\d+\.\d+)\s*:\s*([^\n]+)/g;
+	let lineMatch;
+
+	while ((lineMatch = lineRegex.exec(problemText)) !== null) {
+		const sectionNumber = lineMatch[1].trim();
+		const rawProblems = lineMatch[2].trim();
+
+		const problemList = [];
+		const tokens = rawProblems
+			.split(/[,;]+/)
+			.map((t) => t.trim())
+			.filter(Boolean);
+
+		for (const token of tokens) {
+			const rangeMatch = token.match(/^(\d+)\s*[-–—]\s*(\d+)$/);
+			if (rangeMatch) {
+				const start = parseInt(rangeMatch[1], 10);
+				const end = parseInt(rangeMatch[2], 10);
+				for (let i = start; i <= end; i++) {
+					problemList.push(String(i));
+				}
+			} else {
+				problemList.push(token);
+			}
+		}
+
+		results.push({
+			section: sectionNumber,
+			title: topics[sectionNumber] || null,
+			raw: rawProblems,
+			problems: problemList,
+		});
+	}
+
+	return results;
+}
+
 export async function getCourseSections(client, course) {
 	const response = await client.request(
 		'GET',
@@ -172,6 +243,7 @@ export async function getCourseSections(client, course) {
 
 		const contentHash = computeContentHash(content);
 		const { weekStart, weekEnd } = parseWeekDates(name, client.year || 2026);
+		const suggestedProblems = parseSuggestedProblems(content);
 
 		sections.push({
 			id: `section:${course.id}:${sectionId}`,
@@ -186,6 +258,7 @@ export async function getCourseSections(client, course) {
 			contentHash,
 			weekStart,
 			weekEnd,
+			suggestedProblems,
 		});
 	});
 
