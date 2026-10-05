@@ -273,12 +273,18 @@ export async function getCourseSections(client, course) {
 			return;
 		}
 
+		const suggestedProblems = parseSuggestedProblems(content);
+
+		// Ignore sections that do not contain suggested problems
+		if (!suggestedProblems || suggestedProblems.length === 0) {
+			return;
+		}
+
 		const sectionIndexMatch = sec.attr('id')?.match(/section-(\d+)/);
 		const sectionNumber = sectionIndexMatch ? parseInt(sectionIndexMatch[1], 10) : index;
 
 		const contentHash = computeContentHash(content);
 		const { weekStart, weekEnd } = parseWeekDates(name, client.year || 2026);
-		const suggestedProblems = parseSuggestedProblems(content);
 		const cleanTitle = deriveSectionTitle(name, sectionNumber, content);
 
 		sections.push({

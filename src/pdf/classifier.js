@@ -44,6 +44,16 @@ const NEGATIVE_KEYWORDS = [
 	'exam solution',
 	'quiz solution',
 	'midterm solution',
+	'syllabus',
+	'course outline',
+	'policy',
+	'rubric',
+	'criteria',
+	'guideline',
+	'guidelines',
+	'tutorial',
+	'how to',
+	'academic integrity',
 ];
 
 export function ruleBasedClassify(metadata = {}, pdfText = '') {
@@ -60,7 +70,7 @@ export function ruleBasedClassify(metadata = {}, pdfText = '') {
 	for (const neg of NEGATIVE_KEYWORDS) {
 		if (combinedMeta.includes(neg)) {
 			matchedNegatives.push(neg);
-			score -= 5;
+			score -= 8;
 		}
 	}
 
