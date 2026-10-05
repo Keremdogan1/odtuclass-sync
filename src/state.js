@@ -14,6 +14,7 @@ export function createEmptyState() {
 		initialized: false,
 		assignments: {},
 		sections: {},
+		resources: {},
 	};
 }
 
@@ -39,6 +40,10 @@ export async function loadState(filePath) {
 				state.sections && typeof state.sections === 'object'
 					? state.sections
 					: {},
+			resources:
+				state.resources && typeof state.resources === 'object'
+					? state.resources
+					: {},
 		};
 	} catch (error) {
 		if (error.code === 'ENOENT') {
@@ -56,6 +61,7 @@ export async function saveState(state, filePath) {
 		initialized: true,
 		assignments: state.assignments ?? {},
 		sections: state.sections ?? {},
+		resources: state.resources ?? {},
 	};
 
 	 await mkdir(dirname(statePath), { recursive: true });
@@ -129,6 +135,60 @@ export function recordSections(state, sections) {
 			contentHash: section.contentHash,
 			weekStart: section.weekStart,
 			weekEnd: section.weekEnd,
+			seenAt: existing ? existing.seenAt : recordedAt,
+			updatedAt: isUpdated ? recordedAt : existing?.updatedAt || recordedAt,
+		};
+	}
+
+	return state;
+}
+
+export function findNewOrUpdatedResources(resources, state) {
+	const results = [];
+	const existingResources = state.resources || {};
+
+	for (const resource of resources) {
+		const existing = existingResources[resource.id];
+		if (!existing) {
+			results.push({
+				...resource,
+				event: 'created',
+			});
+		} else if (resource.timemodified && existing.timemodified !== resource.timemodified) {
+			results.push({
+				...resource,
+				event: 'updated',
+			});
+		}
+	}
+
+	return results;
+}
+
+export function recordResources(state, resources) {
+	if (!state.resources) {
+		state.resources = {};
+	}
+	const recordedAt = new Date().toISOString();
+
+	for (const resource of resources) {
+		const existing = state.resources[resource.id];
+		const isUpdated = existing && existing.timemodified !== resource.timemodified;
+
+		state.resources[resource.id] = {
+			id: resource.id,
+			type: 'resource',
+			courseId: resource.courseId,
+			courseName: resource.courseName,
+			moduleId: resource.moduleId,
+			name: resource.name,
+			filename: resource.filename,
+			fileurl: resource.fileurl,
+			filesize: resource.filesize,
+			timemodified: resource.timemodified,
+			isAssignment: resource.isAssignment ?? existing?.isAssignment ?? null,
+			format: resource.format ?? existing?.format ?? null,
+			reason: resource.reason ?? existing?.reason ?? null,
 			seenAt: existing ? existing.seenAt : recordedAt,
 			updatedAt: isUpdated ? recordedAt : existing?.updatedAt || recordedAt,
 		};

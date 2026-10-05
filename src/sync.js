@@ -2,9 +2,11 @@ import {
 	DEFAULT_STATE_PATH,
 	findNewAssignments,
 	findNewOrUpdatedSections,
+	findNewOrUpdatedResources,
 	loadState,
 	recordAssignments,
 	recordSections,
+	recordResources,
 	saveState,
 } from './state.js';
 
@@ -42,4 +44,27 @@ export async function syncSections(
 		sectionEvents,
 		state,
 	};
+}
+
+export async function syncResources(
+	resources,
+	filePath = process.env.ODTUCLASS_STATE_PATH || DEFAULT_STATE_PATH,
+) {
+	const state = await loadState(filePath);
+	const newOrUpdated = findNewOrUpdatedResources(resources, state);
+
+	return {
+		newOrUpdated,
+		state,
+	};
+}
+
+export async function saveResourceState(
+	resources,
+	filePath = process.env.ODTUCLASS_STATE_PATH || DEFAULT_STATE_PATH,
+) {
+	const state = await loadState(filePath);
+	recordResources(state, resources);
+	await saveState(state, filePath);
+	return state;
 }

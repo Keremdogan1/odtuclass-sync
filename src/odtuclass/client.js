@@ -76,6 +76,10 @@ export class ODTUClassClient {
 			config.params = options.params;
 		}
 
+		if (options.responseType) {
+			config.responseType = options.responseType;
+		}
+
 		const response = await axios(config);
 
 		this._collectCookies(response);
@@ -100,13 +104,19 @@ export class ODTUClassClient {
 					redirectHeaders.Cookie = cookies;
 				}
 
-				const redirected = await axios({
+				const redirectConfig = {
 					method: 'GET',
 					url: redirectUrl,
 					headers: redirectHeaders,
 					maxRedirects: 0,
 					validateStatus: () => true,
-				});
+				};
+
+				if (options.responseType) {
+					redirectConfig.responseType = options.responseType;
+				}
+
+				const redirected = await axios(redirectConfig);
 
 				this._collectCookies(redirected);
 

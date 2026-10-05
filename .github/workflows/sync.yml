@@ -34,6 +34,7 @@ jobs:
           ODTU_PASSWORD: ${{ secrets.ODTU_PASSWORD }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_URL: ${{ secrets.NTFY_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run sync
 
       - name: Commit and Push changes
