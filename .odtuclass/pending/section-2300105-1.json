@@ -1,0 +1,17 @@
+{
+  "id": "section:2300105:1",
+  "type": "section",
+  "courseId": 2300105,
+  "courseName": "[PHYS 105 All Sections] General Physics I",
+  "sectionId": 1,
+  "sectionNumber": 1,
+  "title": "Week 1: Introduction, Measurement, Estimating",
+  "name": "September 28 - October 04",
+  "url": "",
+  "content": "### Chapter 1. Introduction, Measurement, Estimating\n\n**Course Coverage:** Self-study   Selected problems: —\n\n#### Topics to be covered:\n- 1-1 How Science Works\n- 1-2 Models, Theories, and Laws\n- 1-3 Measurement and Uncertainty; Significant Figures\n- 1-4 Units, Standards, and the SI System\n- 1-5 Converting Units\n- 1-6 Order of Magnitude: Rapid Estimating\n- 1-7 Dimensions and Dimensional Analysis",
+  "contentHash": "bc913731ec0402a2aa214a9deeb59e832d24a5a5b3b309e0ddbdf89a0b348222",
+  "weekStart": "2026-09-28",
+  "weekEnd": "2026-10-04",
+  "suggestedProblems": [],
+  "event": "created"
+}
