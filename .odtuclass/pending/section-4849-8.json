@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:8",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 8,
+  "sectionNumber": 8,
+  "title": "Week 8: Conservation of Energy",
+  "name": "November 16 - 22",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 8. Conservation of Energy\n\n**Course Coverage:** Included sections 8-1 to 8-9; 8-10 is excluded Selected problems: 21, 23, 26, 38, 45, 64, 82\n\n#### Topics to be covered:\n- 8-1 Conservative and Nonconservative Forces\n- 8-2 Potential Energy\n- 8-3 Mechanical Energy and Its Conservation\n- 8-4 Problem Solving Using Conservation of Mechanical Energy\n- 8-5 The Law of Conservation of Energy\n- 8-6 Energy Conservation with Dissipative Forces: Solving Problems\n- 8-7 Gravitational Potential Energy and Escape Velocity\n- 8-8 Power\n- 8-9 Potential Energy Diagrams; Stable and Unstable Equilibrium\n\n**Suggested problems:** 8: 21, 23, 26, 38, 45, 64, 82",
+  "contentHash": "a0e4a0e6f438a674389eb5b36505a0e5b7afcc97a660ac624d1cba297df342cb",
+  "weekStart": "2026-11-16",
+  "weekEnd": "2026-11-22",
+  "suggestedProblems": [
+    {
+      "section": "8",
+      "title": "Conservation of Energy",
+      "raw": "21, 23, 26, 38, 45, 64, 82",
+      "problems": [
+        "21",
+        "23",
+        "26",
+        "38",
+        "45",
+        "64",
+        "82"
+      ]
+    }
+  ],
+  "event": "created"
+}

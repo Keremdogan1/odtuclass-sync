@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:11",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 11,
+  "sectionNumber": 11,
+  "title": "Week 11: Angular Momentum; General Rotation",
+  "name": "December 07 - 13",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 11. Angular Momentum; General Rotation\n\n**Course Coverage:** Included sections 11-1 to 11-6; 11-7 to 11-9 are excluded Selected problems: 38, 48, 49, 50, 52, 66, 67\n\n#### Topics to be covered:\n- 11-1 Angular Momentum : Objects Rotating About a Fixed Axis\n- 11-2 Vector Cross Product; Torque as a Vector\n- 11-3 Angular Momentum of a Particle\n- 11-4 Angular Momentum and Torque for a System of Particles; General Motion\n- 11-5 Angular Momentum and Torque for a Rigid Object\n- 11-6 Conservation of Angular Momentum\n\n**Suggested problems:** 11: 38, 48, 49, 50, 52, 66, 67",
+  "contentHash": "37fc5ed9cddc236b99c63d67c15dff8035af54d58a1654b2d9be1b1c9025473d",
+  "weekStart": "2026-12-07",
+  "weekEnd": "2026-12-13",
+  "suggestedProblems": [
+    {
+      "section": "11",
+      "title": "Angular Momentum; General Rotation",
+      "raw": "38, 48, 49, 50, 52, 66, 67",
+      "problems": [
+        "38",
+        "48",
+        "49",
+        "50",
+        "52",
+        "66",
+        "67"
+      ]
+    }
+  ],
+  "event": "created"
+}

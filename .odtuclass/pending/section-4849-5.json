@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:5",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 5,
+  "sectionNumber": 5,
+  "title": "Week 5: Using Newton's Laws: Friction, Circular Motion, Drag Forces",
+  "name": "October 26 - November 01",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 5. Using Newton's Laws: Friction, Circular Motion, Drag Forces\n\n**Course Coverage:** Included sections 5-1 to 5-5; 5-6 is excluded Selected problems: 19, 29, 32, 34, 48, 92, 105\n\n#### Topics to be covered:\n- 5-1 Using Newton's Laws with Friction\n- 5-2 Uniform Circular Motion—Kinematics\n- 5-3 Dynamics of Uniform Circular Motion\n- 5-4 Highway Curves: Banked and Unbanked\n- 5-5 Nonuniform Circular Motion\n\n**Suggested problems:** 5: 19, 29, 32, 34, 48, 92, 105",
+  "contentHash": "572564cd1b7ba02a92afeb4ba2f85a140ff45ff5eb3a69c89f51b6f6fa811392",
+  "weekStart": "2026-10-26",
+  "weekEnd": "2026-11-01",
+  "suggestedProblems": [
+    {
+      "section": "5",
+      "title": "Using Newton's Laws: Friction, Circular Motion, Drag Forces",
+      "raw": "19, 29, 32, 34, 48, 92, 105",
+      "problems": [
+        "19",
+        "29",
+        "32",
+        "34",
+        "48",
+        "92",
+        "105"
+      ]
+    }
+  ],
+  "event": "created"
+}

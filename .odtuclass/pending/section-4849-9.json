@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:9",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 9,
+  "sectionNumber": 9,
+  "title": "Week 9: Linear Momentum",
+  "name": "November 23 - 29",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 9. Linear Momentum\n\n**Course Coverage:** Included sections 9-1 to 9-9; 9-10 is excluded Selected problems: 15, 17, 34, 36, 67, 71, 104\n\n#### Topics to be covered:\n- 9-1 Momentum and Its Relation to Force\n- 9-2 Conservation of Momentum\n- 9-3 Collisions and Impulse\n- 9-4 Conservation of Energy and Momentum in Collisions\n- 9-5 Elastic Collisions in One Dimension\n- 9-6 Inelastic Collisions\n- 9-7 Collisions in 2 or 3 Dimensions\n- 9-8 Center of Mass (cm)\n- 9-9 Center of Mass and Translational Motion\n\n**Suggested problems:** 9: 15, 17, 34, 36, 67, 71, 104",
+  "contentHash": "2c8df010d7ac372358180c4c6eff99828bfd177fefa8b65c3fb2dba7ffdc5671",
+  "weekStart": "2026-11-23",
+  "weekEnd": "2026-11-29",
+  "suggestedProblems": [
+    {
+      "section": "9",
+      "title": "Linear Momentum",
+      "raw": "15, 17, 34, 36, 67, 71, 104",
+      "problems": [
+        "15",
+        "17",
+        "34",
+        "36",
+        "67",
+        "71",
+        "104"
+      ]
+    }
+  ],
+  "event": "created"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:2",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 2,
+  "sectionNumber": 2,
+  "title": "Week 2: Describing Motion: Kinematics in One Dimension",
+  "name": "October 05 - 11",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 2. Describing Motion: Kinematics in One Dimension\n\n**Course Coverage:** Included sections 2-1 to 2-7; 2-8 is excluded Selected problems: 27, 43, 47, 64, 69, 78, 93\n\n#### Topics to be covered:\n- 2-1 Reference Frames and Displacement\n- 2-2 Average Velocity\n- 2-3 Instantaneous Velocity\n- 2-4 Acceleration\n- 2-5 Motion at Constant Acceleration\n- 2-6 Solving Problems\n- 2-7 Freely Falling Objects\n\n**Suggested problems:** 2: 27, 43, 47, 64, 69, 78, 93",
+  "contentHash": "96188391dd53e8b2668571bd8fe9677f40e1d92f276ac25d542f9858d6ae92ce",
+  "weekStart": "2026-10-05",
+  "weekEnd": "2026-10-11",
+  "suggestedProblems": [
+    {
+      "section": "2",
+      "title": "Describing Motion: Kinematics in One Dimension",
+      "raw": "27, 43, 47, 64, 69, 78, 93",
+      "problems": [
+        "27",
+        "43",
+        "47",
+        "64",
+        "69",
+        "78",
+        "93"
+      ]
+    }
+  ],
+  "event": "created"
+}

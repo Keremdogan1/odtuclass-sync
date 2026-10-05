@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:3",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 3,
+  "sectionNumber": 3,
+  "title": "Week 3: Kinematics in Two or Three Dimensions; Vectors",
+  "name": "October 12 - 18",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 3. Kinematics in Two or Three Dimensions; Vectors\n\n**Course Coverage:** All sections 3-1 to 3-9 are included Selected problems: 13, 22, 30, 42, 49, 56, 70\n\n#### Topics to be covered:\n- 3-1 Vectors and Scalars\n- 3-2 Addition of Vectors—Graphical Methods\n- 3-3 Subtraction of Vectors, and Multiplication of a Vector by a Scalar\n- 3-4 Adding Vectors by Components\n- 3-5 Unit Vectors\n- 3-6 Vector Kinematics\n- 3-7 Projectile Motion\n- 3-8 Solving Problems Involving Projectile Motion\n- 3-9 Relative Velocity\n\n**Suggested problems:** 3: 13, 22, 30, 42, 49, 56, 70",
+  "contentHash": "5334f576f494fee407a38f61b7472196e292209dcc085de810032fc46bff3f2d",
+  "weekStart": "2026-10-12",
+  "weekEnd": "2026-10-18",
+  "suggestedProblems": [
+    {
+      "section": "3",
+      "title": "Kinematics in Two or Three Dimensions; Vectors",
+      "raw": "13, 22, 30, 42, 49, 56, 70",
+      "problems": [
+        "13",
+        "22",
+        "30",
+        "42",
+        "49",
+        "56",
+        "70"
+      ]
+    }
+  ],
+  "event": "created"
+}

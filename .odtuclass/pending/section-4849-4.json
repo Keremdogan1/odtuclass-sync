@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:4",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 4,
+  "sectionNumber": 4,
+  "title": "Week 4: Dynamics: Newton's Laws of Motion",
+  "name": "October 19 - 25",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 4. Dynamics: Newton's Laws of Motion\n\n**Course Coverage:** All sections 4-1 to 4-8 are included Selected problems: 35, 40, 60, 62, 64, 68, 91\n\n#### Topics to be covered:\n- 4-1 Force\n- 4-2 Newton's First Law of Motion\n- 4-3 Mass\n- 4-4 Newton's Second Law of Motion\n- 4-5 Newton's Third Law of Motion\n- 4-6 Weight—the Force of Gravity; and the Normal Force\n- 4-7 Solving Problems with Newton's Laws: Free-Body Diagrams\n- 4-8 Problem Solving—A General Approach\n\n**Suggested problems:** 4: 35, 40, 60, 62, 64, 68, 91",
+  "contentHash": "cd21eff224cc99c5f68045a5a0be641d7c5e005f0e6e7591311067775df5ebae",
+  "weekStart": "2026-10-19",
+  "weekEnd": "2026-10-25",
+  "suggestedProblems": [
+    {
+      "section": "4",
+      "title": "Dynamics: Newton's Laws of Motion",
+      "raw": "35, 40, 60, 62, 64, 68, 91",
+      "problems": [
+        "35",
+        "40",
+        "60",
+        "62",
+        "64",
+        "68",
+        "91"
+      ]
+    }
+  ],
+  "event": "created"
+}

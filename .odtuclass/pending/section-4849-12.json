@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:12",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 12,
+  "sectionNumber": 12,
+  "title": "Week 12: Static Equilibrium; Elasticity and Fracture",
+  "name": "December 14 - 20",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 12. Static Equilibrium; Elasticity and Fracture\n\n**Course Coverage:** Included sections 12-1 to 12-4; 12-5 to 12-8 are excluded Selected problems: 10, 14, 17, 25, 27, 61, 64\n\n#### Topics to be covered:\n- 12-1 The Conditions for Equilibrium\n- 12-2 Solving Statics Problems\n- 12-3 Applications to Muscles and Joints\n- 12-4 Stability and Balance\n\n**Suggested problems:** 12: 10, 14, 17, 25, 27, 61, 64",
+  "contentHash": "6d216854b2085f6858309420cdfb975ea8f1db0f1fb9056698624d8db4ecb4c0",
+  "weekStart": "2026-12-14",
+  "weekEnd": "2026-12-20",
+  "suggestedProblems": [
+    {
+      "section": "12",
+      "title": "Static Equilibrium; Elasticity and Fracture",
+      "raw": "10, 14, 17, 25, 27, 61, 64",
+      "problems": [
+        "10",
+        "14",
+        "17",
+        "25",
+        "27",
+        "61",
+        "64"
+      ]
+    }
+  ],
+  "event": "created"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "section:4849:6",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 6,
+  "sectionNumber": 6,
+  "title": "Week 6: Gravitation and Newton's Synthesis",
+  "name": "November 02 - 08",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 6. Gravitation and Newton's Synthesis\n\n**Course Coverage:** Included sections 6-1 to 6-5, 6-7, and 6-8; 6-6 and 6-9 are excluded Selected problems: 26, 42, 52, 76, 80,\n\n#### Topics to be covered:\n- 6-1 Newton's Law of Universal Gravitation\n- 6-2 Vector Form of Newton's Law of Universal Gravitation\n- 6-3 Gravity Near the Earth's Surface\n- 6-4 Satellites and “Weightlessness”\n- 6-5 Planets, Kepler's Laws, and Newton's Synthesis\n- 6-7 Types of Forces in Nature\n- 6-8 Gravitational Field\n\n**Suggested problems:** 6: 26, 42, 52, 76, 80",
+  "contentHash": "6277a9a3a25e8b1fb4f3fb1965f1cb0120c34f649ed636d72880046850dfefef",
+  "weekStart": "2026-11-02",
+  "weekEnd": "2026-11-08",
+  "suggestedProblems": [
+    {
+      "section": "6",
+      "title": "Gravitation and Newton's Synthesis",
+      "raw": "26, 42, 52, 76, 80",
+      "problems": [
+        "26",
+        "42",
+        "52",
+        "76",
+        "80"
+      ]
+    }
+  ],
+  "event": "created"
+}

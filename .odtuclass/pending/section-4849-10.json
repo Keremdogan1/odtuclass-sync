@@ -1,0 +1,32 @@
+{
+  "id": "section:4849:10",
+  "type": "section",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "sectionId": 10,
+  "sectionNumber": 10,
+  "title": "Week 10: Rotational Motion",
+  "name": "November 30 - December 06",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573",
+  "content": "### Chapter 10. Rotational Motion\n\n**Course Coverage:** Included sections 10-1 to 10-9; 10-10 is excluded Selected problems: 37, 50, 67, 86, 90, 95, 104\n\n#### Topics to be covered:\n- 10-1 Angular Quantities\n- 10-2 Vector Nature of Angular Quantities\n- 10-3 Constant Angular Acceleration\n- 10-4 Torque\n- 10-5 Rotational Dynamics; Torque and Rotational Inertia\n- 10-6 Solving Problems in Rotational Dynamics\n- 10-7 Determining Moments of Inertia\n- 10-8 Rotational Kinetic Energy\n- 10-9 Rotational plus Translational Motion; Rolling\n\n**Suggested problems:** 10: 37, 50, 67, 86, 90, 95, 104",
+  "contentHash": "6e4de5432c0329e47ab21b88b86728b5a06d00878cd0c565874f63bdf3d559a4",
+  "weekStart": "2026-11-30",
+  "weekEnd": "2026-12-06",
+  "suggestedProblems": [
+    {
+      "section": "10",
+      "title": "Rotational Motion",
+      "raw": "37, 50, 67, 86, 90, 95, 104",
+      "problems": [
+        "37",
+        "50",
+        "67",
+        "86",
+        "90",
+        "95",
+        "104"
+      ]
+    }
+  ],
+  "event": "created"
+}
