@@ -1,0 +1,17 @@
+{
+  "id": "section:4701:84622",
+  "type": "section",
+  "courseId": 4701,
+  "courseName": "[OHS 101 ALL SECTIONS] Occupational Health and Safety-I",
+  "sectionId": 84622,
+  "sectionNumber": 1,
+  "title": "Week 1",
+  "name": "Chapter 1 (September 28 - October 4, 2026)",
+  "url": "https://odtuclass2026f.metu.edu.tr/course/section.php?id=84622",
+  "content": "We will cover \"Health and Safety at Laboratories - I\" topic in first week.\n\nThe level of detail of this chapter are below.\n\n- Basic concepts in health and safety\n\n- Identification of hazards and risk at laboratories\n\n- Chemical hazards\n\n- Physical hazards\n\n- Biological hazards\n\n- Ergonomic hazards",
+  "contentHash": "616f3b0e66ae42c45afddd9956659b30179d2ef4274631eb6fea7b5f5bf46cfb",
+  "weekStart": "2026-09-28",
+  "weekEnd": "2026-10-04",
+  "suggestedProblems": [],
+  "event": "created"
+}
