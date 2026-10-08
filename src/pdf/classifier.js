@@ -22,6 +22,8 @@ const POSITIVE_KEYWORDS = [
 	'suggested',
 	'pset',
 	'problem set',
+	'recitation',
+	'recitations',
 ];
 
 const NEGATIVE_KEYWORDS = [
@@ -173,38 +175,55 @@ Respond ONLY with valid JSON in this exact structure:
   "reason": "short explanation"
 }`;
 
-	const model = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
-	const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+	const candidateModels = [
+		process.env.GEMINI_MODEL,
+		'gemini-1.5-flash',
+		'gemini-1.5-flash-latest',
+		'gemini-2.0-flash',
+		'gemini-2.5-flash',
+	].filter(Boolean);
 
-	const response = await fetch(url, {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({
-			contents: [{ parts: [{ text: prompt }] }],
-			generationConfig: {
-				temperature: 0.1,
-				responseMimeType: 'application/json',
-			},
-		}),
-	});
+	let lastError = null;
+	for (const model of candidateModels) {
+		try {
+			const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+			const response = await fetch(url, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					contents: [{ parts: [{ text: prompt }] }],
+					generationConfig: {
+						temperature: 0.1,
+						responseMimeType: 'application/json',
+					},
+				}),
+			});
 
-	if (!response.ok) {
-		throw new Error(`Gemini API error HTTP ${response.status}: ${response.statusText}`);
+			if (!response.ok) {
+				lastError = new Error(`Gemini API (${model}) HTTP ${response.status}: ${response.statusText}`);
+				continue;
+			}
+
+			const data = await response.json();
+			const contentText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+			if (!contentText) {
+				lastError = new Error(`Empty response from Gemini API (${model}).`);
+				continue;
+			}
+
+			const parsed = JSON.parse(contentText);
+			return {
+				isAssignment: Boolean(parsed.isAssignment),
+				confidence: Number(parsed.confidence) || 0.8,
+				format: parsed.format || 'unknown',
+				reason: `Gemini (${model}): ${parsed.reason || 'AI evaluated'}`,
+			};
+		} catch (err) {
+			lastError = err;
+		}
 	}
 
-	const data = await response.json();
-	const contentText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-	if (!contentText) {
-		throw new Error('Empty response from Gemini API.');
-	}
-
-	const parsed = JSON.parse(contentText);
-	return {
-		isAssignment: Boolean(parsed.isAssignment),
-		confidence: Number(parsed.confidence) || 0.8,
-		format: parsed.format || 'unknown',
-		reason: `Gemini (${model}): ${parsed.reason || 'AI evaluated'}`,
-	};
+	throw lastError || new Error('All Gemini candidate models failed.');
 }
 
 export async function classifyPdf(metadata = {}, pdfText = '', options = {}) {

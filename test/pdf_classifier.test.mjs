@@ -88,6 +88,20 @@ test('ruleBasedClassify: identifies problem and homework PDFs as assignments', (
 	assert.equal(resHw.isAssignment, true);
 	assert.equal(resHw.format, 'single_assignment');
 	assert.ok(resHw.score >= 10);
+
+	const recMeta = {
+		name: 'Math119_recitation_2026-1_week02',
+		filename: 'Math119_recitation_2026-1_week02.pdf',
+	};
+	const recText = `
+		MATH 119 Calculus with Analytic Geometry
+		Recitation 2
+		1. Evaluate the limit of f(x) as x approaches infinity.
+		2. Determine the points of discontinuity.
+	`;
+	const resRec = ruleBasedClassify(recMeta, recText);
+	assert.equal(resRec.isAssignment, true);
+	assert.ok(resRec.score >= 3);
 });
 
 test('ruleBasedClassify: rejects lecture slides, notes, and formula sheets', () => {
