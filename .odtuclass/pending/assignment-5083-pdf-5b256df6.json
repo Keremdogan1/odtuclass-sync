@@ -1,0 +1,16 @@
+{
+  "id": "assignment:5083:pdf-5b256df6",
+  "type": "assignment",
+  "courseId": 5083,
+  "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+  "moduleId": "pdf-5b256df6",
+  "moduleType": "pdf_assignment",
+  "title": "Math119_recitation_2026-1_week02",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37969",
+  "openAt": null,
+  "dueAt": null,
+  "closeAt": null,
+  "content": "MATH 119 Recitation Problems – Week 02 Fall 2026-2027\nQ1. Evaluate the following limits.\n(a) lim\nx→2(x3 − 8) sin\n\u0012 1\nx3 − 8\n\u0013\n(b) lim\nx→∞\n4x3 + 4x2 + 1\n√3x6 + x4 − 12 (c) lim\nx→−∞\n1\n√x2 + 2x − x\n(d) lim\nx→−∞\n1\n√x2 + 2x + x (e) lim\nx→∞\nsin x\n3x (f) lim\nx→−∞ sin\n\u0012 πx2 + 5x + 1\nx2 + 1 − π\n6\n\u0013\n(g) lim\nx→∞(p\nx2 + x − p\nx2 − x) (h) lim\nx→∞\nx2(2 + sin2 x)\n3x + 1\nQ2. Solve the following problems.\n(a) If lim\nx→a[ f (x) + g(x)] = 2 and lim\nx→a[ f (x) − g(x)] = 5, find lim\nx→a[ f (x)g(x)].\n(b) If lim\nx→3\nf (x) − 5\nx − 3 = 4, show that lim\nx→3 f (x) exists and find it.\nQ3. Let ⌊·⌋ denote the greatest integer function. Find the limit lim\nx→0−\n\u0016 x3 − x\nx4 − 1\n\u0017\n.\nQ4. Let",
+  "contentHash": "a54cd51803fd6354df08a072741fbb360f5142965dda0fd06c7c955f47831edb",
+  "event": "created"
+}
