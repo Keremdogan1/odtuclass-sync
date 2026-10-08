@@ -1120,6 +1120,23 @@
       "reason": "Rule-based evaluation: score=0, matchedPositives=[], matchedNegatives=[]",
       "seenAt": "2026-10-07T15:03:28.594Z",
       "updatedAt": "2026-10-07T15:03:28.594Z"
+    },
+    "resource:5151:38506": {
+      "id": "resource:5151:38506",
+      "type": "resource",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": 38506,
+      "name": "BA 100 CAREER PLANNING COURSE WEEKLY PROGRAM (FALL 2026)",
+      "filename": "BA 100 CAREER PLANNING COURSE WEEKLY PROGRAM (FALL 2026).pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=38506",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "unknown",
+      "reason": "Rule-based evaluation: score=0, matchedPositives=[], matchedNegatives=[]",
+      "seenAt": "2026-10-08T13:48:26.810Z",
+      "updatedAt": "2026-10-08T13:48:26.810Z"
     }
   }
 }
