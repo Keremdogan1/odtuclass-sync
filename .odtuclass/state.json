@@ -248,6 +248,40 @@
       "contentHash": "a54cd51803fd6354df08a072741fbb360f5142965dda0fd06c7c955f47831edb",
       "event": "created",
       "seenAt": "2026-10-08T15:35:52.464Z"
+    },
+    "assignment:3533:pdf-2792ccb8": {
+      "id": "assignment:3533:pdf-2792ccb8",
+      "type": "assignment",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": "pdf-2792ccb8",
+      "moduleType": "pdf_assignment",
+      "title": "Logical Fallacies Exercise",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=40550",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "content": "IDENTIFY THE FLAWED LOGIC IN EACH\n1. “We should either support this project or turn our backs on progress and suffer the\nconsequences.”\n2. \"John and Mary became vegetarians last fall and they've been sick all winter. The absence\nof meat in their diets must have weakened their immune systems.\"\n3. \"State Secretary of Health Saunders recommends vegetarianism. But Saunders is the\nsame guy who hands out condoms at high school assemblies and he has been arrested on\ndrunk driving charges. I think it's pretty obvious we shouldn't listen to Joe Saunders's advice\non diet!\"\n4. “When I went to Italy, a boy stole my wallet. Thus, all Italians are thieves.”\n5. “You must pass me, professor, or my parents will be so disappointed and sad.”\n6. “As soon as the new mayor of London was appointed, a group of Japanese people came to\nthe city. Therefore, the mayor has increased London’s tourism.”\n7. “A computer virus is a virus that infects a computer.”\n8. “Asians are naturally good at mathematics.”\n9. “Mom, I have to watch that movie. Everybody in my class have seen it.”\n10. “Skydiving is dangerous because it is characterized by extreme risks.”\n11. Noted psychologist Dr Fraser Crane recommends that you buy Nokia.”\nArgument against a person Sweeping generalization Either Or/False Dilemma\nAppeal to pity Hasty generalization Inappropriate authority figure\nEvents only related by sequence Circular thinking Bandwagon approach/Appeal to popularity\n-- 1 of 1 --",
+      "contentHash": "bacdd3292d45d52b151dd332783e4941d77aa79d3a45c90a1ba25c675d665f52",
+      "event": "created",
+      "seenAt": "2026-10-09T14:57:11.230Z"
+    },
+    "assignment:219:pdf-6c08ca86": {
+      "id": "assignment:219:pdf-6c08ca86",
+      "type": "assignment",
+      "courseId": 219,
+      "courseName": "[PHYS 105 Section 11] General Physics I",
+      "moduleId": "pdf-6c08ca86",
+      "moduleType": "pdf_assignment",
+      "title": "CH 3-solved problems",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=40947",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "content": "(5e) ch3-22 At t = 0, a particle starts from rest at x = 0, y = 0, and moves in the xy plane with\nan acceleration 𝑎 = (4.0𝑖̂ + 3.0𝑗̂)𝑚/𝑠2. Determine (a) the x and y components of velocity, (b)\nthe speed of the particle, and (c) the position of the particle, all as a function of time. (d)\nEvaluate all the above at t = 2.0 s.\nSolution:\nA\t⃗⃗ = 42.0(cos28𝑖̂ + sin28𝑗̂ ),\n2B\t⃗⃗ = 9.7 (−cos56𝑖̂ + sin56𝑗̂ ),\nC\t⃗⃗⃗⃗ = −31.0𝑗̂\nin components:\n𝑅⃗ = C⃗ − A\t⃗⃗ − B\t⃗⃗ = −31.0𝑗̂ − 42.0(0.89𝑖̂ + 0.47𝑗̂ ) − 29.7(−0.56𝑖̂ + 0.83𝑗̂ ) ≈ −20.8𝑖̂ − 75.4𝑗̂\n→ 𝑅 ≈ √(−20.8)2 + (−75.4)2) ≈ 78.2, 𝑡𝑎𝑛𝜃 = |𝑦|\n|𝑥| = 3.57 → 𝜃 ≈ 74.60\na) 𝑣 = 0 + 𝑎t = (4.0𝑖̂ + 3𝑗̂ )𝑡\n(5e) ch3 - P13/c vectors shown in the figure 3-41 , 𝐴 = 42.0, 𝐵 = 29.7, 𝐶 = 31.0,\ndetermine the magnitude and direction of a) B\t⃗⃗ − 3A\t⃗⃗ , b) 2A\t⃗⃗ − 3B\t⃗⃗ + 2C⃗, c) C⃗ − A⃗⃗ − B⃗⃗\nSolution:\n→ 𝑣𝑥 = (4.0𝑡) m/s, 𝑣𝑦 = 3.0𝑡 m/s\nb) 𝑠 = |𝑣| = √(4.02 + 3.02) 𝑡2 = 5.0𝑡 m/s\nc) 𝑟 = 0 + 1\n2 𝑎 𝑡2 = (2.0 𝑖̂ + 1.5 𝑗̂ ) 𝑡2\nd) at 𝑡 = 2𝑠, 𝑣𝑥 = 8.0 m/s, 𝑣𝑦 = 6.0 m/s, 𝑠 = 10. m/s\n𝑥 = 8m, 𝑦 = 6m → 𝑟 = (8.0 𝑖̂ + 6.0 𝑗̂ ) m\n(5e) ch3 – P30 A particle which is at the origin at time 𝑡 = 0 has initial velocity,\n𝑣0 = (−14.0𝑖̂ − 7.0𝑗̂ )𝑚/𝑠 and constant acceleration, 𝑎 = (−3.0𝑖̂ + 4.5𝑗̂ )𝑚/𝑠2\ndetermine the position 𝑟 where the particle comes to the rest momentarily.\nSolution:\n𝑣 = 𝑣0 + 𝑎 t = (−14.0𝑖̂ − 7.0𝑗̂ ) + (−3.0𝑖̂ + 4.5𝑗̂ ) 𝑡\n→ 𝑣𝑥 = (−14.0 − 3.0 𝑡)𝑖̂ m/s ≡ 0 → 𝑡 = −4.67𝑠(never stops!)\n→ 𝑣𝑦 =(−7.0 + 4.5𝑡)𝑗̂ m/s ≡ 0 → 𝑡 = 1.56𝑠(𝑖𝑡 𝑟𝑒𝑠𝑡𝑠 𝑚𝑜𝑚𝑒𝑛𝑡𝑎𝑟𝑖𝑙𝑦 )\n𝑟 (𝑡) = 𝑣0t + 1\n2 𝑎𝑡2 = (−14.0𝑖̂ − 7.0𝑗̂ )t + 1\n2 (−3.0𝑖̂ + 4.5𝑗̂ )𝑡2\n→ 𝑟 (𝑡 = 1.56) = (−25.4𝑖̂ − 5.4𝑗̂ )m\n-- 1 of 1 --",
+      "contentHash": "293d860cef4441309998f8edc9be67abe4c47dc5925f68a67b249f82202debee",
+      "event": "created",
+      "seenAt": "2026-10-09T14:57:13.361Z"
     }
   },
   "sections": {
@@ -1154,6 +1188,40 @@
       "reason": "Rule-based evaluation: score=5, matchedPositives=[recitation], matchedNegatives=[]",
       "seenAt": "2026-10-08T15:35:52.861Z",
       "updatedAt": "2026-10-08T15:35:52.861Z"
+    },
+    "resource:3533:40550": {
+      "id": "resource:3533:40550",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 40550,
+      "name": "Logical Fallacies Exercise",
+      "filename": "Logical Fallacies Exercise.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=40550",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "problem_sheet",
+      "reason": "Rule-based evaluation: score=5, matchedPositives=[exercise], matchedNegatives=[]",
+      "seenAt": "2026-10-09T14:57:13.417Z",
+      "updatedAt": "2026-10-09T14:57:13.417Z"
+    },
+    "resource:219:40947": {
+      "id": "resource:219:40947",
+      "type": "resource",
+      "courseId": 219,
+      "courseName": "[PHYS 105 Section 11] General Physics I",
+      "moduleId": 40947,
+      "name": "CH 3-solved problems",
+      "filename": "CH 3-solved problems.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=40947",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "problem_sheet",
+      "reason": "Rule-based evaluation: score=10, matchedPositives=[problem, problems], matchedNegatives=[]",
+      "seenAt": "2026-10-09T14:57:13.417Z",
+      "updatedAt": "2026-10-09T14:57:13.417Z"
     }
   }
 }

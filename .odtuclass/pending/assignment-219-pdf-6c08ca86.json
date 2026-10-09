@@ -1,0 +1,16 @@
+{
+  "id": "assignment:219:pdf-6c08ca86",
+  "type": "assignment",
+  "courseId": 219,
+  "courseName": "[PHYS 105 Section 11] General Physics I",
+  "moduleId": "pdf-6c08ca86",
+  "moduleType": "pdf_assignment",
+  "title": "CH 3-solved problems",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=40947",
+  "openAt": null,
+  "dueAt": null,
+  "closeAt": null,
+  "content": "(5e) ch3-22 At t = 0, a particle starts from rest at x = 0, y = 0, and moves in the xy plane with\nan acceleration 𝑎 = (4.0𝑖̂ + 3.0𝑗̂)𝑚/𝑠2. Determine (a) the x and y components of velocity, (b)\nthe speed of the particle, and (c) the position of the particle, all as a function of time. (d)\nEvaluate all the above at t = 2.0 s.\nSolution:\nA\t⃗⃗ = 42.0(cos28𝑖̂ + sin28𝑗̂ ),\n2B\t⃗⃗ = 9.7 (−cos56𝑖̂ + sin56𝑗̂ ),\nC\t⃗⃗⃗⃗ = −31.0𝑗̂\nin components:\n𝑅⃗ = C⃗ − A\t⃗⃗ − B\t⃗⃗ = −31.0𝑗̂ − 42.0(0.89𝑖̂ + 0.47𝑗̂ ) − 29.7(−0.56𝑖̂ + 0.83𝑗̂ ) ≈ −20.8𝑖̂ − 75.4𝑗̂\n→ 𝑅 ≈ √(−20.8)2 + (−75.4)2) ≈ 78.2, 𝑡𝑎𝑛𝜃 = |𝑦|\n|𝑥| = 3.57 → 𝜃 ≈ 74.60\na) 𝑣 = 0 + 𝑎t = (4.0𝑖̂ + 3𝑗̂ )𝑡\n(5e) ch3 - P13/c vectors shown in the figure 3-41 , 𝐴 = 42.0, 𝐵 = 29.7, 𝐶 = 31.0,\ndetermine the magnitude and direction of a) B\t⃗⃗ − 3A\t⃗⃗ , b) 2A\t⃗⃗ − 3B\t⃗⃗ + 2C⃗, c) C⃗ − A⃗⃗ − B⃗⃗\nSolution:\n→ 𝑣𝑥 = (4.0𝑡) m/s, 𝑣𝑦 = 3.0𝑡 m/s\nb) 𝑠 = |𝑣| = √(4.02 + 3.02) 𝑡2 = 5.0𝑡 m/s\nc) 𝑟 = 0 + 1\n2 𝑎 𝑡2 = (2.0 𝑖̂ + 1.5 𝑗̂ ) 𝑡2\nd) at 𝑡 = 2𝑠, 𝑣𝑥 = 8.0 m/s, 𝑣𝑦 = 6.0 m/s, 𝑠 = 10. m/s\n𝑥 = 8m, 𝑦 = 6m → 𝑟 = (8.0 𝑖̂ + 6.0 𝑗̂ ) m\n(5e) ch3 – P30 A particle which is at the origin at time 𝑡 = 0 has initial velocity,\n𝑣0 = (−14.0𝑖̂ − 7.0𝑗̂ )𝑚/𝑠 and constant acceleration, 𝑎 = (−3.0𝑖̂ + 4.5𝑗̂ )𝑚/𝑠2\ndetermine the position 𝑟 where the particle comes to the rest momentarily.\nSolution:\n𝑣 = 𝑣0 + 𝑎 t = (−14.0𝑖̂ − 7.0𝑗̂ ) + (−3.0𝑖̂ + 4.5𝑗̂ ) 𝑡\n→ 𝑣𝑥 = (−14.0 − 3.0 𝑡)𝑖̂ m/s ≡ 0 → 𝑡 = −4.67𝑠(never stops!)\n→ 𝑣𝑦 =(−7.0 + 4.5𝑡)𝑗̂ m/s ≡ 0 → 𝑡 = 1.56𝑠(𝑖𝑡 𝑟𝑒𝑠𝑡𝑠 𝑚𝑜𝑚𝑒𝑛𝑡𝑎𝑟𝑖𝑙𝑦 )\n𝑟 (𝑡) = 𝑣0t + 1\n2 𝑎𝑡2 = (−14.0𝑖̂ − 7.0𝑗̂ )t + 1\n2 (−3.0𝑖̂ + 4.5𝑗̂ )𝑡2\n→ 𝑟 (𝑡 = 1.56) = (−25.4𝑖̂ − 5.4𝑗̂ )m\n-- 1 of 1 --",
+  "contentHash": "293d860cef4441309998f8edc9be67abe4c47dc5925f68a67b249f82202debee",
+  "event": "created"
+}
