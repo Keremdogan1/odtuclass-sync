@@ -275,11 +275,6 @@ export async function getCourseSections(client, course) {
 
 		const suggestedProblems = parseSuggestedProblems(content);
 
-		// Ignore sections that do not contain suggested problems
-		if (!suggestedProblems || suggestedProblems.length === 0) {
-			return;
-		}
-
 		const sectionIndexMatch = sec.attr('id')?.match(/section-(\d+)/);
 		const sectionNumber = sectionIndexMatch ? parseInt(sectionIndexMatch[1], 10) : index;
 

@@ -1,5 +1,6 @@
 import { apiCall } from './client.js';
 import * as cheerio from 'cheerio';
+import { extractSectionId } from './sections.js';
 
 const ASSIGNMENT_TYPES = new Set([
 	'assign',
@@ -57,6 +58,9 @@ function extractAssignmentsFromApi(course, sections) {
 				type: 'assignment',
 				courseId: course.id,
 				courseName: course.fullname,
+				sectionId: section.id || null,
+				sectionName: section.name || null,
+				sectionNumber: typeof section.section === 'number' ? section.section : null,
 				moduleId: module.id,
 				moduleType: module.modname,
 				title: module.name || '?',
@@ -117,11 +121,28 @@ async function scrapeAssignmentsFromHtml(client, course) {
 
 		const dates = extractHtmlDates($, activity);
 
+		const parentSection = activity.closest('li.section');
+		let sectionId = null;
+		let sectionName = null;
+		let sectionNumber = null;
+
+		if (parentSection.length) {
+			const secLink = parentSection.find('a[href*="section.php"]').first();
+			const secUrl = secLink.attr('href') || '';
+			sectionId = secUrl ? extractSectionId(secUrl) : null;
+			sectionName = secLink.text().trim() || parentSection.find('.sectionname').text().trim() || null;
+			const secMatch = parentSection.attr('id')?.match(/section-(\d+)/);
+			sectionNumber = secMatch ? parseInt(secMatch[1], 10) : null;
+		}
+
 		assignments.push({
 			id: `assignment:${course.id}:${moduleId}`,
 			type: 'assignment',
 			courseId: course.id,
 			courseName: course.fullname,
+			sectionId,
+			sectionName,
+			sectionNumber,
 			moduleId,
 			moduleType,
 			title,
