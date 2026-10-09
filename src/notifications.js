@@ -13,13 +13,13 @@ export async function notifyNewAssignment(assignment) {
 	const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json',
+			'Content-Type': 'application/json; charset=utf-8',
 		},
 		body: JSON.stringify({
 			topic,
 			title: `Yeni ödev: ${assignment.title}`,
 			message: `${assignment.courseName}\n${assignment.url || assignment.id}`,
-			tags: ['mortar_board'],
+			tags: ['bell'],
 		}),
 	});
 
@@ -46,7 +46,7 @@ export async function notifySectionEvent(section, eventType) {
 	const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json',
+			'Content-Type': 'application/json; charset=utf-8',
 		},
 		body: JSON.stringify({
 			topic,
