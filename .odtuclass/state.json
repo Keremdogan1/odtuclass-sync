@@ -883,23 +883,6 @@
       "seenAt": "2026-10-05T21:36:18.059Z",
       "updatedAt": "2026-10-05T21:36:18.059Z"
     },
-    "resource:5083:26239": {
-      "id": "resource:5083:26239",
-      "type": "resource",
-      "courseId": 5083,
-      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
-      "moduleId": 26239,
-      "name": "Math 119 2026-1 Recitation Week 01",
-      "filename": "Math 119 2026-1 Recitation Week 01.pdf",
-      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=26239",
-      "filesize": null,
-      "timemodified": null,
-      "isAssignment": false,
-      "format": "unknown",
-      "reason": "Rule-based evaluation: score=0, matchedPositives=[], matchedNegatives=[]",
-      "seenAt": "2026-10-05T21:36:18.059Z",
-      "updatedAt": "2026-10-05T21:36:18.059Z"
-    },
     "resource:4701:11027": {
       "id": "resource:4701:11027",
       "type": "resource",
