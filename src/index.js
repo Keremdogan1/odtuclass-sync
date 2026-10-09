@@ -18,6 +18,10 @@ import {
 	writePendingAssignment,
 	writePendingSection,
 } from './pending.js';
+import {
+	findPearsonLtiActivities,
+	fetchPearsonAssignments,
+} from './pearson/client.js';
 
 try {
 	const username = process.env.ODTU_USERNAME;
@@ -216,6 +220,48 @@ try {
 	} catch (resourcePipelineError) {
 		console.error('\n=== RESOURCE PIPELINE ERROR ===');
 		console.error(resourcePipelineError.message);
+	}
+
+	// --- 4. Pearson MyLab & Mastering Pipeline (Isolated) ---
+	try {
+		console.log('\nChecking Pearson MyLab & Mastering activities...');
+		for (const course of courses) {
+			const ltiActivities = await findPearsonLtiActivities(client, course);
+			for (const activity of ltiActivities) {
+				console.log(
+					`\nInspecting Pearson activity: "${activity.title}" in ${activity.courseName}...`,
+				);
+				const pearsonAssignments = await fetchPearsonAssignments(
+					client,
+					activity,
+				);
+				if (pearsonAssignments.length > 0) {
+					console.log(
+						`Found ${pearsonAssignments.length} Pearson assignments for ${activity.courseName}.`,
+					);
+					const syncResult = await syncAssignments(pearsonAssignments);
+					for (const newAssignment of syncResult.newAssignments) {
+						const pendingPath = await writePendingAssignment(
+							newAssignment,
+							getPendingDirectory(),
+						);
+						try {
+							await notifyNewAssignment(newAssignment);
+						} catch (notifyError) {
+							console.warn(
+								`Failed notification for ${newAssignment.id}: ${notifyError.message}`,
+							);
+						}
+						console.log(
+							`Pending Pearson assignment written: ${pendingPath}`,
+						);
+					}
+				}
+			}
+		}
+	} catch (pearsonPipelineError) {
+		console.error('\n=== PEARSON PIPELINE ERROR ===');
+		console.error(pearsonPipelineError.message);
 	}
 } catch (error) {
 	console.error('\n=== TEST FAILED ===');
