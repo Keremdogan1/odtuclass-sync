@@ -735,6 +735,34 @@
       "weekEnd": "2026-12-20",
       "seenAt": "2026-10-05T21:36:10.148Z",
       "updatedAt": "2026-10-05T21:36:10.148Z"
+    },
+    "section:5083:91677": {
+      "id": "section:5083:91677",
+      "type": "section",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "sectionId": 91677,
+      "name": "General",
+      "url": "https://odtuclass2026f.metu.edu.tr/course/section.php?id=91677",
+      "contentHash": "5d1f9dab27f05fcad4b465e9ca5786e1652cdfa1248d86a1246ad21d4c453af3",
+      "weekStart": null,
+      "weekEnd": null,
+      "seenAt": "2026-10-10T14:12:13.033Z",
+      "updatedAt": "2026-10-10T14:12:13.033Z"
+    },
+    "section:5083:91680": {
+      "id": "section:5083:91680",
+      "type": "section",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "sectionId": 91680,
+      "name": "October 12 - October 18",
+      "url": "https://odtuclass2026f.metu.edu.tr/course/section.php?id=91680",
+      "contentHash": "5302de759adf3ed8f1337c644e20c051b2becfb4a0f1c7404dee80712918b9f6",
+      "weekStart": "2026-10-12",
+      "weekEnd": "2026-10-18",
+      "seenAt": "2026-10-10T14:12:13.033Z",
+      "updatedAt": "2026-10-10T14:12:13.033Z"
     }
   },
   "resources": {
