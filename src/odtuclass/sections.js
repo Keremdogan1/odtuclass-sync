@@ -137,7 +137,7 @@ export function parseSectionTopics(content) {
 	}
 
 	const topics = {};
-	const regex = /(?:^|\n)\s*(\d+\.\d+)\.?\s+([^\n]+)/g;
+	const regex = /(?:^|\n)\s*[-*]?\s*(\d+\.\d+)[.*]?\s+([^\n]+)/g;
 	let match;
 
 	while ((match = regex.exec(content)) !== null) {
@@ -156,7 +156,7 @@ export function parseSuggestedProblems(content) {
 		return [];
 	}
 
-	const headerMatch = content.match(/suggested\s+problems[^:\n]*:[\s\S]*/i);
+	const headerMatch = content.match(/suggested\s+problems[^\n]*:?[\s\S]*/i);
 	if (!headerMatch) {
 		return [];
 	}
