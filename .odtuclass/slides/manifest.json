@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-11T12:00:51.748Z",
+  "updatedAt": "2026-10-11T17:01:25.503Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -153,6 +153,20 @@
       "filename": "Tips for Text Discussions.pdf",
       "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
       "evaluatedAt": "2026-10-11T10:44:58.520Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=42531": {
+      "courseCode": "ENG101",
+      "title": "Attractive Cities Activity",
+      "filename": "Attractive cities activity .pdf",
+      "reason": "Gemini (gemini-flash-latest): The document is an in-class or recitation activity worksheet with exercises and fill-in tasks for students to complete.",
+      "evaluatedAt": "2026-10-11T17:01:15.840Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=42354": {
+      "courseCode": "MATH119",
+      "title": "Helproom Schedule 2026-2027 Fall",
+      "filename": "Helproom_Schedule_2026-2027_Fall (1).pdf",
+      "reason": "Gemini (gemini-flash-latest): This document is an administrative schedule showing helproom hours and assigned teaching assistants.",
+      "evaluatedAt": "2026-10-11T17:01:20.878Z"
     }
   }
 }

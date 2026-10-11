@@ -1,0 +1,23 @@
+{
+  "id": "calendar:219:3224",
+  "type": "assignment",
+  "courseId": 219,
+  "courseName": "[PHYS 105 Section 11] General Physics I",
+  "sectionId": 3910,
+  "sectionName": "September 28 - October 4",
+  "sectionNumber": 1,
+  "weekStart": "2026-09-28",
+  "weekEnd": "2026-10-04",
+  "moduleId": 15842,
+  "moduleType": "attendance",
+  "title": "Thursday Attendance-s11",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/attendance/view.php?id=15842",
+  "description": "Thursday, October 15, 2:40 PM » 3:30 PM\n\nCourse event\n\n[PHYS 105 Section 11] General Physics I",
+  "content": "Thursday, October 15, 2:40 PM » 3:30 PM\n\nCourse event\n\n[PHYS 105 Section 11] General Physics I",
+  "contentHash": "9581bbbb3789c55436b1f6bfe426657c9693f6fe71276f7c8c0881db3a75586b",
+  "openAt": "2026-10-15T11:40:00.000Z",
+  "dueAt": "2026-10-15T12:30:00.000Z",
+  "closeAt": "2026-10-15T12:30:00.000Z",
+  "status": "todo",
+  "source": "calendar"
+}

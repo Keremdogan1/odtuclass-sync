@@ -1,0 +1,23 @@
+{
+  "id": "calendar:5083:11071",
+  "type": "assignment",
+  "courseId": 5083,
+  "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+  "sectionId": 91679,
+  "sectionName": "October 5 - October 11",
+  "sectionNumber": 2,
+  "weekStart": "2026-10-05",
+  "weekEnd": "2026-10-11",
+  "moduleId": 38063,
+  "moduleType": "questionnaire",
+  "title": "Section Transfer Application Form",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/questionnaire/view.php?id=38063",
+  "description": "Section Transfer Application Form\n\n### 📋 Hafta / Bölüm Açıklaması (October 5 - October 11)\n\nTopics to be covered:\n\n1.3. Limits at Infinity and Infinite Limits\n\n1.4. Continuity\n\n1.5. The Formal Definition of Limit\n\nSuggested problems from the textbook:\n\n- 1.3 : 3, 6, 9, 10, 14, 20, 25, 29, 33, 34, 50, 51\n- 1.4: 1, 2, 3, 4, 5, 6, 9, 13, 16, 18, 22, 30, 32\n- 1.5: 4, 6, 8,10, 12\n\n### 🔗 İlgili Bağlantılar ve Materyaller\n\n- [Math119_recitation_2026-1_week02](https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37969)",
+  "content": "Section Transfer Application Form\n\n### 📋 Hafta / Bölüm Açıklaması (October 5 - October 11)\n\nTopics to be covered:\n\n1.3. Limits at Infinity and Infinite Limits\n\n1.4. Continuity\n\n1.5. The Formal Definition of Limit\n\nSuggested problems from the textbook:\n\n- 1.3 : 3, 6, 9, 10, 14, 20, 25, 29, 33, 34, 50, 51\n- 1.4: 1, 2, 3, 4, 5, 6, 9, 13, 16, 18, 22, 30, 32\n- 1.5: 4, 6, 8,10, 12\n\n### 🔗 İlgili Bağlantılar ve Materyaller\n\n- [Math119_recitation_2026-1_week02](https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37969)",
+  "contentHash": "85727aa558f30c1efc6ccc6a5af9068e45b24b8542fe175fbd85c1bfac61c154",
+  "openAt": "2026-10-09T15:00:00.000Z",
+  "dueAt": "2026-10-12T20:59:00.000Z",
+  "closeAt": "2026-10-12T20:59:00.000Z",
+  "status": "todo",
+  "source": "calendar"
+}

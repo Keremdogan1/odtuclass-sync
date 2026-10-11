@@ -1,0 +1,23 @@
+{
+  "id": "calendar:3015:10393",
+  "type": "assignment",
+  "courseId": 3015,
+  "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+  "sectionId": 54237,
+  "sectionName": "General",
+  "sectionNumber": 0,
+  "weekStart": null,
+  "weekEnd": null,
+  "moduleId": 36777,
+  "moduleType": "attendance",
+  "title": "Attendance",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/attendance/view.php?id=36777",
+  "description": "Friday, October 16, 9:00 AM » 9:30 AM\n\nCourse event\n\n[CENG 100 Section 1] Computer Engineering Orientation",
+  "content": "Friday, October 16, 9:00 AM » 9:30 AM\n\nCourse event\n\n[CENG 100 Section 1] Computer Engineering Orientation",
+  "contentHash": "6a5da5aa5ce6a20eabd1b69b6e7ba379a9be2c2cae4c8d3b2b5cbb62c1c8fc44",
+  "openAt": "2026-10-16T06:00:00.000Z",
+  "dueAt": "2026-10-16T06:30:00.000Z",
+  "closeAt": "2026-10-16T06:30:00.000Z",
+  "status": "todo",
+  "source": "calendar"
+}
