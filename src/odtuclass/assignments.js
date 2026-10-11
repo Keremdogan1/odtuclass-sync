@@ -15,6 +15,15 @@ const ASSIGNMENT_TYPES = new Set([
 	'lesson',
 ]);
 
+const ADMIN_FORM_TYPES = new Set(['choice', 'feedback', 'questionnaire']);
+const ADMIN_FORM_TITLE_REGEX =
+	/\b(?:course\s+conflict|section\s+transfer|transfer\s+application|excuse\s+(?:form|application)|make-?up\s+(?:exam\s+)?application)\b/i;
+
+function isAdministrativeForm(moduleType, title) {
+	if (!ADMIN_FORM_TYPES.has(moduleType)) return false;
+	return ADMIN_FORM_TITLE_REGEX.test(String(title || ''));
+}
+
 export async function getCourseContents(client, courseId) {
 	return await apiCall(
 		client,
@@ -53,6 +62,9 @@ function extractAssignmentsFromApi(course, sections) {
 	for (const section of sections || []) {
 		for (const module of section.modules || []) {
 			if (!ASSIGNMENT_TYPES.has(module.modname)) {
+				continue;
+			}
+			if (isAdministrativeForm(module.modname, module.name)) {
 				continue;
 			}
 
@@ -120,7 +132,12 @@ async function scrapeAssignmentsFromHtml(client, course) {
 			return;
 		}
 
-		const title = link.text().trim();
+		const linkClone = link.clone();
+		linkClone.find('.accesshide').remove();
+		const title = linkClone.text().trim() || link.text().trim();
+		if (isAdministrativeForm(moduleType, title)) {
+			return;
+		}
 		const url = link.attr('href') || '';
 		const moduleId = extractModuleId(url);
 

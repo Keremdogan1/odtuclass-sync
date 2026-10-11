@@ -40,6 +40,11 @@ export function formatStandardSlideFilename(filename, weekKey, title = '') {
 		const suffix = isPrelecture ? ' Prelecture' : '';
 		return `${year} Week ${wk}${suffix}.pdf`;
 	}
+	const stem = rawName.replace(/\.pdf$/i, '').trim();
+	const numMatch = stem.match(/^0*(\d+(?:\.\d+)?)\s*[._-]+\s*(.+)$/) || stem.match(/^0*(\d+(?:\.\d+)?)\s+(.+)$/);
+	if (numMatch) {
+		return `${numMatch[1]}. ${numMatch[2].replace(/_/g, ' ').trim()}.pdf`;
+	}
 	return rawName.toLowerCase().endsWith('.pdf') ? rawName : `${rawName}.pdf`;
 }
 
@@ -254,7 +259,7 @@ async function fetchPdfWithMeta(client, url, fallbackTitle) {
 }
 
 const OBVIOUS_NON_SLIDE_REGEX =
-	/syllabus|course\s+outline|na\s+criteria|rubric|guideline|academic\s+integrity|scheduler|teams\s+account|textbook|recitation|solved\s+problem|exercise|announcement|pearson\s+help|weekly\s+program|schedule\s+of\s+lecture|genai\s+use/i;
+	/syllabus|course\s+outline|course\s+(?:information\s+)?input|na\s+criteria|rubric|guideline|academic\s+integrity|scheduler|teams\s+account|textbook|recitation|solved\s+problem|exercise|announcement|pearson\s+help|weekly\s+program|schedule\s+of\s+lecture|genai\s+use/i;
 
 export async function syncAllCourseSlides(client, courses) {
 	await fs.mkdir(SLIDES_ROOT_DIR, { recursive: true });

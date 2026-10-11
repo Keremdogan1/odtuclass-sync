@@ -68,6 +68,8 @@ const ADMIN_OR_OTHER_NEGATIVE_KEYWORDS = [
 	'career planning course weekly program',
 	'announcement',
 	'pearson help',
+	'course input',
+	'course information',
 ];
 
 const NEGATIVE_KEYWORDS = [
@@ -219,9 +221,9 @@ Respond ONLY with valid JSON in this exact structure:
 
 	const candidateModels = [
 		process.env.GEMINI_MODEL,
+		'gemini-flash-latest',
+		'gemini-3-flash-preview',
 		'gemini-2.5-flash',
-		'gemini-2.5-flash-lite',
-		'gemini-2.0-flash',
 	].filter(Boolean);
 
 	const errors = [];

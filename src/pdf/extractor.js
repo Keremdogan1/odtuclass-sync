@@ -8,11 +8,8 @@ export async function extractPdfText(buffer) {
 		throw new Error('Buffer is required for PDF text extraction.');
 	}
 
-	const uint8Array = Buffer.isBuffer(buffer)
-		? new Uint8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength)
-		: buffer instanceof Uint8Array
-			? buffer
-			: new Uint8Array(buffer);
+	// Always copy bytes into a fresh Uint8Array so pdfjs worker transfer does not detach the original Buffer
+	const uint8Array = new Uint8Array(buffer);
 	const parser = new PDFParse(uint8Array);
 	const result = await parser.getText();
 	return result.text || '';
