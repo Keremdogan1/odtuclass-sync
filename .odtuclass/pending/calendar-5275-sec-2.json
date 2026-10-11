@@ -1,0 +1,23 @@
+{
+  "id": "calendar:5275:sec-2",
+  "type": "assignment",
+  "courseId": 5275,
+  "courseName": "[Phys 105, 111, 181 Labs] General Physics I Labs",
+  "sectionId": null,
+  "sectionName": "⚠️ Group Info",
+  "sectionNumber": 2,
+  "weekStart": null,
+  "weekEnd": null,
+  "moduleId": 2,
+  "moduleType": "calendar",
+  "title": "⚠️ Group Info",
+  "url": "https://odtuclass2026f.metu.edu.tr/course/view.php?id=5275",
+  "description": "The lab groups will be announced after add-drop week.",
+  "content": "The lab groups will be announced after add-drop week.",
+  "contentHash": "d461c8dfe76333a860347656e9a64e66de80317cf3ed78c77b5642295e267845",
+  "openAt": null,
+  "dueAt": null,
+  "closeAt": null,
+  "status": "todo",
+  "source": "calendar_lab"
+}
