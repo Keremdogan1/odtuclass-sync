@@ -74,7 +74,9 @@ export async function saveState(state, filePath) {
 
 export function findNewAssignments(assignments, state) {
 	return assignments.filter(
-		(assignment) => !Object.hasOwn(state.assignments, assignment.id),
+		(assignment) =>
+			!Object.hasOwn(state.assignments, assignment.id) ||
+			(assignment.status === 'done' && state.assignments[assignment.id]?.status !== 'done'),
 	);
 }
 

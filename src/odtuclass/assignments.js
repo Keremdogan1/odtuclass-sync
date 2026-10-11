@@ -52,6 +52,9 @@ function extractAssignmentsFromApi(course, sections) {
 			}
 
 			const dates = extractDates(module.dates || []);
+			const isCompleted =
+				module.completiondata?.state === 1 ||
+				module.completiondata?.state === 2;
 
 			assignments.push({
 				id: `assignment:${course.id}:${module.id}`,
@@ -68,6 +71,7 @@ function extractAssignmentsFromApi(course, sections) {
 				openAt: dates.openAt,
 				dueAt: dates.dueAt,
 				closeAt: dates.closeAt,
+				status: isCompleted ? 'done' : 'todo',
 			});
 		}
 	}
@@ -135,6 +139,12 @@ async function scrapeAssignmentsFromHtml(client, course) {
 			sectionNumber = secMatch ? parseInt(secMatch[1], 10) : null;
 		}
 
+		const completionRegion = activity.find('[data-region="completion-info"]');
+		const completionText = completionRegion.text();
+		const isCompleted =
+			completionRegion.find('.btn-success, [data-toggletype*="undo"]').length > 0 ||
+			/\b(done|tamamland[ıi])\b/i.test(completionText);
+
 		assignments.push({
 			id: `assignment:${course.id}:${moduleId}`,
 			type: 'assignment',
@@ -150,6 +160,7 @@ async function scrapeAssignmentsFromHtml(client, course) {
 			openAt: dates.openAt,
 			dueAt: dates.dueAt,
 			closeAt: dates.closeAt,
+			status: isCompleted ? 'done' : 'todo',
 		});
 	});
 
