@@ -2,6 +2,12 @@ name: Sync ODTUClass Data
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/sync.yml'
   schedule:
     - cron: '0 */4 * * *' # Her 4 saatte bir çalışır
 
