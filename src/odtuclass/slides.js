@@ -28,6 +28,20 @@ export function extractWeekKey(...texts) {
 	return null;
 }
 
+export function formatStandardSlideFilename(filename, weekKey, title = '') {
+	const rawName = String(filename || '').trim();
+	const combined = `${rawName} ${title || ''}`;
+	const yearMatch = combined.match(/\b(20\d{2})\b/);
+	const year = yearMatch ? yearMatch[1] : '2026';
+	const wk = weekKey || extractWeekKey(rawName, title);
+	if (wk) {
+		const isPrelecture = /pre-?lecture/i.test(combined);
+		const suffix = isPrelecture ? ' Prelecture' : '';
+		return `${year} Week ${wk}${suffix}.pdf`;
+	}
+	return rawName.toLowerCase().endsWith('.pdf') ? rawName : `${rawName}.pdf`;
+}
+
 function sanitizeFilename(name) {
 	const cleaned = name
 		.replace(/[<>:"/\\|?*\x00-\x1F]/g, '_')
@@ -415,6 +429,11 @@ export async function syncAllCourseSlides(client, courses) {
 					courseCode,
 					title: cand.title,
 					filename,
+					formattedFilename: formatStandardSlideFilename(
+						filename,
+						weekKey,
+						cand.title,
+					),
 					weekKey,
 					url: cand.url,
 					finalUrl,
