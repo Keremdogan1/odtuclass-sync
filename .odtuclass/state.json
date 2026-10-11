@@ -441,7 +441,7 @@
       "dueAt": "2026-10-11T20:59:00.000Z",
       "closeAt": null,
       "status": "done",
-      "content": "Homework: CH. 0: Preliminaries | Start: 2026-09-30T04:00:00.000Z | Due: 2026-10-11T20:59:00.000Z | Status: done",
+      "content": "Homework: CH. 0: Preliminaries | Start: 2026-09-30T04:00:00.000Z | Due: 2026-10-11T20:59:00.000Z | Status: todo",
       "contentHash": "3d6a28f09126d684cff29f7c3594bb49007d3dbc59732ad2a06f00355ac1bb6c",
       "event": "created",
       "seenAt": "2026-10-11T11:09:30.217Z"
