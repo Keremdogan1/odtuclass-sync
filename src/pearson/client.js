@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import axios from 'axios';
-import { parsePearsonAssignments } from './parser.js';
+import { parsePearsonAssignments, parsePearsonApiPayloads } from './parser.js';
 
 export const KNOWN_PEARSON_LTI = {
 	5083: { id: 24039, name: 'Pearson MyLab (MATH 119)' },
@@ -19,25 +19,30 @@ export async function findPearsonLtiActivities(client, course) {
 
 		const $ = cheerio.load(response.data);
 		const activities = [];
+		const seenIds = new Set();
 
 		$('a[href*="mod/lti/view.php"]').each((_, a) => {
 			const href = $(a).attr('href') || '';
 			const text = $(a).text().trim();
 			const parentText = $(a).closest('li.activity, .activity-item').text().trim();
 
-			const isPearson = /pearson|mylab|mastering/i.test(text) ||
+			const isPearson =
+				/pearson|mylab|mastering/i.test(text) ||
 				/pearson|mylab|mastering/i.test(parentText) ||
-				/id=24039|id=8699/.test(href);
+				/id=24039|id=8699|id=10016/.test(href);
 
 			if (isPearson) {
 				const idMatch = href.match(/id=(\d+)/);
 				const ltiId = idMatch ? parseInt(idMatch[1], 10) : null;
+				if (ltiId && seenIds.has(ltiId)) return;
+				if (ltiId) seenIds.add(ltiId);
+
 				activities.push({
 					courseId: course.id,
 					courseName: course.fullname,
 					ltiId,
 					title: text || 'Pearson MyLab',
-					url: href,
+					url: new URL(href, client.baseUrl).href,
 				});
 			}
 		});
@@ -61,6 +66,176 @@ export async function findPearsonLtiActivities(client, course) {
 	}
 }
 
+async function fetchPearsonViaPlaywright(client, ltiActivity) {
+	let chromium;
+	try {
+		const pw = await import('playwright');
+		chromium = pw.chromium;
+	} catch {
+		return null;
+	}
+
+	const courseId = ltiActivity.courseId;
+	const courseName = ltiActivity.courseName;
+	const ltiId = ltiActivity.ltiId;
+	const launchUrl = ltiId
+		? `${client.baseUrl}/mod/lti/launch.php?id=${ltiId}&triggerview=0`
+		: ltiActivity.url;
+
+	console.log(`[Pearson Playwright] Launching headless browser for ${courseName} (${launchUrl})...`);
+
+	const browser = await chromium.launch({ headless: true });
+	try {
+		const context = await browser.newContext({
+			userAgent:
+				'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+		});
+
+		const baseHost = new URL(client.baseUrl).hostname;
+		const cookieList = Object.entries(client.cookies || {}).map(([name, value]) => ({
+			name,
+			value: String(value),
+			domain: baseHost,
+			path: '/',
+			secure: true,
+		}));
+		if (cookieList.length > 0) {
+			await context.addCookies(cookieList);
+		}
+
+		const capturedApiPayloads = [];
+		const attachResponseListener = (targetPage) => {
+			targetPage.on('response', async (res) => {
+				try {
+					const u = res.url();
+					const ct = (res.headers()['content-type'] || '').toLowerCase();
+					if (
+						/pearson|mylab|mastering|mathxl|tpi|myct/i.test(u) &&
+						(ct.includes('json') || /assignment|homework|coursehome|student|grade|item/i.test(u))
+					) {
+						const text = await res.text();
+						if (text && text.length > 2 && text.length < 2000000) {
+							console.log(
+								`[Pearson API Response] status=${res.status()} url=${u.slice(0, 140)} len=${text.length}`,
+							);
+							try {
+								const json = JSON.parse(text);
+								capturedApiPayloads.push({ url: u, data: json });
+							} catch {
+								// non-JSON text
+							}
+						}
+					}
+				} catch {
+					// ignore response read errors
+				}
+			});
+		};
+
+		const page = await context.newPage();
+		attachResponseListener(page);
+		context.on('page', (newPage) => {
+			attachResponseListener(newPage);
+		});
+
+		await page.goto(launchUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+		await page.waitForTimeout(5000);
+
+		console.log(`[Pearson Playwright] Landed on URL: ${page.url()} | Title: "${await page.title()}"`);
+
+		// Check all frames for buttons/links that launch MyLab / Mastering or Assignments
+		let activePage = page;
+		for (let step = 0; step < 3; step++) {
+			const frames = activePage.frames();
+			for (const frame of frames) {
+				try {
+					const fUrl = frame.url();
+					if (!fUrl || fUrl === 'about:blank') continue;
+					const bodyText = (await frame.locator('body').innerText({ timeout: 2000 })).trim();
+					console.log(
+						`[Pearson Frame step=${step}] url=${fUrl.slice(0, 120)} textSnippet="${bodyText.replace(/\s+/g, ' ').slice(0, 200)}"`,
+					);
+
+					// Look for launch button or Assignments link
+					const launchLink = frame.locator(
+						'a:has-text("Open MyLab"), button:has-text("Open MyLab"), a:has-text("Launch"), button:has-text("Launch"), a:has-text("Assignments"), a:has-text("All Assignments"), a:has-text("Course Home"), a[href*="PlayerHomework"], a[href*="assignments"]',
+					).first();
+
+					if ((await launchLink.count()) > 0) {
+						const href = await launchLink.getAttribute('href');
+						const linkText = (await launchLink.innerText()).trim();
+						console.log(`[Pearson Playwright] Found interactive link/button: "${linkText}" (href=${href || 'none'})`);
+
+						if (href && href.startsWith('http')) {
+							await activePage.goto(href, { waitUntil: 'domcontentloaded', timeout: 25000 });
+							await activePage.waitForTimeout(5000);
+							break;
+						} else {
+							const popupPromise = context.waitForEvent('page', { timeout: 6000 }).catch(() => null);
+							await launchLink.click({ timeout: 5000 }).catch(() => {});
+							const popup = await popupPromise;
+							if (popup) {
+								activePage = popup;
+								await activePage.waitForLoadState('domcontentloaded').catch(() => {});
+								await activePage.waitForTimeout(5000);
+							} else {
+								await activePage.waitForTimeout(5000);
+							}
+							break;
+						}
+					}
+				} catch {
+					// ignore frame errors
+				}
+			}
+		}
+
+		// Collect HTML from all frames on activePage and original page
+		const allHtmlBlocks = [];
+		const pagesToInspect = activePage === page ? [page] : [page, activePage];
+		for (const p of pagesToInspect) {
+			for (const f of p.frames()) {
+				try {
+					const html = await f.content();
+					if (html && html.length > 50) {
+						allHtmlBlocks.push(html);
+					}
+				} catch {
+					// ignore
+				}
+			}
+		}
+
+		// 1. Try parsing captured JSON API payloads first
+		const apiAssignments = parsePearsonApiPayloads(capturedApiPayloads, {
+			courseId,
+			courseName,
+			url: ltiActivity.url,
+		});
+		if (apiAssignments.length > 0) {
+			console.log(`[Pearson Playwright] Extracted ${apiAssignments.length} assignments from JSON API!`);
+			return apiAssignments;
+		}
+
+		// 2. Try parsing rendered HTML frames
+		for (const html of allHtmlBlocks) {
+			const domAssignments = parsePearsonAssignments(html, {
+				courseId,
+				courseName,
+				url: ltiActivity.url,
+			});
+			if (domAssignments.length > 0) {
+				console.log(`[Pearson Playwright] Extracted ${domAssignments.length} assignments from rendered DOM!`);
+				return domAssignments;
+			}
+		}
+
+		return [];
+	} finally {
+		await browser.close();
+	}
+}
+
 /**
  * Performs LTI Launch from ODTUClass into Pearson platform,
  * maintains session cookies, and fetches assignment payload.
@@ -68,25 +243,39 @@ export async function findPearsonLtiActivities(client, course) {
 export async function fetchPearsonAssignments(client, ltiActivity) {
 	const courseId = ltiActivity.courseId;
 	const courseName = ltiActivity.courseName;
+	const ltiId = ltiActivity.ltiId;
 	const ltiUrl = ltiActivity.url;
+	const launchUrl = ltiId
+		? `${client.baseUrl}/mod/lti/launch.php?id=${ltiId}&triggerview=0`
+		: ltiUrl;
 
-	console.log(`[Pearson] Initiating LTI launch for ${courseName} (${ltiUrl})...`);
+	console.log(`[Pearson] Initiating LTI launch for ${courseName} (${launchUrl})...`);
 
 	try {
-		// 1. Fetch ODTUClass LTI Launch page
-		const ltiPageRes = await client.request('GET', ltiUrl);
+		// Try Playwright headless browser first for full JS SPA & API support
+		const pwResults = await fetchPearsonViaPlaywright(client, ltiActivity);
+		if (pwResults && pwResults.length > 0) {
+			return pwResults;
+		}
+
+		// Fallback to direct HTTP launch via launch.php
+		const ltiPageRes = await client.request('GET', launchUrl);
 		const $ = cheerio.load(ltiPageRes.data);
 
-		// 2. Find LTI Launch Form
-		const form = $('form[action*="pearson"], form[action*="lti"], form#ltiLaunchForm, form').first();
+		const form = $(
+			'form#ltiLaunchForm, form[name="ltiLaunchForm"], form[action*="pearson"], form[action*="lti"]',
+		).first();
 		const actionUrl = form.attr('action');
 
 		if (!actionUrl || !actionUrl.startsWith('http')) {
-			console.log(`[Pearson] No direct auto-submit form on ${ltiUrl}. Check if manual launch is required.`);
+			console.log(
+				`[Pearson] No direct auto-submit form on ${launchUrl} (finalUrl=${ltiPageRes.finalUrl}).`,
+			);
 			return [];
 		}
 
-		// 3. Extract all form inputs (OAuth & LTI launch parameters)
+		console.log(`[Pearson HTTP] Submitting LTI form to: ${actionUrl}`);
+
 		const formData = new URLSearchParams();
 		form.find('input[name]').each((_, input) => {
 			const name = $(input).attr('name');
@@ -94,7 +283,6 @@ export async function fetchPearsonAssignments(client, ltiActivity) {
 			formData.append(name, value);
 		});
 
-		// 4. Create an isolated cookie-tracking axios instance for Pearson session
 		const pearsonCookies = new Map();
 		const trackCookies = (res) => {
 			const setCookie = res.headers['set-cookie'];
@@ -115,12 +303,12 @@ export async function fetchPearsonAssignments(client, ltiActivity) {
 				.join('; ');
 		};
 
-		// 5. POST LTI Launch
 		const launchRes = await axios.post(actionUrl, formData.toString(), {
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
-				'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-				Referer: ltiUrl,
+				'User-Agent':
+					'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+				Referer: launchUrl,
 			},
 			maxRedirects: 5,
 			validateStatus: () => true,
@@ -129,29 +317,36 @@ export async function fetchPearsonAssignments(client, ltiActivity) {
 		trackCookies(launchRes);
 
 		const landingHtml = typeof launchRes.data === 'string' ? launchRes.data : '';
+		console.log(
+			`[Pearson HTTP] Landing status=${launchRes.status} len=${landingHtml.length} snippet="${landingHtml.replace(/\s+/g, ' ').slice(0, 200)}"`,
+		);
+
 		const assignments = parsePearsonAssignments(landingHtml, {
 			courseId,
 			courseName,
 			url: ltiUrl,
 		});
 
-		// If initial landing page yielded assignments
 		if (assignments.length > 0) {
 			console.log(`[Pearson] Found ${assignments.length} assignments on landing page.`);
 			return assignments;
 		}
 
-		// Check if landing page references an iframe or assignments endpoint
 		const landing$ = cheerio.load(landingHtml);
-		const iframeSrc = landing$('iframe[src*="assignments"], iframe[src*="PlayerHomework"], iframe[src*="myct"]').attr('src');
+		const iframeSrc = landing$(
+			'iframe[src*="assignments"], iframe[src*="PlayerHomework"], iframe[src*="myct"]',
+		).attr('src');
 
 		if (iframeSrc) {
-			const fullIframeUrl = iframeSrc.startsWith('http') ? iframeSrc : new URL(iframeSrc, launchRes.config.url || actionUrl).href;
+			const fullIframeUrl = iframeSrc.startsWith('http')
+				? iframeSrc
+				: new URL(iframeSrc, launchRes.config.url || actionUrl).href;
 			console.log(`[Pearson] Fetching assignments iframe: ${fullIframeUrl}...`);
 
 			const iframeRes = await axios.get(fullIframeUrl, {
 				headers: {
-					'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+					'User-Agent':
+						'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
 					Cookie: getCookieHeader(),
 					Referer: launchRes.config.url || actionUrl,
 				},
@@ -174,7 +369,9 @@ export async function fetchPearsonAssignments(client, ltiActivity) {
 
 		return assignments;
 	} catch (err) {
-		console.warn(`[Pearson] Automated LTI launch encountered an error for ${courseName}: ${err.message}`);
+		console.warn(
+			`[Pearson] Automated LTI launch encountered an error for ${courseName}: ${err.message}`,
+		);
 		return [];
 	}
 }

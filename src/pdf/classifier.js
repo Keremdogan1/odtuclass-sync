@@ -1,7 +1,9 @@
 /**
  * Rule-based and Gemini AI-powered PDF Classifier
- * Determines if a course PDF document is an assignment, homework,
- * recommended problem set, or practice exercise sheet vs. lecture slides/notes.
+ * Determines if a course PDF document is:
+ * 1) An assignment, homework, recommended problem set, or practice exercise sheet (isAssignment = true)
+ * 2) Lecture slides, presentation slides, pre-lecture notes, or topic lecture notes (isSlide = true)
+ * 3) Administrative / syllabus / rubric / tutorial / reference material
  */
 
 const POSITIVE_KEYWORDS = [
@@ -26,21 +28,26 @@ const POSITIVE_KEYWORDS = [
 	'recitations',
 ];
 
-const NEGATIVE_KEYWORDS = [
+const SLIDE_KEYWORDS = [
 	'slide',
 	'slides',
 	'slayt',
+	'prelecture',
+	'pre-lecture',
 	'lecture note',
 	'lecture notes',
 	'lecture_note',
 	'lecture_notes',
 	'ders notu',
 	'ders_notu',
+	'presentation',
+];
+
+const ADMIN_OR_OTHER_NEGATIVE_KEYWORDS = [
 	'formula sheet',
 	'formula_sheet',
 	'formül',
 	'cheat sheet',
-	'handout',
 	'table of integrals',
 	'periodic table',
 	'exam solution',
@@ -56,15 +63,27 @@ const NEGATIVE_KEYWORDS = [
 	'tutorial',
 	'how to',
 	'academic integrity',
+	'scheduler',
+	'teams account',
+	'career planning course weekly program',
+	'announcement',
+	'pearson help',
+];
+
+const NEGATIVE_KEYWORDS = [
+	...SLIDE_KEYWORDS,
+	...ADMIN_OR_OTHER_NEGATIVE_KEYWORDS,
+	'handout',
 ];
 
 export function ruleBasedClassify(metadata = {}, pdfText = '') {
 	const name = (metadata.name || '').toLowerCase();
 	const filename = (metadata.filename || '').toLowerCase();
-	const combinedMeta = `${name} ${filename}`;
-	const text = (pdfText || '').toLowerCase();
+	const folderName = (metadata.folderName || '').toLowerCase();
+	const combinedMeta = `${name} ${filename} ${folderName}`;
 
 	let score = 0;
+	let slideScore = 0;
 	const matchedPositives = [];
 	const matchedNegatives = [];
 
@@ -76,11 +95,24 @@ export function ruleBasedClassify(metadata = {}, pdfText = '') {
 		}
 	}
 
+	for (const slideKw of SLIDE_KEYWORDS) {
+		if (combinedMeta.includes(slideKw)) {
+			slideScore += 6;
+		}
+	}
+
+	for (const adminKw of ADMIN_OR_OTHER_NEGATIVE_KEYWORDS) {
+		if (combinedMeta.includes(adminKw)) {
+			slideScore -= 10;
+		}
+	}
+
 	// Check metadata against positive keywords
 	for (const pos of POSITIVE_KEYWORDS) {
 		if (combinedMeta.includes(pos)) {
 			matchedPositives.push(pos);
 			score += 5;
+			slideScore -= 6;
 		}
 	}
 
@@ -112,14 +144,25 @@ export function ruleBasedClassify(metadata = {}, pdfText = '') {
 		matchedPositives.push('pattern:due_date');
 	}
 
-	// Content-level negative indicators (e.g. presentation slides / lecture title pages)
-	const isLectureSlide = /lecture\s+\d+|slide\s+\d+|chapter\s+\d+\s+outline|agenda|learning objectives/i.test(pdfText);
+	// Content-level slide indicators
+	const isLectureSlide =
+		/lecture\s+\d+|slide\s+\d+|chapter\s+\d+\s+outline|agenda|learning objectives|outline\s+of\s+topics/i.test(
+			pdfText,
+		);
 	if (isLectureSlide && !hasSelectedProblems && !hasHomeworkHeader && !hasProblemColonNumber) {
 		score -= 4;
+		slideScore += 5;
 		matchedNegatives.push('pattern:lecture_slides');
 	}
 
+	const hasWeekSlidePattern = /\bweek\s*[-_]*0*\d{1,2}[a-d]?\b/i.test(combinedMeta);
+	if (hasWeekSlidePattern && score < 3) {
+		slideScore += 5;
+	}
+
 	const isAssignment = score >= 3;
+	const isSlide = !isAssignment && slideScore >= 4;
+
 	let format = 'unknown';
 	if (hasChapterProblems || hasSelectedProblems) {
 		format = 'weekly_problems';
@@ -127,14 +170,18 @@ export function ruleBasedClassify(metadata = {}, pdfText = '') {
 		format = 'single_assignment';
 	} else if (isAssignment) {
 		format = 'problem_sheet';
+	} else if (isSlide) {
+		format = 'lecture_slides';
 	}
 
 	return {
 		isAssignment,
+		isSlide,
 		confidence: Math.min(Math.max((score + 5) / 15, 0), 1),
 		format,
-		reason: `Rule-based evaluation: score=${score}, matchedPositives=[${matchedPositives.join(', ')}], matchedNegatives=[${matchedNegatives.join(', ')}]`,
+		reason: `Rule-based evaluation: score=${score}, slideScore=${slideScore}, matchedPositives=[${matchedPositives.join(', ')}], matchedNegatives=[${matchedNegatives.join(', ')}]`,
 		score,
+		slideScore,
 	};
 }
 
@@ -146,21 +193,15 @@ export async function classifyWithGemini(metadata = {}, pdfText = '', apiKey = p
 	const textExcerpt = (pdfText || '').slice(0, 4000);
 	const prompt = `You are an academic document classification assistant for a university student.
 Analyze the following course document metadata and text excerpt.
-Determine if this document contains student-assigned problems, exercises, homework, or recommended practice problems that a student should work on/solve.
+Classify the document into two booleans (isAssignment, isSlide) and a format string:
 
-IMPORTANT CRITERIA:
-- RETURN isAssignment = true for:
-  * Homework assignments / problem sets / psets.
-  * Recommended or suggested textbook problem lists (e.g. weekly course syllabus listing assigned exercises).
-  * Exercise sheets or practice problems.
-- RETURN isAssignment = false for:
-  * Lecture slides, slide presentations, lecture notes.
-  * Formula sheets, periodic tables, integral tables.
-  * General course administrative syllabus with NO exercise problem lists.
-  * Exam / quiz solution sheets.
+1. isAssignment = true when the document contains student-assigned problems, exercises, homework, recitation questions, or recommended textbook problem lists that a student should solve.
+2. isSlide = true when the document is a lecture slide deck, presentation slides, pre-lecture slides, or topic lecture notes meant for teaching/studying a course topic or week (and NOT an administrative document like syllabus, grading rubric, NA criteria, schedule, software tutorial, or full 500-page textbook).
+3. Both isAssignment = false and isSlide = false for administrative documents (syllabus without problem sets, grading rubrics, attendance/NA criteria, Microsoft Teams / Scheduler guides, announcements, exam solutions).
 
 Metadata:
 - Course: ${metadata.courseName || 'Unknown'}
+- Folder/Section: ${metadata.folderName || metadata.sectionName || 'Unknown'}
 - Resource Name: ${metadata.name || 'Unknown'}
 - Filename: ${metadata.filename || 'Unknown'}
 
@@ -169,18 +210,18 @@ ${textExcerpt}
 
 Respond ONLY with valid JSON in this exact structure:
 {
-  "isAssignment": true,
+  "isAssignment": false,
+  "isSlide": true,
   "confidence": 0.95,
-  "format": "weekly_problems" | "single_assignment" | "problem_sheet" | "none",
+  "format": "weekly_problems" | "single_assignment" | "problem_sheet" | "lecture_slides" | "none",
   "reason": "short explanation"
 }`;
 
 	const candidateModels = [
 		process.env.GEMINI_MODEL,
-		'gemini-1.5-flash',
-		'gemini-1.5-flash-latest',
-		'gemini-2.0-flash',
 		'gemini-2.5-flash',
+		'gemini-2.0-flash',
+		'gemini-1.5-flash',
 	].filter(Boolean);
 
 	let lastError = null;
@@ -212,10 +253,13 @@ Respond ONLY with valid JSON in this exact structure:
 			}
 
 			const parsed = JSON.parse(contentText);
+			const isAssignment = Boolean(parsed.isAssignment);
+			const isSlide = !isAssignment && (Boolean(parsed.isSlide) || parsed.format === 'lecture_slides');
 			return {
-				isAssignment: Boolean(parsed.isAssignment),
+				isAssignment,
+				isSlide,
 				confidence: Number(parsed.confidence) || 0.8,
-				format: parsed.format || 'unknown',
+				format: parsed.format || (isSlide ? 'lecture_slides' : 'unknown'),
 				reason: `Gemini (${model}): ${parsed.reason || 'AI evaluated'}`,
 			};
 		} catch (err) {

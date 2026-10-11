@@ -73,11 +73,14 @@ export async function saveState(state, filePath) {
 }
 
 export function findNewAssignments(assignments, state) {
-	return assignments.filter(
-		(assignment) =>
-			!Object.hasOwn(state.assignments, assignment.id) ||
-			(assignment.status === 'done' && state.assignments[assignment.id]?.status !== 'done'),
-	);
+	return assignments.filter((assignment) => {
+		const prev = state.assignments[assignment.id];
+		if (!prev) return true;
+		if (assignment.status && assignment.status !== prev.status) return true;
+		if (assignment.dueAt && assignment.dueAt !== prev.dueAt) return true;
+		if (assignment.openAt && assignment.openAt !== prev.openAt) return true;
+		return false;
+	});
 }
 
 export function recordAssignments(state, assignments) {

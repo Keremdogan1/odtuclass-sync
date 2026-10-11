@@ -1,10 +1,21 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import * as cheerio from 'cheerio';
+import { extractPdfText } from '../pdf/extractor.js';
+import { classifyPdf } from '../pdf/classifier.js';
 
-const SLIDES_DIR = path.resolve(process.cwd(), '.odtuclass', 'slides', 'CENG111');
-const MANIFEST_PATH = path.join(SLIDES_DIR, 'manifest.json');
+const SLIDES_ROOT_DIR = path.resolve(process.cwd(), '.odtuclass', 'slides');
+const ROOT_MANIFEST_PATH = path.join(SLIDES_ROOT_DIR, 'manifest.json');
 const MAX_SLIDE_BYTES = 50 * 1024 * 1024; // 50 MB safety cap for GitHub
+
+export function extractCourseCode(course) {
+	const text = `${course?.fullname || ''} ${course?.shortname || ''}`;
+	const match = text.match(/\b([A-Z]{2,4})\s*(\d{3})\b/i);
+	if (match) {
+		return `${match[1].toUpperCase()}${match[2]}`;
+	}
+	return `COURSE_${course?.id || 'UNKNOWN'}`;
+}
 
 export function extractWeekKey(...texts) {
 	for (const text of texts) {
@@ -61,26 +72,45 @@ function extractFilenameFromHeadersOrUrl(headers, finalUrl, fallbackName) {
 	return sanitizeFilename(fallbackName || 'slide.pdf');
 }
 
-async function loadManifest() {
+async function loadRootManifest() {
+	let rootManifest = { version: 2, updatedAt: null, slides: {}, evaluatedNonSlides: {} };
 	try {
-		const raw = await fs.readFile(MANIFEST_PATH, 'utf8');
+		const raw = await fs.readFile(ROOT_MANIFEST_PATH, 'utf8');
 		const data = JSON.parse(raw);
-		if (data && typeof data === 'object' && data.slides) {
-			return data;
+		if (data && typeof data === 'object') {
+			rootManifest = {
+				version: 2,
+				updatedAt: data.updatedAt || null,
+				slides: data.slides || {},
+				evaluatedNonSlides: data.evaluatedNonSlides || {},
+			};
 		}
 	} catch {
-		// ignore if not exists
+		// Also migrate any existing CENG111 manifest entries if present
+		try {
+			const cengManifestPath = path.join(SLIDES_ROOT_DIR, 'CENG111', 'manifest.json');
+			const cengRaw = await fs.readFile(cengManifestPath, 'utf8');
+			const cengData = JSON.parse(cengRaw);
+			if (cengData?.slides) {
+				for (const [k, v] of Object.entries(cengData.slides)) {
+					const entry = { ...v, courseCode: 'CENG111' };
+					rootManifest.slides[`CENG111/${k}`] = entry;
+				}
+			}
+		} catch {
+			// ignore
+		}
 	}
-	return { version: 1, updatedAt: null, slides: {} };
+	return rootManifest;
 }
 
-async function saveManifest(manifest) {
-	await fs.mkdir(SLIDES_DIR, { recursive: true });
+async function saveRootManifest(manifest) {
+	await fs.mkdir(SLIDES_ROOT_DIR, { recursive: true });
 	manifest.updatedAt = new Date().toISOString();
-	await fs.writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2), 'utf8');
+	await fs.writeFile(ROOT_MANIFEST_PATH, JSON.stringify(manifest, null, 2), 'utf8');
 }
 
-function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = null) {
+function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = null, folderName = null) {
 	const $ = cheerio.load(html);
 	const candidates = [];
 	const folderUrls = [];
@@ -106,7 +136,7 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 		const resolvedUrl = new URL(href, baseUrl).href;
 
 		if (href.includes('mod/folder/view.php')) {
-			if (/slide|lecture|week/i.test(cleanName) && !/textbook|syllabus/i.test(cleanName)) {
+			if (!/textbook|syllabus|past\s+exam/i.test(cleanName)) {
 				folderUrls.push({ url: resolvedUrl, name: cleanName, sectionName });
 			}
 		} else if (
@@ -117,12 +147,12 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 				url: resolvedUrl,
 				title: cleanName,
 				sectionName,
+				folderName,
 				badgeText: badgeText.toLowerCase(),
 			});
 		}
 	});
 
-	// Also inspect any direct links to pluginfile.php or .pdf in summaries/folders
 	$('a[href*="pluginfile.php"], a[href$=".pdf"]').each((_, el) => {
 		const href = $(el).attr('href');
 		if (!href) return;
@@ -141,6 +171,7 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 			url: resolvedUrl,
 			title: text,
 			sectionName,
+			folderName,
 			badgeText: '',
 		});
 	});
@@ -192,25 +223,16 @@ async function fetchPdfWithMeta(client, url, fallbackTitle) {
 	return { buffer, filename, finalUrl };
 }
 
-export async function syncCeng111Slides(client, courses) {
-	const cengCourses = courses.filter((c) =>
-		/ceng\s*111/i.test(`${c.fullname || ''} ${c.shortname || ''}`),
-	);
+const OBVIOUS_NON_SLIDE_REGEX =
+	/syllabus|course\s+outline|na\s+criteria|rubric|guideline|academic\s+integrity|scheduler|teams\s+account|textbook|recitation|solved\s+problem|exercise|announcement|pearson\s+help|weekly\s+program|schedule\s+of\s+lecture|genai\s+use/i;
 
-	if (cengCourses.length === 0) {
-		console.log('No CENG 111 courses found.');
-		return [];
-	}
-
-	await fs.mkdir(SLIDES_DIR, { recursive: true });
-	const manifest = await loadManifest();
+export async function syncAllCourseSlides(client, courses) {
+	await fs.mkdir(SLIDES_ROOT_DIR, { recursive: true });
+	const manifest = await loadRootManifest();
 	const syncedSlides = [];
 
-	for (const course of cengCourses) {
-		console.log(
-			`\nInspecting CENG 111 course for slides: [${course.id}] ${course.fullname}`,
-		);
-
+	for (const course of courses) {
+		const courseCode = extractCourseCode(course);
 		let mainHtml = '';
 		try {
 			const res = await client.request(
@@ -222,7 +244,7 @@ export async function syncCeng111Slides(client, courses) {
 					? res.data
 					: Buffer.from(res.data).toString('utf8');
 		} catch (err) {
-			console.warn(`Failed to fetch CENG 111 course ${course.id}: ${err.message}`);
+			console.warn(`Failed to fetch course ${course.id} for slides: ${err.message}`);
 			continue;
 		}
 
@@ -232,10 +254,11 @@ export async function syncCeng111Slides(client, courses) {
 			client.baseUrl,
 		);
 
-		// Inspect Slide folders
 		for (const folder of folderUrls) {
 			try {
-				console.log(`  Fetching CENG 111 folder: "${folder.name}" (${folder.url})`);
+				console.log(
+					`  [${courseCode}] Fetching folder: "${folder.name}" (${folder.url})`,
+				);
 				const fRes = await client.request('GET', folder.url);
 				const fHtml =
 					typeof fRes.data === 'string'
@@ -245,6 +268,7 @@ export async function syncCeng111Slides(client, courses) {
 					fHtml,
 					course,
 					client.baseUrl,
+					folder.sectionName,
 					folder.name,
 				);
 				for (const c of sub.candidates) {
@@ -258,58 +282,162 @@ export async function syncCeng111Slides(client, courses) {
 		}
 
 		for (const cand of candidates) {
-			if (/textbook|syllabus|scheduler|boolean\s+algebra/i.test(`${cand.title} ${cand.url}`)) {
+			const combinedTitle = `${cand.title} ${cand.url}`;
+			if (OBVIOUS_NON_SLIDE_REGEX.test(combinedTitle)) {
+				continue;
+			}
+			if (
+				cand.badgeText &&
+				!cand.badgeText.includes('pdf') &&
+				/\b(zip|tar|gz|py|c|cpp|txt|mp4|mkv|html|doc|docx|xls|xlsx)\b/i.test(
+					cand.badgeText,
+				)
+			) {
 				continue;
 			}
 
-			const prelimWeekKey = extractWeekKey(cand.title, cand.url, cand.sectionName);
-			if (!prelimWeekKey && !/slide|prelecture|week/i.test(`${cand.title} ${cand.sectionName || ''}`)) {
+			// Skip if already evaluated as non-slide
+			if (manifest.evaluatedNonSlides[cand.url]) {
 				continue;
+			}
+
+			// Skip if already synced and file exists on disk
+			const existingEntry = Object.values(manifest.slides).find(
+				(s) => s.url === cand.url && s.courseCode === courseCode,
+			);
+			if (existingEntry) {
+				const existingDiskPath = path.join(
+					SLIDES_ROOT_DIR,
+					courseCode,
+					existingEntry.filename,
+				);
+				try {
+					await fs.access(existingDiskPath);
+					continue;
+				} catch {
+					// re-download if missing from disk
+				}
 			}
 
 			try {
 				const pdfData = await fetchPdfWithMeta(client, cand.url, cand.title);
 				if (!pdfData) {
+					manifest.evaluatedNonSlides[cand.url] = {
+						title: cand.title,
+						reason: 'Not a PDF',
+						evaluatedAt: new Date().toISOString(),
+					};
 					continue;
 				}
 
 				const { buffer, filename, finalUrl } = pdfData;
-				const weekKey = extractWeekKey(filename, cand.title, cand.sectionName);
-
-				if (!weekKey || buffer.length > MAX_SLIDE_BYTES) {
-					console.log(
-						`  Skipping non-weekly or oversized PDF: "${filename}" (weekKey=${weekKey}, size=${buffer.length})`,
-					);
+				if (
+					buffer.length > MAX_SLIDE_BYTES ||
+					OBVIOUS_NON_SLIDE_REGEX.test(filename)
+				) {
+					manifest.evaluatedNonSlides[cand.url] = {
+						title: cand.title,
+						filename,
+						reason: 'Oversized or non-slide filename',
+						evaluatedAt: new Date().toISOString(),
+					};
 					continue;
 				}
 
-				const targetPath = path.join(SLIDES_DIR, filename);
+				const slideKey = `${courseCode}/${filename}`;
+				const courseSlideDir = path.join(SLIDES_ROOT_DIR, courseCode);
+				const targetPath = path.join(courseSlideDir, filename);
+
+				// Check if already in manifest by filename and exists on disk
+				if (manifest.slides[slideKey]) {
+					try {
+						await fs.access(targetPath);
+						continue;
+					} catch {
+						// proceed
+					}
+				}
+
+				let pdfText = '';
+				try {
+					pdfText = await extractPdfText(buffer);
+				} catch {
+					// ignore text extraction failure
+				}
+
+				const classification = await classifyPdf(
+					{
+						courseName: course.fullname,
+						name: cand.title,
+						filename,
+						folderName: cand.folderName,
+						sectionName: cand.sectionName,
+					},
+					pdfText,
+				);
+
+				const weekKey = extractWeekKey(
+					filename,
+					cand.title,
+					cand.sectionName,
+					cand.folderName,
+				);
+				const inSlidesFolder = /slide|slayt|lecture\s*note/i.test(
+					cand.folderName || '',
+				);
+				const isSlide =
+					classification.isSlide ||
+					classification.format === 'lecture_slides' ||
+					(inSlidesFolder && !classification.isAssignment);
+
+				console.log(
+					`  [${courseCode} Slide Check] "${filename}" -> isSlide=${isSlide} (${classification.reason})`,
+				);
+
+				if (!isSlide) {
+					manifest.evaluatedNonSlides[cand.url] = {
+						courseCode,
+						title: cand.title,
+						filename,
+						reason: classification.reason,
+						evaluatedAt: new Date().toISOString(),
+					};
+					continue;
+				}
+
+				await fs.mkdir(courseSlideDir, { recursive: true });
 				await fs.writeFile(targetPath, buffer);
 
 				const slideEntry = {
-					id: `slide:${course.id}:${filename}`,
+					id: `slide:${courseCode}:${filename}`,
 					courseId: course.id,
 					courseName: course.fullname,
+					courseCode,
 					title: cand.title,
 					filename,
 					weekKey,
 					url: cand.url,
 					finalUrl,
 					filesize: buffer.length,
+					reason: classification.reason,
 					syncedAt: new Date().toISOString(),
 				};
 
-				manifest.slides[filename] = slideEntry;
+				manifest.slides[slideKey] = slideEntry;
 				syncedSlides.push(slideEntry);
-				console.log(`  Saved CENG 111 slide: ${filename} (weekKey: ${weekKey})`);
+				console.log(
+					`  [${courseCode}] Saved slide: ${filename} (weekKey: ${weekKey || 'none'})`,
+				);
 			} catch (err) {
 				console.warn(
-					`  Failed to inspect candidate "${cand.title}" (${cand.url}): ${err.message}`,
+					`  [${courseCode}] Failed to inspect candidate "${cand.title}": ${err.message}`,
 				);
 			}
 		}
 	}
 
-	await saveManifest(manifest);
+	await saveRootManifest(manifest);
 	return syncedSlides;
 }
+
+export const syncCeng111Slides = syncAllCourseSlides;
