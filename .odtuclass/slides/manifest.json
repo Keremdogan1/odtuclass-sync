@@ -1,0 +1,129 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-11T10:44:58.521Z",
+  "slides": {
+    "CENG111/CENG111-2026--Week1a.pdf": {
+      "id": "slide:5129:CENG111-2026--Week1a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week1a.pdf",
+      "filename": "CENG111-2026--Week1a.pdf",
+      "weekKey": "1a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1a.pdf?forcedownload=1",
+      "filesize": 1533819,
+      "syncedAt": "2026-10-11T10:35:07.922Z",
+      "courseCode": "CENG111"
+    },
+    "CENG111/CENG111-2026--Week1b.pdf": {
+      "id": "slide:5129:CENG111-2026--Week1b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week1b.pdf",
+      "filename": "CENG111-2026--Week1b.pdf",
+      "weekKey": "1b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1b.pdf?forcedownload=1",
+      "filesize": 2828417,
+      "syncedAt": "2026-10-11T10:35:08.516Z",
+      "courseCode": "CENG111"
+    },
+    "CENG111/CENG111-2026--Week2a.pdf": {
+      "id": "slide:5129:CENG111-2026--Week2a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week2a.pdf",
+      "filename": "CENG111-2026--Week2a.pdf",
+      "weekKey": "2a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2a.pdf?forcedownload=1",
+      "filesize": 2060201,
+      "syncedAt": "2026-10-11T10:35:08.917Z",
+      "courseCode": "CENG111"
+    },
+    "CENG111/CENG111-2026--Week2b.pdf": {
+      "id": "slide:5129:CENG111-2026--Week2b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week2b.pdf",
+      "filename": "CENG111-2026--Week2b.pdf",
+      "weekKey": "2b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2b.pdf?forcedownload=1",
+      "filesize": 1348224,
+      "syncedAt": "2026-10-11T10:35:09.138Z",
+      "courseCode": "CENG111"
+    }
+  },
+  "evaluatedNonSlides": {
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=26173": {
+      "title": "Lecture 1 Biological Molecules",
+      "reason": "Not a PDF",
+      "evaluatedAt": "2026-10-11T10:44:42.618Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37843": {
+      "title": "Cell",
+      "reason": "Not a PDF",
+      "evaluatedAt": "2026-10-11T10:44:43.297Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37979": {
+      "title": "DNA Structure",
+      "reason": "Not a PDF",
+      "evaluatedAt": "2026-10-11T10:44:43.695Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37209": {
+      "title": "Eng 101 Course Information Input",
+      "reason": "Not a PDF",
+      "evaluatedAt": "2026-10-11T10:44:45.992Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=15298": {
+      "courseCode": "ENG101",
+      "title": "Important Information about MLD Courses",
+      "filename": "Important Info about MLD courses.pdf",
+      "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-11T10:44:46.919Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/70143/mod_folder/content/0/identifying-and-evaluating-hazards-in-research-laboratories.pdf?forcedownload=1": {
+      "courseCode": "OHS101",
+      "title": "identifying-and-evaluating-hazards-in-research-laboratories.pdf",
+      "filename": "identifying-and-evaluating-hazards-in-research-laboratories.pdf",
+      "reason": "Rule-based evaluation: score=5, slideScore=0, matchedPositives=[pattern:chapter_problems], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-11T10:44:51.080Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/70143/mod_folder/content/0/OSHA3404laboratory-safety-guidance.pdf?forcedownload=1": {
+      "courseCode": "OHS101",
+      "title": "OSHA3404laboratory-safety-guidance.pdf",
+      "filename": "OSHA3404laboratory-safety-guidance.pdf",
+      "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-11T10:44:52.339Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16573": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-Course Content and Solved Chapter-end Problems",
+      "filename": "105-20261-Course Content and Solved Chapter-end Problems.pdf",
+      "reason": "Rule-based evaluation: score=21, slideScore=-12, matchedPositives=[problem, problems, pattern:selected_problems, pattern:chapter_problems], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-11T10:44:54.000Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=10008": {
+      "courseCode": "ENG101",
+      "title": "20261 Important Info about MLD courses",
+      "filename": "20261 Important Info about MLD courses.pdf",
+      "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-11T10:44:56.639Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=10011": {
+      "courseCode": "ENG101",
+      "title": "How to see your grade and see or listen to feedback on Turnitin",
+      "filename": "How to see your grade and see or listen to feedback on Turnitin.pdf",
+      "reason": "Rule-based evaluation: score=-8, slideScore=-10, matchedPositives=[], matchedNegatives=[how to]",
+      "evaluatedAt": "2026-10-11T10:44:57.899Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=18593": {
+      "courseCode": "ENG101",
+      "title": "Tips for Text Discussions",
+      "filename": "Tips for Text Discussions.pdf",
+      "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-11T10:44:58.520Z"
+    }
+  }
+}
