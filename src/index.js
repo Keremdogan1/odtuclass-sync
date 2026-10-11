@@ -4,6 +4,7 @@ import { getCourses } from './odtuclass/courses.js';
 import { getAssignments } from './odtuclass/assignments.js';
 import { getCourseSections } from './odtuclass/sections.js';
 import { getCourseResources, fetchResourceBuffer } from './odtuclass/resources.js';
+import { syncCeng111Slides } from './odtuclass/slides.js';
 import { extractPdfText, parseCoursePdf } from './pdf/extractor.js';
 import { classifyPdf } from './pdf/classifier.js';
 import {
@@ -41,7 +42,10 @@ try {
 
 	const courses = await getCourses(client);
 
-	console.log(`Found ${courses.length} courses.`);
+	console.log(`Found ${courses.length} courses:`);
+	for (const c of courses) {
+		console.log(`  [${c.id}] ${c.fullname} (${c.shortname || ''})`);
+	}
 
 	// --- 1. Assignments Pipeline ---
 	try {
@@ -262,6 +266,16 @@ try {
 	} catch (pearsonPipelineError) {
 		console.error('\n=== PEARSON PIPELINE ERROR ===');
 		console.error(pearsonPipelineError.message);
+	}
+
+	// --- 5. CENG 111 Slides Pipeline (Isolated) ---
+	try {
+		console.log('\nChecking CENG 111 weekly slides...');
+		const slides = await syncCeng111Slides(client, courses);
+		console.log(`Synced ${slides.length} CENG 111 slide PDF(s).`);
+	} catch (slidesPipelineError) {
+		console.error('\n=== SLIDES PIPELINE ERROR ===');
+		console.error(slidesPipelineError.message);
 	}
 } catch (error) {
 	console.error('\n=== TEST FAILED ===');

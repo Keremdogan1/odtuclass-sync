@@ -84,60 +84,59 @@ export class ODTUClassClient {
 
 		this._collectCookies(response);
 
-		if (response.status >= 300 && response.status < 400) {
-			const location = response.headers.location;
+		let currentResponse = response;
+		let currentUrl = url;
+		let redirectCount = 0;
 
-			if (location) {
-				const redirectUrl = new URL(location, url).href;
+		while (
+			currentResponse.status >= 300 &&
+			currentResponse.status < 400 &&
+			redirectCount < 5
+		) {
+			const location = currentResponse.headers.location;
+			if (!location) break;
 
-				const redirectHeaders = {
-					'User-Agent': 'odtuclass-sync/1.0',
-					Accept: 'application/json, text/javascript, */*; q=0.01',
-				};
+			const redirectUrl = new URL(location, currentUrl).href;
+			const redirectHeaders = {
+				'User-Agent': 'odtuclass-sync/1.0',
+				Accept: 'application/json, text/javascript, */*; q=0.01',
+			};
 
-				const cookies = this._cookieStr();
-
-				if (
-					cookies &&
-					new URL(redirectUrl).origin === new URL(this.baseUrl).origin
-				) {
-					redirectHeaders.Cookie = cookies;
-				}
-
-				const redirectConfig = {
-					method: 'GET',
-					url: redirectUrl,
-					headers: redirectHeaders,
-					maxRedirects: 0,
-					validateStatus: () => true,
-				};
-
-				if (options.responseType) {
-					redirectConfig.responseType = options.responseType;
-				}
-
-				const redirected = await axios(redirectConfig);
-
-				this._collectCookies(redirected);
-
-				if (redirected.status >= 400) {
-					throw new Error(
-						`HTTP ${redirected.status}: ${redirected.statusText}`,
-					);
-				}
-
-				redirected.finalUrl = redirectUrl;
-				return redirected;
+			const cookies = this._cookieStr();
+			if (
+				cookies &&
+				new URL(redirectUrl).origin === new URL(this.baseUrl).origin
+			) {
+				redirectHeaders.Cookie = cookies;
 			}
+
+			const redirectConfig = {
+				method: 'GET',
+				url: redirectUrl,
+				headers: redirectHeaders,
+				maxRedirects: 0,
+				validateStatus: () => true,
+			};
+
+			if (options.responseType) {
+				redirectConfig.responseType = options.responseType;
+			}
+
+			currentResponse = await axios(redirectConfig);
+			this._collectCookies(currentResponse);
+			currentUrl = redirectUrl;
+			redirectCount++;
 		}
 
-		if (response.status >= 400) {
-			throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+		if (currentResponse.status >= 400) {
+			throw new Error(
+				`HTTP ${currentResponse.status}: ${currentResponse.statusText}`,
+			);
 		}
 
-		response.finalUrl = response.config.url;
+		currentResponse.finalUrl = currentUrl;
 
-		return response;
+		return currentResponse;
 	}
 }
 
