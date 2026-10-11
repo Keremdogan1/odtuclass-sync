@@ -4,6 +4,7 @@ import * as cheerio from 'cheerio';
 
 const SLIDES_DIR = path.resolve(process.cwd(), '.odtuclass', 'slides', 'CENG111');
 const MANIFEST_PATH = path.join(SLIDES_DIR, 'manifest.json');
+const MAX_SLIDE_BYTES = 50 * 1024 * 1024; // 50 MB safety cap for GitHub
 
 export function extractWeekKey(...texts) {
 	for (const text of texts) {
@@ -83,25 +84,9 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 	const $ = cheerio.load(html);
 	const candidates = [];
 	const folderUrls = [];
-	const pageUrls = [];
-	const sectionUrls = [];
-
-	$('a[href*="course/section.php?id="], a[href*="course/view.php"][href*="section="]').each(
-		(_, el) => {
-			const href = $(el).attr('href');
-			const name = $(el).text().trim();
-			if (href) {
-				const resolved = new URL(href, baseUrl).href;
-				if (!sectionUrls.some((s) => s.url === resolved)) {
-					sectionUrls.push({ url: resolved, name });
-				}
-			}
-		},
-	);
 
 	$('li.activity').each((_, element) => {
 		const activity = $(element);
-		const classes = activity.attr('class') || '';
 		const sectionEl = activity.closest('li.section');
 		const sectionName =
 			sectionEl.find('.sectionname, h3.sectionname').first().text().trim() ||
@@ -116,21 +101,17 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 			link.text().replace(/\s+(File|Folder|URL|Page)$/i, '').trim();
 
 		const badgeText = activity.find('.activitybadge').text().trim();
-		console.log(
-			`  [CENG111 Activity] course=${course.id} section="${sectionName || ''}" class="${classes}" name="${cleanName}" badge="${badgeText}" href="${href}"`,
-		);
 
 		if (!href) return;
 		const resolvedUrl = new URL(href, baseUrl).href;
 
 		if (href.includes('mod/folder/view.php')) {
-			folderUrls.push({ url: resolvedUrl, name: cleanName, sectionName });
-		} else if (href.includes('mod/page/view.php')) {
-			pageUrls.push({ url: resolvedUrl, name: cleanName, sectionName });
+			if (/slide|lecture|week/i.test(cleanName) && !/textbook|syllabus/i.test(cleanName)) {
+				folderUrls.push({ url: resolvedUrl, name: cleanName, sectionName });
+			}
 		} else if (
 			href.includes('mod/resource/view.php') ||
-			href.includes('pluginfile.php') ||
-			href.includes('mod/url/view.php')
+			href.includes('pluginfile.php')
 		) {
 			candidates.push({
 				url: resolvedUrl,
@@ -141,33 +122,30 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 		}
 	});
 
-	// Also inspect any direct links to pluginfile.php or .pdf in summaries/tables
-	$('a[href*="pluginfile.php"], a[href*="mod/resource/view.php"], a[href$=".pdf"]').each(
-		(_, el) => {
-			const href = $(el).attr('href');
-			if (!href) return;
-			const resolvedUrl = new URL(href, baseUrl).href;
-			if (candidates.some((c) => c.url === resolvedUrl)) return;
+	// Also inspect any direct links to pluginfile.php or .pdf in summaries/folders
+	$('a[href*="pluginfile.php"], a[href$=".pdf"]').each((_, el) => {
+		const href = $(el).attr('href');
+		if (!href) return;
+		const resolvedUrl = new URL(href, baseUrl).href;
+		if (candidates.some((c) => c.url === resolvedUrl)) return;
 
-			const text = $(el).text().trim() || decodeURIComponent(resolvedUrl.split('/').pop() || '');
-			const sectionEl = $(el).closest('li.section');
-			const sectionName =
-				sectionEl.find('.sectionname, h3.sectionname').first().text().trim() ||
-				defaultSectionName;
+		const text =
+			$(el).text().trim() ||
+			decodeURIComponent(resolvedUrl.split('/').pop() || '');
+		const sectionEl = $(el).closest('li.section');
+		const sectionName =
+			sectionEl.find('.sectionname, h3.sectionname').first().text().trim() ||
+			defaultSectionName;
 
-			console.log(
-				`  [CENG111 DirectLink] course=${course.id} section="${sectionName || ''}" text="${text}" href="${resolvedUrl}"`,
-			);
-			candidates.push({
-				url: resolvedUrl,
-				title: text,
-				sectionName,
-				badgeText: '',
-			});
-		},
-	);
+		candidates.push({
+			url: resolvedUrl,
+			title: text,
+			sectionName,
+			badgeText: '',
+		});
+	});
 
-	return { candidates, folderUrls, pageUrls, sectionUrls };
+	return { candidates, folderUrls };
 }
 
 async function fetchPdfWithMeta(client, url, fallbackTitle) {
@@ -239,23 +217,22 @@ export async function syncCeng111Slides(client, courses) {
 				'GET',
 				`${client.baseUrl}/course/view.php?id=${course.id}`,
 			);
-			mainHtml = typeof res.data === 'string' ? res.data : Buffer.from(res.data).toString('utf8');
+			mainHtml =
+				typeof res.data === 'string'
+					? res.data
+					: Buffer.from(res.data).toString('utf8');
 		} catch (err) {
 			console.warn(`Failed to fetch CENG 111 course ${course.id}: ${err.message}`);
 			continue;
 		}
 
-		const { candidates, folderUrls, pageUrls, sectionUrls } = collectCandidatesFromHtml(
+		const { candidates, folderUrls } = collectCandidatesFromHtml(
 			mainHtml,
 			course,
 			client.baseUrl,
 		);
 
-		console.log(
-			`  Found ${candidates.length} candidate(s), ${folderUrls.length} folder(s), ${pageUrls.length} page(s), ${sectionUrls.length} section link(s) on main page.`,
-		);
-
-		// Inspect folders
+		// Inspect Slide folders
 		for (const folder of folderUrls) {
 			try {
 				console.log(`  Fetching CENG 111 folder: "${folder.name}" (${folder.url})`);
@@ -268,7 +245,7 @@ export async function syncCeng111Slides(client, courses) {
 					fHtml,
 					course,
 					client.baseUrl,
-					folder.sectionName || folder.name,
+					folder.name,
 				);
 				for (const c of sub.candidates) {
 					if (!candidates.some((existing) => existing.url === c.url)) {
@@ -280,85 +257,13 @@ export async function syncCeng111Slides(client, courses) {
 			}
 		}
 
-		// Inspect pages
-		for (const page of pageUrls) {
-			try {
-				console.log(`  Fetching CENG 111 page: "${page.name}" (${page.url})`);
-				const pRes = await client.request('GET', page.url);
-				const pHtml =
-					typeof pRes.data === 'string'
-						? pRes.data
-						: Buffer.from(pRes.data).toString('utf8');
-				const sub = collectCandidatesFromHtml(
-					pHtml,
-					course,
-					client.baseUrl,
-					page.sectionName || page.name,
-				);
-				for (const c of sub.candidates) {
-					if (!candidates.some((existing) => existing.url === c.url)) {
-						candidates.push(c);
-					}
-				}
-			} catch (err) {
-				console.warn(`  Failed to fetch page ${page.url}: ${err.message}`);
-			}
-		}
-
-		// Inspect section subpages in case activities are only rendered inside section.php
-		for (const sec of sectionUrls) {
-			try {
-				const sRes = await client.request('GET', sec.url);
-				const sHtml =
-					typeof sRes.data === 'string'
-						? sRes.data
-						: Buffer.from(sRes.data).toString('utf8');
-				const sub = collectCandidatesFromHtml(
-					sHtml,
-					course,
-					client.baseUrl,
-					sec.name,
-				);
-				for (const c of sub.candidates) {
-					if (!candidates.some((existing) => existing.url === c.url)) {
-						candidates.push(c);
-					}
-				}
-				for (const folder of sub.folderUrls) {
-					if (!folderUrls.some((f) => f.url === folder.url)) {
-						const fRes = await client.request('GET', folder.url);
-						const fHtml =
-							typeof fRes.data === 'string'
-								? fRes.data
-								: Buffer.from(fRes.data).toString('utf8');
-						const fSub = collectCandidatesFromHtml(
-							fHtml,
-							course,
-							client.baseUrl,
-							sec.name,
-						);
-						for (const c of fSub.candidates) {
-							if (!candidates.some((existing) => existing.url === c.url)) {
-								candidates.push(c);
-							}
-						}
-					}
-				}
-			} catch (err) {
-				console.warn(`  Failed to fetch section ${sec.url}: ${err.message}`);
-			}
-		}
-
 		for (const cand of candidates) {
-			if (/lab\s+section\s+scheduler/i.test(cand.title)) {
+			if (/textbook|syllabus|scheduler|boolean\s+algebra/i.test(`${cand.title} ${cand.url}`)) {
 				continue;
 			}
-			// Skip explicitly non-PDF badges like zip, py, ipynb, mp4
-			if (
-				cand.badgeText &&
-				!cand.badgeText.includes('pdf') &&
-				/\b(zip|tar|gz|py|c|cpp|txt|mp4|mkv|html)\b/i.test(cand.badgeText)
-			) {
+
+			const prelimWeekKey = extractWeekKey(cand.title, cand.url, cand.sectionName);
+			if (!prelimWeekKey && !/slide|prelecture|week/i.test(`${cand.title} ${cand.sectionName || ''}`)) {
 				continue;
 			}
 
@@ -370,17 +275,11 @@ export async function syncCeng111Slides(client, courses) {
 
 				const { buffer, filename, finalUrl } = pdfData;
 				const weekKey = extractWeekKey(filename, cand.title, cand.sectionName);
-				const isSlideLike =
-					Boolean(weekKey) ||
-					/prelecture|lecture|slide|week|chap/i.test(
-						`${filename} ${cand.title}`,
+
+				if (!weekKey || buffer.length > MAX_SLIDE_BYTES) {
+					console.log(
+						`  Skipping non-weekly or oversized PDF: "${filename}" (weekKey=${weekKey}, size=${buffer.length})`,
 					);
-
-				console.log(
-					`  [CENG111 PDF] title="${cand.title}" filename="${filename}" weekKey=${weekKey || 'none'} isSlideLike=${isSlideLike} size=${buffer.length}`,
-				);
-
-				if (!isSlideLike) {
 					continue;
 				}
 
