@@ -1,0 +1,17 @@
+{
+  "id": "assignment:4849:pearson-math-review",
+  "type": "assignment",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "moduleId": "pearson-math-review",
+  "moduleType": "pearson",
+  "title": "Mathematics Review",
+  "url": "https://session.physics-mastering.pearson.com#/#",
+  "openAt": null,
+  "dueAt": null,
+  "closeAt": null,
+  "status": "todo",
+  "content": "Coming up soon. Mathematics Review is due in 3 months.14 items, about 115-140 minutes",
+  "contentHash": "ece6086c3b4ebd670e7e2fd7cbeefb074c34c8c809a1922ba7b8aaf96c83350f",
+  "event": "created"
+}

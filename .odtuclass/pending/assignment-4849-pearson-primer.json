@@ -1,0 +1,17 @@
+{
+  "id": "assignment:4849:pearson-primer",
+  "type": "assignment",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "moduleId": "pearson-primer",
+  "moduleType": "pearson",
+  "title": "Physics Primer",
+  "url": "https://session.physics-mastering.pearson.com#/#",
+  "openAt": null,
+  "dueAt": "2026-12-31T20:59:00.000Z",
+  "closeAt": null,
+  "status": "done",
+  "content": "Physics Primer12/31/2026 11:59 PM10 of 10 complete",
+  "contentHash": "eeedb3483a89945dc39d11ca5c046d3272b8b935272c1853773c2bcaf13baf84",
+  "event": "created"
+}

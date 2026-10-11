@@ -1,0 +1,17 @@
+{
+  "id": "assignment:4849:pearson-intro",
+  "type": "assignment",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "moduleId": "pearson-intro",
+  "moduleType": "pearson",
+  "title": "Introduction to MasteringPhysics",
+  "url": "https://session.physics-mastering.pearson.com#/#",
+  "openAt": null,
+  "dueAt": "2026-12-31T20:59:00.000Z",
+  "closeAt": null,
+  "status": "done",
+  "content": "Introduction to MasteringPhysics12/31/2026 11:59 PM6 of 6 complete",
+  "contentHash": "1a0eacece74f17f9fef9509ed87dd93d4a75b2745a65a77b7249cfa03940f486",
+  "event": "created"
+}
