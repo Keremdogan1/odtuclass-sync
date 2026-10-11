@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-11T11:52:14.502Z",
+  "updatedAt": "2026-10-11T12:00:51.748Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -57,6 +57,51 @@
       "filesize": 1348224,
       "syncedAt": "2026-10-11T10:35:09.138Z",
       "courseCode": "CENG111"
+    },
+    "BIOL109/1 Biological Molecules.pdf": {
+      "id": "slide:BIOL109:1 Biological Molecules.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "Lecture 1 Biological Molecules",
+      "filename": "1 Biological Molecules.pdf",
+      "formattedFilename": "1. Biological Molecules.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=26173",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/257447/mod_resource/content/1/1%20Biological%20Molecules.pptx",
+      "filesize": 4553990,
+      "reason": "Gemini (gemini-3-flash-preview): The document contains slide markers (e.g., '-- 1 of 60 --'), a 'Plan for the day' outline, and bulleted educational content typical of a lecture presentation.",
+      "syncedAt": "2026-10-11T12:00:10.972Z"
+    },
+    "BIOL109/2_Cell.pdf": {
+      "id": "slide:BIOL109:2_Cell.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "Cell",
+      "filename": "2_Cell.pdf",
+      "formattedFilename": "2. Cell.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37843",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/300474/mod_resource/content/1/2_Cell.pptx",
+      "filesize": 7737305,
+      "reason": "Gemini (gemini-3-flash-preview): The document is clearly a presentation deck, indicated by slide numbers (e.g., 1 of 88), a 'Plan for the day' outline, and bulleted educational content regarding cell biology.",
+      "syncedAt": "2026-10-11T12:00:24.493Z"
+    },
+    "BIOL109/3 DNA structure and chromosomes.pdf": {
+      "id": "slide:BIOL109:3 DNA structure and chromosomes.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "DNA Structure",
+      "filename": "3 DNA structure and chromosomes.pdf",
+      "formattedFilename": "3. DNA structure and chromosomes.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=37979",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/300863/mod_resource/content/1/3%20DNA%20structure%20and%20chromosomes.pptx",
+      "filesize": 4869184,
+      "reason": "Gemini (gemini-3-flash-preview): The document is clearly a lecture presentation with slide numbering (e.g., '1 of 53'), an outline, and bulleted educational content regarding the history and structure of DNA.",
+      "syncedAt": "2026-10-11T12:00:43.518Z"
     }
   },
   "evaluatedNonSlides": {
