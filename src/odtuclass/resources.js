@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio';
 import { getCourseContents } from './assignments.js';
+import { detectOfficeType, convertOfficeBufferToPdf } from '../pdf/officeConverter.js';
 
 export async function getCourseResources(client, courses) {
 	const resources = [];
@@ -32,7 +33,7 @@ export function extractResourcesFromApi(course, sections) {
 
 	for (const section of sections || []) {
 		for (const module of section.modules || []) {
-			if (module.modname !== 'resource') {
+			if (module.modname !== 'resource' && module.modname !== 'folder') {
 				continue;
 			}
 
@@ -40,14 +41,16 @@ export function extractResourcesFromApi(course, sections) {
 			for (const file of contents) {
 				const filename = file.filename || '';
 				const mimetype = (file.mimetype || '').toLowerCase();
-				const isPdf =
+				const isSupportedDoc =
 					mimetype === 'application/pdf' ||
-					filename.toLowerCase().endsWith('.pdf') ||
-					(file.fileurl && file.fileurl.toLowerCase().includes('.pdf'));
+					mimetype.includes('wordprocessingml') ||
+					mimetype.includes('msword') ||
+					/\.(pdf|docx|doc)$/i.test(filename) ||
+					(file.fileurl && /\.(pdf|docx|doc)(\?|$)/i.test(file.fileurl));
 
-				if (isPdf) {
+				if (isSupportedDoc) {
 					resources.push({
-						id: `resource:${course.id}:${module.id}`,
+						id: `resource:${course.id}:${module.id}:${filename || 'doc'}`,
 						type: 'resource',
 						courseId: course.id,
 						courseName: course.fullname,
@@ -75,7 +78,74 @@ export async function scrapeResourcesFromHtml(client, course) {
 		`${client.baseUrl}/course/view.php?id=${course.id}`,
 	);
 
-	return extractResourcesFromHtml(response.data, course, client.baseUrl);
+	const mainResources = extractResourcesFromHtml(response.data, course, client.baseUrl);
+	const $ = cheerio.load(response.data);
+	const folderLinks = [];
+
+	$('li.activity').each((_, element) => {
+		const activity = $(element);
+		const link = activity.find('a[href*="mod/folder/view.php"]').first();
+		if (!link.length) return;
+		const href = link.attr('href') || '';
+		const instanceNameEl = activity.find('.instancename').clone();
+		instanceNameEl.find('.accesshide').remove();
+		const folderName = instanceNameEl.text().trim() || link.text().trim();
+		// Skip pure slide/textbook folders in assignment resource scraper
+		if (/^slides$|textbook|past\s+exam/i.test(folderName)) {
+			return;
+		}
+		const match = href.match(/id=(\d+)/);
+		const folderId = match ? Number(match[1]) : null;
+		if (folderId) {
+			folderLinks.push({
+				folderId,
+				folderName,
+				url: new URL(href, client.baseUrl).href,
+			});
+		}
+	});
+
+	for (const folder of folderLinks) {
+		try {
+			const fRes = await client.request('GET', folder.url);
+			const fHtml = typeof fRes.data === 'string' ? fRes.data : Buffer.from(fRes.data).toString('utf8');
+			const $f = cheerio.load(fHtml);
+			$f('#region-main a[href*="pluginfile.php"], div[role="main"] a[href*="pluginfile.php"]').each((idx, el) => {
+				const fileHref = $f(el).attr('href') || '';
+				if (!fileHref) return;
+				const resolvedUrl = new URL(fileHref, client.baseUrl).href;
+				const rawFileName =
+					$f(el).find('.fp-filename').text().trim() ||
+					$f(el).text().trim() ||
+					decodeURIComponent(resolvedUrl.split('?')[0].split('/').pop() || '');
+				if (!/\.(pdf|docx|doc)$/i.test(rawFileName) && !/\.(pdf|docx|doc)(\?|$)/i.test(resolvedUrl)) {
+					return;
+				}
+				const safeSlug = rawFileName.replace(/[^a-zA-Z0-9._-]+/g, '-').slice(0, 40);
+				const id = `resource:${course.id}:${folder.folderId}-${safeSlug || idx}`;
+				if (!mainResources.some((r) => r.fileurl === resolvedUrl || r.id === id)) {
+					mainResources.push({
+						id,
+						type: 'resource',
+						courseId: course.id,
+						courseName: course.fullname,
+						moduleId: `${folder.folderId}-${idx}`,
+						folderName: folder.folderName,
+						name: rawFileName.replace(/\.(pdf|docx|doc)$/i, ''),
+						filename: rawFileName,
+						fileurl: resolvedUrl,
+						filesize: null,
+						timecreated: null,
+						timemodified: null,
+					});
+				}
+			});
+		} catch (err) {
+			console.warn(`Failed to scrape folder ${folder.url}: ${err.message}`);
+		}
+	}
+
+	return mainResources;
 }
 
 export function extractResourcesFromHtml(html, course, baseUrl = '') {
@@ -133,11 +203,22 @@ export function extractResourcesFromHtml(html, course, baseUrl = '') {
 			iconSrc.includes('/f/pdf') ||
 			cleanName.toLowerCase().endsWith('.pdf');
 
-		if (!isPdf) {
+		const isWord =
+			badgeText.includes('doc') ||
+			badgeText.includes('word') ||
+			badgeText.includes('rtf') ||
+			iconSrc.includes('/f/document') ||
+			/\.(docx|doc|rtf)$/i.test(cleanName);
+
+		if (!isPdf && !isWord) {
 			return;
 		}
 
 		const resolvedUrl = baseUrl ? new URL(href, baseUrl).href : href;
+		const defaultExt = isWord ? '.docx' : '.pdf';
+		const filename = /\.(pdf|docx|doc|rtf)$/i.test(cleanName)
+			? cleanName
+			: `${cleanName}${defaultExt}`;
 
 		resources.push({
 			id: `resource:${course.id}:${moduleId}`,
@@ -146,7 +227,7 @@ export function extractResourcesFromHtml(html, course, baseUrl = '') {
 			courseName: course.fullname,
 			moduleId,
 			name: cleanName,
-			filename: `${cleanName.replace(/\.pdf$/i, '')}.pdf`,
+			filename,
 			fileurl: resolvedUrl,
 			filesize: null,
 			timecreated: null,
@@ -157,7 +238,7 @@ export function extractResourcesFromHtml(html, course, baseUrl = '') {
 	return resources;
 }
 
-export async function fetchResourceBuffer(client, fileurl) {
+export async function fetchResourceBuffer(client, fileurl, fallbackFilename = 'resource.pdf') {
 	if (!fileurl) {
 		throw new Error('fileurl is required to fetch resource buffer.');
 	}
@@ -166,16 +247,18 @@ export async function fetchResourceBuffer(client, fileurl) {
 		responseType: 'arraybuffer',
 	});
 
-	const buffer = Buffer.from(response.data);
+	let buffer = Buffer.from(response.data);
+	let headers = response.headers || {};
+	let finalUrl = response.finalUrl || fileurl;
 
-	// If response is HTML instead of raw PDF, extract the embedded link
-	const headerStr = buffer.slice(0, 100).toString('utf8');
+	// If response is HTML instead of raw file, extract the embedded link from main content region
+	const headerStr = buffer.slice(0, 200).toString('utf8');
 	if (headerStr.includes('<!DOCTYPE') || headerStr.includes('<html')) {
 		const html = buffer.toString('utf8');
 		const $ = cheerio.load(html);
 
 		const directLink = $(
-			'a[href*="pluginfile.php"], object[data*="pluginfile.php"], iframe[src*="pluginfile.php"], embed[src*="pluginfile.php"], div.resourceworkaround a, a[href$=".pdf"]',
+			'div.resourceworkaround a, div.urlworkaround a, #region-main a[href*="pluginfile.php"], div[role="main"] a[href*="pluginfile.php"], object[data*="pluginfile.php"], iframe[src*="pluginfile.php"], embed[src*="pluginfile.php"], a[href$=".pdf"], a[href$=".docx"], a[href$=".doc"], a[href$=".pptx"], a[href$=".ppt"]',
 		).first();
 
 		const downloadUrl =
@@ -185,12 +268,27 @@ export async function fetchResourceBuffer(client, fileurl) {
 
 		if (downloadUrl) {
 			const resolvedUrl = new URL(downloadUrl, client.baseUrl).href;
-			const pdfResponse = await client.request('GET', resolvedUrl, null, {
+			const fileResponse = await client.request('GET', resolvedUrl, null, {
 				responseType: 'arraybuffer',
 			});
-			return Buffer.from(pdfResponse.data);
+			buffer = Buffer.from(fileResponse.data);
+			headers = fileResponse.headers || {};
+			finalUrl = fileResponse.finalUrl || resolvedUrl;
 		}
+	}
+
+	if (buffer.slice(0, 5).toString('utf8') === '%PDF-') {
+		return buffer;
+	}
+
+	const contentType = headers['content-type'] || '';
+	const officeType = detectOfficeType(buffer, finalUrl || fallbackFilename, contentType);
+	if (officeType) {
+		console.log(`  [Office->PDF] Converting ${officeType.toUpperCase()} resource "${fallbackFilename}" to PDF...`);
+		const converted = await convertOfficeBufferToPdf(buffer, fallbackFilename, officeType);
+		return converted.buffer;
 	}
 
 	return buffer;
 }
+

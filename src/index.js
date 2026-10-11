@@ -149,7 +149,7 @@ try {
 			);
 
 			try {
-				const buffer = await fetchResourceBuffer(client, res.fileurl);
+				const buffer = await fetchResourceBuffer(client, res.fileurl, res.filename);
 				const pdfText = await extractPdfText(buffer);
 				const classification = await classifyPdf(res, pdfText);
 

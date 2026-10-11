@@ -3,6 +3,7 @@ import path from 'node:path';
 import * as cheerio from 'cheerio';
 import { extractPdfText } from '../pdf/extractor.js';
 import { classifyPdf } from '../pdf/classifier.js';
+import { detectOfficeType, convertOfficeBufferToPdf } from '../pdf/officeConverter.js';
 
 const SLIDES_ROOT_DIR = path.resolve(process.cwd(), '.odtuclass', 'slides');
 const ROOT_MANIFEST_PATH = path.join(SLIDES_ROOT_DIR, 'manifest.json');
@@ -46,7 +47,8 @@ function sanitizeFilename(name) {
 	const cleaned = name
 		.replace(/[<>:"/\\|?*\x00-\x1F]/g, '_')
 		.replace(/\s+/g, ' ')
-		.trim();
+		.trim()
+		.replace(/\.(pptx|ppt|ppsx|odp|docx|doc|odt|rtf)$/i, '');
 	return cleaned.toLowerCase().endsWith('.pdf') ? cleaned : `${cleaned}.pdf`;
 }
 
@@ -75,7 +77,7 @@ function extractFilenameFromHeadersOrUrl(headers, finalUrl, fallbackName) {
 		try {
 			const parsed = new URL(finalUrl);
 			const basename = decodeURIComponent(parsed.pathname.split('/').pop() || '');
-			if (basename && basename.toLowerCase().endsWith('.pdf')) {
+			if (basename && /\.(pdf|pptx|ppt|ppsx|odp|docx|doc)$/i.test(basename)) {
 				return sanitizeFilename(basename);
 			}
 		} catch {
@@ -167,7 +169,7 @@ function collectCandidatesFromHtml(html, course, baseUrl, defaultSectionName = n
 		}
 	});
 
-	$('a[href*="pluginfile.php"], a[href$=".pdf"]').each((_, el) => {
+	$('#region-main a[href*="pluginfile.php"], div[role="main"] a[href*="pluginfile.php"], a[href$=".pdf"], a[href$=".pptx"], a[href$=".ppt"], a[href$=".docx"], a[href$=".doc"]').each((_, el) => {
 		const href = $(el).attr('href');
 		if (!href) return;
 		const resolvedUrl = new URL(href, baseUrl).href;
@@ -199,7 +201,7 @@ async function fetchPdfWithMeta(client, url, fallbackTitle) {
 	});
 
 	let buffer = Buffer.from(response.data);
-	let headers = response.headers;
+	let headers = response.headers || {};
 	let finalUrl = response.finalUrl || url;
 
 	const headerStr = buffer.slice(0, 200).toString('utf8');
@@ -208,7 +210,7 @@ async function fetchPdfWithMeta(client, url, fallbackTitle) {
 		const $ = cheerio.load(html);
 
 		const directLink = $(
-			'a[href*="pluginfile.php"], object[data*="pluginfile.php"], iframe[src*="pluginfile.php"], embed[src*="pluginfile.php"], div.resourceworkaround a, div.urlworkaround a, a[href$=".pdf"]',
+			'div.resourceworkaround a, div.urlworkaround a, #region-main a[href*="pluginfile.php"], div[role="main"] a[href*="pluginfile.php"], object[data*="pluginfile.php"], iframe[src*="pluginfile.php"], embed[src*="pluginfile.php"], a[href$=".pdf"], a[href$=".pptx"], a[href$=".ppt"], a[href$=".docx"], a[href$=".doc"]',
 		).first();
 
 		const downloadUrl =
@@ -225,16 +227,30 @@ async function fetchPdfWithMeta(client, url, fallbackTitle) {
 			responseType: 'arraybuffer',
 		});
 		buffer = Buffer.from(pdfResponse.data);
-		headers = pdfResponse.headers;
+		headers = pdfResponse.headers || {};
 		finalUrl = pdfResponse.finalUrl || resolvedUrl;
 	}
 
-	if (buffer.slice(0, 5).toString('utf8') !== '%PDF-') {
-		return null;
+	const filename = extractFilenameFromHeadersOrUrl(headers, finalUrl, fallbackTitle);
+
+	if (buffer.slice(0, 5).toString('utf8') === '%PDF-') {
+		return { buffer, filename, finalUrl, officeType: null };
 	}
 
-	const filename = extractFilenameFromHeadersOrUrl(headers, finalUrl, fallbackTitle);
-	return { buffer, filename, finalUrl };
+	const contentType = headers['content-type'] || '';
+	const officeType = detectOfficeType(buffer, finalUrl || filename, contentType);
+	if (officeType) {
+		console.log(`  [Office->PDF] Converting ${officeType.toUpperCase()} "${fallbackTitle}" (${filename}) to PDF...`);
+		const converted = await convertOfficeBufferToPdf(buffer, filename, officeType);
+		return {
+			buffer: converted.buffer,
+			filename: sanitizeFilename(filename),
+			finalUrl,
+			officeType,
+		};
+	}
+
+	return null;
 }
 
 const OBVIOUS_NON_SLIDE_REGEX =
@@ -303,6 +319,8 @@ export async function syncAllCourseSlides(client, courses) {
 			if (
 				cand.badgeText &&
 				!cand.badgeText.includes('pdf') &&
+				!cand.badgeText.includes('ppt') &&
+				!cand.badgeText.includes('powerpoint') &&
 				/\b(zip|tar|gz|py|c|cpp|txt|mp4|mkv|html|doc|docx|xls|xlsx)\b/i.test(
 					cand.badgeText,
 				)
@@ -338,13 +356,13 @@ export async function syncAllCourseSlides(client, courses) {
 				if (!pdfData) {
 					manifest.evaluatedNonSlides[cand.url] = {
 						title: cand.title,
-						reason: 'Not a PDF',
+						reason: 'Not a PDF or convertible Office document',
 						evaluatedAt: new Date().toISOString(),
 					};
 					continue;
 				}
 
-				const { buffer, filename, finalUrl } = pdfData;
+				const { buffer, filename, finalUrl, officeType } = pdfData;
 				if (
 					buffer.length > MAX_SLIDE_BYTES ||
 					OBVIOUS_NON_SLIDE_REGEX.test(filename)
@@ -399,13 +417,15 @@ export async function syncAllCourseSlides(client, courses) {
 				const inSlidesFolder = /slide|slayt|lecture\s*note/i.test(
 					cand.folderName || '',
 				);
+				const isPowerPoint = officeType === 'pptx' || officeType === 'ppt';
 				const isSlide =
 					classification.isSlide ||
 					classification.format === 'lecture_slides' ||
-					(inSlidesFolder && !classification.isAssignment);
+					(inSlidesFolder && !classification.isAssignment) ||
+					(isPowerPoint && !classification.isAssignment);
 
 				console.log(
-					`  [${courseCode} Slide Check] "${filename}" -> isSlide=${isSlide} (${classification.reason})`,
+					`  [${courseCode} Slide Check] "${filename}" (officeType=${officeType || 'pdf'}) -> isSlide=${isSlide} (${classification.reason})`,
 				);
 
 				if (!isSlide) {

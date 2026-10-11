@@ -8,6 +8,11 @@ const ASSIGNMENT_TYPES = new Set([
 	'quiz',
 	'hvp',
 	'h5pactivity',
+	'choice',
+	'feedback',
+	'questionnaire',
+	'workshop',
+	'lesson',
 ]);
 
 export async function getCourseContents(client, courseId) {
