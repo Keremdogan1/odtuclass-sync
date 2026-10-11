@@ -1,6 +1,6 @@
 import { apiCall } from './client.js';
 import * as cheerio from 'cheerio';
-import { extractSectionId } from './sections.js';
+import { extractSectionId, normalizeSectionHtml } from './sections.js';
 
 const ASSIGNMENT_TYPES = new Set([
 	'assign',

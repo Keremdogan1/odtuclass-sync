@@ -5,6 +5,7 @@ import { getAssignments } from './odtuclass/assignments.js';
 import { getCourseSections } from './odtuclass/sections.js';
 import { getCourseResources, fetchResourceBuffer } from './odtuclass/resources.js';
 import { syncCeng111Slides } from './odtuclass/slides.js';
+import { getEnrichedCalendarTasks } from './odtuclass/calendar.js';
 import { extractPdfText, parseCoursePdf } from './pdf/extractor.js';
 import { classifyPdf } from './pdf/classifier.js';
 import {
@@ -47,11 +48,14 @@ try {
 		console.log(`  [${c.id}] ${c.fullname} (${c.shortname || ''})`);
 	}
 
+	let allAssignments = [];
+
 	// --- 1. Assignments Pipeline ---
 	try {
 		console.log('\nFetching assignments...');
 
 		const assignments = await getAssignments(client, courses);
+		allAssignments = assignments;
 
 		console.log(`Found ${assignments.length} assignments:\n`);
 
@@ -268,14 +272,47 @@ try {
 		console.error(pearsonPipelineError.message);
 	}
 
-	// --- 5. CENG 111 Slides Pipeline (Isolated) ---
+	// --- 5. Course Slides Pipeline (Isolated) ---
 	try {
-		console.log('\nChecking CENG 111 weekly slides...');
+		console.log('\nChecking course weekly slides...');
 		const slides = await syncCeng111Slides(client, courses);
-		console.log(`Synced ${slides.length} CENG 111 slide PDF(s).`);
+		console.log(`Synced ${slides.length} course slide PDF(s).`);
 	} catch (slidesPipelineError) {
 		console.error('\n=== SLIDES PIPELINE ERROR ===');
 		console.error(slidesPipelineError.message);
+	}
+
+	// --- 6. Calendar & Lab Events Pipeline (Isolated) ---
+	try {
+		console.log('\nChecking Moodle Calendar & Lab events...');
+		const calendarTasks = await getEnrichedCalendarTasks(
+			client,
+			courses,
+			allAssignments,
+		);
+		console.log(
+			`Found ${calendarTasks.length} unique calendar/lab event task(s).`,
+		);
+		if (calendarTasks.length > 0) {
+			const calSyncResult = await syncAssignments(calendarTasks);
+			for (const newTask of calSyncResult.newAssignments) {
+				const pendingPath = await writePendingAssignment(
+					newTask,
+					getPendingDirectory(),
+				);
+				try {
+					await notifyNewAssignment(newTask);
+				} catch (notifyError) {
+					console.warn(
+						`Failed notification for ${newTask.id}: ${notifyError.message}`,
+					);
+				}
+				console.log(`Pending calendar/lab task written: ${pendingPath}`);
+			}
+		}
+	} catch (calendarPipelineError) {
+		console.error('\n=== CALENDAR PIPELINE ERROR ===');
+		console.error(calendarPipelineError.message);
 	}
 } catch (error) {
 	console.error('\n=== TEST FAILED ===');

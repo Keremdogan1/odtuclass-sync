@@ -79,6 +79,7 @@ export function findNewAssignments(assignments, state) {
 		if (assignment.status && assignment.status !== prev.status) return true;
 		if (assignment.dueAt && assignment.dueAt !== prev.dueAt) return true;
 		if (assignment.openAt && assignment.openAt !== prev.openAt) return true;
+		if (assignment.contentHash && assignment.contentHash !== prev.contentHash) return true;
 		return false;
 	});
 }
