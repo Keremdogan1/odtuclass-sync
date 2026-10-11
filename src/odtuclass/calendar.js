@@ -274,14 +274,24 @@ export async function getCourseContextForEnrichment(client, course) {
 				act.find('.instancename').first().text().trim() ||
 				'';
 
-			const descEl = act.find('div.activity-description, .contentafterlink').first();
-			const descText = normalizeSectionHtml(descEl.html() || '');
-			const descLinks = extractLinksFromHtml($, descEl, client.baseUrl);
+			const descEl =
+				modname === 'label'
+					? act
+							.find(
+								'.contentwithoutlink, .activity-altcontent, .no-overflow',
+							)
+							.first()
+					: act
+							.find('div.activity-description, .contentafterlink')
+							.first();
+			const effectiveDescEl = descEl.length ? descEl : modname === 'label' ? act : descEl;
+			const descText = normalizeSectionHtml(effectiveDescEl.html() || '');
+			const descLinks = extractLinksFromHtml($, effectiveDescEl, client.baseUrl);
 
 			const modObj = {
 				id: moduleId,
 				modname,
-				name: title,
+				name: title || (modname === 'label' ? descText.split('\n')[0]?.slice(0, 80) || 'Label' : ''),
 				url,
 				description: descText,
 				links: descLinks,
@@ -370,7 +380,7 @@ function extractLinksFromHtml($, container, baseUrl) {
 
 /**
  * Build an enriched markdown description for a calendar event or lab task.
- * Includes the event's own description, related mod/page instructions, and mod/url links.
+ * Includes the event's own description, related mod/page instructions, mod/label content, and mod/url links.
  */
 export function enrichCalendarEvent(event, section, pageDetailsMap = new Map()) {
 	const parts = [];
@@ -390,6 +400,16 @@ export function enrichCalendarEvent(event, section, pageDetailsMap = new Map()) 
 		// 2. Section summary notes if relevant
 		if (section.summaryText && !parts.includes(section.summaryText)) {
 			parts.push(`### 📋 Hafta / Bölüm Açıklaması (${section.name})\n\n${section.summaryText}`);
+		}
+
+		// 2b. Inline mod/label notes in the section
+		const relatedLabels = (section.modules || []).filter(
+			(m) => m.modname === 'label' && m.description,
+		);
+		for (const lbl of relatedLabels) {
+			if (!parts.includes(lbl.description)) {
+				parts.push(lbl.description);
+			}
 		}
 
 		// 3. Related mod/page instructions in the same section
@@ -549,14 +569,27 @@ export function filterDuplicateEvents(calendarEvents, existingAssignments = []) 
 		}
 	}
 
+	const ADMIN_OR_ROUTINE_REGEX =
+		/\b(?:course\s+conflict|section\s+transfer|transfer\s+application|excuse\s+(?:form|application)|make-?up\s+(?:exam\s+)?application)\b/i;
+
 	return Array.from(mergedByKey.values()).filter((ev) => {
 		const courseId = Number(ev.courseid || ev.course?.id || 0);
-		if (courseId && ev.instance && existingModuleIds.has(`${courseId}:${ev.instance}`)) {
-			return false;
-		}
+		const modName = String(ev.modulename || '').toLowerCase();
 		const cleanName = String(ev.name || '')
 			.replace(/\s+(is\s+due|opens|closes|due)$/i, '')
 			.trim();
+
+		// Skip routine lecture attendance events and administrative forms
+		if (modName === 'attendance' || /\battendance\b/i.test(cleanName)) {
+			return false;
+		}
+		if (ADMIN_OR_ROUTINE_REGEX.test(cleanName)) {
+			return false;
+		}
+
+		if (courseId && ev.instance && existingModuleIds.has(`${courseId}:${ev.instance}`)) {
+			return false;
+		}
 		const normName = cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '');
 		if (courseId && normName && existingCourseTitles.has(`${courseId}:${normName}`)) {
 			return false;
@@ -676,7 +709,8 @@ export async function getEnrichedCalendarTasks(
 			if (ctx) {
 				const modSummary = ctx.sections.flatMap((s) =>
 					(s.modules || []).map(
-						(m) => `[sec ${s.sectionNumber}: ${s.name}] ${m.modname}: "${m.name}"`,
+						(m) =>
+							`[sec ${s.sectionNumber}: ${s.name}] ${m.modname}: "${m.name}" (links=${(m.links || []).length}, textLen=${(m.description || '').length})`,
 					),
 				);
 				console.log(
@@ -722,7 +756,7 @@ export async function getEnrichedCalendarTasks(
 		tasks.push(task);
 	}
 
-	// Also check Lab courses for experiment sections or mod/page items with experiment/lab schedules
+	// Also check Lab courses for experiment/schedule sections or mod/page items
 	const existingIdsAndTitles = new Set(
 		[...existingAssignments, ...tasks].map((t) =>
 			`${t.courseId}:${String(t.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '')}`,
@@ -735,12 +769,17 @@ export async function getEnrichedCalendarTasks(
 		if (!ctx) continue;
 
 		for (const sec of ctx.sections || []) {
+			if (sec.sectionNumber === 0) continue;
 			const isExperimentSection =
-				/\b(?:experiment\s*\d+|deney\s*\d+|lab\s*\d+)\b/i.test(sec.name || '') ||
+				/\b(?:experiment|deney|lab(?:oratory)?\s*schedule|group\s*info|lab\s*\d+)\b/i.test(
+					sec.name || '',
+				) ||
 				(sec.modules || []).some(
 					(m) =>
-						m.modname === 'page' &&
-						/\b(?:experiment\s*\d+|deney\s*\d+|lab\s*schedule)\b/i.test(m.name || ''),
+						(m.modname === 'page' || m.modname === 'label') &&
+						/\b(?:experiment\s*\d+|deney\s*\d+|lab(?:oratory)?\s*schedule)\b/i.test(
+							`${m.name || ''} ${m.description || ''}`,
+						),
 				);
 
 			if (!isExperimentSection) continue;

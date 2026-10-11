@@ -195,6 +195,10 @@ export function parseSingleHomeworkPdf(pdfText, metadata = {}) {
 		type: 'assignment',
 		courseId,
 		courseName,
+		sectionId: metadata.sectionId || null,
+		sectionName: metadata.sectionName || null,
+		sectionNumber:
+			typeof metadata.sectionNumber === 'number' ? metadata.sectionNumber : null,
 		moduleId: `pdf-${createHash('md5').update(title).digest('hex').slice(0, 8)}`,
 		moduleType: 'pdf_assignment',
 		title,
@@ -202,6 +206,7 @@ export function parseSingleHomeworkPdf(pdfText, metadata = {}) {
 		openAt: null,
 		dueAt,
 		closeAt: null,
+		description: content,
 		content,
 		contentHash,
 		event: 'created',
