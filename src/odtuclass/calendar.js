@@ -770,14 +770,15 @@ export async function getEnrichedCalendarTasks(
 
 		for (const sec of ctx.sections || []) {
 			if (sec.sectionNumber === 0) continue;
+			if (!sec.weekStart && !sec.weekEnd) continue;
 			const isExperimentSection =
-				/\b(?:experiment|deney|lab(?:oratory)?\s*schedule|group\s*info|lab\s*\d+)\b/i.test(
+				/\b(?:experiment\s*\d+|deney\s*\d+|lab\s*\d+)\b/i.test(
 					sec.name || '',
 				) ||
 				(sec.modules || []).some(
 					(m) =>
 						(m.modname === 'page' || m.modname === 'label') &&
-						/\b(?:experiment\s*\d+|deney\s*\d+|lab(?:oratory)?\s*schedule)\b/i.test(
+						/\b(?:experiment\s*\d+|deney\s*\d+)\b/i.test(
 							`${m.name || ''} ${m.description || ''}`,
 						),
 				);
