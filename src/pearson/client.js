@@ -1,6 +1,9 @@
 import * as cheerio from 'cheerio';
-import axios from 'axios';
-import { parsePearsonAssignments, parsePearsonApiPayloads } from './parser.js';
+import {
+	parsePearsonAssignments,
+	parsePearsonApiPayloads,
+	mergePearsonAssignmentLists,
+} from './parser.js';
 
 export const KNOWN_PEARSON_LTI = {
 	5083: { id: 24039, name: 'Pearson MyLab (MATH 119)' },
@@ -110,7 +113,7 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 				try {
 					const u = res.url();
 					if (
-						/go-mpulse|nr-data|5iZsi4dvD|google-analytics|doubleclick|fonts\.|zoominsoftware|platform-terms|feature\/config|telemetry|sessioninfo|onetrust/i.test(
+						/go-mpulse|nr-data|5iZsi4dvD|google-analytics|doubleclick|fonts\.|zoominsoftware|platform-terms|feature\/config|telemetry|sessioninfo|onetrust|cookielaw|pendo|mixpanel|split\.io|appcues|akamaihd/i.test(
 							u,
 						)
 					) {
@@ -121,7 +124,12 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 					if (ct.includes('json') || reqType === 'xhr' || reqType === 'fetch') {
 						const text = await res.text();
 						if (text && text.length > 2 && text.length < 2000000) {
-							const maxSample = u.includes('links/search') ? 2500 : 350;
+							const isKeyEndpoint =
+								u.includes('links/search') ||
+								u.includes('studenthomedata') ||
+								u.includes('getStdAssignmentData') ||
+								u.includes('myct/mastering');
+							const maxSample = isKeyEndpoint ? 4000 : 350;
 							console.log(
 								`[Pearson API] status=${res.status()} url=${u.slice(0, 150)} len=${text.length} sample=${text.replace(/\s+/g, ' ').slice(0, maxSample)}`,
 							);
@@ -188,7 +196,7 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 		}
 
 		// Inspect all open pages and their frames
-		const allHtmlBlocks = [];
+		const allFramesData = [];
 		for (const p of context.pages()) {
 			console.log(`[Pearson Page Summary] url=${p.url()} title="${await p.title().catch(() => '')}"`);
 			for (const f of p.frames()) {
@@ -202,12 +210,12 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 					).trim();
 					if (bodyText) {
 						console.log(
-							`  [Frame] url=${fUrl.slice(0, 130)} text="${bodyText.replace(/\s+/g, ' ').slice(0, 500)}"`,
+							`  [Frame] url=${fUrl.slice(0, 130)} text="${bodyText.replace(/\s+/g, ' ').slice(0, 1000)}"`,
 						);
 					}
 					const html = await f.content().catch(() => '');
-					if (html && html.length > 50) {
-						allHtmlBlocks.push(html);
+					if ((html && html.length > 50) || bodyText) {
+						allFramesData.push({ html, text: bodyText });
 					}
 				} catch {
 					// ignore
@@ -215,35 +223,42 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 			}
 		}
 
-		// 1. Try parsing captured JSON API payloads first
-		const apiAssignments = parsePearsonApiPayloads(capturedApiPayloads, {
+		const metadata = {
 			courseId,
 			courseName,
 			url: ltiActivity.url,
-		});
+		};
+
+		// 1. Parse captured JSON API payloads
+		const apiAssignments = parsePearsonApiPayloads(capturedApiPayloads, metadata);
 		if (apiAssignments.length > 0) {
 			console.log(
 				`[Pearson Playwright] Extracted ${apiAssignments.length} assignments from JSON API!`,
 			);
-			return apiAssignments;
 		}
 
-		// 2. Try parsing rendered HTML frames
-		for (const html of allHtmlBlocks) {
-			const domAssignments = parsePearsonAssignments(html, {
-				courseId,
-				courseName,
-				url: ltiActivity.url,
-			});
+		// 2. Parse rendered HTML + innerText frames
+		const domLists = [];
+		for (const frame of allFramesData) {
+			const domAssignments = parsePearsonAssignments(frame.html, metadata, frame.text);
 			if (domAssignments.length > 0) {
-				console.log(
-					`[Pearson Playwright] Extracted ${domAssignments.length} assignments from rendered DOM!`,
-				);
-				return domAssignments;
+				domLists.push(domAssignments);
 			}
 		}
 
-		return [];
+		const merged = mergePearsonAssignmentLists(apiAssignments, ...domLists);
+		if (merged.length > 0) {
+			console.log(
+				`[Pearson Playwright] Total merged Pearson assignments for ${courseName}: ${merged.length}`,
+			);
+			for (const a of merged) {
+				console.log(
+					`  -> ${a.id} | "${a.title}" | openAt=${a.openAt} | dueAt=${a.dueAt} | status=${a.status}`,
+				);
+			}
+		}
+
+		return merged;
 	} finally {
 		await browser.close();
 	}
