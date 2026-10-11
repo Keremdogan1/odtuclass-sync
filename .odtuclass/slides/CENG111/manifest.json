@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-11T10:25:38.423Z",
+  "slides": {
+    "CENG111-2026--Week1a.pdf": {
+      "id": "slide:5129:CENG111-2026--Week1a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week1a.pdf",
+      "filename": "CENG111-2026--Week1a.pdf",
+      "weekKey": "1a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1a.pdf?forcedownload=1",
+      "filesize": 1533819,
+      "syncedAt": "2026-10-11T10:25:37.002Z"
+    },
+    "CENG111-2026--Week1b.pdf": {
+      "id": "slide:5129:CENG111-2026--Week1b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week1b.pdf",
+      "filename": "CENG111-2026--Week1b.pdf",
+      "weekKey": "1b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week1b.pdf?forcedownload=1",
+      "filesize": 2828417,
+      "syncedAt": "2026-10-11T10:25:37.586Z"
+    },
+    "CENG111-2026--Week2a.pdf": {
+      "id": "slide:5129:CENG111-2026--Week2a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week2a.pdf",
+      "filename": "CENG111-2026--Week2a.pdf",
+      "weekKey": "2a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2a.pdf?forcedownload=1",
+      "filesize": 2060201,
+      "syncedAt": "2026-10-11T10:25:37.894Z"
+    },
+    "CENG111-2026--Week2b.pdf": {
+      "id": "slide:5129:CENG111-2026--Week2b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "title": "CENG111-2026--Week2b.pdf",
+      "filename": "CENG111-2026--Week2b.pdf",
+      "weekKey": "2b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week2b.pdf?forcedownload=1",
+      "filesize": 1348224,
+      "syncedAt": "2026-10-11T10:25:38.065Z"
+    }
+  }
+}
