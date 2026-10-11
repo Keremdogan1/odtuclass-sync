@@ -2,18 +2,24 @@ import * as cheerio from 'cheerio';
 import { createHash } from 'node:crypto';
 
 export function derivePearsonSlug(title, fallbackId = null) {
-	const t = (title || '').toLowerCase();
+	const t = (title || '')
+		.toLowerCase()
+		.replace(/^(?:homework|quiz|test)\s*:\s*/i, '')
+		.trim();
 	if (/preliminaries|ch\.?\s*0\b/i.test(t)) return 'pearson-ch0';
 	if (/limit\s+and\s+continuity.*basics/i.test(t)) return 'pearson-limit-continuity';
+	if (/formal\s+definitions.*differentiation/i.test(t)) return 'pearson-formal-definitions';
 	if (/physics\s+primer/i.test(t)) return 'pearson-primer';
 	if (/mathematics\s+review/i.test(t)) return 'pearson-math-review';
 	if (/introduction\s+to\s+mastering/i.test(t)) return 'pearson-intro';
-	if (fallbackId) return `pearson-${fallbackId}`;
 	const slug = t
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '')
-		.slice(0, 32);
-	return `pearson-${slug || createHash('md5').update(title).digest('hex').slice(0, 8)}`;
+		.slice(0, 32)
+		.replace(/-+$/g, '');
+	if (slug) return `pearson-${slug}`;
+	if (fallbackId) return `pearson-${fallbackId}`;
+	return `pearson-${createHash('md5').update(title || '').digest('hex').slice(0, 8)}`;
 }
 
 const MONTH_MAP = {
