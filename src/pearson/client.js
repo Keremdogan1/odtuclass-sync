@@ -47,7 +47,6 @@ export async function findPearsonLtiActivities(client, course) {
 			}
 		});
 
-		// Fallback for known courses if not found in HTML
 		if (activities.length === 0 && KNOWN_PEARSON_LTI[course.id]) {
 			const known = KNOWN_PEARSON_LTI[course.id];
 			activities.push({
@@ -82,7 +81,9 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 		? `${client.baseUrl}/mod/lti/launch.php?id=${ltiId}&triggerview=0`
 		: ltiActivity.url;
 
-	console.log(`[Pearson Playwright] Launching headless browser for ${courseName} (${launchUrl})...`);
+	console.log(
+		`[Pearson Playwright] Launching headless browser for ${courseName} (${launchUrl})...`,
+	);
 
 	const browser = await chromium.launch({ headless: true });
 	try {
@@ -108,19 +109,21 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 			targetPage.on('response', async (res) => {
 				try {
 					const u = res.url();
-					if (/go-mpulse|nr-data|5iZsi4dvD|google-analytics|doubleclick|fonts\./i.test(u)) {
+					if (
+						/go-mpulse|nr-data|5iZsi4dvD|google-analytics|doubleclick|fonts\.|zoominsoftware|platform-terms|feature\/config|telemetry|sessioninfo|onetrust/i.test(
+							u,
+						)
+					) {
 						return;
 					}
 					const ct = (res.headers()['content-type'] || '').toLowerCase();
 					const reqType = res.request().resourceType();
-					if (
-						/pearson|mylab|mastering|mathxl|tpi|myct/i.test(u) &&
-						(ct.includes('json') || reqType === 'xhr' || reqType === 'fetch')
-					) {
+					if (ct.includes('json') || reqType === 'xhr' || reqType === 'fetch') {
 						const text = await res.text();
 						if (text && text.length > 2 && text.length < 2000000) {
+							const maxSample = u.includes('links/search') ? 2500 : 350;
 							console.log(
-								`[Pearson API] status=${res.status()} url=${u.slice(0, 140)} len=${text.length} sample=${text.replace(/\s+/g, ' ').slice(0, 220)}`,
+								`[Pearson API] status=${res.status()} url=${u.slice(0, 150)} len=${text.length} sample=${text.replace(/\s+/g, ' ').slice(0, maxSample)}`,
 							);
 							try {
 								const json = JSON.parse(text);
@@ -131,7 +134,7 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 						}
 					}
 				} catch {
-					// ignore response read errors
+					// ignore
 				}
 			});
 		};
@@ -139,12 +142,13 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 		const page = await context.newPage();
 		attachResponseListener(page);
 		context.on('page', (newPage) => {
+			console.log(`[Pearson Playwright] New tab opened: ${newPage.url()}`);
 			attachResponseListener(newPage);
 		});
 
 		await page.goto(launchUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-		// Wait up to 20s for Pearson OIDC SSO + Console Dashboard to render visible text
+		// Wait up to 20s for Pearson Console Dashboard to render
 		await page
 			.waitForFunction(
 				() => document.body && document.body.innerText.trim().length > 30,
@@ -157,88 +161,51 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 			`[Pearson Playwright] Landed on URL: ${page.url()} | Title: "${await page.title()}"`,
 		);
 
-		let activePage = page;
-		for (let step = 0; step < 3; step++) {
-			const frames = activePage.frames();
-			for (const frame of frames) {
+		// Extract the "Open MyLab" / "Open Mastering" href if present
+		const openHref = await page
+			.locator('a:has-text("Open MyLab"), a:has-text("Open Mastering")')
+			.first()
+			.getAttribute('href')
+			.catch(() => null);
+
+		// Also click the "Assignments" link on the dashboard via DOM click
+		const assignmentsLink = page.locator('a:has-text("Assignments")').first();
+		if ((await assignmentsLink.count()) > 0) {
+			console.log('[Pearson Playwright] Triggering DOM click on "Assignments" link...');
+			await assignmentsLink.evaluate((el) => el.click()).catch(() => {});
+			await page.waitForTimeout(8000);
+		}
+
+		// Also navigate directly to openHref in a second tab to capture Course Home / MyLab / Mastering
+		if (openHref && openHref.startsWith('http')) {
+			console.log(`[Pearson Playwright] Navigating directly to course URL: ${openHref}`);
+			const coursePage = await context.newPage();
+			attachResponseListener(coursePage);
+			await coursePage
+				.goto(openHref, { waitUntil: 'domcontentloaded', timeout: 25000 })
+				.catch((e) => console.warn(`  coursePage goto warn: ${e.message}`));
+			await coursePage.waitForTimeout(10000);
+		}
+
+		// Inspect all open pages and their frames
+		const allHtmlBlocks = [];
+		for (const p of context.pages()) {
+			console.log(`[Pearson Page Summary] url=${p.url()} title="${await p.title().catch(() => '')}"`);
+			for (const f of p.frames()) {
 				try {
-					const fUrl = frame.url();
+					const fUrl = f.url();
 					if (!fUrl || fUrl === 'about:blank' || fUrl.includes('checkSessionFrame')) {
 						continue;
 					}
 					const bodyText = (
-						await frame.locator('body').innerText({ timeout: 3000 }).catch(() => '')
+						await f.locator('body').innerText({ timeout: 2500 }).catch(() => '')
 					).trim();
 					if (bodyText) {
 						console.log(
-							`[Pearson Frame step=${step}] url=${fUrl.slice(0, 110)} text="${bodyText.replace(/\s+/g, ' ').slice(0, 350)}"`,
+							`  [Frame] url=${fUrl.slice(0, 130)} text="${bodyText.replace(/\s+/g, ' ').slice(0, 500)}"`,
 						);
 					}
-
-					const interactiveTexts = await frame
-						.locator('a, button')
-						.evaluateAll((els) =>
-							els
-								.map((e) => ({
-									tag: e.tagName,
-									text: (e.innerText || e.textContent || '').trim().replace(/\s+/g, ' '),
-									href: e.getAttribute('href') || '',
-								}))
-								.filter((x) => x.text.length > 0),
-						)
-						.catch(() => []);
-
-					if (interactiveTexts.length > 0) {
-						console.log(
-							`[Pearson Frame Interactives step=${step}]`,
-							JSON.stringify(interactiveTexts.slice(0, 15)),
-						);
-					}
-
-					const launchLink = frame
-						.locator(
-							'a:has-text("Open MyLab"), button:has-text("Open MyLab"), a:has-text("Open Mastering"), button:has-text("Open Mastering"), a:has-text("Assignments"), button:has-text("Assignments"), a:has-text("All Assignments"), a:has-text("Course Home"), a[href*="PlayerHomework"], a[href*="assignments"]',
-						)
-						.first();
-
-					if ((await launchLink.count()) > 0) {
-						const href = await launchLink.getAttribute('href');
-						const linkText = (await launchLink.innerText().catch(() => '')).trim();
-						console.log(
-							`[Pearson Playwright] Clicking "${linkText}" (href=${href || 'none'})`,
-						);
-
-						const popupPromise = context
-							.waitForEvent('page', { timeout: 8000 })
-							.catch(() => null);
-						await launchLink.click({ timeout: 5000 }).catch(() => {});
-						const popup = await popupPromise;
-						if (popup) {
-							activePage = popup;
-							console.log(`[Pearson Playwright] Switched to popup: ${activePage.url()}`);
-						}
-						await activePage
-							.waitForFunction(
-								() => document.body && document.body.innerText.trim().length > 40,
-								{ timeout: 15000 },
-							)
-							.catch(() => {});
-						await activePage.waitForTimeout(5000);
-						break;
-					}
-				} catch {
-					// ignore frame errors
-				}
-			}
-		}
-
-		// Collect HTML from all frames on activePage and original page
-		const allHtmlBlocks = [];
-		const pagesToInspect = activePage === page ? [page] : [page, activePage];
-		for (const p of pagesToInspect) {
-			for (const f of p.frames()) {
-				try {
-					const html = await f.content();
+					const html = await f.content().catch(() => '');
 					if (html && html.length > 50) {
 						allHtmlBlocks.push(html);
 					}
@@ -255,7 +222,9 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 			url: ltiActivity.url,
 		});
 		if (apiAssignments.length > 0) {
-			console.log(`[Pearson Playwright] Extracted ${apiAssignments.length} assignments from JSON API!`);
+			console.log(
+				`[Pearson Playwright] Extracted ${apiAssignments.length} assignments from JSON API!`,
+			);
 			return apiAssignments;
 		}
 
@@ -267,7 +236,9 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 				url: ltiActivity.url,
 			});
 			if (domAssignments.length > 0) {
-				console.log(`[Pearson Playwright] Extracted ${domAssignments.length} assignments from rendered DOM!`);
+				console.log(
+					`[Pearson Playwright] Extracted ${domAssignments.length} assignments from rendered DOM!`,
+				);
 				return domAssignments;
 			}
 		}
@@ -278,138 +249,21 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 	}
 }
 
-/**
- * Performs LTI Launch from ODTUClass into Pearson platform,
- * maintains session cookies, and fetches assignment payload.
- */
 export async function fetchPearsonAssignments(client, ltiActivity) {
-	const courseId = ltiActivity.courseId;
 	const courseName = ltiActivity.courseName;
 	const ltiId = ltiActivity.ltiId;
-	const ltiUrl = ltiActivity.url;
 	const launchUrl = ltiId
 		? `${client.baseUrl}/mod/lti/launch.php?id=${ltiId}&triggerview=0`
-		: ltiUrl;
+		: ltiActivity.url;
 
 	console.log(`[Pearson] Initiating LTI launch for ${courseName} (${launchUrl})...`);
 
 	try {
-		// Try Playwright headless browser first for full JS SPA & API support
 		const pwResults = await fetchPearsonViaPlaywright(client, ltiActivity);
 		if (pwResults && pwResults.length > 0) {
 			return pwResults;
 		}
-
-		// Fallback to direct HTTP launch via launch.php
-		const ltiPageRes = await client.request('GET', launchUrl);
-		const $ = cheerio.load(ltiPageRes.data);
-
-		const form = $(
-			'form#ltiLaunchForm, form[name="ltiLaunchForm"], form[action*="pearson"], form[action*="lti"]',
-		).first();
-		const actionUrl = form.attr('action');
-
-		if (!actionUrl || !actionUrl.startsWith('http')) {
-			console.log(
-				`[Pearson] No direct auto-submit form on ${launchUrl} (finalUrl=${ltiPageRes.finalUrl}).`,
-			);
-			return [];
-		}
-
-		console.log(`[Pearson HTTP] Submitting LTI form to: ${actionUrl}`);
-
-		const formData = new URLSearchParams();
-		form.find('input[name]').each((_, input) => {
-			const name = $(input).attr('name');
-			const value = $(input).attr('value') || '';
-			formData.append(name, value);
-		});
-
-		const pearsonCookies = new Map();
-		const trackCookies = (res) => {
-			const setCookie = res.headers['set-cookie'];
-			if (setCookie) {
-				for (const c of setCookie) {
-					const [nv] = c.split(';');
-					const sep = nv.indexOf('=');
-					if (sep > 0) {
-						pearsonCookies.set(nv.slice(0, sep).trim(), nv.slice(sep + 1).trim());
-					}
-				}
-			}
-		};
-
-		const getCookieHeader = () => {
-			return Array.from(pearsonCookies.entries())
-				.map(([k, v]) => `${k}=${v}`)
-				.join('; ');
-		};
-
-		const launchRes = await axios.post(actionUrl, formData.toString(), {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-				'User-Agent':
-					'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-				Referer: launchUrl,
-			},
-			maxRedirects: 5,
-			validateStatus: () => true,
-		});
-
-		trackCookies(launchRes);
-
-		const landingHtml = typeof launchRes.data === 'string' ? launchRes.data : '';
-		console.log(
-			`[Pearson HTTP] Landing status=${launchRes.status} len=${landingHtml.length} snippet="${landingHtml.replace(/\s+/g, ' ').slice(0, 200)}"`,
-		);
-
-		const assignments = parsePearsonAssignments(landingHtml, {
-			courseId,
-			courseName,
-			url: ltiUrl,
-		});
-
-		if (assignments.length > 0) {
-			console.log(`[Pearson] Found ${assignments.length} assignments on landing page.`);
-			return assignments;
-		}
-
-		const landing$ = cheerio.load(landingHtml);
-		const iframeSrc = landing$(
-			'iframe[src*="assignments"], iframe[src*="PlayerHomework"], iframe[src*="myct"]',
-		).attr('src');
-
-		if (iframeSrc) {
-			const fullIframeUrl = iframeSrc.startsWith('http')
-				? iframeSrc
-				: new URL(iframeSrc, launchRes.config.url || actionUrl).href;
-			console.log(`[Pearson] Fetching assignments iframe: ${fullIframeUrl}...`);
-
-			const iframeRes = await axios.get(fullIframeUrl, {
-				headers: {
-					'User-Agent':
-						'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-					Cookie: getCookieHeader(),
-					Referer: launchRes.config.url || actionUrl,
-				},
-				validateStatus: () => true,
-			});
-
-			trackCookies(iframeRes);
-			const iframeHtml = typeof iframeRes.data === 'string' ? iframeRes.data : '';
-			const iframeAssignments = parsePearsonAssignments(iframeHtml, {
-				courseId,
-				courseName,
-				url: ltiUrl,
-			});
-
-			if (iframeAssignments.length > 0) {
-				console.log(`[Pearson] Found ${iframeAssignments.length} assignments inside iframe.`);
-				return iframeAssignments;
-			}
-		}
-
-		return assignments;
+		return [];
 	} catch (err) {
 		console.warn(
 			`[Pearson] Automated LTI launch encountered an error for ${courseName}: ${err.message}`,
