@@ -570,6 +570,24 @@
       "contentHash": "2a67cf6bab1034d6c97d3ea7927831a3283d8fb596ba36be13aa9a17a4632825",
       "event": "created",
       "seenAt": "2026-10-11T16:59:09.163Z"
+    },
+    "assignment:4849:pearson-hw-01": {
+      "id": "assignment:4849:pearson-hw-01",
+      "type": "assignment",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": "pearson-hw-01",
+      "moduleType": "pearson",
+      "title": "HW-01",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=8699",
+      "openAt": "2026-09-24T04:00:00.000Z",
+      "dueAt": "2026-10-18T20:59:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "content": "HW-01 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-10-18T20:59:00.000Z | Status: todo",
+      "contentHash": "ee4bd47e51aef62e22fbba591cfb3365e22d6dc58b52a1d821bfaf5809845a88",
+      "event": "created",
+      "seenAt": "2026-10-11T21:18:54.665Z"
     }
   },
   "sections": {
