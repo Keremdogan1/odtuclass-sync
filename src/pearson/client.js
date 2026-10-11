@@ -108,15 +108,19 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 			targetPage.on('response', async (res) => {
 				try {
 					const u = res.url();
+					if (/go-mpulse|nr-data|5iZsi4dvD|google-analytics|doubleclick|fonts\./i.test(u)) {
+						return;
+					}
 					const ct = (res.headers()['content-type'] || '').toLowerCase();
+					const reqType = res.request().resourceType();
 					if (
 						/pearson|mylab|mastering|mathxl|tpi|myct/i.test(u) &&
-						(ct.includes('json') || /assignment|homework|coursehome|student|grade|item/i.test(u))
+						(ct.includes('json') || reqType === 'xhr' || reqType === 'fetch')
 					) {
 						const text = await res.text();
 						if (text && text.length > 2 && text.length < 2000000) {
 							console.log(
-								`[Pearson API Response] status=${res.status()} url=${u.slice(0, 140)} len=${text.length}`,
+								`[Pearson API] status=${res.status()} url=${u.slice(0, 140)} len=${text.length} sample=${text.replace(/\s+/g, ' ').slice(0, 220)}`,
 							);
 							try {
 								const json = JSON.parse(text);
@@ -139,50 +143,88 @@ async function fetchPearsonViaPlaywright(client, ltiActivity) {
 		});
 
 		await page.goto(launchUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
-		await page.waitForTimeout(5000);
 
-		console.log(`[Pearson Playwright] Landed on URL: ${page.url()} | Title: "${await page.title()}"`);
+		// Wait up to 20s for Pearson OIDC SSO + Console Dashboard to render visible text
+		await page
+			.waitForFunction(
+				() => document.body && document.body.innerText.trim().length > 30,
+				{ timeout: 20000 },
+			)
+			.catch(() => {});
+		await page.waitForTimeout(3000);
 
-		// Check all frames for buttons/links that launch MyLab / Mastering or Assignments
+		console.log(
+			`[Pearson Playwright] Landed on URL: ${page.url()} | Title: "${await page.title()}"`,
+		);
+
 		let activePage = page;
 		for (let step = 0; step < 3; step++) {
 			const frames = activePage.frames();
 			for (const frame of frames) {
 				try {
 					const fUrl = frame.url();
-					if (!fUrl || fUrl === 'about:blank') continue;
-					const bodyText = (await frame.locator('body').innerText({ timeout: 2000 })).trim();
-					console.log(
-						`[Pearson Frame step=${step}] url=${fUrl.slice(0, 120)} textSnippet="${bodyText.replace(/\s+/g, ' ').slice(0, 200)}"`,
-					);
+					if (!fUrl || fUrl === 'about:blank' || fUrl.includes('checkSessionFrame')) {
+						continue;
+					}
+					const bodyText = (
+						await frame.locator('body').innerText({ timeout: 3000 }).catch(() => '')
+					).trim();
+					if (bodyText) {
+						console.log(
+							`[Pearson Frame step=${step}] url=${fUrl.slice(0, 110)} text="${bodyText.replace(/\s+/g, ' ').slice(0, 350)}"`,
+						);
+					}
 
-					// Look for launch button or Assignments link
-					const launchLink = frame.locator(
-						'a:has-text("Open MyLab"), button:has-text("Open MyLab"), a:has-text("Launch"), button:has-text("Launch"), a:has-text("Assignments"), a:has-text("All Assignments"), a:has-text("Course Home"), a[href*="PlayerHomework"], a[href*="assignments"]',
-					).first();
+					const interactiveTexts = await frame
+						.locator('a, button')
+						.evaluateAll((els) =>
+							els
+								.map((e) => ({
+									tag: e.tagName,
+									text: (e.innerText || e.textContent || '').trim().replace(/\s+/g, ' '),
+									href: e.getAttribute('href') || '',
+								}))
+								.filter((x) => x.text.length > 0),
+						)
+						.catch(() => []);
+
+					if (interactiveTexts.length > 0) {
+						console.log(
+							`[Pearson Frame Interactives step=${step}]`,
+							JSON.stringify(interactiveTexts.slice(0, 15)),
+						);
+					}
+
+					const launchLink = frame
+						.locator(
+							'a:has-text("Open MyLab"), button:has-text("Open MyLab"), a:has-text("Open Mastering"), button:has-text("Open Mastering"), a:has-text("Assignments"), button:has-text("Assignments"), a:has-text("All Assignments"), a:has-text("Course Home"), a[href*="PlayerHomework"], a[href*="assignments"]',
+						)
+						.first();
 
 					if ((await launchLink.count()) > 0) {
 						const href = await launchLink.getAttribute('href');
-						const linkText = (await launchLink.innerText()).trim();
-						console.log(`[Pearson Playwright] Found interactive link/button: "${linkText}" (href=${href || 'none'})`);
+						const linkText = (await launchLink.innerText().catch(() => '')).trim();
+						console.log(
+							`[Pearson Playwright] Clicking "${linkText}" (href=${href || 'none'})`,
+						);
 
-						if (href && href.startsWith('http')) {
-							await activePage.goto(href, { waitUntil: 'domcontentloaded', timeout: 25000 });
-							await activePage.waitForTimeout(5000);
-							break;
-						} else {
-							const popupPromise = context.waitForEvent('page', { timeout: 6000 }).catch(() => null);
-							await launchLink.click({ timeout: 5000 }).catch(() => {});
-							const popup = await popupPromise;
-							if (popup) {
-								activePage = popup;
-								await activePage.waitForLoadState('domcontentloaded').catch(() => {});
-								await activePage.waitForTimeout(5000);
-							} else {
-								await activePage.waitForTimeout(5000);
-							}
-							break;
+						const popupPromise = context
+							.waitForEvent('page', { timeout: 8000 })
+							.catch(() => null);
+						await launchLink.click({ timeout: 5000 }).catch(() => {});
+						const popup = await popupPromise;
+						if (popup) {
+							activePage = popup;
+							console.log(`[Pearson Playwright] Switched to popup: ${activePage.url()}`);
 						}
+						await activePage
+							.waitForFunction(
+								() => document.body && document.body.innerText.trim().length > 40,
+								{ timeout: 15000 },
+							)
+							.catch(() => {});
+						await activePage.waitForTimeout(5000);
+						break;
 					}
 				} catch {
 					// ignore frame errors

@@ -220,11 +220,11 @@ Respond ONLY with valid JSON in this exact structure:
 	const candidateModels = [
 		process.env.GEMINI_MODEL,
 		'gemini-2.5-flash',
+		'gemini-2.5-flash-lite',
 		'gemini-2.0-flash',
-		'gemini-1.5-flash',
 	].filter(Boolean);
 
-	let lastError = null;
+	const errors = [];
 	for (const model of candidateModels) {
 		try {
 			const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -241,14 +241,15 @@ Respond ONLY with valid JSON in this exact structure:
 			});
 
 			if (!response.ok) {
-				lastError = new Error(`Gemini API (${model}) HTTP ${response.status}: ${response.statusText}`);
+				const errBody = await response.text().catch(() => '');
+				errors.push(`${model}: HTTP ${response.status} (${errBody.slice(0, 120)})`);
 				continue;
 			}
 
 			const data = await response.json();
 			const contentText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 			if (!contentText) {
-				lastError = new Error(`Empty response from Gemini API (${model}).`);
+				errors.push(`${model}: Empty response`);
 				continue;
 			}
 
@@ -263,11 +264,11 @@ Respond ONLY with valid JSON in this exact structure:
 				reason: `Gemini (${model}): ${parsed.reason || 'AI evaluated'}`,
 			};
 		} catch (err) {
-			lastError = err;
+			errors.push(`${model}: ${err.message}`);
 		}
 	}
 
-	throw lastError || new Error('All Gemini candidate models failed.');
+	throw new Error(errors.join(' | ') || 'All Gemini candidate models failed.');
 }
 
 export async function classifyPdf(metadata = {}, pdfText = '', options = {}) {
