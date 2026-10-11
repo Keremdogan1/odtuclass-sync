@@ -6,12 +6,12 @@
   "moduleId": "pearson-intro",
   "moduleType": "pearson",
   "title": "Introduction to MasteringPhysics",
-  "url": "https://session.physics-mastering.pearson.com#/#",
-  "openAt": null,
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=8699",
+  "openAt": "2026-09-24T04:00:00.000Z",
   "dueAt": "2026-12-31T20:59:00.000Z",
   "closeAt": null,
   "status": "done",
-  "content": "Introduction to MasteringPhysics12/31/2026 11:59 PM6 of 6 complete",
-  "contentHash": "1a0eacece74f17f9fef9509ed87dd93d4a75b2745a65a77b7249cfa03940f486",
+  "content": "Introduction to MasteringPhysics | Start: 2026-09-24T04:00:00.000Z | Due: 2026-12-31T20:59:00.000Z | Status: done",
+  "contentHash": "f4917318ac7fd82dcc4c4801a0215d650eb6f68459a1ac6c947f6bb7dd834348",
   "event": "created"
 }

@@ -6,12 +6,12 @@
   "moduleId": "pearson-primer",
   "moduleType": "pearson",
   "title": "Physics Primer",
-  "url": "https://session.physics-mastering.pearson.com#/#",
-  "openAt": null,
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=8699",
+  "openAt": "2026-09-24T04:00:00.000Z",
   "dueAt": "2026-12-31T20:59:00.000Z",
   "closeAt": null,
   "status": "done",
-  "content": "Physics Primer12/31/2026 11:59 PM10 of 10 complete",
-  "contentHash": "eeedb3483a89945dc39d11ca5c046d3272b8b935272c1853773c2bcaf13baf84",
+  "content": "Physics Primer | Start: 2026-09-24T04:00:00.000Z | Due: 2026-12-31T20:59:00.000Z | Status: done",
+  "contentHash": "0056e568feee74dc0404f6f580d21328ac49d51b3c244e3e7f26dec6555e0952",
   "event": "created"
 }
