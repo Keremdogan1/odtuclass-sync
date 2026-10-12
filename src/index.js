@@ -6,6 +6,7 @@ import { getCourseSections } from './odtuclass/sections.js';
 import { getCourseResources, fetchResourceBuffer } from './odtuclass/resources.js';
 import { syncCeng111Slides } from './odtuclass/slides.js';
 import { getEnrichedCalendarTasks } from './odtuclass/calendar.js';
+import { getCourseAnnouncements } from './odtuclass/announcements.js';
 import { extractPdfText, parseCoursePdf } from './pdf/extractor.js';
 import { classifyPdf } from './pdf/classifier.js';
 import {
@@ -35,7 +36,8 @@ try {
 		);
 	}
 
-	const client = new ODTUClassClient(2026, 'f');
+	const client = new ODTUClassClient();
+	console.log(`Target ODTUClass instance: ${client.baseUrl} (${client.year} / ${client.semester})`);
 
 	await login(client, username, password);
 
@@ -319,6 +321,40 @@ try {
 	} catch (calendarPipelineError) {
 		console.error('\n=== CALENDAR PIPELINE ERROR ===');
 		console.error(calendarPipelineError.message);
+	}
+
+	// --- 7. Course Forum Announcements Pipeline (Notification-Only, Isolated) ---
+	try {
+		console.log('\nChecking course forum announcements...');
+		const announcements = await getCourseAnnouncements(client, courses);
+		console.log(`Found ${announcements.length} forum announcement thread(s).`);
+		if (announcements.length > 0) {
+			const preSyncResult = await syncAssignments([]);
+			const hadPriorAnnouncements = Object.keys(
+				preSyncResult.state?.assignments || {},
+			).some((k) => k.startsWith('announcement:'));
+
+			const annSyncResult = await syncAssignments(announcements);
+			if (!hadPriorAnnouncements) {
+				console.log(
+					`Initial announcement baseline saved (${announcements.length} existing thread(s) recorded without notification spam).`,
+				);
+			} else {
+				for (const newAnn of annSyncResult.newAssignments) {
+					try {
+						await notifyNewAssignment(newAnn);
+						console.log(`Notified new forum announcement: "${newAnn.title}"`);
+					} catch (notifyError) {
+						console.warn(
+							`Failed notification for ${newAnn.id}: ${notifyError.message}`,
+						);
+					}
+				}
+			}
+		}
+	} catch (annPipelineError) {
+		console.error('\n=== ANNOUNCEMENTS PIPELINE ERROR ===');
+		console.error(annPipelineError.message);
 	}
 } catch (error) {
 	console.error('\n=== TEST FAILED ===');

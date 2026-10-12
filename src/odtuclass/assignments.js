@@ -13,6 +13,7 @@ const ASSIGNMENT_TYPES = new Set([
 	'questionnaire',
 	'workshop',
 	'lesson',
+	'vpl',
 ]);
 
 const ADMIN_FORM_TYPES = new Set(['choice', 'feedback', 'questionnaire']);

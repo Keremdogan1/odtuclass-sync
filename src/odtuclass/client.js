@@ -1,4 +1,51 @@
 import axios from 'axios';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function resolveAcademicTerm(now = new Date(), configPath = path.resolve(process.cwd(), '.odtuclass/config.json')) {
+	let cfgYear = process.env.ODTU_YEAR;
+	let cfgSem = process.env.ODTU_SEMESTER;
+
+	try {
+		if (fs.existsSync(configPath)) {
+			const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+			if (!cfgYear && raw?.academicYear && raw.academicYear !== 'auto') {
+				cfgYear = String(raw.academicYear);
+			}
+			if (!cfgSem && raw?.semester && raw.semester !== 'auto') {
+				cfgSem = String(raw.semester);
+			}
+		}
+	} catch {
+		// ignore config read errors
+	}
+
+	const month = now.getMonth() + 1; // 1..12
+	const calendarYear = now.getFullYear();
+
+	let autoYear = calendarYear;
+	let autoSem = 'f';
+
+	if (month >= 9 && month <= 12) {
+		autoYear = calendarYear;
+		autoSem = 'f';
+	} else if (month === 1) {
+		// January belongs to the Fall semester that started in September of the previous calendar year
+		autoYear = calendarYear - 1;
+		autoSem = 'f';
+	} else if (month >= 2 && month <= 6) {
+		autoYear = calendarYear;
+		autoSem = 's';
+	} else {
+		autoYear = calendarYear;
+		autoSem = 'u';
+	}
+
+	const year = cfgYear ? Number.parseInt(cfgYear, 10) || autoYear : autoYear;
+	const semester = (cfgSem ? cfgSem.trim().toLowerCase() : autoSem) || autoSem;
+
+	return { year, semester };
+}
 
 export function makeBaseUrl(year, semester) {
 	const semesterPrefix =
@@ -9,9 +56,10 @@ export function makeBaseUrl(year, semester) {
 
 export class ODTUClassClient {
 	constructor(year, semester) {
-		this.year = year;
-		this.semester = semester;
-		this.baseUrl = makeBaseUrl(year, semester);
+		const resolved = (!year || !semester) ? resolveAcademicTerm() : { year, semester };
+		this.year = resolved.year;
+		this.semester = resolved.semester;
+		this.baseUrl = makeBaseUrl(this.year, this.semester);
 
 		this.cookies = {};
 		this.sesskey = null;

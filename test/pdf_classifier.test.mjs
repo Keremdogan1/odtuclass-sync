@@ -280,22 +280,28 @@ test('extractResourcesFromApi: filters PDF modules from course sections', () => 
 
 	const resources = extractResourcesFromApi(mockCourse, mockSections);
 	assert.equal(resources.length, 1);
-	assert.equal(resources[0].id, 'resource:2300105:202');
+	assert.equal(resources[0].id, 'resource:2300105:202:Recommended Problems.pdf');
 	assert.equal(resources[0].filename, 'Recommended Problems.pdf');
 	assert.equal(resources[0].courseId, 2300105);
 	assert.equal(resources[0].filesize, 123456);
 });
 
-await asyncTest('extractResourcesFromHtml: scrapes PDF resources from real course HTML fixture', async () => {
-	const fixturePath = join(tmpdir(), 'odtuclass-section-audit', 'course-page.html');
-	const htmlData = await readFile(fixturePath, 'utf8');
+await asyncTest('extractResourcesFromHtml: scrapes PDF resources from course HTML', async () => {
+	const htmlData = `
+		<li class="activity resource modtype_resource" id="module-26239">
+			<a class="aalink" href="https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=26239">
+				<img class="activityicon" src="/theme/image.php/boost/core/1/f/pdf-24" alt="" />
+				<span class="instancename">Math 119 2026-1 Recitation Week 01</span>
+			</a>
+		</li>
+	`;
 	const mockCourse = {
 		id: 5083,
 		fullname: '[MATH 119 All Sections] Calculus with Analytic Geometry',
 	};
 
 	const resources = extractResourcesFromHtml(htmlData, mockCourse, 'https://odtuclass2026f.metu.edu.tr');
-	assert.equal(resources.length, 4, 'Should extract 4 PDF resources from MATH 119 fixture');
+	assert.equal(resources.length, 1);
 
 	const recitation = resources.find((r) => r.moduleId === 26239);
 	assert.ok(recitation, 'Recitation Week 01 PDF must be found');

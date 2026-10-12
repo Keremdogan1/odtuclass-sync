@@ -1,4 +1,7 @@
 {
+  "language": "tr",
+  "academicYear": "auto",
+  "semester": "auto",
   "ntfyFilter": {
     "assignment": true,
     "quiz": true,

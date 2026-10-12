@@ -16,15 +16,32 @@ const DEFAULT_NTFY_FILTER = {
 };
 
 const CATEGORY_LABELS = {
-	assignment: { prefix: 'Yeni ödev', tag: 'memo' },
-	quiz: { prefix: 'Yeni quiz', tag: 'stopwatch' },
-	recitation: { prefix: 'Yeni çalışma / recitation', tag: 'page_facing_up' },
-	lab: { prefix: 'Yeni lab görevi', tag: 'microscope' },
-	survey: { prefix: 'Yeni anket / seçim', tag: 'bar_chart' },
-	announcement: { prefix: 'Yeni duyuru / etkinlik', tag: 'loudspeaker' },
-	attendance: { prefix: 'Yoklama bildirimi', tag: 'clipboard' },
-	section: { prefix: 'Yeni haftalık içerik', tag: 'books' },
+	assignment: { tr: 'Yeni ödev', en: 'New assignment', tag: 'memo' },
+	quiz: { tr: 'Yeni quiz', en: 'New quiz', tag: 'stopwatch' },
+	recitation: { tr: 'Yeni çalışma / recitation', en: 'New recitation / worksheet', tag: 'page_facing_up' },
+	lab: { tr: 'Yeni lab görevi', en: 'New lab task', tag: 'microscope' },
+	survey: { tr: 'Yeni anket / seçim', en: 'New survey / poll', tag: 'bar_chart' },
+	announcement: { tr: 'Yeni duyuru / etkinlik', en: 'New announcement / event', tag: 'loudspeaker' },
+	attendance: { tr: 'Yoklama bildirimi', en: 'Attendance notice', tag: 'clipboard' },
+	section: { tr: 'Yeni haftalık içerik', en: 'New weekly content', tag: 'books' },
 };
+
+export function loadLanguage(configPath = DEFAULT_CONFIG_PATH) {
+	if (process.env.ODTU_LANG) {
+		const envLang = process.env.ODTU_LANG.trim().toLowerCase();
+		if (envLang === 'en' || envLang === 'tr') return envLang;
+	}
+	try {
+		if (fs.existsSync(configPath)) {
+			const raw = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+			const cfgLang = String(raw?.language || '').trim().toLowerCase();
+			if (cfgLang === 'en' || cfgLang === 'tr') return cfgLang;
+		}
+	} catch {
+		// ignore
+	}
+	return 'tr';
+}
 
 export function loadNtfyFilter(configPath = DEFAULT_CONFIG_PATH) {
 	const filter = { ...DEFAULT_NTFY_FILTER };
@@ -118,7 +135,9 @@ export async function notifyNewAssignment(assignment) {
 		return false;
 	}
 
+	const lang = loadLanguage();
 	const meta = CATEGORY_LABELS[category] || CATEGORY_LABELS.assignment;
+	const prefix = meta[lang] || meta.tr;
 	const baseUrl = process.env.NTFY_URL || DEFAULT_NTFY_URL;
 	const url = `${baseUrl.replace(/\/$/, '')}`;
 
@@ -129,7 +148,7 @@ export async function notifyNewAssignment(assignment) {
 		},
 		body: JSON.stringify({
 			topic,
-			title: `${meta.prefix}: ${assignment.title}`,
+			title: `${prefix}: ${assignment.title}`,
 			message: `${assignment.courseName}\n${assignment.url || assignment.id}`,
 			tags: [meta.tag],
 		}),
@@ -156,13 +175,18 @@ export async function notifySectionEvent(section, eventType) {
 		return false;
 	}
 
+	const lang = loadLanguage();
 	const baseUrl = process.env.NTFY_URL || DEFAULT_NTFY_URL;
 	const url = `${baseUrl.replace(/\/$/, '')}`;
 
 	const actionLabel =
 		eventType === 'updated'
-			? 'Haftalık içerik güncellendi'
-			: 'Yeni haftalık içerik';
+			? lang === 'en'
+				? 'Weekly content updated'
+				: 'Haftalık içerik güncellendi'
+			: lang === 'en'
+				? 'New weekly content'
+				: 'Yeni haftalık içerik';
 
 	const response = await fetch(url, {
 		method: 'POST',
