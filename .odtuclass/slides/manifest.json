@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T04:14:49.713Z",
+  "updatedAt": "2026-10-12T14:08:21.372Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -102,6 +102,21 @@
       "filesize": 4869184,
       "reason": "Gemini (gemini-3-flash-preview): The document is clearly a lecture presentation with slide numbering (e.g., '1 of 53'), an outline, and bulleted educational content regarding the history and structure of DNA.",
       "syncedAt": "2026-10-11T12:00:43.518Z"
+    },
+    "CENG111/Binary.pdf": {
+      "id": "slide:CENG111:Binary.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Binary.pdf",
+      "filename": "Binary.pdf",
+      "formattedFilename": "Binary.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Binary.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Binary.pdf?forcedownload=1",
+      "filesize": 981553,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Lecture #1' and contains instructional content, definitions, and explanations about binary systems, which are characteristic of lecture notes or slides used for teaching a course topic.",
+      "syncedAt": "2026-10-12T13:58:32.229Z"
     }
   },
   "evaluatedNonSlides": {
@@ -167,6 +182,48 @@
       "filename": "Helproom_Schedule_2026-2027_Fall (1).pdf",
       "reason": "Gemini (gemini-flash-latest): This document is an administrative schedule showing helproom hours and assigned teaching assistants.",
       "evaluatedAt": "2026-10-11T17:01:20.878Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/lab_manual_2014.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "lab_manual_2014.pdf",
+      "filename": "lab_manual_2014.pdf",
+      "reason": "Gemini (gemini-flash-latest): This is a laboratory manual/software tutorial for Unix commands and tools, not an assignment or lecture slide deck.",
+      "evaluatedAt": "2026-10-12T13:59:17.607Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/linux_cheat_sheet.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "linux_cheat_sheet.pdf",
+      "filename": "linux_cheat_sheet.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a Linux command cheat sheet, which serves as a technical reference guide or software tutorial rather than a lecture slide deck or an assignment.",
+      "evaluatedAt": "2026-10-12T13:59:30.609Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Optional_Recommendations_for_the_Curious.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Optional_Recommendations_for_the_Curious.pdf",
+      "filename": "Optional_Recommendations_for_the_Curious.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a list of optional external resources and software recommendations for students, which is considered an administrative or resource guide rather than a lecture slide deck or a course assignment.",
+      "evaluatedAt": "2026-10-12T14:04:36.845Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Practice_Recommendations_Linux.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Practice_Recommendations_Linux.pdf",
+      "filename": "Practice_Recommendations_Linux.pdf",
+      "reason": "Gemini (gemini-flash-latest): The document is a resource sheet containing external practice links and reference guides for Linux, rather than an assigned problem set or lecture presentation.",
+      "evaluatedAt": "2026-10-12T14:08:06.469Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Recommended_Links.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Recommended_Links.pdf",
+      "filename": "Recommended_Links.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a list of administrative and helpful links for students, including course schedules, registration information, and lab resources. It does not contain lecture slides or student assignments.",
+      "evaluatedAt": "2026-10-12T14:08:11.256Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=44045": {
+      "courseCode": "MATH119",
+      "title": "Office Hours",
+      "filename": "office hours.xlsx - Sheet1.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative schedule listing instructor office hours and contact information, which does not contain lecture content or student assignments.",
+      "evaluatedAt": "2026-10-12T14:08:16.826Z"
     }
   }
 }

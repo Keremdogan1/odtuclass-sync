@@ -1,0 +1,20 @@
+{
+  "id": "assignment:5129:pdf-c6ecf4e7",
+  "type": "assignment",
+  "courseId": 5129,
+  "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+  "sectionId": null,
+  "sectionName": null,
+  "sectionNumber": null,
+  "moduleId": "pdf-c6ecf4e7",
+  "moduleType": "pdf_assignment",
+  "title": "Practice_Recommendations_Linux",
+  "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Practice_Recommendations_Linux.pdf?forcedownload=1",
+  "openAt": null,
+  "dueAt": null,
+  "closeAt": null,
+  "description": "Practice Recommendations:\nBandit: OverTheWire – Interactive\nGame to Learn Linux Commands\nhttps://overthewire.org/wargames/bandit/\nLinux User and Group Management\nGuide\nhttps://www.linode.com/docs/guides/linux-users-and-groups/\nBash STDOUT and STDERR Redirection\nGuide\nhttps://linuxize.com/post/bash-redirect-stderr-stdout/\nRedirecting Error Output to a File in\nLinux\nhttps://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/\nVim Adventures: Interactive Game to\nLearn Vim Commands\nhttps://vim-adventures.com/\n-- 1 of 1 --",
+  "content": "Practice Recommendations:\nBandit: OverTheWire – Interactive\nGame to Learn Linux Commands\nhttps://overthewire.org/wargames/bandit/\nLinux User and Group Management\nGuide\nhttps://www.linode.com/docs/guides/linux-users-and-groups/\nBash STDOUT and STDERR Redirection\nGuide\nhttps://linuxize.com/post/bash-redirect-stderr-stdout/\nRedirecting Error Output to a File in\nLinux\nhttps://www.cyberciti.biz/faq/linux-redirect-error-output-to-file/\nVim Adventures: Interactive Game to\nLearn Vim Commands\nhttps://vim-adventures.com/\n-- 1 of 1 --",
+  "contentHash": "00ca61f87586233a11d425c16be6a949ad39166a878ee33ff843420713ffb693",
+  "event": "created"
+}
