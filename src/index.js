@@ -296,10 +296,17 @@ try {
 		if (calendarTasks.length > 0) {
 			const calSyncResult = await syncAssignments(calendarTasks);
 			for (const newTask of calSyncResult.newAssignments) {
-				const pendingPath = await writePendingAssignment(
-					newTask,
-					getPendingDirectory(),
-				);
+				if (newTask.isTask !== false) {
+					const pendingPath = await writePendingAssignment(
+						newTask,
+						getPendingDirectory(),
+					);
+					console.log(`Pending calendar/lab task written: ${pendingPath}`);
+				} else {
+					console.log(
+						`Skipping pending file for non-task calendar/announcement event: "${newTask.title}" (notification-only)`,
+					);
+				}
 				try {
 					await notifyNewAssignment(newTask);
 				} catch (notifyError) {
@@ -307,7 +314,6 @@ try {
 						`Failed notification for ${newTask.id}: ${notifyError.message}`,
 					);
 				}
-				console.log(`Pending calendar/lab task written: ${pendingPath}`);
 			}
 		}
 	} catch (calendarPipelineError) {

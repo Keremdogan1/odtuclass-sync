@@ -16,12 +16,22 @@ const ASSIGNMENT_TYPES = new Set([
 ]);
 
 const ADMIN_FORM_TYPES = new Set(['choice', 'feedback', 'questionnaire']);
+const ATTENDANCE_TITLE_REGEX = /\b(?:attend[ae]nce|yoklama|roll[\s-]*call)\b/i;
 const ADMIN_FORM_TITLE_REGEX =
-	/\b(?:course\s+conflict|section\s+transfer|transfer\s+application|excuse\s+(?:form|application)|make-?up\s+(?:exam\s+)?application)\b/i;
+	/\b(?:course\s+conflict|section\s+transfer|transfer\s+application|excuse\s+(?:form|application)|make-?up\s+(?:exam\s+)?application|mazeret\s+(?:formu|ba[şs]vurusu)|helproom|help\s+room)\b/i;
 
-function isAdministrativeForm(moduleType, title) {
-	if (!ADMIN_FORM_TYPES.has(moduleType)) return false;
-	return ADMIN_FORM_TITLE_REGEX.test(String(title || ''));
+export function isAdministrativeForm(moduleType, title) {
+	const text = String(title || '');
+	if (moduleType === 'attendance' || ATTENDANCE_TITLE_REGEX.test(text)) {
+		return true;
+	}
+	if (ADMIN_FORM_TITLE_REGEX.test(text)) {
+		return true;
+	}
+	if (ADMIN_FORM_TYPES.has(moduleType) && /\b(?:conflict|transfer|excuse|application|petition|dilek[çc]e)\b/i.test(text)) {
+		return true;
+	}
+	return false;
 }
 
 export async function getCourseContents(client, courseId) {

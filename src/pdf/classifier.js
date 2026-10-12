@@ -53,6 +53,16 @@ const ADMIN_OR_OTHER_NEGATIVE_KEYWORDS = [
 	'exam solution',
 	'quiz solution',
 	'midterm solution',
+	'solved problem',
+	'solved problems',
+	'solved-problem',
+	'solved-problems',
+	'solved_problem',
+	'solved_problems',
+	'solution key',
+	'answer key',
+	'çözümlü',
+	'cevap anahtarı',
 	'syllabus',
 	'course outline',
 	'policy',
@@ -64,6 +74,8 @@ const ADMIN_OR_OTHER_NEGATIVE_KEYWORDS = [
 	'how to',
 	'academic integrity',
 	'scheduler',
+	'helproom',
+	'help room',
 	'teams account',
 	'career planning course weekly program',
 	'announcement',
@@ -116,6 +128,14 @@ export function ruleBasedClassify(metadata = {}, pdfText = '') {
 			score += 5;
 			slideScore -= 6;
 		}
+	}
+
+	// Explicitly penalize solved problem sets / answer keys so they never become assignments
+	const isSolvedSheetMeta = /\b(?:solved|solutions?|answer\s*key|çözümlü|çözümleri)\b/i.test(combinedMeta);
+	const solutionOccurrences = (pdfText.match(/\bSolution\s*:/gi) || []).length;
+	if (isSolvedSheetMeta || solutionOccurrences >= 2) {
+		score -= 20;
+		matchedNegatives.push('pattern:solved_problems');
 	}
 
 	// Check text patterns for problem listings and syllabus homework sections

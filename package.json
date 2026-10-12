@@ -1,6 +1,6 @@
 {
   "name": "odtuclass-sync",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "private": true,
   "description": "Sync ODTUClass data with a GitHub Actions-friendly workflow.",
   "type": "module",

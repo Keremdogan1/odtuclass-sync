@@ -569,8 +569,9 @@ export function filterDuplicateEvents(calendarEvents, existingAssignments = []) 
 		}
 	}
 
+	const ATTENDANCE_REGEX = /\b(?:attend[ae]nce|yoklama|roll[\s-]*call)\b/i;
 	const ADMIN_OR_ROUTINE_REGEX =
-		/\b(?:course\s+conflict|section\s+transfer|transfer\s+application|excuse\s+(?:form|application)|make-?up\s+(?:exam\s+)?application)\b/i;
+		/\b(?:course\s+conflict|section\s+transfer|transfer\s+application|excuse\s+(?:form|application)|make-?up\s+(?:exam\s+)?application|mazeret\s+(?:formu|ba[şs]vurusu)|helproom|help\s+room|office\s+hours?|lecture\s+hours?)\b/i;
 
 	return Array.from(mergedByKey.values()).filter((ev) => {
 		const courseId = Number(ev.courseid || ev.course?.id || 0);
@@ -580,7 +581,7 @@ export function filterDuplicateEvents(calendarEvents, existingAssignments = []) 
 			.trim();
 
 		// Skip routine lecture attendance events and administrative forms
-		if (modName === 'attendance' || /\battendance\b/i.test(cleanName)) {
+		if (modName === 'attendance' || ATTENDANCE_REGEX.test(cleanName)) {
 			return false;
 		}
 		if (ADMIN_OR_ROUTINE_REGEX.test(cleanName)) {
@@ -598,8 +599,48 @@ export function filterDuplicateEvents(calendarEvents, existingAssignments = []) 
 	});
 }
 
+const ACTIONABLE_CALENDAR_MODS = new Set([
+	'assign',
+	'turnitintooltwo',
+	'quiz',
+	'workshop',
+	'hvp',
+	'h5pactivity',
+	'lesson',
+	'choice',
+	'feedback',
+	'questionnaire',
+]);
+
+const ACTIONABLE_TASK_TITLE_REGEX =
+	/\b(?:homework|hw|assignment|ödev|odev|quiz|the\s*\d+|take[\s-]*home\s+exam|pre[\s-]*lab|post[\s-]*lab|lab\s+report|preliminary\s+work|deney\s+raporu|project|proje|submission|teslim)\b/i;
+
+const INFORMATIONAL_ANNOUNCEMENT_REGEX =
+	/\b(?:schedule|takvim|program[ıi]?|announcement|duyuru|rooms?|s[ıi]nav\s+yer|places?|seating|syllabus|solved\s+problems?|groups?\s+and\s+dates|lab\s+dates?)\b/i;
+
+export function isActionableCalendarEvent(event) {
+	const modName = String(event?.modulename || event?.moduleType || '').toLowerCase();
+	const cleanTitle = String(event?.name || event?.title || '')
+		.replace(/\s+(?:is\s+due|opens|closes|due)$/i, '')
+		.trim();
+
+	if (/\b(?:attend[ae]nce|yoklama|roll[\s-]*call)\b/i.test(cleanTitle) || modName === 'attendance') {
+		return false;
+	}
+	if (INFORMATIONAL_ANNOUNCEMENT_REGEX.test(cleanTitle)) {
+		return false;
+	}
+	if (ACTIONABLE_CALENDAR_MODS.has(modName)) {
+		return true;
+	}
+	if (ACTIONABLE_TASK_TITLE_REGEX.test(cleanTitle)) {
+		return true;
+	}
+	return false;
+}
+
 /**
- * Convert a calendar event into an assignment-compatible task payload.
+ * Convert a calendar event into an assignment-compatible task payload (or announcement notification payload).
  */
 export function calendarEventToAssignment(
 	event,
@@ -641,6 +682,7 @@ export function calendarEventToAssignment(
 	const contentHash = computeContentHash(
 		`${cleanTitle}|${openAt || ''}|${dueAt || ''}|${content}`,
 	);
+	const isTask = isActionableCalendarEvent(event);
 
 	return {
 		id: `calendar:${course.id}:${event.id}`,
@@ -665,13 +707,15 @@ export function calendarEventToAssignment(
 		closeAt: dueAt,
 		status: 'todo',
 		source: 'calendar',
+		isTask,
+		notificationCategory: isTask ? undefined : 'announcement',
 	};
 }
 
 /**
  * High-level pipeline helper: fetches calendar events, scans lab courses for experiment/schedule
  * pages, enriches tasks with course section mod/page instructions and mod/url links,
- * and returns assignment-compatible tasks.
+ * and returns items marked with `isTask` (true = DotPM + ntfy, false = ntfy announcement only).
  */
 export async function getEnrichedCalendarTasks(
 	client,
@@ -756,7 +800,9 @@ export async function getEnrichedCalendarTasks(
 		tasks.push(task);
 	}
 
-	// Also check Lab courses for experiment/schedule sections or mod/page items
+	// Check Lab courses for experiment/schedule sections or mod/page items:
+	// Standalone lab date/schedule announcements are marked isTask: false (announcement-only for ntfy, never DotPM),
+	// unless the section explicitly contains an actionable deliverable (pre-lab, lab report, quiz, etc.).
 	const existingIdsAndTitles = new Set(
 		[...existingAssignments, ...tasks].map((t) =>
 			`${t.courseId}:${String(t.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '')}`,
@@ -804,6 +850,11 @@ export async function getEnrichedCalendarTasks(
 			);
 			if (!enrichedDesc) continue;
 
+			const hasActionableDeliverable = (sec.modules || []).some((m) =>
+				ACTIONABLE_CALENDAR_MODS.has(String(m.modname || '').toLowerCase()) ||
+				ACTIONABLE_TASK_TITLE_REGEX.test(String(m.name || '')),
+			);
+
 			const contentHash = computeContentHash(
 				`${sec.name}|${sec.weekStart || ''}|${sec.weekEnd || ''}|${enrichedDesc}`,
 			);
@@ -831,6 +882,8 @@ export async function getEnrichedCalendarTasks(
 				closeAt: sec.weekEnd ? `${sec.weekEnd}T23:59:00.000Z` : null,
 				status: 'todo',
 				source: 'calendar_lab',
+				isTask: hasActionableDeliverable,
+				notificationCategory: hasActionableDeliverable ? 'lab' : 'announcement',
 			});
 		}
 	}

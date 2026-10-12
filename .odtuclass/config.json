@@ -1,0 +1,12 @@
+{
+  "ntfyFilter": {
+    "assignment": true,
+    "quiz": true,
+    "recitation": true,
+    "lab": true,
+    "section": true,
+    "announcement": true,
+    "survey": false,
+    "attendance": false
+  }
+}
