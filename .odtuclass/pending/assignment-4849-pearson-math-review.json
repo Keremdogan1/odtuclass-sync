@@ -10,8 +10,8 @@
   "openAt": "2026-09-24T04:00:00.000Z",
   "dueAt": "2026-12-31T20:59:00.000Z",
   "closeAt": null,
-  "status": "todo",
-  "content": "Mathematics Review | Start: 2026-09-24T04:00:00.000Z | Due: 2026-12-31T20:59:00.000Z | Status: todo",
-  "contentHash": "d08e88422e56c20e39d706572c73fd1f7cb1c2b7998b5b6d867f7f3d36b02f95",
+  "status": "in-progress",
+  "content": "Mathematics Review | Start: 2026-09-24T04:00:00.000Z | Due: 2026-12-31T20:59:00.000Z | Status: in-progress",
+  "contentHash": "ff6f37036538bdfee5249d4eda8113133fa1307a221ac9881c74c9a55bb66f24",
   "event": "created"
 }
