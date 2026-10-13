@@ -987,6 +987,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-12T14:21:14.428Z"
+    },
+    "assignment:5129:50635": {
+      "id": "assignment:5129:50635",
+      "type": "assignment",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "sectionId": 92634,
+      "sectionName": "General",
+      "sectionNumber": 0,
+      "moduleId": 50635,
+      "moduleType": "assign",
+      "title": "Computer & Networking Ethics",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/assign/view.php?id=50635",
+      "openAt": "2026-10-13T21:00:00.000Z",
+      "dueAt": "2026-10-18T20:59:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-13T08:12:14.075Z"
     }
   },
   "sections": {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T01:50:59.611Z",
+  "updatedAt": "2026-10-13T08:14:57.941Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -117,6 +117,21 @@
       "filesize": 981553,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Lecture #1' and contains instructional content, definitions, and explanations about binary systems, which are characteristic of lecture notes or slides used for teaching a course topic.",
       "syncedAt": "2026-10-12T13:58:32.229Z"
+    },
+    "CENG111/CENG111-2026--Week3a-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week3a-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week3a-Prelecture.pdf",
+      "filename": "CENG111-2026--Week3a-Prelecture.pdf",
+      "formattedFilename": "2026 Week 3a Prelecture.pdf",
+      "weekKey": "3a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week3a-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week3a-Prelecture.pdf?forcedownload=1",
+      "filesize": 5620278,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as 'Prelecture' slides for Week 3a in both the metadata and the text. It contains educational content regarding computer architecture (CPU, memory, machine language) and follows a slide-based structure with page numbering.",
+      "syncedAt": "2026-10-13T08:14:51.839Z"
     }
   },
   "evaluatedNonSlides": {
