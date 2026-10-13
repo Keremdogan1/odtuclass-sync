@@ -73,15 +73,34 @@ export async function saveState(state, filePath) {
 }
 
 export function findNewAssignments(assignments, state) {
-	return assignments.filter((assignment) => {
-		const prev = state.assignments[assignment.id];
-		if (!prev) return true;
-		if (assignment.status && assignment.status !== prev.status) return true;
-		if (assignment.dueAt && assignment.dueAt !== prev.dueAt) return true;
-		if (assignment.openAt && assignment.openAt !== prev.openAt) return true;
-		if (assignment.contentHash && assignment.contentHash !== prev.contentHash) return true;
-		return false;
-	});
+	const results = [];
+	const existingAssignments = state.assignments || {};
+
+	for (const assignment of assignments) {
+		const prev = existingAssignments[assignment.id];
+		if (!prev) {
+			results.push({
+				...assignment,
+				event: 'created',
+			});
+		} else {
+			const statusChanged = Boolean(assignment.status && assignment.status !== prev.status);
+			const dueChanged = Boolean(assignment.dueAt && assignment.dueAt !== prev.dueAt);
+			const openChanged = Boolean(assignment.openAt && assignment.openAt !== prev.openAt);
+			const hashChanged = Boolean(assignment.contentHash && assignment.contentHash !== prev.contentHash);
+
+			if (statusChanged || dueChanged || openChanged || hashChanged) {
+				results.push({
+					...assignment,
+					event: 'updated',
+					statusChanged,
+					dueChanged,
+				});
+			}
+		}
+	}
+
+	return results;
 }
 
 export function recordAssignments(state, assignments) {

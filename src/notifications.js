@@ -135,6 +135,20 @@ export async function notifyNewAssignment(assignment) {
 		return false;
 	}
 
+	if (assignment.event === 'updated') {
+		console.log(
+			`[ntfy] Skipping notification for "${assignment.title}" (it is an existing assignment update, not a new assignment).`,
+		);
+		return false;
+	}
+
+	if (assignment.status === 'done') {
+		console.log(
+			`[ntfy] Skipping notification for "${assignment.title}" (assignment is already completed).`,
+		);
+		return false;
+	}
+
 	const lang = loadLanguage();
 	const meta = CATEGORY_LABELS[category] || CATEGORY_LABELS.assignment;
 	const prefix = meta[lang] || meta.tr;

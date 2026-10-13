@@ -370,10 +370,20 @@ test('assignments: existing findNewAssignments and recordAssignments work unmodi
 	const newOnes = findNewAssignments(incoming, state);
 	assert.equal(newOnes.length, 1);
 	assert.equal(newOnes[0].id, 'assignment:100:201');
+	assert.equal(newOnes[0].event, 'created');
 
 	recordAssignments(state, incoming);
 	assert.equal(state.assignments['assignment:100:200'].seenAt, '2026-10-01T00:00:00.000Z');
 	assert.ok(state.assignments['assignment:100:201'].seenAt);
+
+	// Status update is tagged as updated, not created
+	const statusUpdate = [
+		{ id: 'assignment:100:200', title: 'Existing', status: 'done' },
+	];
+	const updatedOnes = findNewAssignments(statusUpdate, state);
+	assert.equal(updatedOnes.length, 1);
+	assert.equal(updatedOnes[0].event, 'updated');
+	assert.equal(updatedOnes[0].statusChanged, true);
 });
 
 // ----------------------------------------------------

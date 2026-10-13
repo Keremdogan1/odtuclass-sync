@@ -73,7 +73,19 @@ try {
 					assignment,
 					getPendingDirectory(),
 				);
-				await notifyNewAssignment(assignment);
+				if (assignment.event === 'created') {
+					try {
+						await notifyNewAssignment(assignment);
+					} catch (notifyError) {
+						console.warn(
+							`Failed notification for ${assignment.id}: ${notifyError.message}`,
+						);
+					}
+				} else {
+					console.log(
+						`Skipping notification for updated assignment (${assignment.status}): "${assignment.title}"`,
+					);
+				}
 				console.log(`Pending assignment written: ${pendingPath}`);
 			}
 		}
@@ -255,11 +267,17 @@ try {
 							newAssignment,
 							getPendingDirectory(),
 						);
-						try {
-							await notifyNewAssignment(newAssignment);
-						} catch (notifyError) {
-							console.warn(
-								`Failed notification for ${newAssignment.id}: ${notifyError.message}`,
+						if (newAssignment.event === 'created') {
+							try {
+								await notifyNewAssignment(newAssignment);
+							} catch (notifyError) {
+								console.warn(
+									`Failed notification for ${newAssignment.id}: ${notifyError.message}`,
+								);
+							}
+						} else {
+							console.log(
+								`Skipping notification for updated Pearson assignment (${newAssignment.status}): "${newAssignment.title}"`,
 							);
 						}
 						console.log(
@@ -309,12 +327,14 @@ try {
 						`Skipping pending file for non-task calendar/announcement event: "${newTask.title}" (notification-only)`,
 					);
 				}
-				try {
-					await notifyNewAssignment(newTask);
-				} catch (notifyError) {
-					console.warn(
-						`Failed notification for ${newTask.id}: ${notifyError.message}`,
-					);
+				if (newTask.event === 'created') {
+					try {
+						await notifyNewAssignment(newTask);
+					} catch (notifyError) {
+						console.warn(
+							`Failed notification for ${newTask.id}: ${notifyError.message}`,
+						);
+					}
 				}
 			}
 		}
