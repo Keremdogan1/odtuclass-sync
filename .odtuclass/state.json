@@ -368,9 +368,9 @@
       "openAt": "2026-09-24T04:00:00.000Z",
       "dueAt": "2026-12-31T20:59:00.000Z",
       "closeAt": null,
-      "status": "in-progress",
-      "content": "Mathematics Review | Start: 2026-09-24T04:00:00.000Z | Due: 2026-12-31T20:59:00.000Z | Status: in-progress",
-      "contentHash": "ff6f37036538bdfee5249d4eda8113133fa1307a221ac9881c74c9a55bb66f24",
+      "status": "done",
+      "content": "Mathematics Review | Start: 2026-09-24T04:00:00.000Z | Due: 2026-12-31T20:59:00.000Z | Status: done",
+      "contentHash": "60b85b0693b3f46541bc270df103c671102822f640772584b2aec3d3ada1ad10",
       "event": "created",
       "seenAt": "2026-10-11T10:58:11.842Z"
     },
