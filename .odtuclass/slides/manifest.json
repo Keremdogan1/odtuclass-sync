@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T11:26:52.015Z",
+  "updatedAt": "2026-10-13T18:54:00.946Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -132,6 +132,21 @@
       "filesize": 5620278,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as 'Prelecture' slides for Week 3a in both the metadata and the text. It contains educational content regarding computer architecture (CPU, memory, machine language) and follows a slide-based structure with page numbering.",
       "syncedAt": "2026-10-13T08:14:51.839Z"
+    },
+    "CENG111/CENG111-2026--Week3a.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week3a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week3a.pdf",
+      "filename": "CENG111-2026--Week3a.pdf",
+      "formattedFilename": "2026 Week 3a.pdf",
+      "weekKey": "3a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week3a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week3a.pdf?forcedownload=1",
+      "filesize": 1025821,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as a slide deck in the metadata and contains instructional content organized by slide numbers for Week 3a of the course.",
+      "syncedAt": "2026-10-13T18:53:54.681Z"
     }
   },
   "evaluatedNonSlides": {

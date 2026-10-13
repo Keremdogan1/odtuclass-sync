@@ -1005,6 +1005,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-13T08:12:14.075Z"
+    },
+    "assignment:5129:51176": {
+      "id": "assignment:5129:51176",
+      "type": "assignment",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "sectionId": 92634,
+      "sectionName": "General",
+      "sectionNumber": 0,
+      "moduleId": 51176,
+      "moduleType": "quiz",
+      "title": "Quiz on history of computing",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/quiz/view.php?id=51176",
+      "openAt": "2026-10-13T16:00:00.000Z",
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-13T18:51:18.008Z"
     }
   },
   "sections": {
