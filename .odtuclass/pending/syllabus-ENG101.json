@@ -1,0 +1,95 @@
+{
+  "id": "syllabus:ENG101",
+  "type": "syllabus",
+  "courseCode": "ENG101",
+  "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+  "courseId": 3533,
+  "originalFilename": "Eng 101 Course Outline.pdf",
+  "pdfFilename": "Syllabus 2026 Fall.pdf",
+  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=15296",
+  "contentHash": "57c90431983390872e09f949396e4ac6a8399d7f16957bbb3098dc55d2f80135",
+  "syncedAt": "2026-10-14T13:03:11.532Z",
+  "extracted": {
+    "exams": [
+      {
+        "title": "Writing 1",
+        "date": null,
+        "time": null,
+        "weight": "%15",
+        "location": null,
+        "notes": "Must be written in class; Turnitin submission required."
+      },
+      {
+        "title": "Writing 2",
+        "date": null,
+        "time": null,
+        "weight": "%20",
+        "location": null,
+        "notes": "Must be written in class; Turnitin submission required."
+      },
+      {
+        "title": "Speaking",
+        "date": null,
+        "time": null,
+        "weight": "%20",
+        "location": null,
+        "notes": "Graded task/exam."
+      },
+      {
+        "title": "Quiz",
+        "date": null,
+        "time": null,
+        "weight": "%15",
+        "location": null,
+        "notes": "Graded task/exam."
+      },
+      {
+        "title": "Final Exam",
+        "date": null,
+        "time": null,
+        "weight": "%20",
+        "location": null,
+        "notes": "Graded task/exam."
+      }
+    ],
+    "grading": [
+      {
+        "component": "Writing 1",
+        "weight": "%15",
+        "notes": "Must be written in class and submitted to Turnitin."
+      },
+      {
+        "component": "Writing 2",
+        "weight": "%20",
+        "notes": "Must be written in class and submitted to Turnitin."
+      },
+      {
+        "component": "Speaking",
+        "weight": "%20",
+        "notes": null
+      },
+      {
+        "component": "Quiz",
+        "weight": "%15",
+        "notes": null
+      },
+      {
+        "component": "Participation",
+        "weight": "%10",
+        "notes": "Attendance mandatory; max 10 hours absence allowed."
+      },
+      {
+        "component": "Final Exam",
+        "weight": "%20",
+        "notes": null
+      }
+    ],
+    "weeklySchedule": [],
+    "textbooks": [
+      "Albaş, Ö., & Aksoy, E. (2023). The forefront: Achieving academic success 1 (2nd ed.). Pelikan Publishing."
+    ],
+    "instructors": [],
+    "summary": "This course aims to develop students' academic reading, writing, listening, and speaking skills through a student-centered approach and critical thinking exercises. Evaluation is based on in-class writing tasks, speaking assessments, quizzes, and a final exam, with a strict attendance policy requiring no more than 10 hours of absence."
+  },
+  "event": "created"
+}

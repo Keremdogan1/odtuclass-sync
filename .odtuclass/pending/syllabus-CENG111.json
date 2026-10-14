@@ -1,0 +1,21 @@
+{
+  "id": "syllabus:CENG111",
+  "type": "syllabus",
+  "courseCode": "CENG111",
+  "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+  "courseId": 5129,
+  "originalFilename": "CENG111_Fall2026.pdf",
+  "pdfFilename": "Syllabus 2026 Fall.pdf",
+  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/195034/mod_folder/content/0/CENG111_Fall2026.pdf?forcedownload=1",
+  "contentHash": "426e408ed4d760253a3922b55882c336cb7d46fc505491155f1a568cb72e9f0c",
+  "syncedAt": "2026-10-14T12:59:46.817Z",
+  "extracted": {
+    "exams": [],
+    "grading": [],
+    "weeklySchedule": [],
+    "textbooks": [],
+    "instructors": [],
+    "summary": "Syllabus document extracted."
+  },
+  "event": "created"
+}

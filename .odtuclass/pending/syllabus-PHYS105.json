@@ -1,0 +1,98 @@
+{
+  "id": "syllabus:PHYS105",
+  "type": "syllabus",
+  "courseCode": "PHYS105",
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "courseId": 4849,
+  "originalFilename": "105-20261-Syllabus.pdf",
+  "pdfFilename": "Syllabus 2026 Fall.pdf",
+  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16572",
+  "contentHash": "dfaaf8c5e6f63d00d0fd2aecf0f275f5e7677a52aa2c2751565ccb5d38e7b8f0",
+  "syncedAt": "2026-10-14T13:03:55.229Z",
+  "extracted": {
+    "exams": [
+      {
+        "title": "First Midterm",
+        "date": "2026-10-31",
+        "time": "10:00-11:30",
+        "weight": "25%",
+        "location": "Face-to-face",
+        "notes": "Coverage to be announced"
+      },
+      {
+        "title": "Second Midterm",
+        "date": "2026-12-05",
+        "time": "10:00-11:30",
+        "weight": "25%",
+        "location": "Face-to-face",
+        "notes": "Coverage to be announced"
+      },
+      {
+        "title": "Final Exam",
+        "date": "2027-01-04",
+        "time": "09:30-11:30",
+        "weight": "35%",
+        "location": "Face-to-face",
+        "notes": "All course content"
+      },
+      {
+        "title": "Make-up Exam",
+        "date": "2027-01-11",
+        "time": "19:00-21:00",
+        "weight": null,
+        "location": "Face-to-face",
+        "notes": "All course content; replaces the grade of the missed examination"
+      }
+    ],
+    "grading": [
+      {
+        "component": "First Midterm",
+        "weight": "25%",
+        "notes": null
+      },
+      {
+        "component": "Second Midterm",
+        "weight": "25%",
+        "notes": null
+      },
+      {
+        "component": "Final Examination",
+        "weight": "35%",
+        "notes": null
+      },
+      {
+        "component": "Laboratory",
+        "weight": "10%",
+        "notes": "Must complete all experiments and have average >= 50; otherwise NA grade"
+      },
+      {
+        "component": "Attendance",
+        "weight": "5%",
+        "notes": "Rate >= 60% required to receive points"
+      },
+      {
+        "component": "Online Homework",
+        "weight": "3% (Bonus)",
+        "notes": "Score 50-100 gives 1-3 bonus points"
+      }
+    ],
+    "weeklySchedule": [],
+    "textbooks": [
+      "Giancoli, Physics for Scientists and Engineers with Modern Physics, Global Edition, 5th Edition"
+    ],
+    "instructors": [
+      {
+        "name": "Dr. Mustafa Özbakan",
+        "email": "ozbakan@metu.edu.tr",
+        "office": null
+      },
+      {
+        "name": "Laboratory Coordination",
+        "email": "physlab@metu.edu.tr",
+        "office": null
+      }
+    ],
+    "summary": "This course covers fundamental physics principles through face-to-face lectures and laboratory experiments. Evaluation is based on two midterms, a final exam, and mandatory lab work, with additional bonus points available for online homework."
+  },
+  "event": "created"
+}

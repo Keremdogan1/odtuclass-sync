@@ -1,0 +1,395 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-14T13:03:55.229Z",
+  "syllabi": {
+    "BIOL109": {
+      "id": "syllabus:BIOL109",
+      "type": "syllabus",
+      "courseCode": "BIOL109",
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseId": 694,
+      "originalFilename": "2380109_2627F_Syllabus.pdf",
+      "pdfFilename": "Syllabus 2026 Fall.pdf",
+      "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=26174",
+      "contentHash": "e42a26692aff135c40a681e035a837b0a5b91d7ce5f2c4e5e3ed24ce802588f9",
+      "syncedAt": "2026-10-14T12:59:37.835Z",
+      "extracted": {
+        "exams": [
+          {
+            "title": "Midterm Exam",
+            "date": "2026-11-18",
+            "time": null,
+            "weight": "%40",
+            "location": "G111",
+            "notes": "Multiple choice questions; covers all topics up to the exam date."
+          },
+          {
+            "title": "Final Exam",
+            "date": null,
+            "time": null,
+            "weight": "%60",
+            "location": null,
+            "notes": "Multiple choice questions; covers all course material throughout the semester."
+          }
+        ],
+        "grading": [
+          {
+            "component": "Midterm Exam",
+            "weight": "%40",
+            "notes": "Multiple choice questions covering all topics until that date"
+          },
+          {
+            "component": "Final Exam",
+            "weight": "%60",
+            "notes": "Multiple choice questions covering all material throughout the semester"
+          }
+        ],
+        "weeklySchedule": [
+          {
+            "week": 1,
+            "dates": "30 Sep",
+            "topic": "First Meeting",
+            "readings": null
+          },
+          {
+            "week": 2,
+            "dates": "7 Oct",
+            "topic": "Biological Molecules, Cell",
+            "readings": null
+          },
+          {
+            "week": 3,
+            "dates": "14 Oct",
+            "topic": "DNA Structure",
+            "readings": null
+          },
+          {
+            "week": 4,
+            "dates": "21 Oct",
+            "topic": "DNA Replication, Mutation, Repair",
+            "readings": null
+          },
+          {
+            "week": 5,
+            "dates": "28 Oct",
+            "topic": "National Holiday / No lecture",
+            "readings": null
+          },
+          {
+            "week": 6,
+            "dates": "4 Nov",
+            "topic": "Genome, Genomics",
+            "readings": null
+          },
+          {
+            "week": 7,
+            "dates": "11 Nov",
+            "topic": "Genetic Code",
+            "readings": null
+          },
+          {
+            "week": 8,
+            "dates": "18 Nov",
+            "topic": "Midterm Exam",
+            "readings": null
+          },
+          {
+            "week": 9,
+            "dates": "25 Nov",
+            "topic": "Transcription, RNA Processing",
+            "readings": null
+          },
+          {
+            "week": 10,
+            "dates": "2 Dec",
+            "topic": "Translation & Protein folding, sorting, modifications, degradation",
+            "readings": null
+          },
+          {
+            "week": 11,
+            "dates": "9 Dec",
+            "topic": "Regulation of Gene Expression",
+            "readings": null
+          },
+          {
+            "week": 12,
+            "dates": "16 Dec",
+            "topic": "NGS Technologies, Protein Folding",
+            "readings": null
+          },
+          {
+            "week": 13,
+            "dates": "23 Dec",
+            "topic": "Evolution",
+            "readings": null
+          },
+          {
+            "week": 14,
+            "dates": "30 Dec",
+            "topic": "Q/A",
+            "readings": null
+          }
+        ],
+        "textbooks": [
+          "Campbell Essential Biology by Pearson",
+          "Life: The Science of Biology by Sinauer"
+        ],
+        "instructors": [
+          {
+            "name": "Res. Dr. Hamit İzgi",
+            "email": "izhamit@metu.edu.tr",
+            "office": "Biology Department 223"
+          }
+        ],
+        "summary": "This course introduces fundamental molecular biology concepts to first-year engineering students, exploring cellular organization, the flow of genetic information from DNA to protein, and computational approaches in bioinformatics. Evaluation is determined by a multiple-choice midterm exam worth 40% and a comprehensive multiple-choice final exam worth 60%."
+      },
+      "event": "created"
+    },
+    "CENG111": {
+      "id": "syllabus:CENG111",
+      "type": "syllabus",
+      "courseCode": "CENG111",
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseId": 5129,
+      "originalFilename": "CENG111_Fall2026.pdf",
+      "pdfFilename": "Syllabus 2026 Fall.pdf",
+      "sourceUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/195034/mod_folder/content/0/CENG111_Fall2026.pdf?forcedownload=1",
+      "contentHash": "426e408ed4d760253a3922b55882c336cb7d46fc505491155f1a568cb72e9f0c",
+      "syncedAt": "2026-10-14T12:59:46.817Z",
+      "extracted": {
+        "exams": [],
+        "grading": [],
+        "weeklySchedule": [],
+        "textbooks": [],
+        "instructors": [],
+        "summary": "Syllabus document extracted."
+      },
+      "event": "created"
+    },
+    "ENG101": {
+      "id": "syllabus:ENG101",
+      "type": "syllabus",
+      "courseCode": "ENG101",
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "courseId": 3533,
+      "originalFilename": "Eng 101 Course Outline.pdf",
+      "pdfFilename": "Syllabus 2026 Fall.pdf",
+      "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=15296",
+      "contentHash": "57c90431983390872e09f949396e4ac6a8399d7f16957bbb3098dc55d2f80135",
+      "syncedAt": "2026-10-14T13:03:11.532Z",
+      "extracted": {
+        "exams": [
+          {
+            "title": "Writing 1",
+            "date": null,
+            "time": null,
+            "weight": "%15",
+            "location": null,
+            "notes": "Must be written in class; Turnitin submission required."
+          },
+          {
+            "title": "Writing 2",
+            "date": null,
+            "time": null,
+            "weight": "%20",
+            "location": null,
+            "notes": "Must be written in class; Turnitin submission required."
+          },
+          {
+            "title": "Speaking",
+            "date": null,
+            "time": null,
+            "weight": "%20",
+            "location": null,
+            "notes": "Graded task/exam."
+          },
+          {
+            "title": "Quiz",
+            "date": null,
+            "time": null,
+            "weight": "%15",
+            "location": null,
+            "notes": "Graded task/exam."
+          },
+          {
+            "title": "Final Exam",
+            "date": null,
+            "time": null,
+            "weight": "%20",
+            "location": null,
+            "notes": "Graded task/exam."
+          }
+        ],
+        "grading": [
+          {
+            "component": "Writing 1",
+            "weight": "%15",
+            "notes": "Must be written in class and submitted to Turnitin."
+          },
+          {
+            "component": "Writing 2",
+            "weight": "%20",
+            "notes": "Must be written in class and submitted to Turnitin."
+          },
+          {
+            "component": "Speaking",
+            "weight": "%20",
+            "notes": null
+          },
+          {
+            "component": "Quiz",
+            "weight": "%15",
+            "notes": null
+          },
+          {
+            "component": "Participation",
+            "weight": "%10",
+            "notes": "Attendance mandatory; max 10 hours absence allowed."
+          },
+          {
+            "component": "Final Exam",
+            "weight": "%20",
+            "notes": null
+          }
+        ],
+        "weeklySchedule": [],
+        "textbooks": [
+          "Albaş, Ö., & Aksoy, E. (2023). The forefront: Achieving academic success 1 (2nd ed.). Pelikan Publishing."
+        ],
+        "instructors": [],
+        "summary": "This course aims to develop students' academic reading, writing, listening, and speaking skills through a student-centered approach and critical thinking exercises. Evaluation is based on in-class writing tasks, speaking assessments, quizzes, and a final exam, with a strict attendance policy requiring no more than 10 hours of absence."
+      },
+      "event": "created"
+    },
+    "MATH119": {
+      "id": "syllabus:MATH119",
+      "type": "syllabus",
+      "courseCode": "MATH119",
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "courseId": 5083,
+      "originalFilename": "2026-1_MATH-119-Course-Syllabus-and-Policy.pdf",
+      "pdfFilename": "Syllabus 2026 Fall.pdf",
+      "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=11138",
+      "contentHash": "d43d479cba1981c819793dfbb95b1d61c7f9a519ee74a92ca9aad84c9e977988",
+      "syncedAt": "2026-10-14T13:03:33.652Z",
+      "extracted": {
+        "exams": [],
+        "grading": [
+          {
+            "component": "attendance rate is",
+            "weight": "%70",
+            "notes": ""
+          },
+          {
+            "component": "attendance with",
+            "weight": "%80",
+            "notes": ""
+          }
+        ],
+        "weeklySchedule": [],
+        "textbooks": [],
+        "instructors": [],
+        "summary": "Syllabus document extracted."
+      },
+      "event": "created"
+    },
+    "PHYS105": {
+      "id": "syllabus:PHYS105",
+      "type": "syllabus",
+      "courseCode": "PHYS105",
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "courseId": 4849,
+      "originalFilename": "105-20261-Syllabus.pdf",
+      "pdfFilename": "Syllabus 2026 Fall.pdf",
+      "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=16572",
+      "contentHash": "dfaaf8c5e6f63d00d0fd2aecf0f275f5e7677a52aa2c2751565ccb5d38e7b8f0",
+      "syncedAt": "2026-10-14T13:03:55.229Z",
+      "extracted": {
+        "exams": [
+          {
+            "title": "First Midterm",
+            "date": "2026-10-31",
+            "time": "10:00-11:30",
+            "weight": "25%",
+            "location": "Face-to-face",
+            "notes": "Coverage to be announced"
+          },
+          {
+            "title": "Second Midterm",
+            "date": "2026-12-05",
+            "time": "10:00-11:30",
+            "weight": "25%",
+            "location": "Face-to-face",
+            "notes": "Coverage to be announced"
+          },
+          {
+            "title": "Final Exam",
+            "date": "2027-01-04",
+            "time": "09:30-11:30",
+            "weight": "35%",
+            "location": "Face-to-face",
+            "notes": "All course content"
+          },
+          {
+            "title": "Make-up Exam",
+            "date": "2027-01-11",
+            "time": "19:00-21:00",
+            "weight": null,
+            "location": "Face-to-face",
+            "notes": "All course content; replaces the grade of the missed examination"
+          }
+        ],
+        "grading": [
+          {
+            "component": "First Midterm",
+            "weight": "25%",
+            "notes": null
+          },
+          {
+            "component": "Second Midterm",
+            "weight": "25%",
+            "notes": null
+          },
+          {
+            "component": "Final Examination",
+            "weight": "35%",
+            "notes": null
+          },
+          {
+            "component": "Laboratory",
+            "weight": "10%",
+            "notes": "Must complete all experiments and have average >= 50; otherwise NA grade"
+          },
+          {
+            "component": "Attendance",
+            "weight": "5%",
+            "notes": "Rate >= 60% required to receive points"
+          },
+          {
+            "component": "Online Homework",
+            "weight": "3% (Bonus)",
+            "notes": "Score 50-100 gives 1-3 bonus points"
+          }
+        ],
+        "weeklySchedule": [],
+        "textbooks": [
+          "Giancoli, Physics for Scientists and Engineers with Modern Physics, Global Edition, 5th Edition"
+        ],
+        "instructors": [
+          {
+            "name": "Dr. Mustafa Özbakan",
+            "email": "ozbakan@metu.edu.tr",
+            "office": null
+          },
+          {
+            "name": "Laboratory Coordination",
+            "email": "physlab@metu.edu.tr",
+            "office": null
+          }
+        ],
+        "summary": "This course covers fundamental physics principles through face-to-face lectures and laboratory experiments. Evaluation is based on two midterms, a final exam, and mandatory lab work, with additional bonus points available for online homework."
+      },
+      "event": "created"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "id": "syllabus:BIOL109",
+  "type": "syllabus",
+  "courseCode": "BIOL109",
+  "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+  "courseId": 694,
+  "originalFilename": "2380109_2627F_Syllabus.pdf",
+  "pdfFilename": "Syllabus 2026 Fall.pdf",
+  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=26174",
+  "contentHash": "e42a26692aff135c40a681e035a837b0a5b91d7ce5f2c4e5e3ed24ce802588f9",
+  "syncedAt": "2026-10-14T12:59:37.835Z",
+  "extracted": {
+    "exams": [
+      {
+        "title": "Midterm Exam",
+        "date": "2026-11-18",
+        "time": null,
+        "weight": "%40",
+        "location": "G111",
+        "notes": "Multiple choice questions; covers all topics up to the exam date."
+      },
+      {
+        "title": "Final Exam",
+        "date": null,
+        "time": null,
+        "weight": "%60",
+        "location": null,
+        "notes": "Multiple choice questions; covers all course material throughout the semester."
+      }
+    ],
+    "grading": [
+      {
+        "component": "Midterm Exam",
+        "weight": "%40",
+        "notes": "Multiple choice questions covering all topics until that date"
+      },
+      {
+        "component": "Final Exam",
+        "weight": "%60",
+        "notes": "Multiple choice questions covering all material throughout the semester"
+      }
+    ],
+    "weeklySchedule": [
+      {
+        "week": 1,
+        "dates": "30 Sep",
+        "topic": "First Meeting",
+        "readings": null
+      },
+      {
+        "week": 2,
+        "dates": "7 Oct",
+        "topic": "Biological Molecules, Cell",
+        "readings": null
+      },
+      {
+        "week": 3,
+        "dates": "14 Oct",
+        "topic": "DNA Structure",
+        "readings": null
+      },
+      {
+        "week": 4,
+        "dates": "21 Oct",
+        "topic": "DNA Replication, Mutation, Repair",
+        "readings": null
+      },
+      {
+        "week": 5,
+        "dates": "28 Oct",
+        "topic": "National Holiday / No lecture",
+        "readings": null
+      },
+      {
+        "week": 6,
+        "dates": "4 Nov",
+        "topic": "Genome, Genomics",
+        "readings": null
+      },
+      {
+        "week": 7,
+        "dates": "11 Nov",
+        "topic": "Genetic Code",
+        "readings": null
+      },
+      {
+        "week": 8,
+        "dates": "18 Nov",
+        "topic": "Midterm Exam",
+        "readings": null
+      },
+      {
+        "week": 9,
+        "dates": "25 Nov",
+        "topic": "Transcription, RNA Processing",
+        "readings": null
+      },
+      {
+        "week": 10,
+        "dates": "2 Dec",
+        "topic": "Translation & Protein folding, sorting, modifications, degradation",
+        "readings": null
+      },
+      {
+        "week": 11,
+        "dates": "9 Dec",
+        "topic": "Regulation of Gene Expression",
+        "readings": null
+      },
+      {
+        "week": 12,
+        "dates": "16 Dec",
+        "topic": "NGS Technologies, Protein Folding",
+        "readings": null
+      },
+      {
+        "week": 13,
+        "dates": "23 Dec",
+        "topic": "Evolution",
+        "readings": null
+      },
+      {
+        "week": 14,
+        "dates": "30 Dec",
+        "topic": "Q/A",
+        "readings": null
+      }
+    ],
+    "textbooks": [
+      "Campbell Essential Biology by Pearson",
+      "Life: The Science of Biology by Sinauer"
+    ],
+    "instructors": [
+      {
+        "name": "Res. Dr. Hamit İzgi",
+        "email": "izhamit@metu.edu.tr",
+        "office": "Biology Department 223"
+      }
+    ],
+    "summary": "This course introduces fundamental molecular biology concepts to first-year engineering students, exploring cellular organization, the flow of genetic information from DNA to protein, and computational approaches in bioinformatics. Evaluation is determined by a multiple-choice midterm exam worth 40% and a comprehensive multiple-choice final exam worth 60%."
+  },
+  "event": "created"
+}

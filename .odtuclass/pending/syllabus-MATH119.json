@@ -1,0 +1,32 @@
+{
+  "id": "syllabus:MATH119",
+  "type": "syllabus",
+  "courseCode": "MATH119",
+  "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+  "courseId": 5083,
+  "originalFilename": "2026-1_MATH-119-Course-Syllabus-and-Policy.pdf",
+  "pdfFilename": "Syllabus 2026 Fall.pdf",
+  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=11138",
+  "contentHash": "d43d479cba1981c819793dfbb95b1d61c7f9a519ee74a92ca9aad84c9e977988",
+  "syncedAt": "2026-10-14T13:03:33.652Z",
+  "extracted": {
+    "exams": [],
+    "grading": [
+      {
+        "component": "attendance rate is",
+        "weight": "%70",
+        "notes": ""
+      },
+      {
+        "component": "attendance with",
+        "weight": "%80",
+        "notes": ""
+      }
+    ],
+    "weeklySchedule": [],
+    "textbooks": [],
+    "instructors": [],
+    "summary": "Syllabus document extracted."
+  },
+  "event": "created"
+}

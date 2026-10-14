@@ -1044,6 +1044,24 @@
       "contentHash": "164541b4f85425c17205e50e1bfdd0b7c6d8d4ff7fafbb8c919e757e11f53615",
       "event": "created",
       "seenAt": "2026-10-14T12:22:40.557Z"
+    },
+    "announcement:5129:forum-1770": {
+      "id": "announcement:5129:forum-1770",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-1770",
+      "moduleType": "forum",
+      "title": "Von Neumann Machine Exam & Preparation Material",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=1770",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-14T12:55:37.211Z"
     }
   },
   "sections": {
