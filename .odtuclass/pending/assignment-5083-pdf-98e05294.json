@@ -1,0 +1,20 @@
+{
+  "id": "assignment:5083:pdf-98e05294",
+  "type": "assignment",
+  "courseId": 5083,
+  "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+  "sectionId": null,
+  "sectionName": null,
+  "sectionNumber": null,
+  "moduleId": "pdf-98e05294",
+  "moduleType": "pdf_assignment",
+  "title": "Math119_recitation_2026-1_week03",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=52565",
+  "openAt": null,
+  "dueAt": null,
+  "closeAt": null,
+  "description": "MATH 119 Recitation Problems – Week 03 Fall 2026-2027\nQ1. How close to 2 do we have to take x so that 3x − 1 is within a distance of 1\n100 from 5?\nQ2. Show that the equation 2 sin x + 6 cos2 x = x has at least two real solutions.\nQ3. If they exist, find the values of a and b that make f continuous everywhere on R.\nf (x) =\n\n\t\t\t\t\t\n\t\t\t\t\t\nx2 − 9\nx + 3 , if x < −3\nax2 − bx + 1, if − 3 ≤ x < 3\n2ax − 4b, if x ≥ 3.\nQ4. (i) Consider the function f defined on [−1, 1]\nf (x) =\n\n\t\t\n\t\t\nx3 sin( 1\nx )\nsin x if x̸ = 0\n0 if x = 0\n.\nFind the derivative function for all values of x. Also, find an equation of the tangent line\nto the graph of f (x) at x = 0 if it exists.\n(ii) Find the equation of the tangent line to the graph of y = x2\nx − 1 at x = 2 if it exists.\n(iii) Find the equation of the tangent line to the graph of f (x) = |x3| at x = 0 if it exists.\nQ5. Find the derivative of the following functions.\na) f (x) = 5 cos3(x2 + 3x)(3 sec2 x − 5)\nb) f (x) = (tan2 x−1)(sin4(x3)+x5−4)\ncot3 x\nQ6. Suppose that f is a function satisfying the equation\nf (x + y) = f (x) + f (y) + xy2 + x2y\nfor all real numbers x and y. Suppose also that\nlim\nx→0\nf (x)\nx = 3.\nFind f (0) and f ′(2).\n1\n-- 1 of 1 --",
+  "content": "MATH 119 Recitation Problems – Week 03 Fall 2026-2027\nQ1. How close to 2 do we have to take x so that 3x − 1 is within a distance of 1\n100 from 5?\nQ2. Show that the equation 2 sin x + 6 cos2 x = x has at least two real solutions.\nQ3. If they exist, find the values of a and b that make f continuous everywhere on R.\nf (x) =\n\n\t\t\t\t\t\n\t\t\t\t\t\nx2 − 9\nx + 3 , if x < −3\nax2 − bx + 1, if − 3 ≤ x < 3\n2ax − 4b, if x ≥ 3.\nQ4. (i) Consider the function f defined on [−1, 1]\nf (x) =\n\n\t\t\n\t\t\nx3 sin( 1\nx )\nsin x if x̸ = 0\n0 if x = 0\n.\nFind the derivative function for all values of x. Also, find an equation of the tangent line\nto the graph of f (x) at x = 0 if it exists.\n(ii) Find the equation of the tangent line to the graph of y = x2\nx − 1 at x = 2 if it exists.\n(iii) Find the equation of the tangent line to the graph of f (x) = |x3| at x = 0 if it exists.\nQ5. Find the derivative of the following functions.\na) f (x) = 5 cos3(x2 + 3x)(3 sec2 x − 5)\nb) f (x) = (tan2 x−1)(sin4(x3)+x5−4)\ncot3 x\nQ6. Suppose that f is a function satisfying the equation\nf (x + y) = f (x) + f (y) + xy2 + x2y\nfor all real numbers x and y. Suppose also that\nlim\nx→0\nf (x)\nx = 3.\nFind f (0) and f ′(2).\n1\n-- 1 of 1 --",
+  "contentHash": "434fcfd88fe4c8eb5cd7ea3814b2cc05daa6240ef21641fc4b625c5bef51c439",
+  "event": "created"
+}
