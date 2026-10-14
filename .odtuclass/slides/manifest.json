@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T09:19:04.628Z",
+  "updatedAt": "2026-10-14T12:29:59.575Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -147,6 +147,21 @@
       "filesize": 1025821,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as a slide deck in the metadata and contains instructional content organized by slide numbers for Week 3a of the course.",
       "syncedAt": "2026-10-13T18:53:54.681Z"
+    },
+    "BIOL109/4 Central Dogma I DNA Replication.pdf": {
+      "id": "slide:BIOL109:4 Central Dogma I DNA Replication.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "Central Dogma",
+      "filename": "4 Central Dogma I DNA Replication.pdf",
+      "formattedFilename": "4. Central Dogma I DNA Replication.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=52157",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/356858/mod_resource/content/1/4%20Central%20Dogma%20I%20DNA%20Replication.pptx",
+      "filesize": 2394170,
+      "reason": "Gemini (gemini-3-flash-preview): The document is clearly a lecture presentation, indicated by the slide numbering (e.g., '1 of 47'), bulleted instructional content on DNA replication and the central dogma, and the visual layout described in the text excerpt.",
+      "syncedAt": "2026-10-14T12:29:52.106Z"
     }
   },
   "evaluatedNonSlides": {

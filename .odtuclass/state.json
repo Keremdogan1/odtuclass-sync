@@ -1023,6 +1023,27 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-13T18:51:18.008Z"
+    },
+    "assignment:694:pdf-03be2acb": {
+      "id": "assignment:694:pdf-03be2acb",
+      "type": "assignment",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "sectionId": null,
+      "sectionName": null,
+      "sectionNumber": null,
+      "moduleId": "pdf-03be2acb",
+      "moduleType": "pdf_assignment",
+      "title": "Example MT exam",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=52033",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "description": "BIOL109 MIDTERM EXAM Full Name:\nID Number:\nInstructions:\n1. Write down your name and ID number on each sheet of the exam.\n2. Sign the METU honour code on this page.\n3. There should be 9 pages/5 sheets in the exam booklet. Check if your booklet\nis complete before you start.\n4. The duration of the exam is 90 minutes.\n5. You are not allowed to leave during the exam. If you do for any reason, you\nwill not be able to return to the exam.\n6. There are 25 questions. Each question is 4 points.\n7. You can only request translation of unknown words (except biological\nterms) from the Teaching Assistants.\n8. Write down your answers at the provided table on the last page of the exam\nbooklet. Any answers not written in the table but are marked on the\nquestion will be disregarded.\n9. Use capital letters when filling in the answer table. Your choice needs to be\neasily legible otherwise it won’t be graded.\nNAME:\nID NUMBER:\nMETU Honour Code:\n\"The members of the METU community are reliable, responsible and\nhonourable people who embrace only the success and recognition they\ndeserve, and act with integrity in their use, evaluation and presentation of\nfacts, data and documents.\"\nSignature:\n1- Which of the following is correct about DNA structure?\n1\n-- 1 of 7 --\nBIOL109 MIDTERM EXAM Full Name:\nID Number:\nA. DNA denaturation results in formation of free nucleotides.\nB. Nucleotides on the same strand are connected through noncovalent\ninteractions.\nC. If we know the percentages of each nucleotide in a DNA molecule, we can\nfigure out its sequence.\nD. If DNA loses its three-dimensional shape, it may still be able to return to\noriginal structure.\nE. Sugar-phosphate backbone of both DNA strands runs in 3’ to 5’ direction.\n2- Which of the following is a good example of the dynamic nature of the genetic\nmaterial?\nA. There are genes that code for proteins that enable organismal/cellular\nmovement such as flagella.\nB. Maternal copy of genes in an organism originates from the haploid genome\nof the oocyte.\nC. Histone proteins are conserved proteins.\nD. If the entire nucleus of an organism X is replaced with the nucleus of another\norganism Y (nuclear cloning), the cell will show the phenotype organism Y.\nE. Similar genes can adopt new functions in different species.\n3- If pyrimidines could bind to other pyrimidines, and purines could bind to other",
+      "content": "BIOL109 MIDTERM EXAM Full Name:\nID Number:\nInstructions:\n1. Write down your name and ID number on each sheet of the exam.\n2. Sign the METU honour code on this page.\n3. There should be 9 pages/5 sheets in the exam booklet. Check if your booklet\nis complete before you start.\n4. The duration of the exam is 90 minutes.\n5. You are not allowed to leave during the exam. If you do for any reason, you\nwill not be able to return to the exam.\n6. There are 25 questions. Each question is 4 points.\n7. You can only request translation of unknown words (except biological\nterms) from the Teaching Assistants.\n8. Write down your answers at the provided table on the last page of the exam\nbooklet. Any answers not written in the table but are marked on the\nquestion will be disregarded.\n9. Use capital letters when filling in the answer table. Your choice needs to be\neasily legible otherwise it won’t be graded.\nNAME:\nID NUMBER:\nMETU Honour Code:\n\"The members of the METU community are reliable, responsible and\nhonourable people who embrace only the success and recognition they\ndeserve, and act with integrity in their use, evaluation and presentation of\nfacts, data and documents.\"\nSignature:\n1- Which of the following is correct about DNA structure?\n1\n-- 1 of 7 --\nBIOL109 MIDTERM EXAM Full Name:\nID Number:\nA. DNA denaturation results in formation of free nucleotides.\nB. Nucleotides on the same strand are connected through noncovalent\ninteractions.\nC. If we know the percentages of each nucleotide in a DNA molecule, we can\nfigure out its sequence.\nD. If DNA loses its three-dimensional shape, it may still be able to return to\noriginal structure.\nE. Sugar-phosphate backbone of both DNA strands runs in 3’ to 5’ direction.\n2- Which of the following is a good example of the dynamic nature of the genetic\nmaterial?\nA. There are genes that code for proteins that enable organismal/cellular\nmovement such as flagella.\nB. Maternal copy of genes in an organism originates from the haploid genome\nof the oocyte.\nC. Histone proteins are conserved proteins.\nD. If the entire nucleus of an organism X is replaced with the nucleus of another\norganism Y (nuclear cloning), the cell will show the phenotype organism Y.\nE. Similar genes can adopt new functions in different species.\n3- If pyrimidines could bind to other pyrimidines, and purines could bind to other",
+      "contentHash": "164541b4f85425c17205e50e1bfdd0b7c6d8d4ff7fafbb8c919e757e11f53615",
+      "event": "created",
+      "seenAt": "2026-10-14T12:22:40.557Z"
     }
   },
   "sections": {
@@ -2246,6 +2267,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is a list of instructor office hours and contact information, which is an administrative document and contains no lecture content or student assignments.",
       "seenAt": "2026-10-12T13:56:15.258Z",
       "updatedAt": "2026-10-12T13:56:15.258Z"
+    },
+    "resource:694:52033": {
+      "id": "resource:694:52033",
+      "type": "resource",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "moduleId": 52033,
+      "name": "Example MT exam",
+      "filename": "Example MT exam.docx",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=52033",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "problem_sheet",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an example midterm exam containing a series of multiple-choice questions for students to solve, which qualifies as a problem sheet or set of exercises.",
+      "seenAt": "2026-10-14T12:22:40.760Z",
+      "updatedAt": "2026-10-14T12:22:40.760Z"
     }
   }
 }
