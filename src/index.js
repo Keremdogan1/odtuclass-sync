@@ -5,6 +5,7 @@ import { getAssignments } from './odtuclass/assignments.js';
 import { getCourseSections } from './odtuclass/sections.js';
 import { getCourseResources, fetchResourceBuffer } from './odtuclass/resources.js';
 import { syncCeng111Slides } from './odtuclass/slides.js';
+import { syncCourseSyllabi } from './odtuclass/syllabi.js';
 import { getEnrichedCalendarTasks } from './odtuclass/calendar.js';
 import { getCourseAnnouncements } from './odtuclass/announcements.js';
 import { extractPdfText, parseCoursePdf } from './pdf/extractor.js';
@@ -375,6 +376,16 @@ try {
 	} catch (annPipelineError) {
 		console.error('\n=== ANNOUNCEMENTS PIPELINE ERROR ===');
 		console.error(annPipelineError.message);
+	}
+
+	// --- 8. Course Syllabi Pipeline (Isolated) ---
+	try {
+		console.log('\nChecking course syllabi...');
+		const syllabi = await syncCourseSyllabi(client, courses);
+		console.log(`Synced ${syllabi.length} course syllabus/outline document(s).`);
+	} catch (syllabiPipelineError) {
+		console.error('\n=== SYLLABI PIPELINE ERROR ===');
+		console.error(syllabiPipelineError.message);
 	}
 } catch (error) {
 	console.error('\n=== TEST FAILED ===');
