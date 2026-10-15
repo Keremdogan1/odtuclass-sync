@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T03:07:12.876Z",
+  "updatedAt": "2026-10-15T08:51:42.977Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -162,6 +162,21 @@
       "filesize": 2394170,
       "reason": "Gemini (gemini-3-flash-preview): The document is clearly a lecture presentation, indicated by the slide numbering (e.g., '1 of 47'), bulleted instructional content on DNA replication and the central dogma, and the visual layout described in the text excerpt.",
       "syncedAt": "2026-10-14T12:29:52.106Z"
+    },
+    "CENG111/CENG111-2026--Week3b-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week3b-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week3b-Prelecture.pdf",
+      "filename": "CENG111-2026--Week3b-Prelecture.pdf",
+      "formattedFilename": "2026 Week 3b Prelecture.pdf",
+      "weekKey": "3b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week3b-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week3b-Prelecture.pdf?forcedownload=1",
+      "filesize": 4962715,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as a pre-lecture slide deck for Week 3b, contains slide-based formatting (e.g., '1 of 71'), and presents educational content on CPU architecture and the Von Neumann machine.",
+      "syncedAt": "2026-10-15T08:51:36.467Z"
     }
   },
   "evaluatedNonSlides": {
