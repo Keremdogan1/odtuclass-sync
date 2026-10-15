@@ -1161,6 +1161,24 @@
       "contentHash": "434fcfd88fe4c8eb5cd7ea3814b2cc05daa6240ef21641fc4b625c5bef51c439",
       "event": "created",
       "seenAt": "2026-10-14T22:58:44.883Z"
+    },
+    "announcement:5083:forum-1917": {
+      "id": "announcement:5083:forum-1917",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-1917",
+      "moduleType": "forum",
+      "title": "Section tranfers done",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=1917",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-15T16:24:14.091Z"
     }
   },
   "sections": {
@@ -2486,6 +2504,23 @@
       "reason": "Rule-based evaluation: score=5, slideScore=-6, matchedPositives=[recitation], matchedNegatives=[]",
       "seenAt": "2026-10-14T22:58:44.920Z",
       "updatedAt": "2026-10-14T22:58:44.920Z"
+    },
+    "resource:4849:53655": {
+      "id": "resource:4849:53655",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 53655,
+      "name": "105-20261-Syllabus",
+      "filename": "105-20261-Syllabus.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=53655",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "single_assignment",
+      "reason": "Rule-based evaluation: score=-2, slideScore=-10, matchedPositives=[pattern:homework_header], matchedNegatives=[syllabus]",
+      "seenAt": "2026-10-15T16:21:42.018Z",
+      "updatedAt": "2026-10-15T16:21:42.018Z"
     }
   }
 }
