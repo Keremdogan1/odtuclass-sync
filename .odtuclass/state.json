@@ -583,9 +583,9 @@
       "openAt": "2026-09-24T04:00:00.000Z",
       "dueAt": "2026-10-18T20:59:00.000Z",
       "closeAt": null,
-      "status": "todo",
-      "content": "HW-01 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-10-18T20:59:00.000Z | Status: todo",
-      "contentHash": "ee4bd47e51aef62e22fbba591cfb3365e22d6dc58b52a1d821bfaf5809845a88",
+      "status": "in-progress",
+      "content": "HW-01 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-10-18T20:59:00.000Z | Status: in-progress",
+      "contentHash": "9f2a27ee315773065f7d6fb32c8b8a31a7c593049e0c197723d4ae07cc043ad5",
       "event": "created",
       "seenAt": "2026-10-11T21:18:54.665Z"
     },
@@ -1179,6 +1179,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-15T16:24:14.091Z"
+    },
+    "announcement:3015:forum-1952": {
+      "id": "announcement:3015:forum-1952",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-1952",
+      "moduleType": "forum",
+      "title": "Tomorrow: Lecture on METU rules & regulations",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=1952",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-15T22:56:01.109Z"
     }
   },
   "sections": {
