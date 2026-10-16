@@ -55,9 +55,9 @@ Instructions:
 2. Clearly distinguish each question number/letter and highlight the final answer in bold (e.g. **Answer:** $...$).
 3. Use clean LaTeX/KaTeX math notation ($...$ inline, $$...$$ display). Never put \\frac or complex formulas inside \\mathbf{...}; put standard markdown bold outside the math delimiters (e.g. **$...$**). Do not add spaces inside dollar delimiters (use $x$ not $ x $).
 4. For textbook PDF citations (like Giancoli solutions), format links using Obsidian native vault syntax without folder prefixes: [[Book Solutions.pdf#page=N|Book Solutions.pdf (Page N)]].
-5. Wrap your entire response in an Obsidian collapsible callout formatted exactly like this:
+5. Wrap your entire response in an Obsidian callout formatted exactly like this (open by default, do NOT use a minus sign):
 
-> [!tip]- 🔑 Answer Key & Detailed Solutions (Click to expand)
+> [!tip] 🔑 Answer Key & Detailed Solutions
 >
 > ### Q1. ...
 > - **Steps:** ...
@@ -67,7 +67,7 @@ Instructions:
 >
 > ### Q2. ...
 
-Do NOT wrap the callout in markdown backtick code blocks. Start directly with "> [!tip]-".`;
+Do NOT wrap the callout in markdown backtick code blocks. Start directly with "> [!tip]".`;
 
 	const candidateModels = [
 		process.env.GEMINI_MODEL,
@@ -96,7 +96,7 @@ Do NOT wrap the callout in markdown backtick code blocks. Start directly with ">
 
 			const data = await response.json();
 			const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-			if (text && text.includes('[!tip]-')) {
+			if (text && text.includes('[!tip]')) {
 				console.log(`  [AI Solver] Successfully generated Answer Key using model ${model}`);
 				return text.trim();
 			}
