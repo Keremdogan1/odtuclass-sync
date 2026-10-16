@@ -53,8 +53,9 @@ ${content.slice(0, 14000)}
 Instructions:
 1. Provide a step-by-step, mathematically rigorous and complete Answer Key in English.
 2. Clearly distinguish each question number/letter and highlight the final answer in bold (e.g. **Answer:** $...$).
-3. Use clean LaTeX/KaTeX math notation ($...$ inline, $$...$$ display) where appropriate.
-4. Wrap your entire response in an Obsidian collapsible callout formatted exactly like this:
+3. Use clean LaTeX/KaTeX math notation ($...$ inline, $$...$$ display). Never put \\frac or complex formulas inside \\mathbf{...}; put standard markdown bold outside the math delimiters (e.g. **$...$**). Do not add spaces inside dollar delimiters (use $x$ not $ x $).
+4. For textbook PDF citations (like Giancoli solutions), format links using Obsidian native vault syntax without folder prefixes: [[Book Solutions.pdf#page=N|Book Solutions.pdf (Page N)]].
+5. Wrap your entire response in an Obsidian collapsible callout formatted exactly like this:
 
 > [!tip]- 🔑 Answer Key & Detailed Solutions (Click to expand)
 >
