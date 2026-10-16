@@ -10,6 +10,7 @@ import { getEnrichedCalendarTasks } from './odtuclass/calendar.js';
 import { getCourseAnnouncements } from './odtuclass/announcements.js';
 import { extractPdfText, parseCoursePdf } from './pdf/extractor.js';
 import { classifyPdf } from './pdf/classifier.js';
+import { generateAssignmentSolutionKey } from './odtuclass/solutions.js';
 import {
 	syncAssignments,
 	syncSections,
@@ -70,6 +71,18 @@ try {
 			console.log(`Found ${syncResult.newAssignments.length} new assignments.`);
 
 			for (const assignment of syncResult.newAssignments) {
+				if (assignment.event === 'created') {
+					try {
+						const solutionKey = await generateAssignmentSolutionKey(assignment, assignment.content);
+						if (solutionKey) {
+							assignment.content = (assignment.content ? assignment.content + '\n\n' : '') + solutionKey;
+							assignment.description = (assignment.description ? assignment.description + '\n\n' : '') + solutionKey;
+						}
+					} catch (solErr) {
+						console.warn(`  Failed generating solution key for ${assignment.id}: ${solErr.message}`);
+					}
+				}
+
 				const pendingPath = await writePendingAssignment(
 					assignment,
 					getPendingDirectory(),
@@ -216,6 +229,18 @@ try {
 					console.log(`Extracted single assignment payload from "${res.name}".`);
 					const assignmentSyncResult = await syncAssignments(parsed.items);
 					for (const newAssignment of assignmentSyncResult.newAssignments) {
+						if (newAssignment.event === 'created') {
+							try {
+								const solutionKey = await generateAssignmentSolutionKey(newAssignment, pdfText || newAssignment.content);
+								if (solutionKey) {
+									newAssignment.content = (newAssignment.content ? newAssignment.content + '\n\n' : '') + solutionKey;
+									newAssignment.description = (newAssignment.description ? newAssignment.description + '\n\n' : '') + solutionKey;
+								}
+							} catch (solErr) {
+								console.warn(`  Failed generating solution key for ${newAssignment.id}: ${solErr.message}`);
+							}
+						}
+
 						const pendingPath = await writePendingAssignment(
 							newAssignment,
 							getPendingDirectory(),
