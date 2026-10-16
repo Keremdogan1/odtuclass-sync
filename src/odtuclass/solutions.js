@@ -54,7 +54,7 @@ Instructions:
 1. Provide a step-by-step, mathematically rigorous and complete Answer Key in English.
 2. Clearly distinguish each question number/letter and highlight the final answer in bold (e.g. **Answer:** $...$).
 3. Use clean LaTeX/KaTeX math notation ($...$ inline, $$...$$ display). Never put \\frac or complex formulas inside \\mathbf{...}; put standard markdown bold outside the math delimiters (e.g. **$...$**). Do not add spaces inside dollar delimiters (use $x$ not $ x $).
-4. For textbook PDF citations (like Giancoli solutions), format links using Obsidian native vault syntax without folder prefixes: [[Book Solutions.pdf#page=N|Book Solutions.pdf (Page N)]].
+4. For Physics (PHYS 105), the course textbook is Giancoli 5th Edition (Global Edition). If citing the textbook in the vault, format links as: [[Physics For Scientists and Engineers.pdf#page=N|Giancoli 5th Ed. (Sayfa N)]].
 5. Wrap your entire response in an Obsidian callout formatted exactly like this (open by default, do NOT use a minus sign):
 
 > [!tip] 🔑 Answer Key & Detailed Solutions
