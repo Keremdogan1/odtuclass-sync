@@ -1254,6 +1254,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-17T14:55:06.182Z"
+    },
+    "announcement:5083:forum-2178": {
+      "id": "announcement:5083:forum-2178",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-2178",
+      "moduleType": "forum",
+      "title": "Mandatory Exam Security Acknowledgement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2178",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-17T18:11:48.034Z"
     }
   },
   "sections": {
