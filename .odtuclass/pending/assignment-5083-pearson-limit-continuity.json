@@ -7,11 +7,13 @@
   "moduleType": "pearson",
   "title": "Homework: Limit and continuity - basics",
   "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
-  "openAt": "2026-10-03T06:00:00.000Z",
+  "openAt": null,
   "dueAt": "2026-10-11T20:59:00.000Z",
   "closeAt": null,
   "status": "done",
-  "content": "Homework: Limit and continuity - basics | Start: 2026-10-03T06:00:00.000Z | Due: 2026-10-11T20:59:00.000Z | Status: todo",
-  "contentHash": "2893c4fd5b132aca22e500e67110ecdddc87f136ee3d54043ee6f3dd594538e4",
-  "event": "created"
+  "content": "11/10/2611:59pm Homework Limit and continuity - basics see score for Limit and continuity - basics",
+  "contentHash": "20d45882a3e38808beca3292c1dd65b9535e5aa088c69ebfac721d28159cd94f",
+  "event": "updated",
+  "statusChanged": false,
+  "dueChanged": false
 }
