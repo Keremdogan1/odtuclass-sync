@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T08:17:19.311Z",
+  "updatedAt": "2026-10-17T14:57:36.975Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -334,6 +334,18 @@
       "filename": "Types of Tone.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is a worksheet containing four short texts with blanks for students to identify the tone from a provided list of options, which constitutes a student exercise/assignment.",
       "evaluatedAt": "2026-10-16T22:33:06.596Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=56107": {
+      "courseCode": "MATH119",
+      "title": "Mathematics Department Exam Security Protocols and Regulations",
+      "filename": "Mathematics Department Exam Security Protocols and Regulations.pdf",
+      "reason": "Gemini (gemini-flash-latest): Administrative document detailing exam security rules and regulations.",
+      "evaluatedAt": "2026-10-17T14:57:32.458Z"
+    },
+    "https://odtuclass2025s.metu.edu.tr/pluginfile.php/420473/mod_resource/content/1/Mathematics%20Department%20Exam%20Security%20Protocols%20and%20Regulations.pdf": {
+      "title": "rules",
+      "reason": "Not a PDF or convertible Office document",
+      "evaluatedAt": "2026-10-17T14:57:33.956Z"
     }
   }
 }

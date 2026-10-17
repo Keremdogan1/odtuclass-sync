@@ -1236,6 +1236,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-16T22:33:24.642Z"
+    },
+    "assignment:5083:56148": {
+      "id": "assignment:5083:56148",
+      "type": "assignment",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "sectionId": 91677,
+      "sectionName": "General",
+      "sectionNumber": 0,
+      "moduleId": 56148,
+      "moduleType": "questionnaire",
+      "title": "Exam Security Acknowledgement Form",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/questionnaire/view.php?id=56148",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-17T14:55:06.182Z"
     }
   },
   "sections": {
@@ -2595,6 +2613,23 @@
       "reason": "Gemini (gemini-flash-latest): The document is an exercise sheet containing multiple texts where students are tasked with identifying the tone of each text from a provided list of options.",
       "seenAt": "2026-10-16T22:30:52.640Z",
       "updatedAt": "2026-10-16T22:30:52.640Z"
+    },
+    "resource:5083:56107": {
+      "id": "resource:5083:56107",
+      "type": "resource",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": 56107,
+      "name": "Mathematics Department Exam Security Protocols and Regulations",
+      "filename": "Mathematics Department Exam Security Protocols and Regulations.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=56107",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-flash-latest): Administrative document detailing exam security protocols and regulations.",
+      "seenAt": "2026-10-17T14:55:26.040Z",
+      "updatedAt": "2026-10-17T14:55:26.040Z"
     }
   }
 }
