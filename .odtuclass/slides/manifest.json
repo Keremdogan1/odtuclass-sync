@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T18:30:00.101Z",
+  "updatedAt": "2026-10-18T22:15:48.106Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -353,6 +353,41 @@
       "filename": "Mathematics Department Exam Security Protocols and Regulations.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative set of exam security protocols and regulations, not a lecture slide deck or a student assignment.",
       "evaluatedAt": "2026-10-18T08:34:49.554Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Links%20to%20be%20Discovered/Optional_Recommendations_for_the_Curious.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Optional_Recommendations_for_the_Curious.pdf",
+      "filename": "Optional_Recommendations_for_the_Curious.pdf",
+      "reason": "Gemini (gemini-flash-latest): This is an informational resource guide containing optional external links and tool recommendations, not an assignment or a lecture slide deck.",
+      "evaluatedAt": "2026-10-18T22:15:27.384Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Links%20to%20be%20Discovered/Recommended_Links.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Recommended_Links.pdf",
+      "filename": "Recommended_Links.pdf",
+      "reason": "Gemini (gemini-flash-latest): This is an administrative reference document containing a list of useful university and departmental links and resources.",
+      "evaluatedAt": "2026-10-18T22:15:29.851Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Links%20to%20be%20Discovered/Practice_Recommendations_Linux.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Practice_Recommendations_Linux.pdf",
+      "filename": "Practice_Recommendations_Linux.pdf",
+      "reason": "Gemini (gemini-flash-latest): This document is a supplementary resource list providing external links and guides for Linux practice, not an assignment or a lecture slide deck.",
+      "evaluatedAt": "2026-10-18T22:15:34.166Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/lab_manual_2014.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "lab_manual_2014.pdf",
+      "filename": "lab_manual_2014.pdf",
+      "reason": "Gemini (gemini-flash-latest): This document is a laboratory reference manual and software tutorial for UNIX, neither a student assignment nor a lecture slide deck.",
+      "evaluatedAt": "2026-10-18T22:15:39.285Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/linux_cheat_sheet.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "linux_cheat_sheet.pdf",
+      "filename": "linux_cheat_sheet.pdf",
+      "reason": "Gemini (gemini-flash-latest): This document is a Linux command reference/cheat sheet provided as a lab resource, not an assignment or lecture slide deck.",
+      "evaluatedAt": "2026-10-18T22:15:42.920Z"
     }
   }
 }
