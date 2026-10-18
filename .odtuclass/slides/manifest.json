@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T02:57:28.332Z",
+  "updatedAt": "2026-10-18T08:34:54.464Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -346,6 +346,13 @@
       "title": "rules",
       "reason": "Not a PDF or convertible Office document",
       "evaluatedAt": "2026-10-17T14:57:33.956Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/362442/mod_resource/content/1/Mathematics%20Department%20Exam%20Security%20Protocols%20and%20Regulations.pdf": {
+      "courseCode": "MATH119",
+      "title": "rules",
+      "filename": "Mathematics Department Exam Security Protocols and Regulations.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative set of exam security protocols and regulations, not a lecture slide deck or a student assignment.",
+      "evaluatedAt": "2026-10-18T08:34:49.554Z"
     }
   }
 }
