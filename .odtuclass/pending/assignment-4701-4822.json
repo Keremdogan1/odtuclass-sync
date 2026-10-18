@@ -1,0 +1,18 @@
+{
+  "id": "assignment:4701:4822",
+  "type": "assignment",
+  "courseId": 4701,
+  "courseName": "[OHS 101 ALL SECTIONS] Occupational Health and Safety-I",
+  "sectionId": 84623,
+  "sectionName": "Chapter 2 (October 5 - October 11, 2026)",
+  "sectionNumber": 2,
+  "moduleId": 4822,
+  "moduleType": "quiz",
+  "title": "Quiz 2",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/quiz/view.php?id=4822",
+  "openAt": "2026-10-04T21:00:00.000Z",
+  "dueAt": null,
+  "closeAt": "2026-10-18T20:59:00.000Z",
+  "status": "done",
+  "event": "created"
+}
