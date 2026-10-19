@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T18:21:28.072Z",
+  "updatedAt": "2026-10-19T23:20:30.693Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -192,6 +192,21 @@
       "filesize": 3538121,
       "reason": "Rule-based evaluation: score=-16, slideScore=17, matchedPositives=[], matchedNegatives=[slide, slides]",
       "syncedAt": "2026-10-15T16:23:55.269Z"
+    },
+    "CENG111/CENG111-2026--Week4a_PreLecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week4a_PreLecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week4a_PreLecture.pdf",
+      "filename": "CENG111-2026--Week4a_PreLecture.pdf",
+      "formattedFilename": "2026 Week 4a Prelecture.pdf",
+      "weekKey": "4a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week4a_PreLecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week4a_PreLecture.pdf?forcedownload=1",
+      "filesize": 4697704,
+      "reason": "Gemini (gemini-flash-latest): The document is a pre-lecture slide presentation deck for Week 4a of the course covering topics like Turing machines, ALU, memory types, and computer architectures.",
+      "syncedAt": "2026-10-19T23:20:25.324Z"
     }
   },
   "evaluatedNonSlides": {
