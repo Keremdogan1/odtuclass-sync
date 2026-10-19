@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T09:37:01.224Z",
+  "updatedAt": "2026-10-19T18:21:28.072Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -388,6 +388,13 @@
       "filename": "linux_cheat_sheet.pdf",
       "reason": "Gemini (gemini-flash-latest): This document is a Linux command reference/cheat sheet provided as a lab resource, not an assignment or lecture slide deck.",
       "evaluatedAt": "2026-10-18T22:15:42.920Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab1_Notes.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "Linux_Lab1_Notes.pdf",
+      "filename": "Linux_Lab1_Notes.pdf",
+      "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
+      "evaluatedAt": "2026-10-19T18:21:20.934Z"
     }
   }
 }

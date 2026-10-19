@@ -458,9 +458,9 @@
       "openAt": "2026-10-12T06:00:00.000Z",
       "dueAt": "2026-10-23T20:59:00.000Z",
       "closeAt": null,
-      "status": "todo",
+      "status": "done",
       "content": "Homework: Formal definitions and Differentiation | Start: 2026-10-12T06:00:00.000Z | Due: 2026-10-23T20:59:00.000Z | Status: todo",
-      "contentHash": "dd5048f7323ec4d8bc9b95a800f680a996cbcfc622cd9221494881d3c30eb5ce",
+      "contentHash": "36c536011035a441181f7c601c4eca7dcf541eb56c814b92cfebc34be01f6e0a",
       "event": "created",
       "seenAt": "2026-10-11T11:09:30.217Z"
     },
@@ -1506,6 +1506,42 @@
       "contentHash": "b5ec2461787dab1081ab468ac5837bcf77d6b226fbc99eaf146e27e3f6ef1f23",
       "event": "created",
       "seenAt": "2026-10-18T22:14:39.234Z"
+    },
+    "announcement:5129:forum-2378": {
+      "id": "announcement:5129:forum-2378",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-2378",
+      "moduleType": "forum",
+      "title": "Lab Review Document",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2378",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-19T18:21:42.627Z"
+    },
+    "announcement:5083:forum-2326": {
+      "id": "announcement:5083:forum-2326",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-2326",
+      "moduleType": "forum",
+      "title": "Exam Content of Midterm-I",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2326",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-19T18:21:42.627Z"
     }
   },
   "sections": {
@@ -2882,6 +2918,23 @@
       "reason": "Gemini (gemini-flash-latest): Administrative document detailing exam security protocols and regulations.",
       "seenAt": "2026-10-17T14:55:26.040Z",
       "updatedAt": "2026-10-17T14:55:26.040Z"
+    },
+    "resource:5129:44643-Linux_Lab1_Notes.pdf": {
+      "id": "resource:5129:44643-Linux_Lab1_Notes.pdf",
+      "type": "resource",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "44643-3",
+      "name": "Linux_Lab1_Notes",
+      "filename": "Linux_Lab1_Notes.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab1_Notes.pdf?forcedownload=1",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "unknown",
+      "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
+      "seenAt": "2026-10-19T18:19:07.810Z",
+      "updatedAt": "2026-10-19T18:19:07.810Z"
     }
   }
 }
