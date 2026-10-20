@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T16:22:05.195Z",
+  "updatedAt": "2026-10-20T23:00:14.176Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -425,6 +425,13 @@
       "filename": "Linux_Lab1_Notes.pdf",
       "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
       "evaluatedAt": "2026-10-19T18:21:20.934Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=32023": {
+      "courseCode": "PHYS105",
+      "title": "Laboratory Manual Booklet",
+      "filename": "metu-phys-labman.pdf",
+      "reason": "Gemini (gemini-flash-latest): This is a laboratory manual and workbook containing weekly experiment procedures, exercises, and graded steps with assigned points for students to complete.",
+      "evaluatedAt": "2026-10-20T23:00:12.549Z"
     }
   }
 }

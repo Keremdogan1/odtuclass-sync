@@ -1578,6 +1578,27 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-20T16:22:19.874Z"
+    },
+    "assignment:5275:pdf-409a18cc": {
+      "id": "assignment:5275:pdf-409a18cc",
+      "type": "assignment",
+      "courseId": 5275,
+      "courseName": "[Phys 105, 111, 181 Labs] General Physics I Labs",
+      "sectionId": null,
+      "sectionName": null,
+      "sectionNumber": null,
+      "moduleId": "pdf-409a18cc",
+      "moduleType": "pdf_assignment",
+      "title": "Laboratory Manual Booklet",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=32023",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "description": "CD: LO METU\nwww.gorsel.metu.edu.tr\nGeneral Physics I\nLaboratory\nMechanics\nLaboratory Manual and Workbook\nAnkara, 2026\n-- 1 of 62 --\n-- 2 of 62 --\n1\nForeword\nThis laboratory manual and workbook is a part of a general effort to rewrite and redesign all laboratory\nmanuals offered by the Department of Physics, METU.\nWe believe that there are possibilities for further improvements of the present text. We would like to get\nyour comments and ask for your cooperation in achieving a better manual and workbook.\nPlease send your remarks, ideas and corrections related to this manual to physlab@metu.edu.tr.\nWe thank you and wish you a fruitful academic year in our laboratories.\n-- 3 of 62 --\n1 Introduction and Acknowledgments 3\n1 Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3\n2 The General Physics Laboratory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4\n3 How to Use This Workbook . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4\n4 Laboratory Rules and Safety . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5\n5 Significant Figures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7\n6 Experimental Errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10\n7 Graphs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15\n8 Answers to the Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20\n2 Mechanics 21\n1 Straight Line Motion with Constant Velocity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21\n2 Straight Line Motion with Constant Acceleration and Motion in a Plane . . . . . . . . . . . . 29\n3 Collisions and Conservation of Linear Momentum . . . . . . . . . . . . . . . . . . . . . . . . . 41\n4 Rotational Motion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49\n-- 4 of 62 --\nIntroduction and Acknowledgments\nPreface\nLaboratory work is an essential part of any physics curriculum: in physics it is the experiment that has\nthe last word on a theory. For most students the freshman laboratory is the first place where the concepts\nof the lectures meet real measurements, and since these courses are taken by students of science and\nengineering alike, the laboratory at this level carries a special weight.\nThis manual and workbook goes back to the one prepared in the Department of Physics in 1996, whose\nfirst part drew on Assist. Prof. Dr. Mustafa Özbakan’s General Physics Laboratory Manual (1989) and\nwhich Prof. Dr. Ahmet Ecevit edited. It was revised in 1997, extended in 1998 and 1999, and issued as\na second edition in 2012, after the apparatus of the rotational motion experiment was replaced.\nThe present edition rewrites it throughout. Each experiment explains its physics through the apparatus\non your table and gives only the equations its procedure uses. The procedure and the workbook are\none numbered list, in which every graded step gives its points and leaves room for the answer. The\nfigures have been redrawn, and this introductory chapter on significant figures, errors and graphs has\nbeen revised to match what the experiments ask of you.\nWe are grateful to everyone who contributed to the earlier editions: their authors and editors, the instruc-\ntors and assistants whose notes shaped them over the years, and the students from whom we learned",
+      "content": "CD: LO METU\nwww.gorsel.metu.edu.tr\nGeneral Physics I\nLaboratory\nMechanics\nLaboratory Manual and Workbook\nAnkara, 2026\n-- 1 of 62 --\n-- 2 of 62 --\n1\nForeword\nThis laboratory manual and workbook is a part of a general effort to rewrite and redesign all laboratory\nmanuals offered by the Department of Physics, METU.\nWe believe that there are possibilities for further improvements of the present text. We would like to get\nyour comments and ask for your cooperation in achieving a better manual and workbook.\nPlease send your remarks, ideas and corrections related to this manual to physlab@metu.edu.tr.\nWe thank you and wish you a fruitful academic year in our laboratories.\n-- 3 of 62 --\n1 Introduction and Acknowledgments 3\n1 Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3\n2 The General Physics Laboratory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4\n3 How to Use This Workbook . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4\n4 Laboratory Rules and Safety . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5\n5 Significant Figures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7\n6 Experimental Errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10\n7 Graphs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15\n8 Answers to the Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20\n2 Mechanics 21\n1 Straight Line Motion with Constant Velocity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21\n2 Straight Line Motion with Constant Acceleration and Motion in a Plane . . . . . . . . . . . . 29\n3 Collisions and Conservation of Linear Momentum . . . . . . . . . . . . . . . . . . . . . . . . . 41\n4 Rotational Motion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49\n-- 4 of 62 --\nIntroduction and Acknowledgments\nPreface\nLaboratory work is an essential part of any physics curriculum: in physics it is the experiment that has\nthe last word on a theory. For most students the freshman laboratory is the first place where the concepts\nof the lectures meet real measurements, and since these courses are taken by students of science and\nengineering alike, the laboratory at this level carries a special weight.\nThis manual and workbook goes back to the one prepared in the Department of Physics in 1996, whose\nfirst part drew on Assist. Prof. Dr. Mustafa Özbakan’s General Physics Laboratory Manual (1989) and\nwhich Prof. Dr. Ahmet Ecevit edited. It was revised in 1997, extended in 1998 and 1999, and issued as\na second edition in 2012, after the apparatus of the rotational motion experiment was replaced.\nThe present edition rewrites it throughout. Each experiment explains its physics through the apparatus\non your table and gives only the equations its procedure uses. The procedure and the workbook are\none numbered list, in which every graded step gives its points and leaves room for the answer. The\nfigures have been redrawn, and this introductory chapter on significant figures, errors and graphs has\nbeen revised to match what the experiments ask of you.\nWe are grateful to everyone who contributed to the earlier editions: their authors and editors, the instruc-\ntors and assistants whose notes shaped them over the years, and the students from whom we learned",
+      "contentHash": "7b11fb44d55411259f03d2b4b42f9d97c5e1ddbd236a94315953d253e144af7e",
+      "event": "created",
+      "seenAt": "2026-10-20T22:56:36.297Z"
     }
   },
   "sections": {
@@ -2971,6 +2992,23 @@
       "reason": "Rule-based evaluation: score=0, slideScore=0, matchedPositives=[], matchedNegatives=[]",
       "seenAt": "2026-10-19T18:19:07.810Z",
       "updatedAt": "2026-10-19T18:19:07.810Z"
+    },
+    "resource:5275:32023": {
+      "id": "resource:5275:32023",
+      "type": "resource",
+      "courseId": 5275,
+      "courseName": "[Phys 105, 111, 181 Labs] General Physics I Labs",
+      "moduleId": 32023,
+      "name": "Laboratory Manual Booklet",
+      "filename": "Laboratory Manual Booklet.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=32023",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "weekly_problems",
+      "reason": "Gemini (gemini-flash-latest): This is a laboratory manual and workbook containing experiment procedures, exercises, and graded steps with assigned points for students to complete throughout the term.",
+      "seenAt": "2026-10-20T22:57:17.676Z",
+      "updatedAt": "2026-10-20T22:57:17.676Z"
     }
   }
 }
