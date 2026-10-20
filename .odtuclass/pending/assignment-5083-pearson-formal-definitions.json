@@ -10,9 +10,9 @@
   "openAt": "2026-10-12T06:00:00.000Z",
   "dueAt": "2026-10-23T20:59:00.000Z",
   "closeAt": null,
-  "status": "todo",
+  "status": "done",
   "content": "Homework: Formal definitions and Differentiation | Start: 2026-10-12T06:00:00.000Z | Due: 2026-10-23T20:59:00.000Z | Status: todo",
-  "contentHash": "dd5048f7323ec4d8bc9b95a800f680a996cbcfc622cd9221494881d3c30eb5ce",
+  "contentHash": "36c536011035a441181f7c601c4eca7dcf541eb56c814b92cfebc34be01f6e0a",
   "event": "updated",
   "statusChanged": true,
   "dueChanged": false
