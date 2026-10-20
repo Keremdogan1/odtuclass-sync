@@ -1542,6 +1542,42 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-19T18:21:42.627Z"
+    },
+    "announcement:5151:forum-2476": {
+      "id": "announcement:5151:forum-2476",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": "forum-2476",
+      "moduleType": "forum",
+      "title": "BA100 – Week 3 Course Announcement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2476",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-20T16:22:19.874Z"
+    },
+    "announcement:5083:forum-2477": {
+      "id": "announcement:5083:forum-2477",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-2477",
+      "moduleType": "forum",
+      "title": "LAST EXTANTION About Mandatory Exam Security Acknowledgement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2477",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-20T16:22:19.874Z"
     }
   },
   "sections": {
