@@ -6,57 +6,88 @@
   "courseId": 4849,
   "originalFilename": "105-20261-Syllabus.pdf",
   "pdfFilename": "Syllabus 2026 Fall.pdf",
-  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=53655",
-  "contentHash": "5d0f13aacdf69301c629ead3fdd631502bedbe709e8072c8099fa40aa5967c98",
-  "syncedAt": "2026-10-15T16:24:37.638Z",
+  "sourceUrl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=60630",
+  "contentHash": "3a9ffd537378592ef27271073d6b6267a31bd3ae640895807d24e51016a403e7",
+  "syncedAt": "2026-10-22T09:12:37.745Z",
   "extracted": {
-    "exams": [],
-    "grading": [
+    "exams": [
       {
-        "component": "Midterm",
+        "title": "First Midterm",
+        "date": "2026-10-31",
+        "time": "10:00-11:30",
         "weight": "%25",
-        "notes": ""
+        "location": null,
+        "notes": "Face-to-face; coverage to be announced"
       },
       {
-        "component": "Midterm",
+        "title": "Second Midterm",
+        "date": "2026-12-05",
+        "time": "10:00-11:30",
         "weight": "%25",
-        "notes": ""
+        "location": null,
+        "notes": "Face-to-face; coverage to be announced"
+      },
+      {
+        "title": "Final Examination",
+        "date": "2027-01-04",
+        "time": "09:30-11:30",
+        "weight": "%35",
+        "location": null,
+        "notes": "Face-to-face; covers all course content; open to all students with no restriction"
+      },
+      {
+        "title": "Make-up Exam",
+        "date": "2027-01-11",
+        "time": "19:00-21:00",
+        "weight": null,
+        "location": null,
+        "notes": "Covers all course content; for students with documented excuses for one missed exam"
+      }
+    ],
+    "grading": [
+      {
+        "component": "First Midterm",
+        "weight": "%25",
+        "notes": null
+      },
+      {
+        "component": "Second Midterm",
+        "weight": "%25",
+        "notes": null
       },
       {
         "component": "Final Examination",
         "weight": "%35",
-        "notes": ""
+        "notes": "No restrictions to be eligible for the final exam"
       },
       {
         "component": "Laboratory",
         "weight": "%10",
-        "notes": ""
+        "notes": "Must complete all experiments and average >= 50; missing one experiment or average < 50 results in NA"
       },
       {
         "component": "Attendance",
         "weight": "%5",
-        "notes": ""
+        "notes": "Attendance >= 60% receives proportional grade (1-5); below 60% receives 0"
       },
       {
-        "component": "Homework",
+        "component": "Online Homework",
         "weight": "%3",
-        "notes": ""
-      },
-      {
-        "component": "attendance rate of",
-        "weight": "%60",
-        "notes": ""
-      },
-      {
-        "component": "attendance rate below",
-        "weight": "%60",
-        "notes": ""
+        "notes": "Bonus points; score of 50-100 gives 1-3 bonus points proportionally"
       }
     ],
     "weeklySchedule": [],
-    "textbooks": [],
-    "instructors": [],
-    "summary": "Syllabus document extracted."
+    "textbooks": [
+      "Giancoli, Physics for Scientists and Engineers with Modern Physics, Global Edition, 5th Edition"
+    ],
+    "instructors": [
+      {
+        "name": "Dr. Mustafa Özbakan",
+        "email": "ozbakan@metu.edu.tr",
+        "office": null
+      }
+    ],
+    "summary": "PHYS 105 (General Physics I) covers fundamental introductory physics topics supported by face-to-face theoretical lectures and laboratory experiments. The course evaluation consists of two midterms (25% each), a comprehensive final exam (35%), laboratory work (10%), attendance (5%), and up to 3% bonus for online homework."
   },
   "event": "created"
 }

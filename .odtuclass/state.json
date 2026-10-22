@@ -3118,6 +3118,40 @@
       "reason": "Rule-based evaluation: score=-26, slideScore=-32, matchedPositives=[problem, problems], matchedNegatives=[solved problem, solved problems, pattern:solved_problems]",
       "seenAt": "2026-10-21T23:01:39.351Z",
       "updatedAt": "2026-10-21T23:01:39.351Z"
+    },
+    "resource:4849:60630": {
+      "id": "resource:4849:60630",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 60630,
+      "name": "105-20261-Syllabus",
+      "filename": "105-20261-Syllabus.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=60630",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-flash-latest): This is a course syllabus containing administrative information, grading policies, exam schedules, and attendance rules.",
+      "seenAt": "2026-10-22T09:09:46.623Z",
+      "updatedAt": "2026-10-22T09:09:46.623Z"
+    },
+    "resource:4849:60631": {
+      "id": "resource:4849:60631",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 60631,
+      "name": "105-20261-Exam-Rules",
+      "filename": "105-20261-Exam-Rules.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=60631",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative announcement outlining exam rules and regulations, which does not qualify as a lecture slide or a problem assignment.",
+      "seenAt": "2026-10-22T09:09:46.623Z",
+      "updatedAt": "2026-10-22T09:09:46.623Z"
     }
   }
 }

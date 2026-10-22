@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T03:20:19.097Z",
+  "updatedAt": "2026-10-22T09:12:01.584Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -222,6 +222,21 @@
       "filesize": 4119328,
       "reason": "Gemini (gemini-3-flash-preview): The document is a lecture slide deck for Week 4 of the course, containing 87 pages of teaching material on topics like Turing Machines, ALU, and Memory types.",
       "syncedAt": "2026-10-20T16:21:58.704Z"
+    },
+    "CENG111/CENG111-2026--Week4b-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week4b-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week4b-Prelecture.pdf",
+      "filename": "CENG111-2026--Week4b-Prelecture.pdf",
+      "formattedFilename": "2026 Week 4b Prelecture.pdf",
+      "weekKey": "4b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week4b-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week4b-Prelecture.pdf?forcedownload=1",
+      "filesize": 1500500,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Prelecture', contains slide numbers (e.g., 1 of 33), is located in a 'Slides' folder, and uses a bulleted presentation format to teach course topics like memory types and programming languages.",
+      "syncedAt": "2026-10-22T09:11:49.651Z"
     }
   },
   "evaluatedNonSlides": {
@@ -432,6 +447,13 @@
       "filename": "metu-phys-labman.pdf",
       "reason": "Gemini (gemini-flash-latest): This is a laboratory manual and workbook containing weekly experiment procedures, exercises, and graded steps with assigned points for students to complete.",
       "evaluatedAt": "2026-10-20T23:00:12.549Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=60631": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-Exam-Rules",
+      "filename": "105-20261-Exam-Rules.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative guide outlining exam rules and regulations, which does not qualify as a lecture slide or a student assignment.",
+      "evaluatedAt": "2026-10-22T09:11:59.487Z"
     }
   }
 }
