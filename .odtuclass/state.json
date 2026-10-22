@@ -1674,6 +1674,60 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-21T23:03:42.825Z"
+    },
+    "assignment:3533:28460": {
+      "id": "assignment:3533:28460",
+      "type": "assignment",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "sectionId": 63565,
+      "sectionName": "October 19 - October 25",
+      "sectionNumber": 4,
+      "moduleId": 28460,
+      "moduleType": "hvp",
+      "title": "ENG 101 Paragraph Writing Part 1",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/hvp/view.php?id=28460",
+      "openAt": null,
+      "dueAt": "2026-10-26T21:00:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-22T16:36:02.285Z"
+    },
+    "assignment:3533:28461": {
+      "id": "assignment:3533:28461",
+      "type": "assignment",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "sectionId": 63565,
+      "sectionName": "October 19 - October 25",
+      "sectionNumber": 4,
+      "moduleId": 28461,
+      "moduleType": "hvp",
+      "title": "ENG 101 Paragraph Writing Part 2",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/hvp/view.php?id=28461",
+      "openAt": null,
+      "dueAt": "2026-10-26T21:00:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-22T16:36:02.285Z"
+    },
+    "announcement:3015:forum-2750": {
+      "id": "announcement:3015:forum-2750",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-2750",
+      "moduleType": "forum",
+      "title": "Tomorrow at 8:40: Lecture on METU rules & regulations (cont'd)",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2750",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-22T16:38:51.333Z"
     }
   },
   "sections": {
@@ -3152,6 +3206,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative announcement outlining exam rules and regulations, which does not qualify as a lecture slide or a problem assignment.",
       "seenAt": "2026-10-22T09:09:46.623Z",
       "updatedAt": "2026-10-22T09:09:46.623Z"
+    },
+    "resource:3533:61609": {
+      "id": "resource:3533:61609",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 61609,
+      "name": "Graded Paragraph Writing Quiz: Guidelines & Rubric",
+      "filename": "Graded Paragraph Writing Quiz: Guidelines & Rubric.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=61609",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document contains guidelines and a rubric for a writing quiz, which is administrative and instructional rather than a set of problems to solve or a lecture presentation.",
+      "seenAt": "2026-10-22T16:36:27.082Z",
+      "updatedAt": "2026-10-22T16:36:27.082Z"
     }
   }
 }

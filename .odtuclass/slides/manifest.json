@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T09:12:01.584Z",
+  "updatedAt": "2026-10-22T16:38:38.631Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -237,6 +237,21 @@
       "filesize": 1500500,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Prelecture', contains slide numbers (e.g., 1 of 33), is located in a 'Slides' folder, and uses a bulleted presentation format to teach course topics like memory types and programming languages.",
       "syncedAt": "2026-10-22T09:11:49.651Z"
+    },
+    "CENG111/CENG111-2026--Week4b.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week4b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week4b.pdf",
+      "filename": "CENG111-2026--Week4b.pdf",
+      "formattedFilename": "2026 Week 4b.pdf",
+      "weekKey": "4b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week4b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week4b.pdf?forcedownload=1",
+      "filesize": 1500500,
+      "reason": "Rule-based evaluation: score=-16, slideScore=17, matchedPositives=[], matchedNegatives=[slide, slides]",
+      "syncedAt": "2026-10-22T16:38:33.497Z"
     }
   },
   "evaluatedNonSlides": {
