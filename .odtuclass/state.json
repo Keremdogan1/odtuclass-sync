@@ -1728,6 +1728,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-22T16:38:51.333Z"
+    },
+    "announcement:3015:forum-2800": {
+      "id": "announcement:3015:forum-2800",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-2800",
+      "moduleType": "forum",
+      "title": "Lecture slıdes & Syllabus",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2800",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-23T09:50:27.311Z"
     }
   },
   "sections": {
@@ -3223,6 +3241,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document contains guidelines and a rubric for a writing quiz, which is administrative and instructional rather than a set of problems to solve or a lecture presentation.",
       "seenAt": "2026-10-22T16:36:27.082Z",
       "updatedAt": "2026-10-22T16:36:27.082Z"
+    },
+    "resource:3533:62283": {
+      "id": "resource:3533:62283",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 62283,
+      "name": "Sample Paragraph",
+      "filename": "Sample Paragraph.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=62283",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-flash-latest): The document is a sample paragraph provided as an exemplar or reference model for academic writing, not an assignment or a lecture slide deck.",
+      "seenAt": "2026-10-23T09:46:27.398Z",
+      "updatedAt": "2026-10-23T09:46:27.398Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T03:19:09.918Z",
+  "updatedAt": "2026-10-23T09:50:11.636Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -469,6 +469,13 @@
       "filename": "105-20261-Exam-Rules.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative guide outlining exam rules and regulations, which does not qualify as a lecture slide or a student assignment.",
       "evaluatedAt": "2026-10-22T09:11:59.487Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=62283": {
+      "courseCode": "ENG101",
+      "title": "Sample Paragraph",
+      "filename": "Paragraph Example.pdf",
+      "reason": "Gemini (gemini-flash-latest): The document is a sample paragraph provided as a writing example or reference material, containing neither student assignment problems nor lecture slides.",
+      "evaluatedAt": "2026-10-23T09:50:05.557Z"
     }
   }
 }
