@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T09:50:11.636Z",
+  "updatedAt": "2026-10-23T16:53:39.784Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -252,6 +252,21 @@
       "filesize": 1500500,
       "reason": "Rule-based evaluation: score=-16, slideScore=17, matchedPositives=[], matchedNegatives=[slide, slides]",
       "syncedAt": "2026-10-22T16:38:33.497Z"
+    },
+    "CENG111/Linux_Lab2_Notes.pdf": {
+      "id": "slide:CENG111:Linux_Lab2_Notes.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Linux_Lab2_Notes.pdf",
+      "filename": "Linux_Lab2_Notes.pdf",
+      "formattedFilename": "Linux_Lab2_Notes.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab2_Notes.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab2_Notes.pdf?forcedownload=1",
+      "filesize": 181592,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a set of instructional notes/guide for a lab session covering Linux commands, intended for teaching/studying the topic.",
+      "syncedAt": "2026-10-23T16:52:45.429Z"
     }
   },
   "evaluatedNonSlides": {
@@ -476,6 +491,13 @@
       "filename": "Paragraph Example.pdf",
       "reason": "Gemini (gemini-flash-latest): The document is a sample paragraph provided as a writing example or reference material, containing neither student assignment problems nor lecture slides.",
       "evaluatedAt": "2026-10-23T09:50:05.557Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=40076": {
+      "courseCode": "ENG101",
+      "title": "Grammar Practice",
+      "filename": "Advanced Grammar Practice.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document consists of grammar exercises (nominalization and inversion) with numbered questions and blank lines for student responses, which is characteristic of a practice worksheet or assignment.",
+      "evaluatedAt": "2026-10-23T16:53:34.571Z"
     }
   }
 }
