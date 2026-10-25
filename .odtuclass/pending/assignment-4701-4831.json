@@ -12,7 +12,9 @@
   "url": "https://odtuclass2026f.metu.edu.tr/mod/quiz/view.php?id=4831",
   "openAt": "2026-10-18T21:00:00.000Z",
   "dueAt": null,
-  "closeAt": "2026-10-25T20:59:00.000Z",
-  "status": "todo",
-  "event": "created"
+  "closeAt": null,
+  "status": "done",
+  "event": "updated",
+  "statusChanged": true,
+  "dueChanged": false
 }

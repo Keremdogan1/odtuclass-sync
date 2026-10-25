@@ -1485,8 +1485,8 @@
       "url": "https://odtuclass2026f.metu.edu.tr/mod/quiz/view.php?id=4831",
       "openAt": "2026-10-18T21:00:00.000Z",
       "dueAt": null,
-      "closeAt": "2026-10-25T20:59:00.000Z",
-      "status": "todo",
+      "closeAt": null,
+      "status": "done",
       "seenAt": "2026-10-18T15:21:20.008Z"
     },
     "assignment:4849:pearson-hw-02": {
@@ -1821,6 +1821,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-23T16:53:53.558Z"
+    },
+    "announcement:5129:forum-2998": {
+      "id": "announcement:5129:forum-2998",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-2998",
+      "moduleType": "forum",
+      "title": "No Labs This Week and Thursday Lecture Cancellation",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2998",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-25T22:20:01.709Z"
     }
   },
   "sections": {
