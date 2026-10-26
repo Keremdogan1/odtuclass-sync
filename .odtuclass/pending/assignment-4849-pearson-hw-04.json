@@ -1,0 +1,17 @@
+{
+  "id": "assignment:4849:pearson-hw-04",
+  "type": "assignment",
+  "courseId": 4849,
+  "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+  "moduleId": "pearson-hw-04",
+  "moduleType": "pearson",
+  "title": "HW-04",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=8699",
+  "openAt": "2026-09-24T04:00:00.000Z",
+  "dueAt": "2026-11-08T20:59:00.000Z",
+  "closeAt": null,
+  "status": "todo",
+  "content": "HW-04 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-11-08T20:59:00.000Z | Status: todo",
+  "contentHash": "edc02382965cfb151b010b68183f5e3469e027e0359b76c91941a416bdc4d27e",
+  "event": "created"
+}
