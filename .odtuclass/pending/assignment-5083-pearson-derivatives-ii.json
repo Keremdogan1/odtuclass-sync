@@ -8,10 +8,12 @@
   "title": "Homework: Derivatives II",
   "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
   "openAt": "2026-10-26T06:00:00.000Z",
-  "dueAt": "2026-11-06T20:59:00.000Z",
+  "dueAt": "2026-11-01T20:59:00.000Z",
   "closeAt": null,
   "status": "todo",
-  "content": "Homework: Derivatives II | Start: 2026-10-26T06:00:00.000Z | Due: 2026-11-06T20:59:00.000Z | Status: todo",
-  "contentHash": "0e534b5ec93a2b77a99a722f9515713edde98fa29cc283aeb89436445055ac35",
-  "event": "created"
+  "content": "Homework: Derivatives II | Start: 2026-10-26T06:00:00.000Z | Due: 2026-11-01T20:59:00.000Z | Status: todo",
+  "contentHash": "194da82d821f7b895f19eab76ccade7a9b2e0e9bd9dc33f24eaf8a26ecd7816f",
+  "event": "updated",
+  "statusChanged": false,
+  "dueChanged": true
 }

@@ -7,13 +7,13 @@
   "moduleType": "pearson",
   "title": "Homework: Formal definitions and Differentiation",
   "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
-  "openAt": "2026-10-12T06:00:00.000Z",
+  "openAt": null,
   "dueAt": "2026-10-23T20:59:00.000Z",
   "closeAt": null,
   "status": "done",
-  "content": "Homework: Formal definitions and Differentiation | Start: 2026-10-12T06:00:00.000Z | Due: 2026-10-23T20:59:00.000Z | Status: todo",
-  "contentHash": "36c536011035a441181f7c601c4eca7dcf541eb56c814b92cfebc34be01f6e0a",
+  "content": "23/10/2611:59pm Homework Formal definitions and Differentiation see score for Formal definitions and Differentiation",
+  "contentHash": "3a73376033d17f58e203819cefd0f92b5098b81d5e1bed1a9c776c3e36432127",
   "event": "updated",
-  "statusChanged": true,
+  "statusChanged": false,
   "dueChanged": false
 }
