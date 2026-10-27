@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T03:38:57.215Z",
+  "updatedAt": "2026-10-27T09:01:13.763Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -267,6 +267,21 @@
       "filesize": 181592,
       "reason": "Gemini (gemini-3-flash-preview): The document is a set of instructional notes/guide for a lab session covering Linux commands, intended for teaching/studying the topic.",
       "syncedAt": "2026-10-23T16:52:45.429Z"
+    },
+    "CENG111/CENG111-2026--Week5a-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week5a-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week5a-Prelecture.pdf",
+      "filename": "CENG111-2026--Week5a-Prelecture.pdf",
+      "formattedFilename": "2026 Week 5a Prelecture.pdf",
+      "weekKey": "5a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week5a-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week5a-Prelecture.pdf?forcedownload=1",
+      "filesize": 3011901,
+      "reason": "Gemini (gemini-flash-latest): The document is a pre-lecture slide deck for Week 5a of CENG 111 covering binary representation and computer engineering concepts.",
+      "syncedAt": "2026-10-27T09:01:07.008Z"
     }
   },
   "evaluatedNonSlides": {
