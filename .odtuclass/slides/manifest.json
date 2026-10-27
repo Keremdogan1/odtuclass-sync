@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T09:37:45.229Z",
+  "updatedAt": "2026-10-27T17:35:16.756Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -282,6 +282,21 @@
       "filesize": 3011901,
       "reason": "Gemini (gemini-flash-latest): The document is a pre-lecture slide deck for Week 5a of CENG 111 covering binary representation and computer engineering concepts.",
       "syncedAt": "2026-10-27T09:01:07.008Z"
+    },
+    "CENG111/CENG111-2026--Week5a.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week5a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week5a.pdf",
+      "filename": "CENG111-2026--Week5a.pdf",
+      "formattedFilename": "2026 Week 5a.pdf",
+      "weekKey": "5a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week5a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week5a.pdf?forcedownload=1",
+      "filesize": 2242346,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as a slide deck in the metadata and text excerpt, featuring slide numbers (1 of 41), lecture credits, a 'Today's topics' outline, and instructional content on binary representation.",
+      "syncedAt": "2026-10-27T17:35:10.188Z"
     }
   },
   "evaluatedNonSlides": {

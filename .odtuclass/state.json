@@ -1968,6 +1968,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-27T09:01:27.499Z"
+    },
+    "announcement:5129:forum-3187": {
+      "id": "announcement:5129:forum-3187",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-3187",
+      "moduleType": "forum",
+      "title": "Von Neumann Exam Results and Paper Inspection",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=3187",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-27T17:35:29.009Z"
     }
   },
   "sections": {
