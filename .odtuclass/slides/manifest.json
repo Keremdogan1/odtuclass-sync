@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T10:22:19.547Z",
+  "updatedAt": "2026-10-28T17:56:31.667Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -528,6 +528,13 @@
       "filename": "Advanced Grammar Practice.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document consists of grammar exercises (nominalization and inversion) with numbered questions and blank lines for student responses, which is characteristic of a practice worksheet or assignment.",
       "evaluatedAt": "2026-10-23T16:53:34.571Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=67670": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-MT1-exam places-ID sorted",
+      "filename": "105-20261-MT1-exam places-ID sorted.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): This is an administrative document listing exam room assignments and locations for students based on their IDs for Midterm 1 (MT1).",
+      "evaluatedAt": "2026-10-28T17:56:28.845Z"
     }
   }
 }

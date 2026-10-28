@@ -3549,6 +3549,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is a list of recitation problems for Week 05, containing specific exercises (Q1-Q8) for students to solve as part of their coursework.",
       "seenAt": "2026-10-27T08:54:01.617Z",
       "updatedAt": "2026-10-27T08:54:01.617Z"
+    },
+    "resource:4849:67670": {
+      "id": "resource:4849:67670",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 67670,
+      "name": "105-20261-MT1-exam places-ID sorted",
+      "filename": "105-20261-MT1-exam places-ID sorted.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=67670",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative list of student IDs and their assigned exam locations for Midterm 1 (MT1), which does not contain educational content or problems to solve.",
+      "seenAt": "2026-10-28T17:53:25.098Z",
+      "updatedAt": "2026-10-28T17:53:25.098Z"
     }
   }
 }
