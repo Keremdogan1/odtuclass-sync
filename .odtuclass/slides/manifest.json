@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:58:33.881Z",
+  "updatedAt": "2026-10-29T20:59:24.092Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -535,6 +535,13 @@
       "filename": "105-20261-MT1-exam places-ID sorted.pdf",
       "reason": "Gemini (gemini-3-flash-preview): This is an administrative document listing exam room assignments and locations for students based on their IDs for Midterm 1 (MT1).",
       "evaluatedAt": "2026-10-28T17:56:28.845Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=68038": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-MT1-exam places-ID sorted",
+      "filename": "105-20261-MT1-exam places-ID sorted.pdf",
+      "reason": "Gemini (gemini-flash-latest): Administrative document listing student exam classroom and building locations.",
+      "evaluatedAt": "2026-10-29T20:59:20.827Z"
     }
   }
 }

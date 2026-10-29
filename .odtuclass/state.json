@@ -1986,6 +1986,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-27T17:35:29.009Z"
+    },
+    "announcement:3015:forum-2757": {
+      "id": "announcement:3015:forum-2757",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-2757",
+      "moduleType": "forum",
+      "title": "Tomorrow at 8:40: About department infrastructure",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=2757",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-29T20:59:37.611Z"
     }
   },
   "sections": {
@@ -3566,6 +3584,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative list of student IDs and their assigned exam locations for Midterm 1 (MT1), which does not contain educational content or problems to solve.",
       "seenAt": "2026-10-28T17:53:25.098Z",
       "updatedAt": "2026-10-28T17:53:25.098Z"
+    },
+    "resource:4849:68038": {
+      "id": "resource:4849:68038",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 68038,
+      "name": "105-20261-MT1-exam places-ID sorted",
+      "filename": "105-20261-MT1-exam places-ID sorted.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=68038",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative list of exam locations and student IDs for Midterm 1 (MT1), which does not contain educational problems or lecture content.",
+      "seenAt": "2026-10-29T20:56:23.250Z",
+      "updatedAt": "2026-10-29T20:56:23.250Z"
     }
   }
 }
