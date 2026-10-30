@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T04:17:36.112Z",
+  "updatedAt": "2026-10-30T15:03:30.588Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -542,6 +542,20 @@
       "filename": "105-20261-MT1-exam places-ID sorted.pdf",
       "reason": "Gemini (gemini-flash-latest): Administrative document listing student exam classroom and building locations.",
       "evaluatedAt": "2026-10-29T20:59:20.827Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=68149": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-Exam-Rules-1",
+      "filename": "105-20261-Exam-Rules-1.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a set of administrative rules and instructions for an exam, covering identification requirements, prohibited items, and conduct guidelines.",
+      "evaluatedAt": "2026-10-30T15:02:28.765Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=68150": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-Exam-Rules-2",
+      "filename": "105-20261-Exam-Rules-2.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative set of rules and regulations for an exam, containing no lecture content or student assignments.",
+      "evaluatedAt": "2026-10-30T15:03:27.713Z"
     }
   }
 }

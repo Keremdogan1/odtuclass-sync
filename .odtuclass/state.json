@@ -2004,6 +2004,42 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-10-29T20:59:37.611Z"
+    },
+    "assignment:4701:4833": {
+      "id": "assignment:4701:4833",
+      "type": "assignment",
+      "courseId": 4701,
+      "courseName": "[OHS 101 ALL SECTIONS] Occupational Health and Safety-I",
+      "sectionId": 84626,
+      "sectionName": "Chapter 5 (October 26 - November 1, 2026)",
+      "sectionNumber": 5,
+      "moduleId": 4833,
+      "moduleType": "quiz",
+      "title": "Quiz 5",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/quiz/view.php?id=4833",
+      "openAt": "2026-10-25T21:00:00.000Z",
+      "dueAt": null,
+      "closeAt": "2026-11-01T20:59:00.000Z",
+      "status": "done",
+      "seenAt": "2026-10-30T14:49:11.523Z"
+    },
+    "announcement:5129:forum-3417": {
+      "id": "announcement:5129:forum-3417",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-3417",
+      "moduleType": "forum",
+      "title": "Help needed for a research paper",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=3417",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-10-30T15:03:45.948Z"
     }
   },
   "sections": {
@@ -3601,6 +3637,40 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative list of exam locations and student IDs for Midterm 1 (MT1), which does not contain educational problems or lecture content.",
       "seenAt": "2026-10-29T20:56:23.250Z",
       "updatedAt": "2026-10-29T20:56:23.250Z"
+    },
+    "resource:4849:68149": {
+      "id": "resource:4849:68149",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 68149,
+      "name": "105-20261-Exam-Rules-1",
+      "filename": "105-20261-Exam-Rules-1.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=68149",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative guide outlining exam rules, identification requirements, and conduct policies. It does not contain problems for students to solve nor is it a lecture presentation.",
+      "seenAt": "2026-10-30T14:59:41.354Z",
+      "updatedAt": "2026-10-30T14:59:41.354Z"
+    },
+    "resource:4849:68150": {
+      "id": "resource:4849:68150",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 68150,
+      "name": "105-20261-Exam-Rules-2",
+      "filename": "105-20261-Exam-Rules-2.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=68150",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document contains administrative rules and regulations for an exam, which does not qualify as a lecture slide or a student assignment.",
+      "seenAt": "2026-10-30T14:59:41.354Z",
+      "updatedAt": "2026-10-30T14:59:41.354Z"
     }
   }
 }
