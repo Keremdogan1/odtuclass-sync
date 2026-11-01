@@ -10,10 +10,10 @@
   "openAt": "2026-10-26T06:00:00.000Z",
   "dueAt": "2026-11-01T20:59:00.000Z",
   "closeAt": null,
-  "status": "todo",
+  "status": "done",
   "content": "Homework: Derivatives II | Start: 2026-10-26T06:00:00.000Z | Due: 2026-11-01T20:59:00.000Z | Status: todo",
-  "contentHash": "194da82d821f7b895f19eab76ccade7a9b2e0e9bd9dc33f24eaf8a26ecd7816f",
+  "contentHash": "6a4edd6a8e094d6975eaa579b0db5dc50be73ae43673bbb82a587a7fdf8a4286",
   "event": "updated",
-  "statusChanged": false,
-  "dueChanged": true
+  "statusChanged": true,
+  "dueChanged": false
 }
