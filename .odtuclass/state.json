@@ -2094,6 +2094,42 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-01T20:08:50.518Z"
+    },
+    "announcement:5151:forum-3818": {
+      "id": "announcement:5151:forum-3818",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": "forum-3818",
+      "moduleType": "forum",
+      "title": "BA100 – Week 5 Course Announcement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=3818",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-02T17:49:38.977Z"
+    },
+    "announcement:5083:forum-3764": {
+      "id": "announcement:5083:forum-3764",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-3764",
+      "moduleType": "forum",
+      "title": "Reminder About Attendance Criteria",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=3764",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-02T17:49:38.977Z"
     }
   },
   "sections": {
