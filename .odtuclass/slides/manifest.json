@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T11:38:39.632Z",
+  "updatedAt": "2026-11-03T19:04:37.601Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -312,6 +312,21 @@
       "filesize": 2618966,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'Prelecture' for 'Week 6a' and contains 56 slides covering academic topics such as binary representation and floating-point numbers, formatted with slide numbers and bullet points.",
       "syncedAt": "2026-11-03T08:45:35.953Z"
+    },
+    "CENG111/CENG111-2026--Week6a.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week6a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week6a.pdf",
+      "filename": "CENG111-2026--Week6a.pdf",
+      "formattedFilename": "2026 Week 6a.pdf",
+      "weekKey": "6a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week6a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week6a.pdf?forcedownload=1",
+      "filesize": 2123306,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a lecture slide deck for Week 6a, containing slide numbers (e.g., 1 of 40), teaching content on binary representation, and administrative notes about exams.",
+      "syncedAt": "2026-11-03T19:04:23.598Z"
     }
   },
   "evaluatedNonSlides": {
@@ -576,6 +591,13 @@
       "title": "CENG111-2026--Week5b -- 29 October.txt",
       "reason": "Not a PDF or convertible Office document",
       "evaluatedAt": "2026-11-03T08:44:53.217Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=73636": {
+      "courseCode": "ENG101",
+      "title": "APA 7 Quiz",
+      "filename": "APA 7 Referencing Quiz.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a referencing activity or quiz that requires students to complete exercises by organizing source information into APA 7 format, including in-text and end-text references.",
+      "evaluatedAt": "2026-11-03T19:04:32.604Z"
     }
   }
 }

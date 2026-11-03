@@ -2130,6 +2130,45 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-02T17:49:38.977Z"
+    },
+    "assignment:3533:pdf-01a8053d": {
+      "id": "assignment:3533:pdf-01a8053d",
+      "type": "assignment",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "sectionId": null,
+      "sectionName": null,
+      "sectionNumber": null,
+      "moduleId": "pdf-01a8053d",
+      "moduleType": "pdf_assignment",
+      "title": "APA 7 Quiz",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=73636",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "description": "APA 7 REFERENCING ACTIVITY\nThe following source details are not in APA 7 format. Organize the information to create a complete reference-\nlist entry for each source.\n• Pay attention to the order of the information.\n• Use correct capitalization and punctuation.\n• Identify which elements should be italicized.\nSOURCE 1: BOOK WITH TWO AUTHORS\nAuthor(s): Laura Evans and Michael Turner\nDate: 2021\nTitle of the book: Academic Writing in a Changing World\nEdition: 2nd edition\nPublisher: Oxford university press\nMultiple non-consecutive pages used in the direct quotation: 10, 22, and 23\nIn-text reference for the summary/paraphrase: _________________________________________________________\nIn-text reference for the direct quotation: ______________________________________________________________\nEnd-text reference:\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\nSOURCE 2: JOURNAL ARTICLE\nAuthor(s): Sarah Mitchell and David Chen\nDate: 2023\nTitle of the article: The relationship between urban green spaces and student well-being\nTitle of the journal: Journal of environmental psychology\nVolume: 48\nIssue: 2\nPage numbers: 115–132\nDOI: https://doi.org/10.1234/jeps.2023.00125\nPages used in the direct quotation: 128 and 129\nIn-text reference for the summary/paraphrase: _________________________________________________________\nIn-text reference for the direct quotation: ______________________________________________________________\nEnd-text reference:\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\nSOURCE 3: YOUTUBE VIDEO\nAuthor: TED-Ed\n-- 1 of 4 --\nDate: 14 April 2022\nTitle of the video: How cities can become more sustainable\nType of media: Video\nWebsite: YouTube\nURL: https://www.youtube.com/watch?v=example123\nTimestamp used for the direct quotation: 4:22\nIn-text reference for the summary/paraphrase: _________________________________________________________\nIn-text reference for the direct quotation: ______________________________________________________________\nEnd-text reference:\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________",
+      "content": "APA 7 REFERENCING ACTIVITY\nThe following source details are not in APA 7 format. Organize the information to create a complete reference-\nlist entry for each source.\n• Pay attention to the order of the information.\n• Use correct capitalization and punctuation.\n• Identify which elements should be italicized.\nSOURCE 1: BOOK WITH TWO AUTHORS\nAuthor(s): Laura Evans and Michael Turner\nDate: 2021\nTitle of the book: Academic Writing in a Changing World\nEdition: 2nd edition\nPublisher: Oxford university press\nMultiple non-consecutive pages used in the direct quotation: 10, 22, and 23\nIn-text reference for the summary/paraphrase: _________________________________________________________\nIn-text reference for the direct quotation: ______________________________________________________________\nEnd-text reference:\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\nSOURCE 2: JOURNAL ARTICLE\nAuthor(s): Sarah Mitchell and David Chen\nDate: 2023\nTitle of the article: The relationship between urban green spaces and student well-being\nTitle of the journal: Journal of environmental psychology\nVolume: 48\nIssue: 2\nPage numbers: 115–132\nDOI: https://doi.org/10.1234/jeps.2023.00125\nPages used in the direct quotation: 128 and 129\nIn-text reference for the summary/paraphrase: _________________________________________________________\nIn-text reference for the direct quotation: ______________________________________________________________\nEnd-text reference:\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\nSOURCE 3: YOUTUBE VIDEO\nAuthor: TED-Ed\n-- 1 of 4 --\nDate: 14 April 2022\nTitle of the video: How cities can become more sustainable\nType of media: Video\nWebsite: YouTube\nURL: https://www.youtube.com/watch?v=example123\nTimestamp used for the direct quotation: 4:22\nIn-text reference for the summary/paraphrase: _________________________________________________________\nIn-text reference for the direct quotation: ______________________________________________________________\nEnd-text reference:\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________\n_______________________________________________________________________________________________________",
+      "contentHash": "e0a2858ff8f1ec17cb8414432e7789fe8f56e314216a25058e1c096851bcfcfe",
+      "event": "created",
+      "seenAt": "2026-11-03T19:02:08.143Z"
+    },
+    "announcement:5151:forum-4002": {
+      "id": "announcement:5151:forum-4002",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": "forum-4002",
+      "moduleType": "forum",
+      "title": "BA100 – Learn & Connect: 5.40 Lecture Series – 2nd Anniversary Special Event",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=4002",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-03T19:04:50.076Z"
     }
   },
   "sections": {
@@ -3761,6 +3800,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document contains administrative rules and regulations for an exam, which does not qualify as a lecture slide or a student assignment.",
       "seenAt": "2026-10-30T14:59:41.354Z",
       "updatedAt": "2026-10-30T14:59:41.354Z"
+    },
+    "resource:3533:73636": {
+      "id": "resource:3533:73636",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 73636,
+      "name": "APA 7 Quiz",
+      "filename": "APA 7 Quiz.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=73636",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "problem_sheet",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an APA 7 referencing activity/quiz containing specific exercises for students to complete, including fill-in-the-blank sections for in-text and end-text references.",
+      "seenAt": "2026-11-03T19:02:12.149Z",
+      "updatedAt": "2026-11-03T19:02:12.149Z"
     }
   }
 }
