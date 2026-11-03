@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T02:01:21.694Z",
+  "updatedAt": "2026-11-03T08:45:43.890Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -297,6 +297,21 @@
       "filesize": 2242346,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly identified as a slide deck in the metadata and text excerpt, featuring slide numbers (1 of 41), lecture credits, a 'Today's topics' outline, and instructional content on binary representation.",
       "syncedAt": "2026-10-27T17:35:10.188Z"
+    },
+    "CENG111/CENG111-2026--Week6a-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week6a-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week6a-Prelecture.pdf",
+      "filename": "CENG111-2026--Week6a-Prelecture.pdf",
+      "formattedFilename": "2026 Week 6a Prelecture.pdf",
+      "weekKey": "6a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week6a-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week6a-Prelecture.pdf?forcedownload=1",
+      "filesize": 2618966,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'Prelecture' for 'Week 6a' and contains 56 slides covering academic topics such as binary representation and floating-point numbers, formatted with slide numbers and bullet points.",
+      "syncedAt": "2026-11-03T08:45:35.953Z"
     }
   },
   "evaluatedNonSlides": {
@@ -556,6 +571,11 @@
       "filename": "105-20261-Exam-Rules-2.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative set of rules and regulations for an exam, containing no lecture content or student assignments.",
       "evaluatedAt": "2026-10-30T15:03:27.713Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week5b%20--%2029%20October.txt?forcedownload=1": {
+      "title": "CENG111-2026--Week5b -- 29 October.txt",
+      "reason": "Not a PDF or convertible Office document",
+      "evaluatedAt": "2026-11-03T08:44:53.217Z"
     }
   }
 }
