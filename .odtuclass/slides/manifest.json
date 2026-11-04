@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T11:54:33.803Z",
+  "updatedAt": "2026-11-04T19:33:44.423Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -342,6 +342,21 @@
       "filesize": 2371337,
       "reason": "Gemini (gemini-3-flash-preview): The document is clearly a lecture slide deck, as evidenced by the slide numbering (e.g., '-- 1 of 52 --'), the presence of slide titles, bulleted educational content, and copyright notices from a textbook publisher (Pearson Education).",
       "syncedAt": "2026-11-04T11:54:25.704Z"
+    },
+    "CENG111/CENG111-2026--Week6b_PreLecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week6b_PreLecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week6b_PreLecture.pdf",
+      "filename": "CENG111-2026--Week6b_PreLecture.pdf",
+      "formattedFilename": "2026 Week 6b Prelecture.pdf",
+      "weekKey": "6b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week6b_PreLecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week6b_PreLecture.pdf?forcedownload=1",
+      "filesize": 2362296,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'PreLecture' slides for Week 6b, contains slide numbering (e.g., '-- 1 of 29 --'), and presents educational content regarding binary representation and Python data types.",
+      "syncedAt": "2026-11-04T19:32:40.502Z"
     }
   },
   "evaluatedNonSlides": {
@@ -613,6 +628,27 @@
       "filename": "APA 7 Referencing Quiz.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is a referencing activity or quiz that requires students to complete exercises by organizing source information into APA 7 format, including in-text and end-text references.",
       "evaluatedAt": "2026-11-03T19:04:32.604Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/387566/mod_folder/content/0/preliminary_q0.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "preliminary_q0.pdf",
+      "filename": "preliminary_q0.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a Linux exercise sheet containing specific questions and tasks for students to perform, including point values for each question, which clearly classifies it as an assignment or problem set.",
+      "evaluatedAt": "2026-11-04T19:33:19.654Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/387566/mod_folder/content/0/sample_quiz.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "sample_quiz.pdf",
+      "filename": "sample_quiz.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a Linux quiz containing a series of technical tasks and command-line exercises for students to solve and submit to a lab assistant.",
+      "evaluatedAt": "2026-11-04T19:33:28.817Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=74702": {
+      "courseCode": "MATH119",
+      "title": "Midterm 1- sample solution",
+      "filename": "119Exms (3).pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a sample solution for a midterm exam. According to the instructions, exam solutions are considered administrative documents and should have both isAssignment and isSlide set to false.",
+      "evaluatedAt": "2026-11-04T19:33:39.223Z"
     }
   }
 }

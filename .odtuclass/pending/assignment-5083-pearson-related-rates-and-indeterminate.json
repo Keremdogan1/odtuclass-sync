@@ -7,11 +7,13 @@
   "moduleType": "pearson",
   "title": "Homework: Related rates and indeterminate forms",
   "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
-  "openAt": "2026-11-04T12:00:00.000Z",
+  "openAt": null,
   "dueAt": "2026-11-15T20:59:00.000Z",
   "closeAt": null,
   "status": "todo",
-  "content": "Homework: Related rates and indeterminate forms | Start: 2026-11-04T12:00:00.000Z | Due: 2026-11-15T20:59:00.000Z | Status: todo",
-  "contentHash": "f00bf04fd4028f0f65906a87e3bddeb205717288f2dc938ad5b7c79dd3098614",
-  "event": "created"
+  "content": "15/11/26 11:59pm Homework Related rates and indeterminate forms",
+  "contentHash": "0904bbb1dd6a16fc4f54e4238e73d2bc612b75bfb404b699ee48b18e023e7592",
+  "event": "updated",
+  "statusChanged": false,
+  "dueChanged": false
 }
