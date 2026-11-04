@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T00:24:59.517Z",
+  "updatedAt": "2026-11-04T11:54:33.803Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -327,6 +327,21 @@
       "filesize": 2123306,
       "reason": "Gemini (gemini-3-flash-preview): The document is a lecture slide deck for Week 6a, containing slide numbers (e.g., 1 of 40), teaching content on binary representation, and administrative notes about exams.",
       "syncedAt": "2026-11-03T19:04:23.598Z"
+    },
+    "BIOL109/5 Genetic Code.pdf": {
+      "id": "slide:BIOL109:5 Genetic Code.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "Genetic Code",
+      "filename": "5 Genetic Code.pdf",
+      "formattedFilename": "5. Genetic Code.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=74070",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/387015/mod_resource/content/1/5%20Genetic%20Code.pptx",
+      "filesize": 2371337,
+      "reason": "Gemini (gemini-3-flash-preview): The document is clearly a lecture slide deck, as evidenced by the slide numbering (e.g., '-- 1 of 52 --'), the presence of slide titles, bulleted educational content, and copyright notices from a textbook publisher (Pearson Education).",
+      "syncedAt": "2026-11-04T11:54:25.704Z"
     }
   },
   "evaluatedNonSlides": {

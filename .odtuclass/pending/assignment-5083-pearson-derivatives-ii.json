@@ -7,13 +7,13 @@
   "moduleType": "pearson",
   "title": "Homework: Derivatives II",
   "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
-  "openAt": "2026-10-26T06:00:00.000Z",
+  "openAt": null,
   "dueAt": "2026-11-01T20:59:00.000Z",
   "closeAt": null,
   "status": "done",
-  "content": "Homework: Derivatives II | Start: 2026-10-26T06:00:00.000Z | Due: 2026-11-01T20:59:00.000Z | Status: todo",
-  "contentHash": "6a4edd6a8e094d6975eaa579b0db5dc50be73ae43673bbb82a587a7fdf8a4286",
+  "content": "01/11/2611:59pm Homework Derivatives II see score for Derivatives II",
+  "contentHash": "e93087fa9211d256a6814bf271ba29af4920260d4620bb5e893ee21f7a4b2c27",
   "event": "updated",
-  "statusChanged": true,
+  "statusChanged": false,
   "dueChanged": false
 }

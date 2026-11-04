@@ -1282,12 +1282,12 @@
       "moduleType": "pearson",
       "title": "Homework: Derivatives II",
       "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
-      "openAt": "2026-10-26T06:00:00.000Z",
+      "openAt": null,
       "dueAt": "2026-11-01T20:59:00.000Z",
       "closeAt": null,
       "status": "done",
-      "content": "Homework: Derivatives II | Start: 2026-10-26T06:00:00.000Z | Due: 2026-11-01T20:59:00.000Z | Status: todo",
-      "contentHash": "6a4edd6a8e094d6975eaa579b0db5dc50be73ae43673bbb82a587a7fdf8a4286",
+      "content": "01/11/2611:59pm Homework Derivatives II see score for Derivatives II",
+      "contentHash": "e93087fa9211d256a6814bf271ba29af4920260d4620bb5e893ee21f7a4b2c27",
       "event": "created",
       "seenAt": "2026-10-17T21:58:51.461Z"
     },
@@ -1849,12 +1849,12 @@
       "moduleType": "pearson",
       "title": "Homework: Transcendental functions",
       "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=24039",
-      "openAt": "2026-10-28T06:00:00.000Z",
+      "openAt": null,
       "dueAt": "2026-11-08T20:59:00.000Z",
       "closeAt": null,
       "status": "todo",
-      "content": "Homework: Transcendental functions | Start: 2026-10-28T06:00:00.000Z | Due: 2026-11-08T20:59:00.000Z | Status: todo",
-      "contentHash": "4128b1879a716395788b4f78e60fa04c0d8adff5e0bfe7508b057745755e986e",
+      "content": "08/11/26 11:59pm Homework Transcendental functions",
+      "contentHash": "2ec7f66130016d6ec8305c8825f7d3d45655ad45bef7863c72c993dd55e11763",
       "event": "created",
       "seenAt": "2026-10-26T10:11:59.984Z"
     },
@@ -2169,6 +2169,27 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-03T19:04:50.076Z"
+    },
+    "assignment:5083:pdf-e9235590": {
+      "id": "assignment:5083:pdf-e9235590",
+      "type": "assignment",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "sectionId": null,
+      "sectionName": null,
+      "sectionNumber": null,
+      "moduleId": "pdf-e9235590",
+      "moduleType": "pdf_assignment",
+      "title": "Math 119 2026-1 Recitation Week 06",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=74272",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "description": "MATH 119 Recitation Problems – Week 06 Fall 2026-2027\nQ1. Use logarithmic differentation to find the derivative of f (x) = (x2 + 1)3(2x + 5)3\n(x2 + 5)2 .Compute\nf ′(0).\nQ2. Find y′ for the following expressions.\n(a) y = xsec x\n(b) y = (x2 + 1) 3\n√x\n(c) y = x√x\n(d) y = (1/x)ln x\nQ3. A sphere of ice of radius 7 cm is melting at the rate of 12 cm3 per minute. What is the rate at\nwhich its radius is changing when the radius is 5 cm ?\nQ4. The area of a rectangle is increasing at a rate of 5m2/s while the height is increasing at a rate\nof 10m/s. At the moment when the height is 20m and the width is 16m, how fast is the width\nchanging?\nQ5. A particle moves along a parabola y = x2 in the first quadrant in such a way that its x-coordinate\nincreases at a steady 17 units per second. How fast is the distance of the particle to the origin\nchanging when x = 4?\nQ6. Evaluate the following limits, if they exist.\n(a) lim\nx→2+\nln(x − 2)\nln(x2 − 4)\n(b) lim\nx→ π\n2\n−\ntan x\nln( π\n2 − x)\n(c) lim\nx→0\n\u0000 sin x\nx\n\u00011/x2\n(d) lim\nx→0+\n√x\n√sin x\nQ7. Show that the function\nf (x) =\n\u001a e−1/x x > 0\n0 x ≤ 0\nis differentiable.\nQ8. Use the Squeeze Theorem to show that lim\nx→0\nx2 sin2(1/x)\nsin x = 0. Discuss why L’H ˆopital’s Rule is\nnot applicable here.\n1",
+      "content": "MATH 119 Recitation Problems – Week 06 Fall 2026-2027\nQ1. Use logarithmic differentation to find the derivative of f (x) = (x2 + 1)3(2x + 5)3\n(x2 + 5)2 .Compute\nf ′(0).\nQ2. Find y′ for the following expressions.\n(a) y = xsec x\n(b) y = (x2 + 1) 3\n√x\n(c) y = x√x\n(d) y = (1/x)ln x\nQ3. A sphere of ice of radius 7 cm is melting at the rate of 12 cm3 per minute. What is the rate at\nwhich its radius is changing when the radius is 5 cm ?\nQ4. The area of a rectangle is increasing at a rate of 5m2/s while the height is increasing at a rate\nof 10m/s. At the moment when the height is 20m and the width is 16m, how fast is the width\nchanging?\nQ5. A particle moves along a parabola y = x2 in the first quadrant in such a way that its x-coordinate\nincreases at a steady 17 units per second. How fast is the distance of the particle to the origin\nchanging when x = 4?\nQ6. Evaluate the following limits, if they exist.\n(a) lim\nx→2+\nln(x − 2)\nln(x2 − 4)\n(b) lim\nx→ π\n2\n−\ntan x\nln( π\n2 − x)\n(c) lim\nx→0\n\u0000 sin x\nx\n\u00011/x2\n(d) lim\nx→0+\n√x\n√sin x\nQ7. Show that the function\nf (x) =\n\u001a e−1/x x > 0\n0 x ≤ 0\nis differentiable.\nQ8. Use the Squeeze Theorem to show that lim\nx→0\nx2 sin2(1/x)\nsin x = 0. Discuss why L’H ˆopital’s Rule is\nnot applicable here.\n1",
+      "contentHash": "73327bb071c8510cc3ff62c12e43941651bc0f444524f031cd38ef7f0f3fe0ac",
+      "event": "created",
+      "seenAt": "2026-11-04T11:51:12.494Z"
     }
   },
   "sections": {
@@ -3817,6 +3838,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an APA 7 referencing activity/quiz containing specific exercises for students to complete, including fill-in-the-blank sections for in-text and end-text references.",
       "seenAt": "2026-11-03T19:02:12.149Z",
       "updatedAt": "2026-11-03T19:02:12.149Z"
+    },
+    "resource:5083:74272": {
+      "id": "resource:5083:74272",
+      "type": "resource",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": 74272,
+      "name": "Math 119 2026-1 Recitation Week 06",
+      "filename": "Math 119 2026-1 Recitation Week 06.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=74272",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "problem_sheet",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a collection of recitation problems (Q1-Q8) for a specific week in a calculus course, intended for students to solve as exercises.",
+      "seenAt": "2026-11-04T11:51:18.551Z",
+      "updatedAt": "2026-11-04T11:51:18.551Z"
     }
   }
 }
