@@ -10,9 +10,9 @@
   "openAt": "2026-09-24T04:00:00.000Z",
   "dueAt": "2026-11-01T20:59:00.000Z",
   "closeAt": null,
-  "status": "in-progress",
-  "content": "HW-03 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-11-01T20:59:00.000Z | Status: in-progress",
-  "contentHash": "77a0198a772c78f65937d5b79cdd31c24848e79aeb3d856d51a554de165a7861",
+  "status": "done",
+  "content": "HW-03 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-11-01T20:59:00.000Z | Status: done",
+  "contentHash": "0cb1b8a83b1f8a5e459707f319094b16b148ba4f39643fb0792f909b50ef48af",
   "event": "updated",
   "statusChanged": true,
   "dueChanged": false
