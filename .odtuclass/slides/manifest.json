@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T12:22:46.300Z",
+  "updatedAt": "2026-11-06T19:28:12.804Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -686,6 +686,11 @@
       "filename": "ssh_scp_sftp_examples.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is a technical reference or tutorial guide for SSH, SCP, and SFTP commands, which is considered a lab resource/tutorial rather than a lecture slide deck or a student assignment.",
       "evaluatedAt": "2026-11-06T00:49:18.640Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/lorem.txt?forcedownload=1": {
+      "title": "lorem.txt",
+      "reason": "Not a PDF or convertible Office document",
+      "evaluatedAt": "2026-11-06T19:28:07.476Z"
     }
   }
 }
