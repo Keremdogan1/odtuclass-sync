@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T11:54:51.337Z",
+  "updatedAt": "2026-11-06T00:49:25.638Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -372,6 +372,21 @@
       "filesize": 1111006,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'Week 6b', contains slide numbering (e.g., 1 of 24), credits other textbooks for slide content, and covers lecture topics like binary representation and Python data types.",
       "syncedAt": "2026-11-05T11:54:44.484Z"
+    },
+    "CENG111/Linux_Lab3_Notes.pdf": {
+      "id": "slide:CENG111:Linux_Lab3_Notes.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Linux_Lab3_Notes.pdf",
+      "filename": "Linux_Lab3_Notes.pdf",
+      "formattedFilename": "Linux_Lab3_Notes.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab3_Notes.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab3_Notes.pdf?forcedownload=1",
+      "filesize": 197947,
+      "reason": "Gemini (gemini-3-flash-preview): The document consists of instructional notes and command references for a specific lab session (Lab 3), fitting the definition of topic lecture notes for teaching a course topic.",
+      "syncedAt": "2026-11-06T00:49:09.223Z"
     }
   },
   "evaluatedNonSlides": {
@@ -664,6 +679,13 @@
       "filename": "119Exms (3).pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is a sample solution for a midterm exam. According to the instructions, exam solutions are considered administrative documents and should have both isAssignment and isSlide set to false.",
       "evaluatedAt": "2026-11-04T19:33:39.223Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/ssh_scp_sftp_examples.pdf?forcedownload=1": {
+      "courseCode": "CENG111",
+      "title": "ssh_scp_sftp_examples.pdf",
+      "filename": "ssh_scp_sftp_examples.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a technical reference or tutorial guide for SSH, SCP, and SFTP commands, which is considered a lab resource/tutorial rather than a lecture slide deck or a student assignment.",
+      "evaluatedAt": "2026-11-06T00:49:18.640Z"
     }
   }
 }

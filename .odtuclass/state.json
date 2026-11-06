@@ -4002,6 +4002,40 @@
       "reason": "Rule-based evaluation: score=-20, slideScore=0, matchedPositives=[], matchedNegatives=[pattern:solved_problems]",
       "seenAt": "2026-11-04T19:29:35.226Z",
       "updatedAt": "2026-11-04T19:29:35.226Z"
+    },
+    "resource:5129:44643-Linux_Lab3_Notes.pdf": {
+      "id": "resource:5129:44643-Linux_Lab3_Notes.pdf",
+      "type": "resource",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "44643-5",
+      "name": "Linux_Lab3_Notes",
+      "filename": "Linux_Lab3_Notes.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/Linux_Lab3_Notes.pdf?forcedownload=1",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document consists of instructional notes and command explanations for a specific lab session, functioning as teaching material for a course topic.",
+      "seenAt": "2026-11-06T00:45:54.756Z",
+      "updatedAt": "2026-11-06T00:45:54.756Z"
+    },
+    "resource:5129:44643-ssh_scp_sftp_examples.pdf": {
+      "id": "resource:5129:44643-ssh_scp_sftp_examples.pdf",
+      "type": "resource",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "44643-6",
+      "name": "ssh_scp_sftp_examples",
+      "filename": "ssh_scp_sftp_examples.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Linux/Linux%20Lab%20Notes/ssh_scp_sftp_examples.pdf?forcedownload=1",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document title and metadata indicate it is a set of instructional examples for SSH, SCP, and SFTP, which are technical topics taught in an introductory computer engineering course. It serves as teaching material rather than an assignment or administrative guide.",
+      "seenAt": "2026-11-06T00:45:54.756Z",
+      "updatedAt": "2026-11-06T00:45:54.756Z"
     }
   }
 }
