@@ -4036,6 +4036,57 @@
       "reason": "Gemini (gemini-3-flash-preview): The document title and metadata indicate it is a set of instructional examples for SSH, SCP, and SFTP, which are technical topics taught in an introductory computer engineering course. It serves as teaching material rather than an assignment or administrative guide.",
       "seenAt": "2026-11-06T00:45:54.756Z",
       "updatedAt": "2026-11-06T00:45:54.756Z"
+    },
+    "resource:3533:77546": {
+      "id": "resource:3533:77546",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 77546,
+      "name": "Myth of the Indoor City",
+      "filename": "Myth of the Indoor City.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77546",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a scholarly journal article from the Journal of Environmental Psychology. It is a reading resource for an English for Academic Purposes course, not a slide deck or a set of assigned problems/exercises.",
+      "seenAt": "2026-11-07T19:52:40.262Z",
+      "updatedAt": "2026-11-07T19:52:40.262Z"
+    },
+    "resource:3533:77547": {
+      "id": "resource:3533:77547",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 77547,
+      "name": "Graded Text Discussion Guidelines",
+      "filename": "Graded Text Discussion Guidelines.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77547",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): This document contains administrative guidelines, ground rules, and grading criteria for a discussion task rather than the actual assignment questions or lecture content.",
+      "seenAt": "2026-11-07T19:52:40.262Z",
+      "updatedAt": "2026-11-07T19:52:40.262Z"
+    },
+    "resource:3533:77548": {
+      "id": "resource:3533:77548",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 77548,
+      "name": "Text Discussion Rubric",
+      "filename": "Text Discussion Rubric.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77548",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a grading rubric and task expectation guide for a text discussion activity. It does not contain specific problems for students to solve, nor is it a set of lecture slides for teaching a topic.",
+      "seenAt": "2026-11-07T19:52:40.262Z",
+      "updatedAt": "2026-11-07T19:52:40.262Z"
     }
   }
 }

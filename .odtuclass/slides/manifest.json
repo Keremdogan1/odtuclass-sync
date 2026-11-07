@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T14:43:09.643Z",
+  "updatedAt": "2026-11-07T19:58:13.281Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -387,6 +387,21 @@
       "filesize": 197947,
       "reason": "Gemini (gemini-3-flash-preview): The document consists of instructional notes and command references for a specific lab session (Lab 3), fitting the definition of topic lecture notes for teaching a course topic.",
       "syncedAt": "2026-11-06T00:49:09.223Z"
+    },
+    "ENG101/Discussion Input.pdf": {
+      "id": "slide:ENG101:Discussion Input.pdf",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "courseCode": "ENG101",
+      "title": "Text Discussion Input",
+      "filename": "Discussion Input.pdf",
+      "formattedFilename": "Discussion Input.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77568",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/391441/mod_resource/content/1/Discussion%20Input.pptx",
+      "filesize": 714461,
+      "reason": "Gemini (gemini-flash-latest): The document is a 16-slide lecture presentation covering the concept, skills, guidelines, and useful language chunks for academic text discussions.",
+      "syncedAt": "2026-11-07T19:58:07.923Z"
     }
   },
   "evaluatedNonSlides": {
@@ -691,6 +706,13 @@
       "title": "lorem.txt",
       "reason": "Not a PDF or convertible Office document",
       "evaluatedAt": "2026-11-06T19:28:07.476Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77546": {
+      "courseCode": "ENG101",
+      "title": "Myth of the Indoor City",
+      "filename": "Myth of the Indoor City.pdf",
+      "reason": "Gemini (gemini-flash-latest): This is a published academic journal article used as a reading text, not an assignment or lecture slide deck.",
+      "evaluatedAt": "2026-11-07T19:57:44.114Z"
     }
   }
 }
