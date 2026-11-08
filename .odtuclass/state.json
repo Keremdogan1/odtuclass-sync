@@ -1852,9 +1852,9 @@
       "openAt": null,
       "dueAt": "2026-11-08T20:59:00.000Z",
       "closeAt": null,
-      "status": "todo",
-      "content": "08/11/26 11:59pm Homework Transcendental functions",
-      "contentHash": "2ec7f66130016d6ec8305c8825f7d3d45655ad45bef7863c72c993dd55e11763",
+      "status": "done",
+      "content": "08/11/2611:59pm Homework Transcendental functions see score for Transcendental functions",
+      "contentHash": "9c7d7e8cf2f1c26b6983859b8a3834e9589ed4fadfc1befdf71aa46c9d0395fd",
       "event": "created",
       "seenAt": "2026-10-26T10:11:59.984Z"
     },
@@ -1888,9 +1888,9 @@
       "openAt": "2026-09-24T04:00:00.000Z",
       "dueAt": "2026-11-08T20:59:00.000Z",
       "closeAt": null,
-      "status": "todo",
-      "content": "HW-04 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-11-08T20:59:00.000Z | Status: todo",
-      "contentHash": "edc02382965cfb151b010b68183f5e3469e027e0359b76c91941a416bdc4d27e",
+      "status": "in-progress",
+      "content": "HW-04 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-11-08T20:59:00.000Z | Status: in-progress",
+      "contentHash": "0221580b56d7389564ecdc3a5dadd14da9c5619f9c87071c91f8329311ffa01d",
       "event": "created",
       "seenAt": "2026-10-26T18:44:06.594Z"
     },
@@ -4121,6 +4121,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is a transcript of a video used for teaching Module 2, serving as topic lecture notes or study material for the course content.",
       "seenAt": "2026-11-08T14:49:31.857Z",
       "updatedAt": "2026-11-08T14:49:31.857Z"
+    },
+    "resource:3533:78315": {
+      "id": "resource:3533:78315",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 78315,
+      "name": "Myth of the Indoor City-Highlighted",
+      "filename": "Myth of the Indoor City-Highlighted.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=78315",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-flash-latest): This is an academic research article from the Journal of Environmental Psychology provided as course reading material, not an assignment or lecture slide deck.",
+      "seenAt": "2026-11-08T20:13:06.823Z",
+      "updatedAt": "2026-11-08T20:13:06.823Z"
     }
   }
 }

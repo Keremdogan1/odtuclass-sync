@@ -10,10 +10,10 @@
   "openAt": null,
   "dueAt": "2026-11-08T20:59:00.000Z",
   "closeAt": null,
-  "status": "todo",
-  "content": "08/11/26 11:59pm Homework Transcendental functions",
-  "contentHash": "2ec7f66130016d6ec8305c8825f7d3d45655ad45bef7863c72c993dd55e11763",
+  "status": "done",
+  "content": "08/11/2611:59pm Homework Transcendental functions see score for Transcendental functions",
+  "contentHash": "9c7d7e8cf2f1c26b6983859b8a3834e9589ed4fadfc1befdf71aa46c9d0395fd",
   "event": "updated",
-  "statusChanged": false,
+  "statusChanged": true,
   "dueChanged": false
 }

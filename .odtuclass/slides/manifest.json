@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T15:00:52.180Z",
+  "updatedAt": "2026-11-08T20:17:16.211Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -742,6 +742,13 @@
       "filename": "Transcript for Alain de Bottons Video.pdf",
       "reason": "Gemini (gemini-flash-latest): The document is a video transcript provided for reference or listening comprehension, not an assignment or a slide deck.",
       "evaluatedAt": "2026-11-08T15:00:46.850Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=78315": {
+      "courseCode": "ENG101",
+      "title": "Myth of the Indoor City-Highlighted",
+      "filename": "Myth of the Indoor City with the comments.pdf",
+      "reason": "Gemini (gemini-flash-latest): The document is an academic journal article ('The Myth of the Indoor City') assigned as reading material, not an assignment or lecture slide deck.",
+      "evaluatedAt": "2026-11-08T20:17:10.587Z"
     }
   }
 }
