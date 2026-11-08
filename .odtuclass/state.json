@@ -4087,6 +4087,40 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is a grading rubric and task expectation guide for a text discussion activity. It does not contain specific problems for students to solve, nor is it a set of lecture slides for teaching a topic.",
       "seenAt": "2026-11-07T19:52:40.262Z",
       "updatedAt": "2026-11-07T19:52:40.262Z"
+    },
+    "resource:3533:78047": {
+      "id": "resource:3533:78047",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 78047,
+      "name": "APA 7 Quiz Key",
+      "filename": "APA 7 Quiz Key.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=78047",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-flash-latest): The document is an answer key/solution sheet for an APA 7 quiz rather than an unsolved assignment or lecture slides.",
+      "seenAt": "2026-11-08T14:49:31.857Z",
+      "updatedAt": "2026-11-08T14:49:31.857Z"
+    },
+    "resource:3533:77978": {
+      "id": "resource:3533:77978",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 77978,
+      "name": "Transcript for Alain de Botton's Video",
+      "filename": "Transcript for Alain de Botton's Video.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77978",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a transcript of a video used for teaching Module 2, serving as topic lecture notes or study material for the course content.",
+      "seenAt": "2026-11-08T14:49:31.857Z",
+      "updatedAt": "2026-11-08T14:49:31.857Z"
     }
   }
 }

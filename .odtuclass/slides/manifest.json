@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T04:20:18.199Z",
+  "updatedAt": "2026-11-08T15:00:52.180Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -402,6 +402,21 @@
       "filesize": 714461,
       "reason": "Gemini (gemini-flash-latest): The document is a 16-slide lecture presentation covering the concept, skills, guidelines, and useful language chunks for academic text discussions.",
       "syncedAt": "2026-11-07T19:58:07.923Z"
+    },
+    "ENG101/APA 7 Input Sts.pdf": {
+      "id": "slide:ENG101:APA 7 Input Sts.pdf",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "courseCode": "ENG101",
+      "title": "APA 7 Input",
+      "filename": "APA 7 Input Sts.pdf",
+      "formattedFilename": "APA 7 Input Sts.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=78044",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/391949/mod_resource/content/1/APA%207%20Input%20Sts.pptx",
+      "filesize": 2006030,
+      "reason": "Gemini (gemini-flash-latest): The document is a 42-slide lecture presentation covering APA 7th edition referencing and academic citation styles.",
+      "syncedAt": "2026-11-08T14:57:21.555Z"
     }
   },
   "evaluatedNonSlides": {
@@ -713,6 +728,20 @@
       "filename": "Myth of the Indoor City.pdf",
       "reason": "Gemini (gemini-flash-latest): This is a published academic journal article used as a reading text, not an assignment or lecture slide deck.",
       "evaluatedAt": "2026-11-07T19:57:44.114Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=78047": {
+      "courseCode": "ENG101",
+      "title": "APA 7 Quiz Key",
+      "filename": "APA 7 QUIZ KEY.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an answer key (Quiz Key) for APA 7 citations. According to the instructions, exam solutions and administrative documents are neither assignments nor slides.",
+      "evaluatedAt": "2026-11-08T14:57:32.408Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=77978": {
+      "courseCode": "ENG101",
+      "title": "Transcript for Alain de Botton's Video",
+      "filename": "Transcript for Alain de Bottons Video.pdf",
+      "reason": "Gemini (gemini-flash-latest): The document is a video transcript provided for reference or listening comprehension, not an assignment or a slide deck.",
+      "evaluatedAt": "2026-11-08T15:00:46.850Z"
     }
   }
 }
