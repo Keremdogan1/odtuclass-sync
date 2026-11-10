@@ -2322,6 +2322,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-10T02:35:04.039Z"
+    },
+    "announcement:5129:forum-4721": {
+      "id": "announcement:5129:forum-4721",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-4721",
+      "moduleType": "forum",
+      "title": "Section 2 lecture today",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=4721",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-10T07:50:37.082Z"
     }
   },
   "sections": {
