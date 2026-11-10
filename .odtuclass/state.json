@@ -2286,6 +2286,42 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-04T19:34:00.891Z"
+    },
+    "assignment:4849:pearson-hw-05": {
+      "id": "assignment:4849:pearson-hw-05",
+      "type": "assignment",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": "pearson-hw-05",
+      "moduleType": "pearson",
+      "title": "HW-05",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/lti/view.php?id=8699",
+      "openAt": "2026-09-24T04:00:00.000Z",
+      "dueAt": "2026-11-15T20:59:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "content": "HW-05 | Start: 2026-09-24T04:00:00.000Z | Due: 2026-11-15T20:59:00.000Z | Status: todo",
+      "contentHash": "5627ff26c583571eaa2f3c171f86d8362ad50ea270944c2448f20e7dfe4f003d",
+      "event": "created",
+      "seenAt": "2026-11-10T02:33:46.086Z"
+    },
+    "announcement:5151:forum-4631": {
+      "id": "announcement:5151:forum-4631",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": "forum-4631",
+      "moduleType": "forum",
+      "title": "BA100 – Week 6 Course Announcement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=4631",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-10T02:35:04.039Z"
     }
   },
   "sections": {
