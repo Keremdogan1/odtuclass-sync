@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T07:50:24.153Z",
+  "updatedAt": "2026-11-10T12:34:59.482Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -417,6 +417,21 @@
       "filesize": 2006030,
       "reason": "Gemini (gemini-flash-latest): The document is a 42-slide lecture presentation covering APA 7th edition referencing and academic citation styles.",
       "syncedAt": "2026-11-08T14:57:21.555Z"
+    },
+    "CENG111/CENG111-2026--Week7a.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week7a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week7a.pdf",
+      "filename": "CENG111-2026--Week7a.pdf",
+      "formattedFilename": "2026 Week 7a.pdf",
+      "weekKey": "7a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week7a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week7a.pdf?forcedownload=1",
+      "filesize": 949369,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as slides in the metadata and contains weekly lecture content on Python data structures (strings, tuples, lists) with slide numbering and teaching credits.",
+      "syncedAt": "2026-11-10T12:34:52.466Z"
     }
   },
   "evaluatedNonSlides": {
