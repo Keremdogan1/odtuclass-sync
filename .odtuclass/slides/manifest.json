@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T04:38:45.067Z",
+  "updatedAt": "2026-11-11T22:40:46.318Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -432,6 +432,21 @@
       "filesize": 949369,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as slides in the metadata and contains weekly lecture content on Python data structures (strings, tuples, lists) with slide numbering and teaching credits.",
       "syncedAt": "2026-11-10T12:34:52.466Z"
+    },
+    "BIOL109/6 Transcription+RNA processing.pdf": {
+      "id": "slide:BIOL109:6 Transcription+RNA processing.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "Transcription & RNA processing",
+      "filename": "6 Transcription+RNA processing.pdf",
+      "formattedFilename": "6. Transcription+RNA processing.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=81275",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/396038/mod_resource/content/1/6%20Transcription%2BRNA%20processing.pdf",
+      "filesize": 1951527,
+      "reason": "Gemini (gemini-3-flash-preview): The document contains slide numbers (e.g., '-- 1 of 49 --'), bulleted educational content, and copyright notices from a textbook publisher, which are characteristic of lecture slides.",
+      "syncedAt": "2026-11-11T22:35:19.363Z"
     }
   },
   "evaluatedNonSlides": {
@@ -764,6 +779,27 @@
       "filename": "Myth of the Indoor City with the comments.pdf",
       "reason": "Gemini (gemini-flash-latest): The document is an academic journal article ('The Myth of the Indoor City') assigned as reading material, not an assignment or lecture slide deck.",
       "evaluatedAt": "2026-11-08T20:17:10.587Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=80938": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-MT1-A+B-soln",
+      "filename": "105-20261-MT1-A+B-soln.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a midterm examination solution. According to the instructions, exam solutions are administrative documents and should have both isAssignment and isSlide set to false.",
+      "evaluatedAt": "2026-11-11T22:35:32.998Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=80946": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-MT1-A+B-averages-1",
+      "filename": "105-20261-MT1-A+B-averages-1.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document contains statistical data and averages for a midterm exam (MT1), which is an administrative grading report rather than a student assignment or lecture slides.",
+      "evaluatedAt": "2026-11-11T22:35:39.765Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=80893": {
+      "courseCode": "PHYS105",
+      "title": "Directive for regrade requests",
+      "filename": "Directive for regrade requests.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative directive providing instructions on how to submit regrade requests for exams; it contains no assignments, problems, or lecture content.",
+      "evaluatedAt": "2026-11-11T22:40:43.692Z"
     }
   }
 }
