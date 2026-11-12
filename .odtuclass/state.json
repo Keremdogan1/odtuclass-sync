@@ -2397,6 +2397,24 @@
       "contentHash": "7a75069580ad3e2ce78dd05514ecf2b45129d2fd4c840df6969200846672e4f9",
       "event": "created",
       "seenAt": "2026-11-11T22:33:17.593Z"
+    },
+    "announcement:3015:forum-5001": {
+      "id": "announcement:3015:forum-5001",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-5001",
+      "moduleType": "forum",
+      "title": "Tomorrow's lecture: internships",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=5001",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-12T16:38:00.390Z"
     }
   },
   "sections": {
