@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T22:40:46.318Z",
+  "updatedAt": "2026-11-12T05:42:52.339Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -447,6 +447,21 @@
       "filesize": 1951527,
       "reason": "Gemini (gemini-3-flash-preview): The document contains slide numbers (e.g., '-- 1 of 49 --'), bulleted educational content, and copyright notices from a textbook publisher, which are characteristic of lecture slides.",
       "syncedAt": "2026-11-11T22:35:19.363Z"
+    },
+    "CENG111/CENG111-2026--Week7b-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week7b-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week7b-Prelecture.pdf",
+      "filename": "CENG111-2026--Week7b-Prelecture.pdf",
+      "formattedFilename": "2026 Week 7b Prelecture.pdf",
+      "weekKey": "7b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week7b-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week7b-Prelecture.pdf?forcedownload=1",
+      "filesize": 1064755,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled as 'Prelecture' slides for Week 7b, contains slide numbering (e.g., 1 of 30), and presents educational content on Python programming topics such as lists, variables, and expressions.",
+      "syncedAt": "2026-11-12T05:42:44.884Z"
     }
   },
   "evaluatedNonSlides": {
