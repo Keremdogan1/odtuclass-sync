@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T11:54:08.367Z",
+  "updatedAt": "2026-11-13T19:15:36.359Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -477,6 +477,21 @@
       "filesize": 887712,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Week 7b', contains slide numbering (e.g., '-- 1 of 24 --'), and presents lecture content on Python programming topics such as lists, variables, and expressions.",
       "syncedAt": "2026-11-12T16:37:37.314Z"
+    },
+    "CENG111/Lab_Notes_Python1.pdf": {
+      "id": "slide:CENG111:Lab_Notes_Python1.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Lab_Notes_Python1.pdf",
+      "filename": "Lab_Notes_Python1.pdf",
+      "formattedFilename": "Lab_Notes_Python1.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab_Notes_Python1.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab_Notes_Python1.pdf?forcedownload=1",
+      "filesize": 254351,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a 'Review Sheet' and 'Lab Notes' containing instructional material and explanations of Python concepts for a specific lab session, fitting the definition of topic lecture notes.",
+      "syncedAt": "2026-11-13T19:15:29.166Z"
     }
   },
   "evaluatedNonSlides": {

@@ -4352,6 +4352,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative directive providing instructions and rules for submitting regrade requests for exams, which does not qualify as an assignment or lecture slides.",
       "seenAt": "2026-11-11T22:32:22.543Z",
       "updatedAt": "2026-11-11T22:32:22.543Z"
+    },
+    "resource:5129:44643-Lab_Notes_Python1.pdf": {
+      "id": "resource:5129:44643-Lab_Notes_Python1.pdf",
+      "type": "resource",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "44643-10",
+      "name": "Lab_Notes_Python1",
+      "filename": "Lab_Notes_Python1.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab_Notes_Python1.pdf?forcedownload=1",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a review sheet and lab notes covering Python basics for a specific lab session, serving as instructional material for teaching/studying a course topic.",
+      "seenAt": "2026-11-13T19:11:37.358Z",
+      "updatedAt": "2026-11-13T19:11:37.358Z"
     }
   }
 }
