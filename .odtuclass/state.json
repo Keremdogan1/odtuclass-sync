@@ -2415,6 +2415,42 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-12T16:38:00.390Z"
+    },
+    "assignment:3533:28458": {
+      "id": "assignment:3533:28458",
+      "type": "assignment",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "sectionId": 63569,
+      "sectionName": "November 16 - November 22",
+      "sectionNumber": 8,
+      "moduleId": 28458,
+      "moduleType": "hvp",
+      "title": "ENG 101 Noun Phrases",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/hvp/view.php?id=28458",
+      "openAt": null,
+      "dueAt": "2026-11-21T21:00:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-14T23:38:03.293Z"
+    },
+    "assignment:3533:28466": {
+      "id": "assignment:3533:28466",
+      "type": "assignment",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "sectionId": 63569,
+      "sectionName": "November 16 - November 22",
+      "sectionNumber": 8,
+      "moduleId": 28466,
+      "moduleType": "hvp",
+      "title": "ENG 101 Using Sources Part 1: Borrowing Methods",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/hvp/view.php?id=28466",
+      "openAt": null,
+      "dueAt": "2026-11-21T21:00:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-14T23:38:03.293Z"
     }
   },
   "sections": {
@@ -4369,6 +4405,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is a review sheet and lab notes covering Python basics for a specific lab session, serving as instructional material for teaching/studying a course topic.",
       "seenAt": "2026-11-13T19:11:37.358Z",
       "updatedAt": "2026-11-13T19:11:37.358Z"
+    },
+    "resource:4849:84236": {
+      "id": "resource:4849:84236",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 84236,
+      "name": "106-20261-MT1-A+B-averages",
+      "filename": "106-20261-MT1-A+B-averages.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=84236",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative report showing statistical averages and regrading results for Midterm 1 (MT1), not a set of problems for students to solve or a lecture presentation.",
+      "seenAt": "2026-11-14T23:43:25.724Z",
+      "updatedAt": "2026-11-14T23:43:25.724Z"
     }
   }
 }

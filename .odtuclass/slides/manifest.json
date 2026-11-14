@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T17:42:05.252Z",
+  "updatedAt": "2026-11-14T23:49:50.349Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -845,6 +845,13 @@
       "filename": "Directive for regrade requests.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative directive providing instructions on how to submit regrade requests for exams; it contains no assignments, problems, or lecture content.",
       "evaluatedAt": "2026-11-11T22:40:43.692Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=84236": {
+      "courseCode": "PHYS105",
+      "title": "106-20261-MT1-A+B-averages",
+      "filename": "106-20261-MT1-A+B-averages.pdf",
+      "reason": "Gemini (gemini-flash-latest): This document contains midterm exam grade averages and statistics, which is administrative data and not an assignment or lecture slide.",
+      "evaluatedAt": "2026-11-14T23:49:47.193Z"
     }
   }
 }
