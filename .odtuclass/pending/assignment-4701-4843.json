@@ -3,12 +3,18 @@
   "type": "assignment",
   "courseId": 4701,
   "courseName": "[OHS 101 ALL SECTIONS] Occupational Health and Safety-I",
+  "sectionId": 84630,
+  "sectionName": "Chapter 9 (November 23 - November 29, 2026)",
+  "sectionNumber": 9,
   "moduleId": 4843,
   "moduleType": "hvp",
-  "title": "Prequiz - Not Graded  Interactive Content",
+  "title": "Prequiz - Not Graded",
   "url": "https://odtuclass2026f.metu.edu.tr/mod/hvp/view.php?id=4843",
   "openAt": null,
   "dueAt": null,
   "closeAt": null,
-  "seenAt": "2026-10-02T20:06:57.904Z"
+  "status": "done",
+  "event": "updated",
+  "statusChanged": true,
+  "dueChanged": false
 }

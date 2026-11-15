@@ -10,10 +10,10 @@
   "openAt": null,
   "dueAt": "2026-11-15T20:59:00.000Z",
   "closeAt": null,
-  "status": "todo",
-  "content": "15/11/26 11:59pm Homework Related rates and indeterminate forms",
-  "contentHash": "0904bbb1dd6a16fc4f54e4238e73d2bc612b75bfb404b699ee48b18e023e7592",
+  "status": "done",
+  "content": "15/11/2611:59pm Homework Related rates and indeterminate forms see score for Related rates and indeterminate forms",
+  "contentHash": "88bee4bb87c7ad2db5205d2636bdbcfd41f50eae0a18f942656dafc1785902c4",
   "event": "updated",
-  "statusChanged": false,
+  "statusChanged": true,
   "dueChanged": false
 }
