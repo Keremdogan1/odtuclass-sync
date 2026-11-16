@@ -2577,6 +2577,24 @@
       "contentHash": "fb3b79478b527dac57b5c7871f8ab0977848b2b8d248a2a12bfed9f15c2d9db1",
       "event": "created",
       "seenAt": "2026-11-16T04:40:52.665Z"
+    },
+    "announcement:5151:forum-5382": {
+      "id": "announcement:5151:forum-5382",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": "forum-5382",
+      "moduleType": "forum",
+      "title": "BA100 – Week 7 Course Announcement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=5382",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-16T17:57:10.607Z"
     }
   },
   "sections": {
