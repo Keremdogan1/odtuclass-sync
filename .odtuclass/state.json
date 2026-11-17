@@ -2595,6 +2595,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-16T17:57:10.607Z"
+    },
+    "announcement:694:forum-5481": {
+      "id": "announcement:694:forum-5481",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "moduleId": "forum-5481",
+      "moduleType": "forum",
+      "title": "Midterm Exam Reminder",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=5481",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-17T23:23:25.353Z"
     }
   },
   "sections": {
