@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T02:49:00.669Z",
+  "updatedAt": "2026-11-17T10:10:10.161Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -492,6 +492,21 @@
       "filesize": 254351,
       "reason": "Gemini (gemini-3-flash-preview): The document is a 'Review Sheet' and 'Lab Notes' containing instructional material and explanations of Python concepts for a specific lab session, fitting the definition of topic lecture notes.",
       "syncedAt": "2026-11-13T19:15:29.166Z"
+    },
+    "CENG111/CENG111-2026--Week8a-Prelecture.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week8a-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week8a-Prelecture.pdf",
+      "filename": "CENG111-2026--Week8a-Prelecture.pdf",
+      "formattedFilename": "2026 Week 8a Prelecture.pdf",
+      "weekKey": "8a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week8a-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week8a-Prelecture.pdf?forcedownload=1",
+      "filesize": 1315468,
+      "reason": "Gemini (gemini-flash-latest): The document is a lecture slide deck covering Python programming concepts for Week 8a.",
+      "syncedAt": "2026-11-17T10:10:02.627Z"
     }
   },
   "evaluatedNonSlides": {
