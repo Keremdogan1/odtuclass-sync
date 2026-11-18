@@ -2613,6 +2613,27 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-17T23:23:25.353Z"
+    },
+    "assignment:5083:pdf-c5ad024e": {
+      "id": "assignment:5083:pdf-c5ad024e",
+      "type": "assignment",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "sectionId": null,
+      "sectionName": null,
+      "sectionNumber": null,
+      "moduleId": "pdf-c5ad024e",
+      "moduleType": "pdf_assignment",
+      "title": "Math 119 2026-1 Recitation Week 08",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=86815",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "description": "MATH 119 Recitation Problems – Week 08 Fall 2026-2027\nQ1. Use linear approximation to estimate the following.\n(a) e0.015\n(b) sin(3)\nQ2. A one-meter-long wire is cut into two pieces. One piece is bent into a circle and the other piece\nis bent into a square. Where should the wire be cut so that the sum of the areas of the circle and\nthe square is\na) maximum, b) minimum?\nQ3. Find the shortest distance from the point (8, 1) to the curve y = 1 + x3/2.\nQ4. Show that\nn\n∑\ni=1\n\u0012 1\ni(i + 1) + 2−i\n\u0013\n= n\nn + 1 + 2n − 1\n2n for any positive integer n.\nQ5. Find the area of the region bounded by the function f (x) = 2x and y = 0 on the interval x ∈ [0, 2]\nby computing L( f , Pn) and U( f , Pn), where Pn is the partition of [0, 2] into n subintervals of equal\nlength.\n1\n-- 1 of 1 --",
+      "content": "MATH 119 Recitation Problems – Week 08 Fall 2026-2027\nQ1. Use linear approximation to estimate the following.\n(a) e0.015\n(b) sin(3)\nQ2. A one-meter-long wire is cut into two pieces. One piece is bent into a circle and the other piece\nis bent into a square. Where should the wire be cut so that the sum of the areas of the circle and\nthe square is\na) maximum, b) minimum?\nQ3. Find the shortest distance from the point (8, 1) to the curve y = 1 + x3/2.\nQ4. Show that\nn\n∑\ni=1\n\u0012 1\ni(i + 1) + 2−i\n\u0013\n= n\nn + 1 + 2n − 1\n2n for any positive integer n.\nQ5. Find the area of the region bounded by the function f (x) = 2x and y = 0 on the interval x ∈ [0, 2]\nby computing L( f , Pn) and U( f , Pn), where Pn is the partition of [0, 2] into n subintervals of equal\nlength.\n1\n-- 1 of 1 --",
+      "contentHash": "af884f0c6ec3a1855197a3747bcfc2cacdab842a7353ec2849db13eaecf145aa",
+      "event": "created",
+      "seenAt": "2026-11-18T16:57:14.676Z"
     }
   },
   "sections": {
@@ -4584,6 +4605,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative report showing statistical averages and regrading results for Midterm 1 (MT1), not a set of problems for students to solve or a lecture presentation.",
       "seenAt": "2026-11-14T23:43:25.724Z",
       "updatedAt": "2026-11-14T23:43:25.724Z"
+    },
+    "resource:5083:86815": {
+      "id": "resource:5083:86815",
+      "type": "resource",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": 86815,
+      "name": "Math 119 2026-1 Recitation Week 08",
+      "filename": "Math 119 2026-1 Recitation Week 08.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=86815",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "weekly_problems",
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Recitation Problems' and contains a list of numbered mathematical exercises (Q1-Q5) for students to solve during a specific week.",
+      "seenAt": "2026-11-18T17:02:16.081Z",
+      "updatedAt": "2026-11-18T17:02:16.081Z"
     }
   }
 }
