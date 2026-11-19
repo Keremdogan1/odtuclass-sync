@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T01:45:37.136Z",
+  "updatedAt": "2026-11-19T12:36:00.242Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -507,6 +507,36 @@
       "filesize": 1315468,
       "reason": "Gemini (gemini-flash-latest): The document is a lecture slide deck covering Python programming concepts for Week 8a.",
       "syncedAt": "2026-11-17T10:10:02.627Z"
+    },
+    "CENG111/CENG111-2026--Week8a.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week8a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week8a.pdf",
+      "filename": "CENG111-2026--Week8a.pdf",
+      "formattedFilename": "2026 Week 8a.pdf",
+      "weekKey": "8a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week8a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week8a.pdf?forcedownload=1",
+      "filesize": 1315468,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a 35-page lecture slide deck for Week 8 of the course, covering Python programming topics such as variables, aliasing, and operators. It contains slide numbers, teaching content, and is explicitly labeled as 'Week 8a' in the metadata and text.",
+      "syncedAt": "2026-11-19T12:33:10.413Z"
+    },
+    "CENG111/CENG111-2026--Week8b.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week8b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week8b.pdf",
+      "filename": "CENG111-2026--Week8b.pdf",
+      "formattedFilename": "2026 Week 8b.pdf",
+      "weekKey": "8b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week8b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week8b.pdf?forcedownload=1",
+      "filesize": 855353,
+      "reason": "Gemini (gemini-flash-latest): The document is a lecture presentation slide deck covering Python expressions, statements, and functions for Week 8b.",
+      "syncedAt": "2026-11-19T12:35:52.219Z"
     }
   },
   "evaluatedNonSlides": {
