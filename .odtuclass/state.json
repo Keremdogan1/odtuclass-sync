@@ -2634,6 +2634,24 @@
       "contentHash": "af884f0c6ec3a1855197a3747bcfc2cacdab842a7353ec2849db13eaecf145aa",
       "event": "created",
       "seenAt": "2026-11-18T16:57:14.676Z"
+    },
+    "announcement:3015:forum-5764": {
+      "id": "announcement:3015:forum-5764",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-5764",
+      "moduleType": "forum",
+      "title": "Lecture today 9am",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=5764",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-20T16:45:26.983Z"
     }
   },
   "sections": {
