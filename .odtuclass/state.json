@@ -2485,7 +2485,7 @@
       "openAt": "2026-11-15T21:00:00.000Z",
       "dueAt": null,
       "closeAt": "2026-11-22T20:59:00.000Z",
-      "status": "todo",
+      "status": "done",
       "seenAt": "2026-11-15T15:18:07.615Z"
     },
     "assignment:4701:4844": {
