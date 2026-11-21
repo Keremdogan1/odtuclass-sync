@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-20T16:45:14.122Z",
+  "updatedAt": "2026-11-21T01:08:49.695Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -537,6 +537,21 @@
       "filesize": 855353,
       "reason": "Gemini (gemini-flash-latest): The document is a lecture presentation slide deck covering Python expressions, statements, and functions for Week 8b.",
       "syncedAt": "2026-11-19T12:35:52.219Z"
+    },
+    "CENG111/Lab4_Notes_Python.pdf": {
+      "id": "slide:CENG111:Lab4_Notes_Python.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Lab4_Notes_Python.pdf",
+      "filename": "Lab4_Notes_Python.pdf",
+      "formattedFilename": "Lab4_Notes_Python.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab4_Notes_Python.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab4_Notes_Python.pdf?forcedownload=1",
+      "filesize": 254351,
+      "reason": "Gemini (gemini-flash-latest): This document is a topic review sheet and lecture note summarizing Python concepts for Lab 4, designed for teaching and studying.",
+      "syncedAt": "2026-11-21T01:08:42.440Z"
     }
   },
   "evaluatedNonSlides": {
@@ -897,6 +912,11 @@
       "filename": "106-20261-MT1-A+B-averages.pdf",
       "reason": "Gemini (gemini-flash-latest): This document contains midterm exam grade averages and statistics, which is administrative data and not an assignment or lecture slide.",
       "evaluatedAt": "2026-11-14T23:49:47.193Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab5_Python.ipynb?forcedownload=1": {
+      "title": "Lab5_Python.ipynb",
+      "reason": "Not a PDF or convertible Office document",
+      "evaluatedAt": "2026-11-21T01:08:44.044Z"
     }
   }
 }

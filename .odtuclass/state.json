@@ -2652,6 +2652,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-20T16:45:26.983Z"
+    },
+    "announcement:5129:forum-5841": {
+      "id": "announcement:5129:forum-5841",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-5841",
+      "moduleType": "forum",
+      "title": "Weekly Practice Platform: PY.CENG is Available",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=5841",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-21T01:09:04.781Z"
     }
   },
   "sections": {
@@ -4640,6 +4658,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Recitation Problems' and contains a list of numbered mathematical exercises (Q1-Q5) for students to solve during a specific week.",
       "seenAt": "2026-11-18T17:02:16.081Z",
       "updatedAt": "2026-11-18T17:02:16.081Z"
+    },
+    "resource:5129:44643-Lab4_Notes_Python.pdf": {
+      "id": "resource:5129:44643-Lab4_Notes_Python.pdf",
+      "type": "resource",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "44643-10",
+      "name": "Lab4_Notes_Python",
+      "filename": "Lab4_Notes_Python.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab4_Notes_Python.pdf?forcedownload=1",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document is a review sheet and set of lecture notes covering Python basics for a specific lab session, intended for teaching and studying rather than as a set of problems to be solved.",
+      "seenAt": "2026-11-21T01:05:11.279Z",
+      "updatedAt": "2026-11-21T01:05:11.279Z"
     }
   }
 }
