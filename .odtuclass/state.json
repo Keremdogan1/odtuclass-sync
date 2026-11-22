@@ -2691,6 +2691,42 @@
       "contentHash": "187dad734d97b5e30d996a7f7c32e34c8a414ba4c9d21d3878bd7f8a47cfbd8b",
       "event": "created",
       "seenAt": "2026-11-21T12:04:47.256Z"
+    },
+    "assignment:5129:90535": {
+      "id": "assignment:5129:90535",
+      "type": "assignment",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "sectionId": 92634,
+      "sectionName": "General",
+      "sectionNumber": 0,
+      "moduleId": 90535,
+      "moduleType": "assign",
+      "title": "Lab Exam 2 (Preliminary)",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/assign/view.php?id=90535",
+      "openAt": "2026-11-21T21:00:00.000Z",
+      "dueAt": "2026-12-04T14:00:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-22T15:55:04.564Z"
+    },
+    "announcement:5129:forum-5913": {
+      "id": "announcement:5129:forum-5913",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-5913",
+      "moduleType": "forum",
+      "title": "Lab Exam 2 (LE2) is ready!",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=5913",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-22T15:58:24.011Z"
     }
   },
   "sections": {

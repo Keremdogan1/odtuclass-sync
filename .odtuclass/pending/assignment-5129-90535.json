@@ -1,0 +1,18 @@
+{
+  "id": "assignment:5129:90535",
+  "type": "assignment",
+  "courseId": 5129,
+  "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+  "sectionId": 92634,
+  "sectionName": "General",
+  "sectionNumber": 0,
+  "moduleId": 90535,
+  "moduleType": "assign",
+  "title": "Lab Exam 2 (Preliminary)",
+  "url": "https://odtuclass2026f.metu.edu.tr/mod/assign/view.php?id=90535",
+  "openAt": "2026-11-21T21:00:00.000Z",
+  "dueAt": "2026-12-04T14:00:00.000Z",
+  "closeAt": null,
+  "status": "todo",
+  "event": "created"
+}
