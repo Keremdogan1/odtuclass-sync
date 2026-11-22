@@ -10,8 +10,10 @@
   "openAt": null,
   "dueAt": "2026-11-22T20:59:00.000Z",
   "closeAt": null,
-  "status": "todo",
-  "content": "22/11/26 11:59pm Homework More Applications of Differentiation",
-  "contentHash": "7a75069580ad3e2ce78dd05514ecf2b45129d2fd4c840df6969200846672e4f9",
-  "event": "created"
+  "status": "done",
+  "content": "22/11/2611:59pm Homework More Applications of Differentiation see score for More Applications of Differentiation",
+  "contentHash": "801daaf141c1feeca7b7d14d349afb0e330366104b5744d56528f7ee7502003f",
+  "event": "updated",
+  "statusChanged": true,
+  "dueChanged": false
 }
