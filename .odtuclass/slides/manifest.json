@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T05:40:57.862Z",
+  "updatedAt": "2026-11-23T19:51:24.196Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -552,6 +552,21 @@
       "filesize": 254351,
       "reason": "Gemini (gemini-flash-latest): This document is a topic review sheet and lecture note summarizing Python concepts for Lab 4, designed for teaching and studying.",
       "syncedAt": "2026-11-21T01:08:42.440Z"
+    },
+    "CENG111/Ceng111-2026--Week9a_PreLecture.pdf": {
+      "id": "slide:CENG111:Ceng111-2026--Week9a_PreLecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Ceng111-2026--Week9a_PreLecture.pdf",
+      "filename": "Ceng111-2026--Week9a_PreLecture.pdf",
+      "formattedFilename": "2026 Week 9a Prelecture.pdf",
+      "weekKey": "9a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/Ceng111-2026--Week9a_PreLecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/Ceng111-2026--Week9a_PreLecture.pdf?forcedownload=1",
+      "filesize": 2972395,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a 52-page slide deck for Week 9a of the course, containing lecture topics, slide credits, and an outline of the day's teaching material.",
+      "syncedAt": "2026-11-23T19:51:18.563Z"
     }
   },
   "evaluatedNonSlides": {

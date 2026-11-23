@@ -2781,6 +2781,42 @@
       "contentHash": "087b61b1abf3c19dfc3220cd20e360cdc22facffb24e2f1c1d715a3d07e11aef",
       "event": "created",
       "seenAt": "2026-11-22T21:33:14.128Z"
+    },
+    "announcement:5151:forum-6012": {
+      "id": "announcement:5151:forum-6012",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5151,
+      "courseName": "[BA 100 All Sections] Career Planning",
+      "moduleId": "forum-6012",
+      "moduleType": "forum",
+      "title": "BA100 - Week 8 Course Announcement",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=6012",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-23T19:51:38.622Z"
+    },
+    "announcement:5083:forum-6002": {
+      "id": "announcement:5083:forum-6002",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-6002",
+      "moduleType": "forum",
+      "title": "Exam Content of Midterm-II",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=6002",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-23T19:51:38.622Z"
     }
   },
   "sections": {
