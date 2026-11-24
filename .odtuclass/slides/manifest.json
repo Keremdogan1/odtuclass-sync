@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T08:47:27.075Z",
+  "updatedAt": "2026-11-24T19:26:04.850Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -567,6 +567,36 @@
       "filesize": 2972395,
       "reason": "Gemini (gemini-3-flash-preview): The document is a 52-page slide deck for Week 9a of the course, containing lecture topics, slide credits, and an outline of the day's teaching material.",
       "syncedAt": "2026-11-23T19:51:18.563Z"
+    },
+    "CENG111/CENG111-2026--Week9a.pdf": {
+      "id": "slide:CENG111:CENG111-2026--Week9a.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "CENG111-2026--Week9a.pdf",
+      "filename": "CENG111-2026--Week9a.pdf",
+      "formattedFilename": "2026 Week 9a.pdf",
+      "weekKey": "9a",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week9a.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/CENG111-2026--Week9a.pdf?forcedownload=1",
+      "filesize": 1528916,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'Week 9a' slides, contains slide numbering (e.g., 1 of 30), and presents instructional content on Python functions in a presentation format.",
+      "syncedAt": "2026-11-24T19:25:29.086Z"
+    },
+    "ENG101/Alternative Academic Expressions for Paragraph Writing.pdf": {
+      "id": "slide:ENG101:Alternative Academic Expressions for Paragraph Writing.pdf",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "courseCode": "ENG101",
+      "title": "Academic Alternatives to Some Common Phrases",
+      "filename": "Alternative Academic Expressions for Paragraph Writing.pdf",
+      "formattedFilename": "Alternative Academic Expressions for Paragraph Writing.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=92837",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/410048/mod_resource/content/1/Alternative%20Academic%20Expressions%20for%20Paragraph%20Writing.pdf",
+      "filesize": 182779,
+      "reason": "Gemini (gemini-3-flash-preview): The document is an 'Expression Bank' providing academic vocabulary alternatives, serving as topic lecture notes or teaching material for the course's academic writing module. It contains no assigned problems or administrative information.",
+      "syncedAt": "2026-11-24T19:25:55.911Z"
     }
   },
   "evaluatedNonSlides": {
@@ -932,6 +962,11 @@
       "title": "Lab5_Python.ipynb",
       "reason": "Not a PDF or convertible Office document",
       "evaluatedAt": "2026-11-21T01:08:44.044Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab6_Python_student.ipynb?forcedownload=1": {
+      "title": "Lab6_Python_student.ipynb",
+      "reason": "Not a PDF or convertible Office document",
+      "evaluatedAt": "2026-11-24T19:25:35.199Z"
     }
   }
 }

@@ -4892,6 +4892,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is a grading rubric for a writing assignment, which is explicitly categorized as an administrative document that is neither an assignment nor a slide deck.",
       "seenAt": "2026-11-21T12:04:53.538Z",
       "updatedAt": "2026-11-21T12:04:53.538Z"
+    },
+    "resource:3533:92837": {
+      "id": "resource:3533:92837",
+      "type": "resource",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "moduleId": 92837,
+      "name": "Academic Alternatives to Some Common Phrases",
+      "filename": "Academic Alternatives to Some Common Phrases.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=92837",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an 'Expression Bank' for academic writing, serving as a study resource or lecture notes for a specific course topic. It contains no assigned problems or exercises for the student to solve.",
+      "seenAt": "2026-11-24T19:22:28.583Z",
+      "updatedAt": "2026-11-24T19:22:28.583Z"
     }
   }
 }
