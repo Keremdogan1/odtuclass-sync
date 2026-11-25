@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T03:25:13.883Z",
+  "updatedAt": "2026-11-25T13:56:45.164Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -597,6 +597,21 @@
       "filesize": 182779,
       "reason": "Gemini (gemini-3-flash-preview): The document is an 'Expression Bank' providing academic vocabulary alternatives, serving as topic lecture notes or teaching material for the course's academic writing module. It contains no assigned problems or administrative information.",
       "syncedAt": "2026-11-24T19:25:55.911Z"
+    },
+    "BIOL109/7 Translation+protein folding sorting degradation.pdf": {
+      "id": "slide:BIOL109:7 Translation+protein folding sorting degradation.pdf",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "courseCode": "BIOL109",
+      "title": "Translation & PTM",
+      "filename": "7 Translation+protein folding sorting degradation.pdf",
+      "formattedFilename": "7. Translation+protein folding sorting degradation.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=93370",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/410654/mod_resource/content/1/7%20Translation%2Bprotein%20folding%20sorting%20degradation.pdf",
+      "filesize": 1819477,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a 55-page slide deck covering the topic of translation and protein synthesis, as evidenced by the slide numbering (e.g., '-- 1 of 55 --'), bulleted instructional content, and diagrams.",
+      "syncedAt": "2026-11-25T13:56:36.639Z"
     }
   },
   "evaluatedNonSlides": {

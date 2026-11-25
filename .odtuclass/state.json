@@ -2853,6 +2853,27 @@
       "contentHash": "01c9365caa36517b7d192dbfd1c762903312a097d5bd03ab71b6981f15b9e21c",
       "event": "created",
       "seenAt": "2026-11-24T04:36:27.338Z"
+    },
+    "assignment:5083:pdf-645398e5": {
+      "id": "assignment:5083:pdf-645398e5",
+      "type": "assignment",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "sectionId": null,
+      "sectionName": null,
+      "sectionNumber": null,
+      "moduleId": "pdf-645398e5",
+      "moduleType": "pdf_assignment",
+      "title": "Math 119 2026-1 Recitation Week 09",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=93575",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "description": "MATH 119 Recitation Problems – Week 09 Fall 2026-2027\nQ1. Use the patrition P = {−1, 0, 1, 2} of the interval [−1, 2] to show that\n18\n17 <\nZ 2\n−1\n1\n1 + x4 dx < 5\n2\nHint: Give the sketch of the function and then compute lower and upper Riemann sums.\nQ2. Express the following limits as definite integrals.\n(a) lim\nn→∞\nn\n∑\ni=1\n2\nn ln\n\u0012\n1 + 2i\nn\n\u0013\n(b) lim\nn→∞\nn\n∑\ni=1\nn\nn2 + i2\nQ3. Evaluate the following integrals by interpreting them as areas.\n(a)\nZ 2\n0\np\n2x − x2 dx\n(b)\nZ 2\n1\np\n4 − x2 dx\nQ4. Evaluate the following limits.\n(a) lim\nn→∞\n\u0010 n\nn2 + 1 + n\nn2 + 4 + · · · + n\n2n2\n\u0011\n(b) lim\nx→0",
+      "content": "MATH 119 Recitation Problems – Week 09 Fall 2026-2027\nQ1. Use the patrition P = {−1, 0, 1, 2} of the interval [−1, 2] to show that\n18\n17 <\nZ 2\n−1\n1\n1 + x4 dx < 5\n2\nHint: Give the sketch of the function and then compute lower and upper Riemann sums.\nQ2. Express the following limits as definite integrals.\n(a) lim\nn→∞\nn\n∑\ni=1\n2\nn ln\n\u0012\n1 + 2i\nn\n\u0013\n(b) lim\nn→∞\nn\n∑\ni=1\nn\nn2 + i2\nQ3. Evaluate the following integrals by interpreting them as areas.\n(a)\nZ 2\n0\np\n2x − x2 dx\n(b)\nZ 2\n1\np\n4 − x2 dx\nQ4. Evaluate the following limits.\n(a) lim\nn→∞\n\u0010 n\nn2 + 1 + n\nn2 + 4 + · · · + n\n2n2\n\u0011\n(b) lim\nx→0",
+      "contentHash": "66f87b617d5cb2fe763407c8de265e8c83a32ae31e9f93cc2e64859343cd9f76",
+      "event": "created",
+      "seenAt": "2026-11-25T13:54:12.343Z"
     }
   },
   "sections": {
@@ -4909,6 +4930,40 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is an 'Expression Bank' for academic writing, serving as a study resource or lecture notes for a specific course topic. It contains no assigned problems or exercises for the student to solve.",
       "seenAt": "2026-11-24T19:22:28.583Z",
       "updatedAt": "2026-11-24T19:22:28.583Z"
+    },
+    "resource:694:93370": {
+      "id": "resource:694:93370",
+      "type": "resource",
+      "courseId": 694,
+      "courseName": "[BIOL 109 Section 1] Introduction to Molecular Biology",
+      "moduleId": 93370,
+      "name": "Translation & PTM",
+      "filename": "Translation & PTM.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=93370",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "lecture_slides",
+      "reason": "Gemini (gemini-3-flash-preview): The document contains slide numbers (e.g., '-- 1 of 55 --'), bulleted instructional content, and diagrams typical of a lecture presentation on a specific course topic (Translation).",
+      "seenAt": "2026-11-25T13:54:15.658Z",
+      "updatedAt": "2026-11-25T13:54:15.658Z"
+    },
+    "resource:5083:93575": {
+      "id": "resource:5083:93575",
+      "type": "resource",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": 93575,
+      "name": "Math 119 2026-1 Recitation Week 09",
+      "filename": "Math 119 2026-1 Recitation Week 09.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=93575",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": true,
+      "format": "weekly_problems",
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Recitation Problems' and contains a list of numbered exercises (Q1-Q6) for students to solve, which fits the definition of an assignment/problem sheet.",
+      "seenAt": "2026-11-25T13:54:15.658Z",
+      "updatedAt": "2026-11-25T13:54:15.658Z"
     }
   }
 }
