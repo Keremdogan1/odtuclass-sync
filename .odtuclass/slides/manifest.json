@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T13:56:45.164Z",
+  "updatedAt": "2026-11-26T00:06:38.679Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -612,6 +612,21 @@
       "filesize": 1819477,
       "reason": "Gemini (gemini-3-flash-preview): The document is a 55-page slide deck covering the topic of translation and protein synthesis, as evidenced by the slide numbering (e.g., '-- 1 of 55 --'), bulleted instructional content, and diagrams.",
       "syncedAt": "2026-11-25T13:56:36.639Z"
+    },
+    "ENG101/Analysing Prompts MetuClass.pdf": {
+      "id": "slide:ENG101:Analysing Prompts MetuClass.pdf",
+      "courseId": 3533,
+      "courseName": "[ENG 101 Section 119] English for Academic Purposes I",
+      "courseCode": "ENG101",
+      "title": "How to analyse prompts",
+      "filename": "Analysing Prompts MetuClass.pdf",
+      "formattedFilename": "Analysing Prompts MetuClass.pdf",
+      "weekKey": null,
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=93679",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/411055/mod_resource/content/1/Analysing%20Prompts%20MetuClass.pptx",
+      "filesize": 3578350,
+      "reason": "Gemini (gemini-3-flash-preview): The document is structured as a 27-page slide deck (indicated by the page markers) designed to teach students how to analyze academic writing prompts. It contains instructional content, definitions, and examples typical of lecture presentations.",
+      "syncedAt": "2026-11-26T00:06:33.596Z"
     }
   },
   "evaluatedNonSlides": {
