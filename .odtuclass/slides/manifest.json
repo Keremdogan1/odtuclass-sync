@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T00:06:38.679Z",
+  "updatedAt": "2026-11-26T07:44:18.399Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -627,6 +627,21 @@
       "filesize": 3578350,
       "reason": "Gemini (gemini-3-flash-preview): The document is structured as a 27-page slide deck (indicated by the page markers) designed to teach students how to analyze academic writing prompts. It contains instructional content, definitions, and examples typical of lecture presentations.",
       "syncedAt": "2026-11-26T00:06:33.596Z"
+    },
+    "CENG111/Ceng111-2026--Week9b-Prelecture.pdf": {
+      "id": "slide:CENG111:Ceng111-2026--Week9b-Prelecture.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Ceng111-2026--Week9b-Prelecture.pdf",
+      "filename": "Ceng111-2026--Week9b-Prelecture.pdf",
+      "formattedFilename": "2026 Week 9b Prelecture.pdf",
+      "weekKey": "9b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/Ceng111-2026--Week9b-Prelecture.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/Ceng111-2026--Week9b-Prelecture.pdf?forcedownload=1",
+      "filesize": 1463685,
+      "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'Slides' and 'Prelecture' in the metadata and filename. The content is structured as a slide deck (e.g., '-- 1 of 35 --') and covers instructional topics such as Python scope, functional programming, and recursion.",
+      "syncedAt": "2026-11-26T07:44:11.463Z"
     }
   },
   "evaluatedNonSlides": {
