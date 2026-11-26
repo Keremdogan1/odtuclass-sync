@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T08:51:27.224Z",
+  "updatedAt": "2026-11-26T18:12:00.335Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -642,6 +642,21 @@
       "filesize": 1463685,
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly labeled as 'Slides' and 'Prelecture' in the metadata and filename. The content is structured as a slide deck (e.g., '-- 1 of 35 --') and covers instructional topics such as Python scope, functional programming, and recursion.",
       "syncedAt": "2026-11-26T07:44:11.463Z"
+    },
+    "CENG111/Ceng111-2026--Week9b.pdf": {
+      "id": "slide:CENG111:Ceng111-2026--Week9b.pdf",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "courseCode": "CENG111",
+      "title": "Ceng111-2026--Week9b.pdf",
+      "filename": "Ceng111-2026--Week9b.pdf",
+      "formattedFilename": "2026 Week 9b.pdf",
+      "weekKey": "9b",
+      "url": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/Ceng111-2026--Week9b.pdf?forcedownload=1",
+      "finalUrl": "https://odtuclass2026f.metu.edu.tr/pluginfile.php/235374/mod_folder/content/0/Ceng111-2026--Week9b.pdf?forcedownload=1",
+      "filesize": 1441713,
+      "reason": "Gemini (gemini-3-flash-preview): The document is a slide deck for Week 9b of the course, featuring slide numbering (e.g., 1 of 33), lecture topics such as Python scope and recursion, and is stored in a folder named 'Slides'.",
+      "syncedAt": "2026-11-26T18:11:45.462Z"
     }
   },
   "evaluatedNonSlides": {
@@ -1012,6 +1027,13 @@
       "title": "Lab6_Python_student.ipynb",
       "reason": "Not a PDF or convertible Office document",
       "evaluatedAt": "2026-11-24T19:25:35.199Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=94767": {
+      "courseCode": "PHYS105",
+      "title": "105-20261-Exam Rules-2",
+      "filename": "exam-rules-phone-dijital.pdf",
+      "reason": "Gemini (gemini-3-flash-preview): The document is an administrative set of exam rules and regulations, not a lecture slide deck or a student assignment.",
+      "evaluatedAt": "2026-11-26T18:11:58.071Z"
     }
   }
 }

@@ -2874,6 +2874,42 @@
       "contentHash": "66f87b617d5cb2fe763407c8de265e8c83a32ae31e9f93cc2e64859343cd9f76",
       "event": "created",
       "seenAt": "2026-11-25T13:54:12.343Z"
+    },
+    "assignment:5129:94104": {
+      "id": "assignment:5129:94104",
+      "type": "assignment",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "sectionId": 92634,
+      "sectionName": "General",
+      "sectionNumber": 0,
+      "moduleId": 94104,
+      "moduleType": "assign",
+      "title": "Quiz 1",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/assign/view.php?id=94104",
+      "openAt": "2026-11-25T21:00:00.000Z",
+      "dueAt": "2026-11-26T20:59:00.000Z",
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-26T18:06:28.943Z"
+    },
+    "announcement:5129:forum-6355": {
+      "id": "announcement:5129:forum-6355",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5129,
+      "courseName": "[CENG 111 ALL Secitons] Introduction to Computer Eng. Concepts",
+      "moduleId": "forum-6355",
+      "moduleType": "forum",
+      "title": "Midterm Grades",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=6355",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-26T18:12:15.023Z"
     }
   },
   "sections": {
@@ -4964,6 +5000,23 @@
       "reason": "Gemini (gemini-3-flash-preview): The document is explicitly titled 'Recitation Problems' and contains a list of numbered exercises (Q1-Q6) for students to solve, which fits the definition of an assignment/problem sheet.",
       "seenAt": "2026-11-25T13:54:15.658Z",
       "updatedAt": "2026-11-25T13:54:15.658Z"
+    },
+    "resource:4849:94767": {
+      "id": "resource:4849:94767",
+      "type": "resource",
+      "courseId": 4849,
+      "courseName": "[PHYS 105 ALL SECTIONS] General Physics I",
+      "moduleId": 94767,
+      "name": "105-20261-Exam Rules-2",
+      "filename": "105-20261-Exam Rules-2.pdf",
+      "fileurl": "https://odtuclass2026f.metu.edu.tr/mod/resource/view.php?id=94767",
+      "filesize": null,
+      "timemodified": null,
+      "isAssignment": false,
+      "format": "none",
+      "reason": "Gemini (gemini-3-flash-preview): This is an administrative document outlining exam rules and procedures, not a lecture slide deck or an assignment.",
+      "seenAt": "2026-11-26T18:08:47.525Z",
+      "updatedAt": "2026-11-26T18:08:47.525Z"
     }
   }
 }
