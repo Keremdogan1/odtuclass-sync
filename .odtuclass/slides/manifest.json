@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T13:31:26.976Z",
+  "updatedAt": "2026-11-27T23:57:07.835Z",
   "slides": {
     "CENG111/CENG111-2026--Week1a.pdf": {
       "id": "slide:5129:CENG111-2026--Week1a.pdf",
@@ -1034,6 +1034,11 @@
       "filename": "exam-rules-phone-dijital.pdf",
       "reason": "Gemini (gemini-3-flash-preview): The document is an administrative set of exam rules and regulations, not a lecture slide deck or a student assignment.",
       "evaluatedAt": "2026-11-26T18:11:58.071Z"
+    },
+    "https://odtuclass2026f.metu.edu.tr/pluginfile.php/315532/mod_folder/content/0/Python/Lab6_Python_solved.ipynb?forcedownload=1": {
+      "title": "Lab6_Python_solved.ipynb",
+      "reason": "Not a PDF or convertible Office document",
+      "evaluatedAt": "2026-11-27T23:57:02.912Z"
     }
   }
 }
