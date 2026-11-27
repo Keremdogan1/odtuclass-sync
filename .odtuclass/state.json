@@ -2928,6 +2928,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-27T02:42:01.792Z"
+    },
+    "announcement:5083:forum-6478": {
+      "id": "announcement:5083:forum-6478",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 5083,
+      "courseName": "[MATH 119 All Sections] Calculus with Analytic Geometry",
+      "moduleId": "forum-6478",
+      "moduleType": "forum",
+      "title": "Midterm 2- Exam Places and Exam Rules",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=6478",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-27T13:31:41.861Z"
     }
   },
   "sections": {
