@@ -2910,6 +2910,24 @@
       "closeAt": null,
       "status": "todo",
       "seenAt": "2026-11-26T18:12:15.023Z"
+    },
+    "announcement:3015:forum-6433": {
+      "id": "announcement:3015:forum-6433",
+      "type": "assignment",
+      "source": "announcement",
+      "isTask": false,
+      "notificationCategory": "announcement",
+      "courseId": 3015,
+      "courseName": "[CENG 100 Section 1] Computer Engineering Orientation",
+      "moduleId": "forum-6433",
+      "moduleType": "forum",
+      "title": "Tomorrow starting 9am: “Why you should (not) become an academician” by Prof. Dr. Sinan Kalkan",
+      "url": "https://odtuclass2026f.metu.edu.tr/mod/forum/discuss.php?d=6433",
+      "openAt": null,
+      "dueAt": null,
+      "closeAt": null,
+      "status": "todo",
+      "seenAt": "2026-11-27T02:42:01.792Z"
     }
   },
   "sections": {
